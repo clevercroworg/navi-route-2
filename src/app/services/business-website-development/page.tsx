@@ -338,9 +338,9 @@ export default function BusinessWebsiteDevelopmentPage() {
             <div className="bg-white border border-[#1D3D9E]/10 rounded-[32px] p-8 sm:p-12 grid grid-cols-2 lg:grid-cols-4 gap-8 items-center shadow-sm">
               
               <div className="flex items-center gap-4 py-2 justify-center lg:justify-start">
-                <div className="relative w-12 h-12 shrink-0">
+                <div className="relative w-16 h-16 shrink-0">
                   <Image
-                    src="/images/service_website_v5.png"
+                    src="/images/service/1.png"
                     alt="Websites Delivered Icon"
                     fill
                     className="object-contain"
@@ -353,9 +353,9 @@ export default function BusinessWebsiteDevelopmentPage() {
               </div>
 
               <div className="flex items-center gap-4 py-2 justify-center lg:justify-start">
-                <div className="relative w-12 h-12 shrink-0">
+                <div className="relative w-16 h-16 shrink-0">
                   <Image
-                    src="/images/hand_holding_compass_v4.png"
+                    src="/images/service/Happy Clients - Handshake.png"
                     alt="Happy Clients Icon"
                     fill
                     className="object-contain"
@@ -368,9 +368,9 @@ export default function BusinessWebsiteDevelopmentPage() {
               </div>
 
               <div className="flex items-center gap-4 py-2 justify-center lg:justify-start">
-                <div className="relative w-12 h-12 shrink-0">
+                <div className="relative w-16 h-16 shrink-0">
                   <Image
-                    src="/images/mini_lighthouse_v4.png"
+                    src="/images/service/Years of Experience - Award Badge.png"
                     alt="Years Experience Icon"
                     fill
                     className="object-contain"
@@ -383,9 +383,9 @@ export default function BusinessWebsiteDevelopmentPage() {
               </div>
 
               <div className="flex items-center gap-4 py-2 justify-center lg:justify-start">
-                <div className="relative w-12 h-12 shrink-0">
+                <div className="relative w-16 h-16 shrink-0">
                   <Image
-                    src="/images/process_plan_v5.png"
+                    src="/images/service/Industries Served - Sitemap.png"
                     alt="Industries Served Icon"
                     fill
                     className="object-contain"
