@@ -773,14 +773,14 @@ export default function WorkPage() {
             </div>
 
             {/* Filter Buttons */}
-            <div className="flex flex-wrap gap-2 pt-2 border-t border-[#1D3D9E]/5">
+            <div className="flex overflow-x-auto md:flex-wrap gap-2 pt-2 border-t border-[#1D3D9E]/5 pb-1 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               {sectorFilters.map((filter) => {
                 const isActive = selectedSector === filter.value;
                 return (
                   <button
                     key={filter.value}
                     onClick={() => setSelectedSector(filter.value)}
-                    className={`px-4 py-2 text-xs font-bold rounded-xl transition-all duration-300 cursor-pointer ${
+                    className={`shrink-0 px-4 py-2 text-xs font-bold rounded-xl transition-all duration-300 cursor-pointer ${
                       isActive
                         ? "bg-[#1D3D9E] text-white shadow-sm scale-102 border-transparent"
                         : "bg-slate-50 text-[#0F2C59]/80 border border-[#1D3D9E]/10 hover:border-[#FF6B00]/40 hover:text-[#1D3D9E]"
