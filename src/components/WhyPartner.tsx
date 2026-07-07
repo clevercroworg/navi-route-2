@@ -88,6 +88,9 @@ export default function WhyPartner() {
             </svg>
           </div>
 
+          {/* Vertical dotted line on mobile to connect steps vertically */}
+          <div className="absolute top-14 bottom-32 left-1/2 -translate-x-1/2 w-0.5 border-l-2 border-dashed border-[#1D3D9E]/20 md:hidden z-0 pointer-events-none" />
+
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
             {processSteps.map((step, idx) => {
               return (
