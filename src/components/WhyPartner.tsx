@@ -222,7 +222,7 @@ export default function WhyPartner() {
               alt="Seaside Coastal Town & Sailboat Sketch (Mobile)"
               fill
               sizes="100vw"
-              className="object-contain object-right-bottom opacity-95"
+              className="object-cover object-bottom opacity-95"
             />
           </div>
 
