@@ -44,17 +44,23 @@ export default function Navbar() {
   return (
     <header className={`fixed top-0 z-50 w-full transition-all duration-300 ease-in-out ${
       isScrolled 
-        ? "bg-sand-100/90 backdrop-blur-md border-b border-[#0F2C59]/5 shadow-sm py-3" 
-        : "bg-sand-100 border-b border-[#0F2C59]/5 py-5"
+        ? "bg-sand-100/95 backdrop-blur-md border-b border-[#0F2C59]/5 shadow-sm py-3" 
+        : "bg-transparent border-b border-transparent py-5"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className={`flex items-center justify-between transition-all duration-300 ${
+          isScrolled ? "h-14" : "h-20"
+        }`}>
           {/* Logo */}
           <Link href="/" className="flex items-center select-none">
             <img
               src="/images/logo_v2.jpeg"
               alt="Navi Route Logo"
-              className="object-contain mix-blend-multiply w-[170px] h-[54px]"
+              className={`object-contain mix-blend-multiply transition-all duration-300 ${
+                isScrolled 
+                  ? "w-[120px] h-[38px] md:w-[140px] md:h-[44px]" 
+                  : "w-[120px] h-[38px] md:w-[170px] md:h-[54px]"
+              }`}
             />
           </Link>
 
