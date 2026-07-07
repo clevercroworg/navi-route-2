@@ -52,15 +52,18 @@ export default function Navbar() {
           isScrolled ? "h-14" : "h-20"
         }`}>
           {/* Logo */}
-          <Link href="/" className="flex items-center select-none">
+          <Link 
+            href="/" 
+            className={`flex items-center select-none transition-all duration-300 ${
+              isScrolled 
+                ? "w-28 h-10 md:w-36 md:h-12" 
+                : "w-28 h-10 md:w-44 md:h-16"
+            }`}
+          >
             <img
               src="/images/logo_v2.jpeg"
               alt="Navi Route Logo"
-              className={`object-contain mix-blend-multiply transition-all duration-300 ${
-                isScrolled 
-                  ? "w-[120px] h-[38px] md:w-[140px] md:h-[44px]" 
-                  : "w-[120px] h-[38px] md:w-[170px] md:h-[54px]"
-              }`}
+              className="object-contain mix-blend-multiply w-full h-full"
             />
           </Link>
 
