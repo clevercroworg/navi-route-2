@@ -113,12 +113,12 @@ export default function Footer() {
           </div>
 
           {/* Desktop version (Visible on lg and larger) - spans full height from absolute top to bottom */}
-          <div className="hidden lg:block absolute right-0 bottom-0 top-0 w-[42%] pointer-events-none select-none z-0">
+          <div className="hidden lg:block absolute right-0 bottom-0 top-0 w-[45%] pointer-events-none select-none z-0">
             <Image
-              src="/images/mini_lighthouse_v4.png"
+              src="/images/cta_lighthouse_ink.png"
               alt="Lighthouse & Cottage Cliff Sketch (Desktop)"
               fill
-              sizes="40vw"
+              sizes="45vw"
               className="object-contain object-right-bottom opacity-95"
               priority
             />
@@ -156,7 +156,7 @@ export default function Footer() {
             {/* Right Side / Mobile Only: Sketched illustration container inside grid */}
             <div className="block lg:hidden w-full h-[180px] relative select-none z-0 mt-4">
               <Image
-                src="/images/mini_lighthouse_v4.png"
+                src="/images/cta_lighthouse_ink.png"
                 alt="Lighthouse & Cottage Cliff Sketch (Mobile)"
                 fill
                 sizes="100vw"
