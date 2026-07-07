@@ -8,25 +8,25 @@ const services = [
   {
     title: "Website Development",
     description: "Fast, high-converting websites built to engage your audience.",
-    image: "/images/service_website_v4.png",
+    image: "/images/service_website_v5.png",
     href: "#",
   },
   {
     title: "App Development",
     description: "Scalable mobile and web apps with seamless experiences.",
-    image: "/images/service_app_v4.png",
+    image: "/images/service_app_v5.png",
     href: "#",
   },
   {
     title: "AI Automation",
     description: "Streamline operations and save time with smart automation.",
-    image: "/images/service_automation_v4.png",
+    image: "/images/service_automation_v5.png",
     href: "#",
   },
   {
     title: "Digital Marketing",
     description: "Data-driven campaigns that attract and convert customers.",
-    image: "/images/service_marketing_v4.png",
+    image: "/images/service_marketing_v5.png",
     href: "#",
   },
 ];
