@@ -26,7 +26,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F2C59] leading-tight"
+            className="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#1D3D9E] leading-tight"
           >
             Navigate Your Brand <br className="hidden sm:inline" />
             Toward Smarter Growth.
@@ -57,7 +57,7 @@ export default function Hero() {
             
             <Link
               href="#work"
-              className="inline-flex justify-center items-center gap-2 text-[#0F2C59] hover:text-[#FF6B00] text-sm font-bold py-4 px-2 group transition-all duration-200 w-full sm:w-auto text-center"
+              className="inline-flex justify-center items-center gap-2 text-[#1D3D9E] hover:text-[#FF6B00] text-sm font-bold py-4 px-2 group transition-all duration-200 w-full sm:w-auto text-center"
             >
               View Our Work
               <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>

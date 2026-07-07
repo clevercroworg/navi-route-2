@@ -68,7 +68,7 @@ export default function WhyPartner() {
           <span className="text-[#FF6B00] uppercase tracking-wider text-xs font-bold block">
             OUR PROCESS
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-[#0F2C59]">
+          <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-[#1D3D9E]">
             A clear route from idea to impact.
           </h2>
         </div>
@@ -76,7 +76,7 @@ export default function WhyPartner() {
         {/* Timeline Grid */}
         <div className="relative w-full">
           {/* Dotted wavy path background on desktop - custom Y-axis alignment */}
-          <div className="absolute top-1/2 left-0 right-0 h-24 -translate-y-24 hidden md:block z-0 pointer-events-none text-[#0F2C59]/15">
+          <div className="absolute top-1/2 left-0 right-0 h-24 -translate-y-24 hidden md:block z-0 pointer-events-none text-[#1D3D9E]/15">
             <svg className="w-full h-full" viewBox="0 0 1000 100" preserveAspectRatio="none" fill="none">
               <path
                 d="M 50 65 Q 100 5, 150 65 T 250 65 T 350 65 T 450 65 T 550 65 T 650 65 T 750 65 T 850 65 T 950 65"
@@ -114,7 +114,7 @@ export default function WhyPartner() {
                   </div>
 
                   <div className="space-y-1">
-                    <h3 className="font-serif text-lg font-bold text-[#0F2C59]">
+                    <h3 className="font-serif text-lg font-bold text-[#1D3D9E]">
                       {step.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-[#0F2C59]/70 leading-relaxed max-w-[200px] mx-auto">
@@ -129,14 +129,14 @@ export default function WhyPartner() {
       </section>
 
       {/* 2. TESTIMONIALS SECTION */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-[#0F2C59]/5">
+      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-[#1D3D9E]/5">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 relative">
           <div className="space-y-3 text-left relative pr-20">
             <span className="text-[#FF6B00] uppercase tracking-wider text-xs font-bold block">
               WHAT OUR CLIENTS SAY
             </span>
             <div className="flex items-center gap-3 relative">
-              <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-[#0F2C59]">
+              <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-[#1D3D9E]">
                 Real stories from great partners.
               </h2>
               {/* Hand-drawn orange sun sketch overlay positioned right of the title text */}
@@ -161,12 +161,12 @@ export default function WhyPartner() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="border border-dashed border-[#0F2C59]/20 rounded-3xl p-8 bg-transparent flex flex-col justify-between items-start text-left relative"
+              className="border border-dashed border-[#1D3D9E]/20 rounded-3xl p-8 bg-transparent flex flex-col justify-between items-start text-left relative"
             >
               <div className="w-full">
                 {/* Centered Circular Avatar at the Top */}
                 <div className="flex justify-center w-full mb-6">
-                  <div className="relative w-24 h-24 rounded-full overflow-hidden border border-[#0F2C59]/10 select-none">
+                  <div className="relative w-24 h-24 rounded-full overflow-hidden border border-[#1D3D9E]/10 select-none">
                     <Image
                       src={test.avatar}
                       alt={test.author}
@@ -187,9 +187,9 @@ export default function WhyPartner() {
               </div>
 
               {/* Left-Aligned Author Details at the Bottom */}
-              <div className="w-full border-t border-[#0F2C59]/5 pt-4">
-                <h4 className="font-serif text-sm font-bold text-[#0F2C59]">{test.author}</h4>
-                <p className="text-[11px] text-[#0F2C59]/60">{test.role}</p>
+              <div className="w-full border-t border-[#1D3D9E]/5 pt-4">
+                <h4 className="font-serif text-sm font-bold text-[#1D3D9E]">{test.author}</h4>
+                <p className="text-[11px] text-[#1D3D9E]/60">{test.role}</p>
               </div>
             </motion.div>
           ))}

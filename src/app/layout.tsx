@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Caveat, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Caveat, Inter } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-plus-jakarta",
   display: "swap",
 });
 
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${caveat.variable} ${inter.variable} h-full antialiased font-sans`}
+      className={`${plusJakarta.variable} ${caveat.variable} ${inter.variable} h-full antialiased font-sans`}
     >
       <body className="min-h-full flex flex-col bg-sand-100 text-navy-900 selection:bg-navy-100 selection:text-navy-800">
         {children}

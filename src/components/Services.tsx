@@ -41,7 +41,7 @@ export default function Services() {
           <span className="text-[#FF6B00] uppercase tracking-wider text-xs font-bold block">
             NAVIGATING IDEAS. DELIVERING IMPACT.
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-[#0F2C59]">
+          <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-[#1D3D9E]">
             A partner for your digital journey.
           </h2>
           <p className="text-[#0F2C59]/70 text-sm sm:text-base leading-relaxed">
@@ -59,7 +59,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="border border-[#0F2C59]/10 rounded-2xl bg-white p-8 hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center justify-between group"
+                className="border border-[#1D3D9E]/10 rounded-2xl bg-white p-8 hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center justify-between group"
               >
                 <div className="space-y-6 flex flex-col items-center w-full">
                   {/* Custom Hand-drawn White-Ink Style Illustration (Mix-blend-multiply to merge transparent outlines) */}
@@ -74,7 +74,7 @@ export default function Services() {
                   </div>
 
                   <div className="space-y-3 w-full">
-                    <h3 className="font-serif text-lg font-bold text-[#0F2C59] group-hover:text-[#FF6B00] transition-colors duration-300">
+                    <h3 className="font-serif text-lg font-bold text-[#1D3D9E] group-hover:text-[#FF6B00] transition-colors duration-300">
                       {svc.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-[#0F2C59]/70 leading-relaxed max-w-[220px] mx-auto">

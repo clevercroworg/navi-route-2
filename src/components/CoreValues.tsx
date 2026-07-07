@@ -24,7 +24,7 @@ const benefits = [
 
 export default function CoreValues() {
   return (
-    <section id="why-partner" className="py-24 bg-white relative overflow-hidden w-full border-t border-[#0F2C59]/5">
+    <section id="why-partner" className="py-24 bg-white relative overflow-hidden w-full border-t border-[#1D3D9E]/5">
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -34,7 +34,7 @@ export default function CoreValues() {
               <span className="text-[#FF6B00] uppercase tracking-wider text-xs font-bold block">
                 WHY NAVI ROUTE
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F2C59] leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1D3D9E] leading-tight">
                 Clarity. Strategy. <br />
                 Measurable Growth.
               </h2>
@@ -53,11 +53,11 @@ export default function CoreValues() {
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
                     className="flex gap-4 items-start group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-[#0F2C59]/5 flex items-center justify-center text-[#0F2C59] group-hover:bg-[#FF6B00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-[#1D3D9E]/5 flex items-center justify-center text-[#1D3D9E] group-hover:bg-[#FF6B00] group-hover:text-white transition-all duration-300 flex-shrink-0">
                       <Icon className="w-5 h-5 stroke-[1.5]" />
                     </div>
                     <div className="space-y-1">
-                      <h3 className="font-serif text-base font-bold text-[#0F2C59] group-hover:text-[#FF6B00] transition-colors duration-300">
+                      <h3 className="font-serif text-base font-bold text-[#1D3D9E] group-hover:text-[#FF6B00] transition-colors duration-300">
                         {benefit.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-[#0F2C59]/70 leading-relaxed max-w-md">

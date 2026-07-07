@@ -32,7 +32,7 @@ export default function Footer() {
     <div className="bg-white w-full flex flex-col">
       
       {/* 1. GET IN TOUCH SECTION */}
-      <section id="contact" className="py-24 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full border-t border-[#0F2C59]/5">
+      <section id="contact" className="py-24 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full border-t border-[#1D3D9E]/5">
         
         {/* Left: Contact Info */}
         <div className="space-y-8 text-left">
@@ -40,7 +40,7 @@ export default function Footer() {
             <span className="text-[#FF6B00] uppercase tracking-wider text-xs font-bold block">
               GET IN TOUCH
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F2C59] leading-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1D3D9E] leading-tight">
               We'd love to hear <br />
               about your project.
             </h2>
@@ -49,9 +49,9 @@ export default function Footer() {
           <div className="space-y-6">
             <a 
               href="mailto:hello@naviroute.studio" 
-              className="flex items-center gap-4 group text-[#0F2C59] hover:text-[#FF6B00] transition-colors"
+              className="flex items-center gap-4 group text-[#1D3D9E] hover:text-[#FF6B00] transition-colors"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#0F2C59]/5 flex items-center justify-center text-[#0F2C59] group-hover:bg-[#FF6B00] group-hover:text-white transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-[#1D3D9E]/5 flex items-center justify-center text-[#1D3D9E] group-hover:bg-[#FF6B00] group-hover:text-white transition-all duration-300">
                 <Mail className="w-5 h-5 stroke-[1.5]" />
               </div>
               <span className="font-semibold text-sm sm:text-base">hello@naviroute.studio</span>
@@ -59,16 +59,16 @@ export default function Footer() {
 
             <a 
               href="tel:+15551234567" 
-              className="flex items-center gap-4 group text-[#0F2C59] hover:text-[#FF6B00] transition-colors"
+              className="flex items-center gap-4 group text-[#1D3D9E] hover:text-[#FF6B00] transition-colors"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#0F2C59]/5 flex items-center justify-center text-[#0F2C59] group-hover:bg-[#FF6B00] group-hover:text-white transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-[#1D3D9E]/5 flex items-center justify-center text-[#1D3D9E] group-hover:bg-[#FF6B00] group-hover:text-white transition-all duration-300">
                 <Phone className="w-5 h-5 stroke-[1.5]" />
               </div>
               <span className="font-semibold text-sm sm:text-base">+1 (555) 123-4567</span>
             </a>
 
-            <div className="flex items-center gap-4 group text-[#0F2C59]">
-              <div className="w-12 h-12 rounded-xl bg-[#0F2C59]/5 flex items-center justify-center text-[#0F2C59]">
+            <div className="flex items-center gap-4 group text-[#1D3D9E]">
+              <div className="w-12 h-12 rounded-xl bg-[#1D3D9E]/5 flex items-center justify-center text-[#1D3D9E]">
                 <MapPin className="w-5 h-5 stroke-[1.5]" />
               </div>
               <span className="font-semibold text-sm sm:text-base">Austin, TX & Worldwide</span>
@@ -129,7 +129,7 @@ export default function Footer() {
             {/* Left Side: Typography & Newsletter Form stacked */}
             <div className="space-y-6 lg:col-span-7 text-left w-full relative z-10">
               <div className="space-y-2">
-                <h3 className="font-serif text-2xl sm:text-3xl font-extrabold text-[#0F2C59] leading-tight">
+                <h3 className="font-serif text-2xl sm:text-3xl font-extrabold text-[#1D3D9E] leading-tight">
                   Stay in the loop
                 </h3>
                 <p className="text-[#0F2C59]/75 text-sm sm:text-base">
@@ -141,7 +141,7 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full bg-[#FAF6F0] border border-[#0F2C59]/10 rounded-xl px-5 py-3 text-sm text-[#0F2C59] placeholder-[#0F2C59]/40 focus:outline-none focus:border-[#FF6B00] transition-colors"
+                  className="w-full bg-[#FAF6F0] border border-[#1D3D9E]/10 rounded-xl px-5 py-3 text-sm text-[#1D3D9E] placeholder-[#1D3D9E]/40 focus:outline-none focus:border-[#FF6B00] transition-colors"
                   required
                 />
                 <button
