@@ -47,13 +47,13 @@ const megaMenuData = [
     icon: Cpu,
     iconColor: "text-emerald-600 bg-emerald-50",
     items: [
-      { name: "AI Chatbot Development", href: "#" },
-      { name: "WhatsApp Automation", href: "#" },
-      { name: "Lead Management Automation", href: "#" },
-      { name: "CRM Automation", href: "#" },
-      { name: "Sales Follow-Up Automation", href: "#" },
-      { name: "Workflow Automation", href: "#" },
-      { name: "AI Customer Support Automation", href: "#" },
+      { name: "AI Chatbot Development", href: "/services/ai-chatbot-development", active: true },
+      { name: "WhatsApp Automation", href: "/services/whatsapp-automation", active: true },
+      { name: "Lead Management Automation", href: "/services/lead-management-automation", active: true },
+      { name: "CRM Automation", href: "/services/crm-automation", active: true },
+      { name: "Sales Follow-Up Automation", href: "/services/sales-follow-up-automation", active: true },
+      { name: "Workflow Automation", href: "/services/workflow-automation", active: true },
+      { name: "AI Customer Support Automation", href: "/services/ai-customer-support-automation", active: true },
     ]
   },
   {
@@ -61,13 +61,13 @@ const megaMenuData = [
     icon: Megaphone,
     iconColor: "text-amber-600 bg-amber-50",
     items: [
-      { name: "Google Ads Management", href: "#" },
-      { name: "Meta Ads Management", href: "#" },
-      { name: "SEO Services", href: "#" },
-      { name: "Social Media Management", href: "#" },
-      { name: "Lead Generation Campaigns", href: "#" },
-      { name: "Performance Marketing", href: "#" },
-      { name: "Analytics & Tracking Setup", href: "#" },
+      { name: "Google Ads Management", href: "/services/google-ads-management", active: true },
+      { name: "Meta Ads Management", href: "/services/meta-ads-management", active: true },
+      { name: "SEO Services", href: "/services/seo-services", active: true },
+      { name: "Social Media Management", href: "/services/social-media-management", active: true },
+      { name: "Lead Generation Campaigns", href: "/services/lead-generation-campaigns", active: true },
+      { name: "Performance Marketing", href: "/services/performance-marketing", active: true },
+      { name: "Analytics & Tracking Setup", href: "/services/analytics-tracking-setup", active: true },
     ]
   }
 ];
