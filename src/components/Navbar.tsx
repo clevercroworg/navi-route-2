@@ -8,7 +8,7 @@ import { Phone, Menu, X, ChevronDown, Laptop, Smartphone, Cpu, Megaphone } from 
 
 const navLinks = [
   { name: "Services", href: "#services-dropdown" },
-  { name: "Work", href: "/#work" },
+  { name: "Work", href: "/work" },
   { name: "About", href: "/#about" },
   { name: "Insights", href: "/#insights" },
   { name: "Contact", href: "/contact" },
