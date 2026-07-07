@@ -707,7 +707,7 @@ export default function WorkPage() {
   }, [selectedPort]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#FCF9F3] selection:bg-[#FF6B00]/10 selection:text-[#FF6B00] relative">
+    <div className="flex flex-col min-h-screen bg-white selection:bg-[#FF6B00]/10 selection:text-[#FF6B00] relative">
       <Navbar />
 
       {/* Floating background sketch overlay */}
@@ -762,7 +762,7 @@ export default function WorkPage() {
                   placeholder="Search ports, brands, or sectors..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-11 pr-4 py-3 bg-[#FCF9F3] border border-[#1D3D9E]/10 rounded-2xl text-sm font-semibold text-[#0F2C59] placeholder-[#0F2C59]/40 focus:outline-none focus:border-[#FF6B00] transition-colors"
+                  className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-[#1D3D9E]/10 rounded-2xl text-sm font-semibold text-[#0F2C59] placeholder-[#0F2C59]/40 focus:outline-none focus:border-[#FF6B00] transition-colors"
                 />
               </div>
 
@@ -783,7 +783,7 @@ export default function WorkPage() {
                     className={`px-4 py-2 text-xs font-bold rounded-xl transition-all duration-300 cursor-pointer ${
                       isActive
                         ? "bg-[#1D3D9E] text-white shadow-sm scale-102 border-transparent"
-                        : "bg-[#FCF9F3] text-[#0F2C59]/80 border border-[#1D3D9E]/10 hover:border-[#FF6B00]/40 hover:text-[#1D3D9E]"
+                        : "bg-slate-50 text-[#0F2C59]/80 border border-[#1D3D9E]/10 hover:border-[#FF6B00]/40 hover:text-[#1D3D9E]"
                     }`}
                   >
                     {filter.label}
@@ -978,7 +978,7 @@ export default function WorkPage() {
             {/* Performance Statistics Metrics */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-b border-[#1D3D9E]/10 py-5">
               {selectedPort.metrics.map((metric, i) => (
-                <div key={i} className="bg-[#FCF9F3] border border-[#1D3D9E]/5 rounded-2xl p-4 space-y-1 text-center">
+                <div key={i} className="bg-slate-50 border border-[#1D3D9E]/5 rounded-2xl p-4 space-y-1 text-center">
                   <span className="text-[10px] font-bold text-[#0F2C59]/50 uppercase tracking-wide block">
                     {metric.label}
                   </span>
@@ -1011,7 +1011,7 @@ export default function WorkPage() {
             </div>
 
             {/* Dynamic Interactive SVG Chart */}
-            <div className="bg-[#FCF9F3] border border-[#1D3D9E]/10 rounded-[24px] p-5 space-y-4">
+            <div className="bg-slate-50 border border-[#1D3D9E]/10 rounded-[24px] p-5 space-y-4">
               <div className="flex justify-between items-center">
                 <span className="font-serif text-xs font-bold text-[#1D3D9E] uppercase tracking-wide flex items-center gap-1.5">
                   <TrendingUp className="w-4 h-4 text-[#FF6B00]" />
