@@ -218,15 +218,26 @@ export default function BusinessWebsiteDevelopmentPage() {
       <main className="flex-grow">
         
         {/* 1. HERO SECTION */}
-        <section className="relative bg-sand-100 pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden flex items-center min-h-[70vh]">
-          {/* Transparent navy Goa seaside church & design tools watermark */}
-          <div className="absolute right-0 bottom-0 top-12 w-[60%] lg:w-[45%] pointer-events-none select-none z-0 opacity-20 lg:opacity-35">
+        <section className="relative bg-sand-100 pt-32 pb-72 lg:pt-40 lg:pb-28 overflow-hidden flex items-center min-h-[70vh]">
+          {/* DESKTOP BACKGROUND ARTWORK */}
+          <div className="absolute right-0 bottom-0 top-12 w-[45%] pointer-events-none select-none z-0 opacity-35 hidden lg:block">
             <Image
               src="/images/seaside_port_design_sketch.png"
-              alt="Seaside Port Design Background"
+              alt="Seaside Port Design Background (Desktop)"
               fill
               className="object-contain object-right-bottom"
               priority
+            />
+          </div>
+
+          {/* MOBILE BACKGROUND ARTWORK */}
+          <div className="absolute inset-x-0 bottom-0 z-0 h-[280px] sm:h-[350px] select-none pointer-events-none lg:hidden opacity-35">
+            <Image
+              src="/images/seaside_port_design_sketch.png"
+              alt="Seaside Port Design Background (Mobile)"
+              fill
+              sizes="100vw"
+              className="object-contain object-bottom"
             />
           </div>
 
