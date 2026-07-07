@@ -33,13 +33,13 @@ const megaMenuData = [
     icon: Smartphone,
     iconColor: "text-purple-600 bg-purple-50",
     items: [
-      { name: "Mobile App Development", href: "#" },
-      { name: "Web App Development", href: "#" },
-      { name: "SaaS Product Development", href: "#" },
-      { name: "CRM & Dashboard Development", href: "#" },
-      { name: "Booking System Development", href: "#" },
-      { name: "Admin Panel Development", href: "#" },
-      { name: "Customer Portal Development", href: "#" },
+      { name: "Mobile App Development", href: "/services/mobile-app-development", active: true },
+      { name: "Web App Development", href: "/services/web-app-development", active: true },
+      { name: "SaaS Product Development", href: "/services/saas-product-development", active: true },
+      { name: "CRM & Dashboard Development", href: "/services/crm-dashboard-development", active: true },
+      { name: "Booking System Development", href: "/services/booking-system-development", active: true },
+      { name: "Admin Panel Development", href: "/services/admin-panel-development", active: true },
+      { name: "Customer Portal Development", href: "/services/customer-portal-development", active: true },
     ]
   },
   {

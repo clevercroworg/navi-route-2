@@ -7,96 +7,74 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   ArrowRight, 
   Check, 
-  Layout, 
-  Target, 
-  Rocket, 
+  Shield, 
+  Users, 
   ShoppingCart, 
-  Monitor, 
-  Search 
+  Database, 
+  Target, 
+  Wrench, 
+  Phone
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.967C16.29 1.97 13.82 1.05 12.008 1.05c-5.442 0-9.87 4.372-9.874 9.802-.002 1.778.486 3.514 1.411 5.097l-.924 3.376 3.471-.912-.03-.009zm11.367-7.854c-.3-.15-1.77-.875-2.046-.975-.276-.102-.476-.15-.676.15-.2.3-.775.975-.95 1.174-.175.2-.35.226-.65.076-.3-.15-1.267-.467-2.413-1.485-.892-.793-1.493-1.773-1.668-2.073-.175-.3-.019-.461.13-.61.135-.133.3-.349.45-.523.15-.174.2-.3.3-.5.1-.2.05-.375-.025-.524-.075-.15-.676-1.624-.925-2.225-.244-.589-.493-.51-.676-.519-.174-.009-.374-.01-.574-.01-.2 0-.526.075-.801.374-.275.3-1.05 1.024-1.05 2.5 0 1.475 1.075 2.9 1.225 3.1.15.2 2.11 3.224 5.116 4.524.715.31 1.273.496 1.71.635.717.227 1.37.195 1.885.118.574-.086 1.77-.724 2.02-1.385.25-.66.25-1.225.175-1.385-.075-.16-.275-.26-.575-.41z" />
+    <svg className={className} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.03-5.118-2.91-6.997-1.878-1.879-4.361-2.914-7.01-2.915-5.442 0-9.87 4.414-9.874 9.86-.002 1.798.486 3.55 1.414 5.094l-.949 3.469 3.555-.933zm12.39-7.105c-.34-.17-2.01-.99-2.32-1.1-31-.11-.53-.17-.76-.51-.23-.34-.9-.9-1.12-1.32-.22-.42 0-.78-.08-.95-.08-.17-.76-1.84-1.05-2.51-.27-.67-.56-.58-.76-.59-.2-.01-.43-.01-.67-.01-.24 0-.63.09-.96.44-.33.35-1.27 1.24-1.27 3.03s1.3 3.52 1.48 3.76c.18.24 2.55 3.9 6.19 5.47 2.16.93 3.32 1.23 4.54 1.15 1.09-.08 2.01-.84 2.44-1.63.43-.79.43-1.47.3-1.62-.13-.15-.47-.25-.81-.42z"/>
     </svg>
   );
 }
 
-const businessServices = [
+const appServices = [
   {
-    icon: Layout,
-    title: "Ad Campaign Landing Pages",
-    description: "High-converting landing pages designed specifically for Google Ads and Meta Ads traffic.",
+    icon: Shield,
+    title: "Content Management",
+    description: "Manage website and app content, pages, blog posts, and media from a centralized dashboard.",
   },
   {
-    icon: Target,
-    title: "Lead Generation Pages",
-    description: "Focused lead capture pages with forms, CTAs, and trust signals to maximize enquiries.",
-  },
-  {
-    icon: Rocket,
-    title: "Product Launch Pages",
-    description: "Stunning product launch pages designed to create buzz and drive early adopter signups.",
+    icon: Users,
+    title: "User Management",
+    description: "Add, edit, and manage users with role-based access control and activity tracking.",
   },
   {
     icon: ShoppingCart,
-    title: "Ecommerce Offer Pages",
-    description: "Promotional landing pages for seasonal sales, flash deals, and special offers.",
+    title: "Order & Booking Management",
+    description: "Track and manage orders, bookings, payments, and customer transactions.",
   },
   {
-    icon: Monitor,
-    title: "Event Registration Pages",
-    description: "Clean event and webinar registration pages with form integrations and confirmations.",
+    icon: Database,
+    title: "Reports & Analytics",
+    description: "Generate custom reports with data exports, charts, and business intelligence dashboards.",
   },
   {
-    icon: Search,
-    title: "SEO Landing Pages",
-    description: "Keyword-optimized pages designed to rank organically and capture search traffic.",
+    icon: Target,
+    title: "Lead Management",
+    description: "View, assign, and track leads with pipeline views and follow-up reminders.",
+  },
+  {
+    icon: Wrench,
+    title: "System Settings",
+    description: "Configure business settings, notifications, integrations, and automated workflows.",
   }
 ];
 
 const whyChoosePoints = [
-  "Conversion-focused designs with clear CTAs, trust signals, and persuasive copy structures.",
-  "Optimized for Google Ads Quality Score to reduce your cost per click and cost per lead.",
-  "Fast-loading pages that score high on Core Web Vitals for better ad performance.",
-  "Mobile-first responsive design for consistent experience across all devices.",
-  "Full tracking setup with GA4, GTM, Meta Pixel, and conversion event configuration."
+  "Custom admin panels designed specifically for your business workflows and data structure.",
+  "Role-based access control with proper security and activity logging.",
+  "Clean, intuitive interfaces that your team can use without technical training.",
+  "Real-time data management with search, filters, exports, and bulk actions.",
+  "Seamless integration with your existing website, app, and third-party tools."
 ];
 
 const processSteps = [
-  {
-    step: "01",
-    title: "Discover",
-    description: "We learn about your business, goals, and audience.",
-    image: "/images/process_discover_v5.png",
-  },
-  {
-    step: "02",
-    title: "Plan",
-    description: "We map the strategy, features, and roadmap.",
-    image: "/images/process_plan_v5.png",
-  },
-  {
-    step: "03",
-    title: "Build",
-    description: "We design, develop, and test with care and precision.",
-    image: "/images/process_build_v5.png",
-  },
-  {
-    step: "04",
-    title: "Launch",
-    description: "We deploy, optimize, and prepare for growth.",
-    image: "/images/process_launch_v5.png",
-  },
-  {
-    step: "05",
-    title: "Grow",
-    description: "We analyze, iterate, and scale what works.",
-    image: "/images/process_grow_v5.png",
-  },
+  { step: "01", title: "Discover", description: "We understand your business, goals and user needs.", image: "/images/process_discover_v5.png" },
+  { step: "02", title: "Plan", description: "We plan features, workflows and technical structure.", image: "/images/process_plan_v5.png" },
+  { step: "03", title: "Design", description: "We design intuitive UI/UX that users will love.", image: "/images/process_build_v5.png" },
+  { step: "04", title: "Develop", description: "We build clean, scalable and secure applications.", image: "/images/process_launch_v5.png" },
+  { step: "05", title: "Test", description: "We test thoroughly for performance, security and usability.", image: "/images/process_grow_v5.png" },
+  { step: "06", title: "Launch", description: "We deploy smoothly and make your app live.", image: "/images/process_launch_v5.png" },
+  { step: "07", title: "Support", description: "We provide ongoing support and improvements.", image: "/images/process_grow_v5.png" }
 ];
 
 const technologies = [
@@ -124,86 +102,43 @@ const technologies = [
     )
   },
   {
-    name: "WordPress",
+    name: "Node.js",
     svg: (
-      <svg className="w-8 h-8 text-[#21759B]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.54.82-2.771.82-3.864 0-.405-.026-.78-.07-1.11m-7.981.105c.647-.03 1.232-.105 1.232-.105.582-.075.514-.93-.067-.899 0 0-1.755.135-2.88.135-1.064 0-2.85-.15-2.85-.15-.585-.03-.661.855-.075.885 0 0 .54.061 1.125.09l1.68 4.605-2.37 7.08L5.354 6.9c.649-.03 1.234-.1 1.234-.1.585-.075.516-.93-.065-.896 0 0-1.746.138-2.874.138-.2 0-.438-.008-.69-.015C4.911 3.15 8.235 1.215 12 1.215c2.809 0 5.365 1.072 7.286 2.833-.046-.003-.091-.009-.141-.009-1.06 0-1.812.923-1.812 1.914 0 .89.513 1.643 1.06 2.531.411.72.89 1.643.89 2.977 0 .915-.354 1.994-.821 3.479l-1.075 3.585-3.9-11.61.001.014zM12 22.784c-1.059 0-2.081-.153-3.048-.437l3.237-9.406 3.315 9.087c.024.053.05.101.078.149-1.12.393-2.325.609-3.582.609M1.211 12c0-1.564.336-3.05.935-4.39L7.29 21.709C3.694 19.96 1.212 16.271 1.211 12M12 0C5.385 0 0 5.385 0 12s5.385 12 12 12 12-5.385 12-12S18.615 0 12 0"/>
+      <svg className="w-8 h-8 text-[#339933]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.998,24c-0.321,0-0.641-0.084-0.922-0.247l-2.936-1.737c-0.438-0.245-0.224-0.332-0.08-0.383 c0.585-0.203,0.703-0.25,1.328-0.604c0.065-0.037,0.151-0.023,0.218,0.017l2.256,1.339c0.082,0.045,0.197,0.045,0.272,0 l8.795-5.076c0.082-0.047,0.134-0.141,0.134-0.238V6.921c0-0.099-0.053-0.192-0.137-0.242l-8.791-5.072c-0.081-0.047-0.189-0.047-0.271,0 L3.075,6.68C2.99,6.729,2.936,6.825,2.936,6.921v10.15c0,0.097,0.054,0.189,0.139,0.235l2.409,1.392c1.307,0.654,2.108-0.116,2.108-0.89V7.787c0-0.142,0.114-0.253,0.256-0.253h1.115c0.139,0,0.255,0.112,0.255,0.253v10.021c0,1.745-0.95,2.745-2.604,2.745c-0.508,0-0.909,0-2.026-0.551L2.28,18.675c-0.57-0.329-0.922-0.945-0.922-1.604V6.921c0-0.659,0.353-1.275,0.922-1.603l8.795-5.082c0.557-0.315,1.296-0.315,1.848,0l8.794,5.082c0.57,0.329,0.924,0.944,0.924,1.603v10.15c0,0.659-0.354,1.273-0.924,1.604l-8.794,5.078C12.643,23.916,12.324,24,11.998,24z"/>
       </svg>
     )
   },
   {
-    name: "WooCommerce",
+    name: "PostgreSQL",
     svg: (
-      <svg className="w-8 h-8 text-[#96588A]" viewBox="0 0 503.81 299.89" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M46.75,0H456.84a46.94,46.94,0,0,1,47,47V203.5a46.94,46.94,0,0,1-47,47H309.78L330,299.89l-88.78-49.43H47a46.94,46.94,0,0,1-47-47V47A46.77,46.77,0,0,1,46.76,0Z"/>
-      </svg>
-    )
-  },
-  {
-    name: "HTML5",
-    svg: (
-      <svg className="w-8 h-8 text-[#E34F26]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1.5 0h21l-1.9 21.2L12 24l-8.6-2.8L1.5 0zm15.4 6H7.2l.2 2.3h7.9l-.3 3.6-3 1-3-1-.2-2.1H6.5l.4 4.5 5.1 1.7 5.1-1.7.7-7.3H16.9z"/>
-      </svg>
-    )
-  },
-  {
-    name: "CSS3",
-    svg: (
-      <svg className="w-8 h-8 text-[#1572B6]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1.5 0h21l-1.9 21.2L12 24l-8.6-2.8L1.5 0zm15.2 6H7.1l.2 2.3h7.9l-.3 3.5-3 1-3-1-.2-2.1H6.4l.4 4.4 5.2 1.7 5.2-1.7.7-7.2H16.7z"/>
-      </svg>
-    )
-  },
-  {
-    name: "JavaScript",
-    svg: (
-      <svg className="w-8 h-8 text-[#F7DF1E]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z" />
-      </svg>
-    )
-  },
-  {
-    name: "Tailwind CSS",
-    svg: (
-      <svg className="w-8 h-8 text-[#06B6D4]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/>
+      <svg className="w-8 h-8 text-[#336791]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788"/>
       </svg>
     )
   }
 ];
 
-const businessGoals = [
-  { label: "Company Profiles", description: "Establish trust, showcase your brand story, and detail services for potential clients." },
-  { label: "Lead Generation", description: "Capture high-quality enquiries via optimized landing pages and seamless forms." },
-  { label: "Ecommerce Stores", description: "Sell physical or digital products securely with robust shopping and payment flows." },
-  { label: "SaaS Product Sites", description: "Explain software features, show interactive pricing, and guide user sign-ups." },
-  { label: "Landing Pages", description: "Convert paid search and social campaign traffic with highly targeted sales funnels." },
-  { label: "Booking & Enquiry", description: "Allow clients to schedule appointments, check availability, or submit requests." },
-  { label: "Portfolio Showcases", description: "Highlight case studies, creative work, or projects to close bigger deals." },
-  { label: "Service Business", description: "Explain custom services, pricing models, and facilitate consultation bookings." }
-];
-
 const faqs = [
   {
-    question: "What makes a landing page different from a website?",
-    answer: "A landing page is a single focused page designed to drive one specific action, like a form submission or a purchase, while a website has multiple pages with broader information.",
+    question: "What is an admin panel?",
+    answer: "An admin panel is a secure backend interface where you can manage your website or app content, users, orders, data, and business operations.",
   },
   {
-    question: "Can you create landing pages for Google Ads?",
-    answer: "Yes. We design high-converting landing pages specifically optimized for Google Ads, Meta Ads, and other paid campaigns.",
+    question: "Can I control user roles and permissions?",
+    answer: "Yes. We build role-based access control so different team members have appropriate access levels.",
   },
   {
-    question: "How quickly can a landing page be built?",
-    answer: "Most landing pages can be designed, developed, and launched within 5–10 business days depending on complexity.",
+    question: "Can it integrate with my existing systems?",
+    answer: "Yes. We can integrate admin panels with your existing website, app, CRM, payment gateways, and third-party tools.",
   },
   {
-    question: "Do you include tracking and analytics?",
-    answer: "Yes. We set up GA4, Google Tag Manager, Meta Pixel, and conversion tracking on every landing page we build.",
+    question: "Is the admin panel mobile-friendly?",
+    answer: "Yes. All admin panels we build are responsive and work smoothly on tablets and mobile devices.",
   },
 ];
 
-export default function LandingPageDevelopmentPage() {
+export default function AdminPanelDevelopmentPage() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   return (
@@ -217,8 +152,8 @@ export default function LandingPageDevelopmentPage() {
           {/* DESKTOP BACKGROUND ARTWORK */}
           <div className="absolute right-0 bottom-0 top-12 w-[45%] pointer-events-none select-none z-0 opacity-35 hidden lg:block">
             <Image
-              src="/images/seaside_port_design_sketch.png"
-              alt="Seaside Port Design Background (Desktop)"
+              src="/images/service_app_v5.png"
+              alt="App Development Background (Desktop)"
               fill
               className="object-contain object-right-bottom"
               priority
@@ -228,8 +163,8 @@ export default function LandingPageDevelopmentPage() {
           {/* MOBILE BACKGROUND ARTWORK */}
           <div className="absolute inset-x-0 bottom-0 top-40 z-0 select-none pointer-events-none lg:hidden opacity-25">
             <Image
-              src="/images/seaside_port_design_sketch.png"
-              alt="Seaside Port Design Background (Mobile)"
+              src="/images/service_app_v5.png"
+              alt="App Development Background (Mobile)"
               fill
               sizes="100vw"
               className="object-contain object-center"
@@ -240,24 +175,24 @@ export default function LandingPageDevelopmentPage() {
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div className="lg:col-span-8 space-y-6 text-left">
               <span className="text-[#FF6B00] uppercase tracking-wider text-xs font-bold block">
-                Landing Page Development
+                Admin Panel Development
               </span>
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#1D3D9E] leading-tight max-w-3xl">
-                Landing Page Development for Better Conversions
+                Admin Panel Development for Custom Platforms
               </h1>
               <p className="text-[#0F2C59]/80 text-base sm:text-lg leading-relaxed max-w-xl">
-                Create high-converting landing pages for Google Ads, Meta Ads, lead generation campaigns, product launches and service offers.
+                Manage users, content, bookings, orders, leads and reports with a secure custom admin panel built for your business workflow.
               </p>
               
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
                 <Link
-                  href="/contact?service=Landing%20Page%20Development"
+                  href="/contact?service=Admin%20Panel%20Development"
                   className="inline-flex justify-center items-center bg-[#FF6B00] hover:bg-[#E05E00] text-white text-xs sm:text-sm font-bold px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
                 >
                   Discuss Your Project
                 </Link>
                 <a
-                  href="https://wa.me/919986389444?text=Hi%2C%20I'm%20interested%20in%20your%20Landing%20Page%20Development%20service."
+                  href="https://wa.me/919986389444?text=Hi%2C%20I'm%20interested%20in%20your%20Admin%20Panel%20Development%20service."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex justify-center items-center gap-2 bg-white hover:bg-slate-50 border border-slate-200 text-[#0F2C59] text-xs sm:text-sm font-bold px-8 py-4 rounded-xl shadow-sm transition-all duration-200"
@@ -274,18 +209,18 @@ export default function LandingPageDevelopmentPage() {
         <section className="py-24 max-w-7xl mx-auto px-6 border-t border-[#1D3D9E]/5">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <span className="text-[#FF6B00] uppercase tracking-wider text-xs font-bold block">
-              OUR WEB SERVICES
+              OUR ADMIN SERVICES
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-[#1D3D9E] leading-tight">
-              Bespoke Digital Solutions
+              Bespoke Backend Interfaces
             </h2>
             <p className="text-[#0F2C59]/70 text-xs sm:text-sm max-w-md mx-auto">
-              Custom design and development packages tailored to establish your authority and generate online leads.
+              We design and develop content management panels, user directories, transaction logs, and analytics views.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {businessServices.map((svc, idx) => {
+            {appServices.map((svc, idx) => {
               const Icon = svc.icon;
               return (
                 <div
@@ -305,7 +240,7 @@ export default function LandingPageDevelopmentPage() {
                   </div>
                   <div className="pt-6">
                     <Link
-                      href="/contact?service=Landing%20Page%20Development"
+                      href="/contact?service=Admin%20Panel%20Development"
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1D3D9E] hover:text-[#FF6B00] transition-colors"
                     >
                       <span>Get a Quote</span>
@@ -325,13 +260,13 @@ export default function LandingPageDevelopmentPage() {
               OUR PROCESS
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-[#1D3D9E]">
-              A clear route from idea to impact.
+              From Idea to Impact
             </h2>
           </div>
 
           <div className="relative w-full">
             {/* Dotted wavy path background on desktop */}
-            <div className="absolute top-1/2 left-0 right-0 h-24 -translate-y-24 hidden md:block z-0 pointer-events-none text-[#1D3D9E]/15">
+            <div className="absolute top-1/2 left-0 right-0 h-24 -translate-y-24 hidden lg:block z-0 pointer-events-none text-[#1D3D9E]/15">
               <svg className="w-full h-full" viewBox="0 0 1000 100" preserveAspectRatio="none" fill="none">
                 <path
                   d="M 50 65 Q 100 5, 150 65 T 250 65 T 350 65 T 450 65 T 550 65 T 650 65 T 750 65 T 850 65 T 950 65"
@@ -344,9 +279,9 @@ export default function LandingPageDevelopmentPage() {
             </div>
 
             {/* Vertical dotted line on mobile */}
-            <div className="absolute top-18 bottom-36 left-1/2 -translate-x-1/2 w-0.5 border-l-2 border-dashed border-[#1D3D9E]/20 md:hidden z-0 pointer-events-none" />
+            <div className="absolute top-18 bottom-36 left-1/2 -translate-x-1/2 w-0.5 border-l-2 border-dashed border-[#1D3D9E]/20 lg:hidden z-0 pointer-events-none" />
 
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 relative z-10">
               {processSteps.map((step, idx) => (
                 <div key={idx} className="flex flex-col items-center text-center space-y-4">
                   <div className="relative w-20 h-20 select-none pointer-events-none">
@@ -359,8 +294,8 @@ export default function LandingPageDevelopmentPage() {
                   </div>
                   <div className="space-y-2">
                     <span className="text-xs font-extrabold text-[#FF6B00] tracking-wider uppercase">Step {step.step}</span>
-                    <h3 className="font-serif text-lg font-bold text-[#1D3D9E]">{step.title}</h3>
-                    <p className="text-xs text-[#0F2C59]/70 leading-relaxed max-w-[160px] mx-auto">{step.description}</p>
+                    <h3 className="font-serif text-sm font-bold text-[#1D3D9E]">{step.title}</h3>
+                    <p className="text-[11px] text-[#0F2C59]/70 leading-relaxed max-w-[130px] mx-auto">{step.description}</p>
                   </div>
                 </div>
               ))}
@@ -376,10 +311,10 @@ export default function LandingPageDevelopmentPage() {
                 TECHNOLOGY STACK
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-[#1D3D9E]">
-                Modern Technologies We Work With
+                Technologies We Work With
               </h2>
               <p className="text-[#0F2C59]/70 text-xs sm:text-sm max-w-md mx-auto">
-                We leverage industry-leading frameworks and platforms to build secure, robust, and lightning-fast web solutions.
+                We leverage modern web technologies to build secure, robust, and lightning-fast web applications.
               </p>
             </div>
 
@@ -401,41 +336,7 @@ export default function LandingPageDevelopmentPage() {
           </div>
         </section>
 
-        {/* 5. WEBSITES FOR DIFFERENT BUSINESS GOALS */}
-        <section className="py-24 max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
-            <span className="text-[#FF6B00] uppercase tracking-wider text-xs font-bold block">
-              BUSINESS GOALS
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-[#1D3D9E]">
-              Websites for Different Business Goals
-            </h2>
-            <p className="text-[#0F2C59]/70 text-xs sm:text-sm max-w-md mx-auto">
-              Every website we build is mapped to a specific commercial outcome. Tell us your objective, and we will map the route.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {businessGoals.map((goal, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-[#1D3D9E]/10 rounded-2xl p-8 hover:shadow-md hover:border-[#FF6B00]/30 transition-all duration-300 text-left space-y-3"
-              >
-                <div className="w-8 h-8 rounded-lg bg-[#FF6B00]/10 flex items-center justify-center text-[#FF6B00] font-bold text-sm">
-                  {idx + 1}
-                </div>
-                <h3 className="font-serif text-lg font-bold text-[#1D3D9E]">
-                  {goal.label}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#0F2C59]/75 leading-relaxed">
-                  {goal.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 6. WHY CHOOSE SECTION */}
+        {/* 5. WHY CHOOSE SECTION */}
         <section className="py-24 bg-[#1D3D9E]/5 border-t border-b border-[#1D3D9E]/10">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
             
@@ -446,10 +347,10 @@ export default function LandingPageDevelopmentPage() {
                   WHY PARTNER WITH US
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-[#1D3D9E]">
-                  Engineered for Better Conversions
+                  We Build Apps That Drive Real Results
                 </h2>
                 <p className="text-[#0F2C59]/80 text-xs sm:text-sm leading-relaxed max-w-xl">
-                  We don't just build code; we layout websites meant to attract, educate, and convert your ideal business clientele.
+                  We build custom administrative panels designed natively around your company’s precise operational structure.
                 </p>
               </div>
 
@@ -475,8 +376,8 @@ export default function LandingPageDevelopmentPage() {
                 className="relative w-72 h-72 select-none pointer-events-none"
               >
                 <Image
-                  src="/images/floating_message_bottle_v4.png"
-                  alt="Message Bottle Illustration"
+                  src="/images/telescope_lookout_sketch.png"
+                  alt="Telescope Illustration"
                   fill
                   className="object-contain"
                 />
@@ -486,7 +387,7 @@ export default function LandingPageDevelopmentPage() {
           </div>
         </section>
 
-        {/* 7. FAQ & CTA GRID SECTION */}
+        {/* 6. FAQ & CTA GRID SECTION */}
         <section className="py-24 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
@@ -535,8 +436,8 @@ export default function LandingPageDevelopmentPage() {
               {/* background overlay */}
               <div className="absolute right-0 bottom-0 w-[85%] h-[55%] pointer-events-none select-none z-0">
                 <Image
-                  src="/images/sailboat_waves_sketch.png"
-                  alt="Sailboat Background"
+                  src="/images/ship_wheel_sketch.png"
+                  alt="Steering Wheel Background"
                   fill
                   className="object-contain object-right-bottom opacity-90"
                 />
@@ -544,23 +445,23 @@ export default function LandingPageDevelopmentPage() {
 
               <div className="space-y-4 relative z-10 text-left max-w-md">
                 <h3 className="font-serif text-2xl sm:text-3xl font-extrabold leading-tight">
-                  Ready for Better Landing Page Conversions?
+                  Need a Secure Custom Admin Panel?
                 </h3>
                 <p className="text-white/80 text-xs sm:text-sm leading-relaxed">
-                  Let's design a high-converting landing page built specifically to turn campaign traffic into business enquiries.
+                  Let's build a secure backend dashboard with role-based access control and real-time content management tools.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 pt-8 relative z-10 w-full sm:max-w-md">
                 <Link
-                  href="/contact?service=Landing%20Page%20Development"
+                  href="/contact?service=Admin%20Panel%20Development"
                   className="inline-flex justify-center items-center gap-2 bg-[#FF6B00] hover:bg-[#E05E00] text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-xl shadow-md transition-all duration-200 text-center flex-grow"
                 >
                   <span>Discuss Your Project</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
-                  href="https://wa.me/919986389444?text=Hi%2C%20I'm%20interested%20in%20your%20Landing%20Page%20Development%20service."
+                  href="https://wa.me/919986389444?text=Hi%2C%20I'm%20interested%20in%20your%20Admin%20Panel%20Development%20service."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex justify-center items-center gap-2 bg-white hover:bg-slate-50 text-[#0F2C59] text-xs sm:text-sm font-bold px-6 py-3.5 rounded-xl shadow-sm transition-all duration-200 text-center flex-grow"
@@ -574,7 +475,7 @@ export default function LandingPageDevelopmentPage() {
           </div>
         </section>
 
-        {/* 8. STATS STRIP SECTION */}
+        {/* 7. STATS STRIP SECTION */}
         <section className="bg-sand-100 border-t border-[#1D3D9E]/5 py-16">
           <div className="max-w-7xl mx-auto px-6">
             <div className="bg-white border border-[#1D3D9E]/10 rounded-[32px] p-8 sm:p-12 grid grid-cols-2 lg:grid-cols-4 gap-8 items-center shadow-sm">
@@ -590,7 +491,7 @@ export default function LandingPageDevelopmentPage() {
                 </div>
                 <div className="text-left">
                   <span className="text-2xl sm:text-3xl font-serif font-black text-[#1D3D9E] tracking-tight block leading-none">90+</span>
-                  <span className="text-[10px] font-bold text-[#0F2C59]/50 uppercase tracking-wider mt-1 block">Websites Delivered</span>
+                  <span className="text-[10px] font-bold text-[#0F2C59]/50 uppercase tracking-wider mt-1 block">Apps Delivered</span>
                 </div>
               </div>
 
