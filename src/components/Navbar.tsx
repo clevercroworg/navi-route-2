@@ -94,7 +94,7 @@ export default function Navbar() {
 
   return (
     <header className={`fixed top-0 z-50 w-full transition-all duration-300 ease-in-out ${
-      isScrolled 
+      (isScrolled || isOpen) 
         ? "bg-[#1D3D9E] border-b border-[#FF6B00]/10 lg:border-[#1D3D9E]/5 shadow-sm py-3" 
         : "bg-transparent border-b border-transparent py-5"
     }`}>
@@ -223,7 +223,7 @@ export default function Navbar() {
             <div className="flex justify-start">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className={`transition-colors p-2 ${isScrolled ? 'text-white/90' : 'text-[#0F2C59]'}`}
+                className={`transition-colors p-2 ${isScrolled || isOpen ? 'text-white/90' : 'text-[#0F2C59]'}`}
                 aria-label="Toggle menu"
               >
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -236,12 +236,12 @@ export default function Navbar() {
                 href="/" 
                 className="flex items-center justify-center select-none transition-all duration-300"
                 style={{
-                  width: isScrolled ? '50px' : '100px',
-                  height: isScrolled ? '50px' : '100px'
+                  width: (isScrolled || isOpen) ? '50px' : '100px',
+                  height: (isScrolled || isOpen) ? '50px' : '100px'
                 }}
               >
                 <img
-                  src={isScrolled ? "/images/light logo.png" : "/images/dark logo.png"}
+                  src={(isScrolled || isOpen) ? "/images/light logo.png" : "/images/dark logo.png"}
                   alt="Navi Route Logo"
                   className="object-contain w-full h-full"
                 />
@@ -252,7 +252,7 @@ export default function Navbar() {
             <div className="flex justify-end">
               <a
                 href="tel:+919986389444"
-                className={`transition-colors p-2 ${isScrolled ? 'text-white/90' : 'text-[#0F2C59]'}`}
+                className={`transition-colors p-2 ${isScrolled || isOpen ? 'text-white/90' : 'text-[#0F2C59]'}`}
                 aria-label="Call us"
               >
                 <Phone className="w-6 h-6" />
