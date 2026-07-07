@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[75vh] lg:min-h-[85vh] bg-transparent pt-32 pb-0 overflow-hidden flex flex-col justify-between">
+    <section className="relative min-h-[75vh] lg:min-h-[85vh] bg-transparent pt-32 pb-0 overflow-hidden flex flex-col justify-start lg:justify-between">
       
       {/* Main Grid Content */}
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 items-center gap-12 relative z-10 w-full flex-grow">
@@ -89,7 +89,7 @@ export default function Hero() {
       </div>
 
       {/* MOBILE ARTWORK - Positioned at the bottom of the section */}
-      <div className="lg:hidden w-full relative h-[280px] sm:h-[380px] mt-8 select-none z-0 px-4">
+      <div className="lg:hidden w-full relative h-[280px] sm:h-[380px] -mt-10 select-none z-0 px-4">
         <video
           src="/images/Vintage Coastal Lighthouse Panorama.mp4"
           autoPlay
