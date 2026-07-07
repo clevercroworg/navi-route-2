@@ -4,19 +4,79 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Menu, X, ChevronDown } from "lucide-react";
+import { Phone, Menu, X, ChevronDown, Laptop, Smartphone, Cpu, Megaphone } from "lucide-react";
 
 const navLinks = [
-  { name: "Services", href: "/#services" },
+  { name: "Services", href: "#services-dropdown" },
   { name: "Work", href: "/#work" },
   { name: "About", href: "/#about" },
   { name: "Insights", href: "/#insights" },
   { name: "Contact", href: "/contact" },
 ];
 
+const megaMenuData = [
+  {
+    category: "Website Development",
+    icon: Laptop,
+    iconColor: "text-[#1D3D9E] bg-[#1D3D9E]/5",
+    items: [
+      { name: "Business Website Development", href: "/services/business-website-development", active: true },
+      { name: "React / Next.js Website Development", href: "#" },
+      { name: "Ecommerce Website Development", href: "#" },
+      { name: "Landing Page Development", href: "#" },
+      { name: "Website Redesign", href: "#" },
+      { name: "Website Maintenance", href: "#" },
+    ]
+  },
+  {
+    category: "App Development",
+    icon: Smartphone,
+    iconColor: "text-purple-600 bg-purple-50",
+    items: [
+      { name: "Mobile App Development", href: "#" },
+      { name: "Web App Development", href: "#" },
+      { name: "SaaS Product Development", href: "#" },
+      { name: "CRM & Dashboard Development", href: "#" },
+      { name: "Booking System Development", href: "#" },
+      { name: "Admin Panel Development", href: "#" },
+      { name: "Customer Portal Development", href: "#" },
+    ]
+  },
+  {
+    category: "AI Automation",
+    icon: Cpu,
+    iconColor: "text-emerald-600 bg-emerald-50",
+    items: [
+      { name: "AI Chatbot Development", href: "#" },
+      { name: "WhatsApp Automation", href: "#" },
+      { name: "Lead Management Automation", href: "#" },
+      { name: "CRM Automation", href: "#" },
+      { name: "Sales Follow-Up Automation", href: "#" },
+      { name: "Workflow Automation", href: "#" },
+      { name: "AI Customer Support Automation", href: "#" },
+    ]
+  },
+  {
+    category: "Digital Marketing",
+    icon: Megaphone,
+    iconColor: "text-amber-600 bg-amber-50",
+    items: [
+      { name: "Google Ads Management", href: "#" },
+      { name: "Meta Ads Management", href: "#" },
+      { name: "SEO Services", href: "#" },
+      { name: "Social Media Management", href: "#" },
+      { name: "Lead Generation Campaigns", href: "#" },
+      { name: "Performance Marketing", href: "#" },
+      { name: "Analytics & Tracking Setup", href: "#" },
+    ]
+  }
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [activeMobileCat, setActiveMobileCat] = useState<string | null>(null);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -27,19 +87,10 @@ export default function Navbar() {
         setIsScrolled(false);
       }
     };
-    // Initialize status
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleDropdown = (name: string) => {
-    if (activeDropdown === name) {
-      setActiveDropdown(null);
-    } else {
-      setActiveDropdown(name);
-    }
-  };
 
   return (
     <header className={`fixed top-0 z-50 w-full transition-all duration-300 ease-in-out ${
@@ -73,15 +124,82 @@ export default function Navbar() {
             {/* Desktop Nav Links */}
             <nav className="flex items-center gap-8">
               {navLinks.map((link) => (
-                <div key={link.name} className="relative">
-                  <Link
-                    href={link.href}
-                    className={`text-sm font-medium transition-colors py-2 ${
-                      isScrolled ? 'text-white/90 hover:text-orange-brand' : 'text-[#0F2C59]/85 hover:text-[#1D3D9E]'
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
+                <div 
+                  key={link.name} 
+                  className="relative py-4"
+                  onMouseEnter={() => {
+                    if (link.name === "Services") setIsServicesOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    if (link.name === "Services") setIsServicesOpen(false);
+                  }}
+                >
+                  {link.name === "Services" ? (
+                    <button
+                      className={`text-sm font-medium transition-colors py-2 flex items-center gap-1 cursor-pointer focus:outline-none ${
+                        isScrolled ? 'text-white/90 hover:text-orange-brand' : 'text-[#0F2C59]/85 hover:text-[#1D3D9E]'
+                      }`}
+                    >
+                      <span>{link.name}</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`} />
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className={`text-sm font-medium transition-colors py-2 ${
+                        isScrolled ? 'text-white/90 hover:text-orange-brand' : 'text-[#0F2C59]/85 hover:text-[#1D3D9E]'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
+
+                  {/* Mega Menu Dropdown */}
+                  {link.name === "Services" && (
+                    <AnimatePresence>
+                      {isServicesOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 15 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 15 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute left-1/2 -translate-x-1/2 top-full mt-1 bg-white border border-[#1D3D9E]/10 shadow-2xl rounded-3xl p-8 w-[920px] grid grid-cols-4 gap-6 text-left"
+                        >
+                          {megaMenuData.map((col) => {
+                            const Icon = col.icon;
+                            return (
+                              <div key={col.category} className="space-y-4">
+                                <div className="flex items-center gap-2 border-b border-[#1D3D9E]/5 pb-2">
+                                  <div className={`p-1.5 rounded-lg ${col.iconColor}`}>
+                                    <Icon className="w-4 h-4" />
+                                  </div>
+                                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#0F2C59]/50">
+                                    {col.category}
+                                  </span>
+                                </div>
+                                <ul className="space-y-2.5">
+                                  {col.items.map((item) => (
+                                    <li key={item.name}>
+                                      <Link
+                                        href={item.href}
+                                        className={`text-xs font-semibold hover:text-[#FF6B00] transition-colors block leading-relaxed relative ${
+                                          item.active 
+                                            ? "text-[#FF6B00] pl-3 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#FF6B00]" 
+                                            : "text-[#0F2C59]/75"
+                                        }`}
+                                      >
+                                        {item.name}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            );
+                          })}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  )}
                 </div>
               ))}
             </nav>
@@ -89,10 +207,10 @@ export default function Navbar() {
             {/* CTA Let's Talk button */}
             <div className="flex items-center">
               <Link
-                href="https://wa.me/yourwhatsappnumber"
+                href="https://wa.me/919986389444"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-orange-brand hover:bg-orange-brand-hover text-white text-sm font-bold px-6 py-2.5 rounded-full transition-all duration-200"
+                className="inline-flex items-center justify-center bg-[#FF6B00] hover:bg-[#E05E00] text-white text-sm font-bold px-6 py-2.5 rounded-full transition-all duration-200"
               >
                 Let's Talk
               </Link>
@@ -133,7 +251,7 @@ export default function Navbar() {
             {/* Right Edge: Call / Phone trigger */}
             <div className="flex justify-end">
               <a
-                href="tel:+15551234567"
+                href="tel:+919986389444"
                 className={`transition-colors p-2 ${isScrolled ? 'text-white/90' : 'text-[#0F2C59]'}`}
                 aria-label="Call us"
               >
@@ -153,29 +271,89 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden bg-[#1D3D9E] border-b border-[#FF6B00]/10 overflow-hidden"
+            className="lg:hidden bg-[#1D3D9E] border-b border-[#FF6B00]/10 overflow-hidden text-left"
           >
             <div className="px-4 pt-2 pb-6 space-y-2">
               {navLinks.map((link) => (
                 <div key={link.name} className="border-b border-white/10 pb-2">
-                  <div className="flex justify-between items-center py-2">
-                    <Link
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className="text-sm font-bold text-white/90 hover:text-orange-brand"
-                    >
-                      {link.name}
-                    </Link>
-                  </div>
+                  {link.name === "Services" ? (
+                    <div className="flex flex-col">
+                      <button
+                        onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                        className="flex justify-between items-center py-2 text-sm font-bold text-white/90 w-full"
+                      >
+                        <span>{link.name}</span>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileServicesOpen ? "rotate-180" : ""}`} />
+                      </button>
+                      
+                      <AnimatePresence>
+                        {isMobileServicesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="pl-3 mt-1 space-y-3 overflow-hidden"
+                          >
+                            {megaMenuData.map((cat) => (
+                              <div key={cat.category} className="space-y-1">
+                                <button
+                                  onClick={() => setActiveMobileCat(activeMobileCat === cat.category ? null : cat.category)}
+                                  className="flex justify-between items-center w-full py-1 text-xs font-bold text-white/70"
+                                >
+                                  <span>{cat.category}</span>
+                                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMobileCat === cat.category ? "rotate-180" : ""}`} />
+                                </button>
+                                
+                                <AnimatePresence>
+                                  {activeMobileCat === cat.category && (
+                                    <motion.ul
+                                      initial={{ opacity: 0, height: 0 }}
+                                      animate={{ opacity: 1, height: "auto" }}
+                                      exit={{ opacity: 0, height: 0 }}
+                                      className="pl-3 py-1 space-y-2 border-l border-white/10"
+                                    >
+                                      {cat.items.map((item) => (
+                                        <li key={item.name}>
+                                          <Link
+                                            href={item.href}
+                                            onClick={() => setIsOpen(false)}
+                                            className={`text-xs block py-1 hover:text-orange-brand transition-colors ${
+                                              item.active ? "text-[#FF6B00] font-bold" : "text-white/80"
+                                            }`}
+                                          >
+                                            {item.name}
+                                          </Link>
+                                        </li>
+                                      ))}
+                                    </motion.ul>
+                                  )}
+                                </AnimatePresence>
+                              </div>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <div className="flex justify-between items-center py-2">
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="text-sm font-bold text-white/90 hover:text-orange-brand"
+                      >
+                        {link.name}
+                      </Link>
+                    </div>
+                  )}
                 </div>
               ))}
 
               <Link
-                href="https://wa.me/yourwhatsappnumber"
+                href="https://wa.me/919986389444"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="mt-4 flex justify-center items-center bg-orange-brand hover:bg-orange-brand-hover text-white text-sm font-bold py-3 rounded-full w-full"
+                className="mt-4 flex justify-center items-center bg-[#FF6B00] hover:bg-[#E05E00] text-white text-sm font-bold py-3 rounded-full w-full"
               >
                 Let's Talk
               </Link>
