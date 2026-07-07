@@ -88,14 +88,14 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* MOBILE BACKGROUND ARTWORK - Positioned below the blue navbar and contained to prevent cropping */}
-      <div className="absolute inset-x-0 bottom-0 top-24 z-0 select-none pointer-events-none lg:hidden opacity-20">
+      {/* MOBILE BACKGROUND ARTWORK - Larger and highly visible background watermark under the text and buttons */}
+      <div className="absolute inset-0 z-0 select-none pointer-events-none lg:hidden opacity-45">
         <Image
           src="/images/hero_lighthouse_ink.png"
           alt="Lighthouse Cliff Background (Mobile)"
           fill
           sizes="100vw"
-          className="object-contain object-bottom"
+          className="object-cover object-bottom"
         />
       </div>
 
