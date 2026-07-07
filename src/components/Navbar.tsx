@@ -54,11 +54,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link 
             href="/" 
-            className={`flex items-center justify-center select-none transition-all duration-300 ${
-              isScrolled 
-                ? "w-12 h-12" 
-                : "w-16 h-16"
-            }`}
+            className="flex items-center justify-center select-none transition-all duration-300"
+            style={{
+              width: isScrolled ? '56px' : '76px',
+              height: isScrolled ? '56px' : '76px'
+            }}
           >
             <img
               src="/images/logo_v2.jpeg"
