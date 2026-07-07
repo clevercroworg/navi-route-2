@@ -164,35 +164,31 @@ export default function WhyPartner() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="border border-dashed border-[#1D3D9E]/20 rounded-3xl p-8 bg-transparent flex flex-col justify-between items-start text-left relative"
+              className="border border-[#1D3D9E]/10 rounded-2xl p-6 bg-[#1D3D9E]/5 flex flex-col justify-start items-start text-left relative hover:shadow-md transition-all duration-300"
             >
-              <div className="w-full">
-                {/* Centered Circular Avatar at the Top */}
-                <div className="flex justify-center w-full mb-6">
-                  <div className="relative w-24 h-24 rounded-full overflow-hidden border border-[#1D3D9E]/10 select-none">
-                    <Image
-                      src={test.avatar}
-                      alt={test.author}
-                      fill
-                      sizes="96px"
-                      className="object-cover"
-                    />
-                  </div>
+              {/* Header: Avatar and details aligned side-by-side */}
+              <div className="flex items-center gap-4 mb-4 w-full">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden border border-[#1D3D9E]/15 select-none flex-shrink-0">
+                  <Image
+                    src={test.avatar}
+                    alt={test.author}
+                    fill
+                    sizes="56px"
+                    className="object-cover"
+                  />
                 </div>
-
-                {/* Orange Quotation Mark */}
-                <span className="text-[#FF6B00] text-3xl font-serif block mb-2 leading-none">“</span>
-                
-                {/* Testimonial Quote */}
-                <p className="text-[#0F2C59]/80 text-sm sm:text-base leading-relaxed mb-6">
-                  {test.quote}
-                </p>
+                <div>
+                  <h4 className="font-serif text-sm sm:text-base font-bold text-[#1D3D9E]">{test.author}</h4>
+                  <p className="text-[11px] sm:text-xs text-[#0F2C59]/60">{test.role}</p>
+                </div>
               </div>
 
-              {/* Left-Aligned Author Details at the Bottom */}
-              <div className="w-full border-t border-[#1D3D9E]/5 pt-4">
-                <h4 className="font-serif text-sm font-bold text-[#1D3D9E]">{test.author}</h4>
-                <p className="text-[11px] text-[#1D3D9E]/60">{test.role}</p>
+              {/* Quote details */}
+              <div className="w-full relative">
+                <span className="text-[#FF6B00] text-2xl font-serif block mb-1 leading-none">“</span>
+                <p className="text-[#0F2C59]/80 text-xs sm:text-sm leading-relaxed italic pr-2">
+                  {test.quote}
+                </p>
               </div>
             </motion.div>
           ))}
