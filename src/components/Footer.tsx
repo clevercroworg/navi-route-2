@@ -175,24 +175,14 @@ export default function Footer() {
             
             {/* Logo Column */}
             <div className="space-y-6 lg:col-span-2">
-              <Link href="/" className="flex items-center gap-3 group">
-                <div className="relative w-9 h-9 flex-shrink-0 flex items-center justify-center">
-                  <svg className="w-9 h-9 text-[#FF6B00] group-hover:rotate-45 transition-transform duration-700 ease-out" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <circle cx="50" cy="50" r="40" stroke="white" strokeWidth="1.5" strokeDasharray="3 3" />
-                    <circle cx="50" cy="50" r="35" stroke="white" strokeWidth="2" />
-                    <polygon points="50,15 45,50 50,45" fill="#FF6B00" stroke="white" strokeWidth="1.5" />
-                    <polygon points="50,15 55,50 50,45" fill="#E05E00" stroke="white" strokeWidth="1.5" />
-                    <polygon points="50,85 45,50 50,55" fill="white" stroke="white" strokeWidth="1.5" />
-                    <polygon points="50,85 55,50 50,55" fill="#DCE6F0" stroke="white" strokeWidth="1.5" />
-                  </svg>
-                </div>
-                <div className="flex flex-col -space-y-0.5">
-                  <span className="font-sans text-base font-black tracking-widest text-white leading-none">
-                    NAVI
-                  </span>
-                  <span className="font-sans text-base font-black tracking-widest text-white leading-none">
-                    ROUTE
-                  </span>
+              <Link href="/" className="flex items-center select-none">
+                <div className="relative w-[140px] h-[45px]">
+                  <Image
+                    src="/images/light logo.png"
+                    alt="Navi Route Logo"
+                    fill
+                    className="object-contain object-left"
+                  />
                 </div>
               </Link>
 

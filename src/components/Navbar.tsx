@@ -48,61 +48,98 @@ export default function Navbar() {
         : "bg-transparent border-b border-transparent py-5"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex items-center justify-between transition-all duration-300 ${
+        <div className={`transition-all duration-300 ${
           isScrolled ? "h-14" : "h-20"
-        }`}>
-          {/* Logo */}
-          <Link 
-            href="/" 
-            className="flex items-center justify-center select-none transition-all duration-300"
-            style={{
-              width: isScrolled ? '56px' : '76px',
-              height: isScrolled ? '56px' : '76px'
-            }}
-          >
-            <img
-              src="/images/logo_v2.jpeg"
-              alt="Navi Route Logo"
-              className="object-contain mix-blend-multiply w-full h-full"
-            />
-          </Link>
-
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <div key={link.name} className="relative">
-                <Link
-                  href={link.href}
-                  className="text-sm font-medium text-[#0F2C59]/80 hover:text-orange-brand transition-colors py-2"
-                >
-                  {link.name}
-                </Link>
-              </div>
-            ))}
-          </nav>
-
-          {/* CTA Let's Talk button */}
-          <div className="hidden lg:flex items-center">
-            <Link
-              href="https://wa.me/yourwhatsappnumber"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-orange-brand hover:bg-orange-brand-hover text-white text-sm font-bold px-6 py-2.5 rounded-full transition-all duration-200"
+        } flex items-center w-full`}>
+          
+          {/* Desktop Version (lg+) */}
+          <div className="hidden lg:flex items-center justify-between w-full">
+            {/* Logo */}
+            <Link 
+              href="/" 
+              className="flex items-center justify-center select-none transition-all duration-300"
+              style={{
+                width: isScrolled ? '56px' : '76px',
+                height: isScrolled ? '56px' : '76px'
+              }}
             >
-              Let's Talk
+              <img
+                src="/images/dark logo.png"
+                alt="Navi Route Logo"
+                className="object-contain w-full h-full"
+              />
             </Link>
+
+            {/* Desktop Nav Links */}
+            <nav className="flex items-center gap-8">
+              {navLinks.map((link) => (
+                <div key={link.name} className="relative">
+                  <Link
+                    href={link.href}
+                    className="text-sm font-medium text-[#0F2C59]/80 hover:text-orange-brand transition-colors py-2"
+                  >
+                    {link.name}
+                  </Link>
+                </div>
+              ))}
+            </nav>
+
+            {/* CTA Let's Talk button */}
+            <div className="flex items-center">
+              <Link
+                href="https://wa.me/yourwhatsappnumber"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-orange-brand hover:bg-orange-brand-hover text-white text-sm font-bold px-6 py-2.5 rounded-full transition-all duration-200"
+              >
+                Let's Talk
+              </Link>
+            </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="flex lg:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-navy-800 hover:text-orange-brand transition-colors p-2"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+          {/* Mobile Version (<lg) */}
+          <div className="grid grid-cols-3 items-center w-full lg:hidden">
+            {/* Left Edge: Menu trigger */}
+            <div className="flex justify-start">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-[#0F2C59] hover:text-orange-brand transition-colors p-2"
+                aria-label="Toggle menu"
+              >
+                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
+
+            {/* Center: Logo */}
+            <div className="flex justify-center">
+              <Link 
+                href="/" 
+                className="flex items-center justify-center select-none transition-all duration-300"
+                style={{
+                  width: isScrolled ? '50px' : '64px',
+                  height: isScrolled ? '50px' : '64px'
+                }}
+              >
+                <img
+                  src="/images/dark logo.png"
+                  alt="Navi Route Logo"
+                  className="object-contain w-full h-full"
+                />
+              </Link>
+            </div>
+
+            {/* Right Edge: Call / Phone trigger */}
+            <div className="flex justify-end">
+              <a
+                href="tel:+15551234567"
+                className="text-[#0F2C59] hover:text-orange-brand transition-colors p-2"
+                aria-label="Call us"
+              >
+                <Phone className="w-6 h-6" />
+              </a>
+            </div>
           </div>
+
         </div>
       </div>
 
