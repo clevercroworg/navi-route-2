@@ -24,6 +24,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Navi Route | Digital Growth Partners",
   description: "Digital marketing that drives enquiries and bookings for hospitality & leisure brands.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
