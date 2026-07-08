@@ -63,10 +63,10 @@ const megaMenuData = [
     items: [
       { name: "Social Media Management", href: "/services/social-media-management", active: true },
       { name: "Social Media Marketing", href: "/services/social-media-marketing", active: true },
-      { name: "Lead Generation Campaigns", href: "/services/lead-generation-campaigns", active: true },
+      { name: "Lead Generation", href: "/services/lead-generation-campaigns", active: true },
       { name: "SEO Services", href: "/services/seo-services", active: true },
       { name: "Performance Marketing", href: "/services/performance-marketing", active: true },
-      { name: "Analytics & Tracking Setup", href: "/services/analytics-tracking-setup", active: true },
+      { name: "Analytics & Tracking", href: "/services/analytics-tracking-setup", active: true },
     ]
   }
 ];
