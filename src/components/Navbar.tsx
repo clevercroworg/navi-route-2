@@ -177,16 +177,16 @@ export default function Navbar() {
             {/* Logo */}
             <Link 
               href="/" 
-              className="flex items-center justify-center select-none transition-all duration-300"
+              className="flex items-center justify-start select-none transition-all duration-300"
               style={{
-                width: isScrolled ? '56px' : '100px',
-                height: isScrolled ? '56px' : '100px'
+                width: isScrolled ? '48px' : '180px',
+                height: isScrolled ? '48px' : '56px'
               }}
             >
               <img
-                src={isScrolled ? "/images/light logo.png" : "/images/dark logo.png"}
+                src={isScrolled ? "/images/logo-icon.png" : "/images/logo-1.png"}
                 alt="Navi Route Logo"
-                className="object-contain w-full h-full"
+                className={`object-contain w-full h-full ${isScrolled ? "brightness-0 invert" : ""}`}
               />
             </Link>
 
@@ -348,14 +348,14 @@ export default function Navbar() {
                 href="/" 
                 className="flex items-center justify-center select-none transition-all duration-300"
                 style={{
-                  width: (isScrolled || isOpen) ? '50px' : '100px',
-                  height: (isScrolled || isOpen) ? '50px' : '100px'
+                  width: (isScrolled || isOpen) ? '40px' : '140px',
+                  height: '40px'
                 }}
               >
                 <img
-                  src={(isScrolled || isOpen) ? "/images/light logo.png" : "/images/dark logo.png"}
+                  src={(isScrolled || isOpen) ? "/images/logo-icon.png" : "/images/logo-1.png"}
                   alt="Navi Route Logo"
-                  className="object-contain w-full h-full"
+                  className={`object-contain w-full h-full ${(isScrolled || isOpen) ? "brightness-0 invert" : ""}`}
                 />
               </Link>
             </div>

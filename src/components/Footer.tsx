@@ -42,10 +42,10 @@ export default function Footer() {
               <Link href="/" className="flex items-center select-none">
                 <div className="relative w-[140px] h-[45px]">
                   <Image
-                    src="/images/light logo.png"
+                    src="/images/logo-1.png"
                     alt="Navi Route Logo"
                     fill
-                    className="object-contain object-left"
+                    className="object-contain object-left brightness-0 invert"
                   />
                 </div>
               </Link>
