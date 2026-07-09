@@ -82,10 +82,10 @@ export default function Footer() {
                 Services
               </h4>
               <ul className="space-y-3 text-xs sm:text-sm">
-                <li><Link href="/services/business-website-development" className="hover:text-white transition-colors">Website Development</Link></li>
-                <li><Link href="/#services" className="hover:text-white transition-colors">App Development</Link></li>
-                <li><Link href="/#services" className="hover:text-white transition-colors">AI Automation</Link></li>
-                <li><Link href="/#services" className="hover:text-white transition-colors">Digital Marketing</Link></li>
+                <li><Link href="/website-development-goa" className="hover:text-white transition-colors">Website Development</Link></li>
+                <li><Link href="/app-development-goa" className="hover:text-white transition-colors">App Development</Link></li>
+                <li><Link href="/ai-automation-goa" className="hover:text-white transition-colors">AI Automation</Link></li>
+                <li><Link href="/digital-marketing-agency-goa" className="hover:text-white transition-colors">Digital Marketing</Link></li>
               </ul>
             </div>
 

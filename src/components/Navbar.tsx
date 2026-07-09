@@ -20,12 +20,12 @@ const megaMenuData = [
     icon: Laptop,
     iconColor: "text-[#1D3D9E] bg-[#1D3D9E]/8",
     items: [
-      { name: "Business Website", href: "/services/business-website-development", active: true },
-      { name: "React / Next.js Website", href: "/services/react-nextjs-website-development", active: true },
-      { name: "Ecommerce Website", href: "/services/ecommerce-website-development", active: true },
-      { name: "Landing Page", href: "/services/landing-page-development", active: true },
-      { name: "Website Redesign", href: "/services/website-redesign-services", active: true },
-      { name: "Website Maintenance", href: "/services/website-maintenance-services", active: true },
+      { name: "Business Website", href: "/website-development-goa/business-websites", active: true },
+      { name: "React / Next.js Website", href: "/website-development-goa/react-nextjs-development", active: true },
+      { name: "Ecommerce Website", href: "/website-development-goa/ecommerce-solutions", active: true },
+      { name: "Landing Page", href: "/website-development-goa/landing-page-design", active: true },
+      { name: "Website Redesign", href: "/website-development-goa/website-redesign", active: true },
+      { name: "Website Maintenance", href: "/website-development-goa/website-maintenance", active: true },
     ]
   },
   {
@@ -33,13 +33,13 @@ const megaMenuData = [
     icon: Smartphone,
     iconColor: "text-purple-600 bg-purple-600/8",
     items: [
-      { name: "Mobile App", href: "/services/mobile-app-development", active: true },
-      { name: "Web App", href: "/services/web-app-development", active: true },
-      { name: "SaaS Product", href: "/services/saas-product-development", active: true },
-      { name: "CRM & Dashboard", href: "/services/crm-dashboard-development", active: true },
-      { name: "Booking System", href: "/services/booking-system-development", active: true },
-      { name: "Admin Panel", href: "/services/admin-panel-development", active: true },
-      { name: "Customer Portal", href: "/services/customer-portal-development", active: true },
+      { name: "Mobile App", href: "/app-development-goa/mobile-app-development", active: true },
+      { name: "Web App", href: "/app-development-goa/web-app-development", active: true },
+      { name: "SaaS Product", href: "/app-development-goa/saas-product-development", active: true },
+      { name: "CRM & Dashboard", href: "/app-development-goa/crm-dashboard-development", active: true },
+      { name: "Booking System", href: "/app-development-goa/online-booking-systems", active: true },
+      { name: "Admin Panel", href: "/app-development-goa/custom-admin-panels", active: true },
+      { name: "Customer Portal", href: "/app-development-goa/customer-portals", active: true },
     ]
   },
   {
@@ -47,13 +47,13 @@ const megaMenuData = [
     icon: Cpu,
     iconColor: "text-emerald-600 bg-emerald-600/8",
     items: [
-      { name: "AI Chatbot", href: "/services/ai-chatbot-development", active: true },
-      { name: "WhatsApp Automation", href: "/services/whatsapp-automation", active: true },
-      { name: "Lead Management", href: "/services/lead-management-automation", active: true },
-      { name: "CRM Automation", href: "/services/crm-automation", active: true },
-      { name: "Sales Follow-Up", href: "/services/sales-follow-up-automation", active: true },
-      { name: "Workflow Automation", href: "/services/workflow-automation", active: true },
-      { name: "AI Customer Support", href: "/services/ai-customer-support-automation", active: true },
+      { name: "AI Chatbot", href: "/ai-automation-goa/ai-chatbots", active: true },
+      { name: "WhatsApp Automation", href: "/ai-automation-goa/whatsapp-business-automation", active: true },
+      { name: "Lead Management", href: "/ai-automation-goa/automated-lead-management", active: true },
+      { name: "CRM Automation", href: "/ai-automation-goa/crm-workflow-automation", active: true },
+      { name: "Sales Follow-Up", href: "/ai-automation-goa/automated-sales-followup", active: true },
+      { name: "Workflow Automation", href: "/ai-automation-goa/business-workflow-automation", active: true },
+      { name: "AI Customer Support", href: "/ai-automation-goa/ai-customer-support", active: true },
     ]
   },
   {
@@ -61,12 +61,12 @@ const megaMenuData = [
     icon: Megaphone,
     iconColor: "text-amber-600 bg-amber-600/8",
     items: [
-      { name: "Social Media Management", href: "/services/social-media-management", active: true },
-      { name: "Social Media Marketing", href: "/services/social-media-marketing", active: true },
-      { name: "Lead Generation", href: "/services/lead-generation-campaigns", active: true },
-      { name: "SEO Services", href: "/services/seo-services", active: true },
-      { name: "Performance Marketing", href: "/services/performance-marketing", active: true },
-      { name: "Analytics & Tracking", href: "/services/analytics-tracking-setup", active: true },
+      { name: "Social Media Management", href: "/digital-marketing-agency-goa/social-media-management", active: true },
+      { name: "Social Media Marketing", href: "/digital-marketing-agency-goa/social-media-marketing", active: true },
+      { name: "Lead Generation", href: "/digital-marketing-agency-goa/lead-generation-services", active: true },
+      { name: "SEO Services", href: "/digital-marketing-agency-goa/seo-services", active: true },
+      { name: "Performance Marketing", href: "/digital-marketing-agency-goa/performance-marketing-meta-google-ads", active: true },
+      { name: "Analytics & Tracking", href: "/digital-marketing-agency-goa/analytics-conversion-tracking", active: true },
     ]
   }
 ];
@@ -308,7 +308,7 @@ export default function Navbar() {
                                 <span className="text-[10px] font-bold uppercase tracking-widest">Navigate · Build · Grow</span>
                               </div>
                               <Link
-                                href="/contact"
+                                href="/website-development-goa"
                                 className="text-[11px] font-bold text-[#FF6B00] hover:text-[#E05E00] transition-colors uppercase tracking-wider"
                               >
                                 View All Services →
