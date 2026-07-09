@@ -86,7 +86,7 @@ export default function Contact() {
       router.push("/thank-you");
     } catch (err) {
       console.error(err);
-      alert("Something went wrong. Please try again or contact us via phone/WhatsApp.");
+      alert("Something went wrong. Our team has been notified and we will fix it shortly. Please try again or contact us directly via phone/WhatsApp.");
     } finally {
       setIsSubmitting(false);
     }

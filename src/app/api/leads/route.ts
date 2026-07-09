@@ -13,6 +13,14 @@ export async function POST(req: Request) {
       );
     }
 
+    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      console.error("LEAD API CONFIG ERROR: Missing SMTP_USER or SMTP_PASS environment variables.");
+      return NextResponse.json(
+        { error: "Service temporarily unavailable due to missing configurations." },
+        { status: 500 }
+      );
+    }
+
     try {
       console.log("Attempting to send lead email via SMTP...");
       const transporter = nodemailer.createTransport({
@@ -50,7 +58,10 @@ export async function POST(req: Request) {
       console.log("Email sent successfully:", info.messageId);
     } catch (mailError) {
       console.error("SMTP ERROR:", mailError);
-      // Return 200/success to frontend even if mail delivery failed so user doesn't see error
+      return NextResponse.json(
+        { error: "Could not send notification. Please try again later." },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json({ success: true }, { status: 200 });
