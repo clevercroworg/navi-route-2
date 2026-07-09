@@ -48,22 +48,46 @@ export default function Contact() {
   const [activeBranch, setActiveBranch] = useState("udupi");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API request
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          message,
+          service: selectedType,
+          source: "Nauti Route Contact Form",
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to send message");
+      }
+
       setIsSubmitted(true);
       setName("");
       setEmail("");
+      setPhone("");
       setMessage("");
-    }, 1500);
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong. Please try again or contact us via phone/WhatsApp.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -270,19 +294,37 @@ export default function Contact() {
                     />
                   </div>
 
-                  {/* Email field */}
-                  <div className="space-y-1.5 text-left">
-                    <label className="text-xs font-bold uppercase tracking-wider text-[#0F2C59]/50">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-[#1D3D9E]/5 border border-[#1D3D9E]/10 rounded-xl px-4 py-3.5 text-sm sm:text-base text-[#0F2C59] focus:outline-none focus:ring-2 focus:ring-[#FF6B00] focus:border-transparent transition-all duration-200 placeholder-[#0F2C59]/30"
-                      placeholder="e.g. john@company.com"
-                    />
+                  {/* Email & Phone fields */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Email field */}
+                    <div className="space-y-1.5 text-left">
+                      <label className="text-xs font-bold uppercase tracking-wider text-[#0F2C59]/50">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full bg-[#1D3D9E]/5 border border-[#1D3D9E]/10 rounded-xl px-4 py-3.5 text-sm sm:text-base text-[#0F2C59] focus:outline-none focus:ring-2 focus:ring-[#FF6B00] focus:border-transparent transition-all duration-200 placeholder-[#0F2C59]/30"
+                        placeholder="e.g. john@company.com"
+                      />
+                    </div>
+
+                    {/* Phone field */}
+                    <div className="space-y-1.5 text-left">
+                      <label className="text-xs font-bold uppercase tracking-wider text-[#0F2C59]/50">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        className="w-full bg-[#1D3D9E]/5 border border-[#1D3D9E]/10 rounded-xl px-4 py-3.5 text-sm sm:text-base text-[#0F2C59] focus:outline-none focus:ring-2 focus:ring-[#FF6B00] focus:border-transparent transition-all duration-200 placeholder-[#0F2C59]/30"
+                        placeholder="e.g. +91 99863 89444"
+                      />
+                    </div>
                   </div>
 
                   {/* Message field */}
