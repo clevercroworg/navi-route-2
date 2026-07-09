@@ -3254,7 +3254,7 @@ export default function WorkPage() {
             </div>
 
             {/* Filter Buttons */}
-            <div className="flex overflow-x-auto md:flex-wrap gap-2 pt-2 border-t border-[#1D3D9E]/5 pb-1 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <div className="flex flex-wrap gap-2 pt-2 border-t border-[#1D3D9E]/5">
               {sectorFilters.map((filter) => {
                 const isActive = selectedSector === filter.value;
                 return (

@@ -788,8 +788,8 @@ export default function AiAutomationServiceLayout({
                   />
                 </div>
                 <div className="text-left">
-                  <span className="text-2xl sm:text-3xl font-serif font-black text-[#1D3D9E] tracking-tight block leading-none">90+</span>
-                  <span className="text-[10px] font-bold text-[#0F2C59]/50 uppercase tracking-wider mt-1 block">Apps Delivered</span>
+                  <span className="text-2xl sm:text-3xl font-serif font-black text-[#1D3D9E] tracking-tight block leading-none">150+</span>
+                  <span className="text-[10px] font-bold text-[#0F2C59]/50 uppercase tracking-wider mt-1 block">Websites Delivered</span>
                 </div>
               </div>
 
@@ -818,7 +818,7 @@ export default function AiAutomationServiceLayout({
                   />
                 </div>
                 <div className="text-left">
-                  <span className="text-2xl sm:text-3xl font-serif font-black text-[#1D3D9E] tracking-tight block leading-none">5+</span>
+                  <span className="text-2xl sm:text-3xl font-serif font-black text-[#1D3D9E] tracking-tight block leading-none">15+</span>
                   <span className="text-[10px] font-bold text-[#0F2C59]/50 uppercase tracking-wider mt-1 block">Years Experience</span>
                 </div>
               </div>

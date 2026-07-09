@@ -141,6 +141,13 @@ function MobileWave() {
   );
 }
 
+const mobileIconColors: Record<string, string> = {
+  "Website Development": "text-sky-300 bg-sky-300/10",
+  "App Development": "text-purple-300 bg-purple-300/10",
+  "AI Automation": "text-emerald-300 bg-emerald-300/10",
+  "Digital Marketing": "text-amber-300 bg-amber-300/10"
+};
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -393,93 +400,77 @@ export default function Navbar() {
                 <div key={link.name}>
                   {link.name === "Services" ? (
                     <div className="flex flex-col">
-                      {/* Services toggle */}
-                      <button
-                        onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                        className="flex justify-between items-center py-3.5 text-[15px] font-bold text-white/90 w-full border-b border-dashed border-white/10"
-                      >
-                        <span>{link.name}</span>
-                        <ChevronDown className={`w-4 h-4 text-[#FF6B00] transition-transform duration-200 ${isMobileServicesOpen ? "rotate-180" : ""}`} />
-                      </button>
+                      {/* Services Header */}
+                      <div className="flex justify-between items-center py-2.5 text-[11px] font-extrabold uppercase tracking-widest text-white/40 border-b border-dashed border-white/10 mt-2 mb-1">
+                        Services
+                      </div>
                       
-                      <AnimatePresence>
-                        {isMobileServicesOpen && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.25 }}
-                            className="overflow-hidden"
-                          >
-                            <div className="pt-2 pb-1 space-y-1">
-                              {megaMenuData.map((cat, catIdx) => {
-                                const Icon = cat.icon;
-                                const isExpanded = activeMobileCat === cat.category;
+                      <div className="pt-2 pb-1 space-y-1">
+                        {megaMenuData.map((cat, catIdx) => {
+                          const Icon = cat.icon;
+                          const isExpanded = activeMobileCat === cat.category;
 
-                                return (
-                                  <motion.div 
-                                    key={cat.category}
-                                    initial={{ opacity: 0, x: -8 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.2, delay: catIdx * 0.04 }}
+                          return (
+                            <motion.div 
+                              key={cat.category}
+                              initial={{ opacity: 0, x: -8 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.2, delay: catIdx * 0.04 }}
+                            >
+                              {/* Category row */}
+                              <button
+                                onClick={() => setActiveMobileCat(isExpanded ? null : cat.category)}
+                                className={`flex items-center gap-3 w-full py-3 px-3 rounded-xl transition-all duration-200 ${
+                                  isExpanded ? "bg-white/10" : "hover:bg-white/5"
+                                }`}
+                              >
+                                <div className={`p-1.5 rounded-lg ${mobileIconColors[cat.category] || cat.iconColor}`}>
+                                  <Icon className="w-3.5 h-3.5" />
+                                </div>
+                                <span className="text-[13px] font-bold text-white/85 flex-1 text-left">
+                                  {cat.category}
+                                </span>
+                                <span className="text-[10px] font-bold text-white/30 bg-white/8 px-2 py-0.5 rounded-full mr-1">
+                                  {cat.items.length}
+                                </span>
+                                <ChevronDown className={`w-3.5 h-3.5 text-white/40 transition-transform duration-200 ${isExpanded ? "rotate-180" : ""}`} />
+                              </button>
+
+                              {/* Expanded sub-items */}
+                              <AnimatePresence>
+                                {isExpanded && (
+                                  <motion.ul
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: "auto" }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    transition={{ duration: 0.2 }}
+                                    className="overflow-hidden"
                                   >
-                                    {/* Category row */}
-                                    <button
-                                      onClick={() => setActiveMobileCat(isExpanded ? null : cat.category)}
-                                      className={`flex items-center gap-3 w-full py-3 px-3 rounded-xl transition-all duration-200 ${
-                                        isExpanded ? "bg-white/10" : "hover:bg-white/5"
-                                      }`}
-                                    >
-                                      <div className={`p-1.5 rounded-lg ${cat.iconColor}`}>
-                                        <Icon className="w-3.5 h-3.5" />
-                                      </div>
-                                      <span className="text-[13px] font-bold text-white/85 flex-1 text-left">
-                                        {cat.category}
-                                      </span>
-                                      <span className="text-[10px] font-bold text-white/30 bg-white/8 px-2 py-0.5 rounded-full mr-1">
-                                        {cat.items.length}
-                                      </span>
-                                      <ChevronDown className={`w-3.5 h-3.5 text-white/40 transition-transform duration-200 ${isExpanded ? "rotate-180" : ""}`} />
-                                    </button>
-
-                                    {/* Expanded sub-items */}
-                                    <AnimatePresence>
-                                      {isExpanded && (
-                                        <motion.ul
-                                          initial={{ opacity: 0, height: 0 }}
-                                          animate={{ opacity: 1, height: "auto" }}
-                                          exit={{ opacity: 0, height: 0 }}
-                                          transition={{ duration: 0.2 }}
-                                          className="overflow-hidden"
+                                    <div className="ml-5 pl-4 py-2 space-y-0.5 border-l-2 border-dashed border-[#FF6B00]/30">
+                                      {cat.items.map((item, itemIdx) => (
+                                        <motion.li
+                                          key={item.name}
+                                          initial={{ opacity: 0, x: -6 }}
+                                          animate={{ opacity: 1, x: 0 }}
+                                          transition={{ duration: 0.15, delay: itemIdx * 0.03 }}
                                         >
-                                          <div className="ml-5 pl-4 py-2 space-y-0.5 border-l-2 border-dashed border-[#FF6B00]/30">
-                                            {cat.items.map((item, itemIdx) => (
-                                              <motion.li
-                                                key={item.name}
-                                                initial={{ opacity: 0, x: -6 }}
-                                                animate={{ opacity: 1, x: 0 }}
-                                                transition={{ duration: 0.15, delay: itemIdx * 0.03 }}
-                                              >
-                                                <Link
-                                                  href={item.href}
-                                                  onClick={() => setIsOpen(false)}
-                                                  className="text-[13px] font-medium block py-2 px-3 rounded-lg text-white/70 hover:text-[#FF6B00] hover:bg-white/5 transition-all duration-200"
-                                                >
-                                                  {item.name}
-                                                </Link>
-                                              </motion.li>
-                                            ))}
-                                          </div>
-                                        </motion.ul>
-                                      )}
-                                    </AnimatePresence>
-                                  </motion.div>
-                                );
-                              })}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                                          <Link
+                                            href={item.href}
+                                            onClick={() => setIsOpen(false)}
+                                            className="text-[13px] font-medium block py-2 px-3 rounded-lg text-white/70 hover:text-[#FF6B00] hover:bg-white/5 transition-all duration-200"
+                                          >
+                                            {item.name}
+                                          </Link>
+                                        </motion.li>
+                                      ))}
+                                    </div>
+                                  </motion.ul>
+                                )}
+                              </AnimatePresence>
+                            </motion.div>
+                          );
+                        })}
+                      </div>
                     </div>
                   ) : (
                     <Link
