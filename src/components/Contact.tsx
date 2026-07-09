@@ -82,136 +82,128 @@ export default function Contact() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch relative z-10 w-full">
-        
-        {/* Left Side: Modern Card-Style Contact Details & Floating Artwork */}
-        <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
-          
-          <div className="space-y-4">
-            
-            {/* Email Card */}
-            <a 
-              href="mailto:hello@naviroute.studio" 
-              className="flex items-center gap-4 p-5 rounded-2xl border border-[#1D3D9E]/10 bg-[#1D3D9E]/5 hover:bg-[#1D3D9E]/10 hover:border-[#FF6B00]/30 transition-all duration-300 group text-left w-full"
+      {/* 2. Branch Office Cards Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 w-full">
+        {branches.map((b) => {
+          const isActive = activeBranch === b.id;
+          return (
+            <div
+              key={b.id}
+              onClick={() => !b.comingSoon && setActiveBranch(b.id)}
+              className={`p-6 rounded-3xl border text-left transition-all duration-300 flex flex-col justify-between h-full w-full ${
+                isActive
+                  ? "bg-white border-[#FF6B00] shadow-md ring-2 ring-[#FF6B00]/10"
+                  : b.comingSoon
+                  ? "bg-[#1D3D9E]/2 border-[#1D3D9E]/5 opacity-65"
+                  : "bg-[#1D3D9E]/5 border-[#1D3D9E]/10 hover:bg-[#1D3D9E]/8 hover:border-[#1D3D9E]/20 cursor-pointer"
+              }`}
             >
-              <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#1D3D9E] group-hover:bg-[#FF6B00] group-hover:text-white transition-all duration-300 shadow-sm flex-shrink-0">
-                <Mail className="w-5 h-5 stroke-[1.5]" />
-              </div>
-              <div className="space-y-1">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-[#0F2C59]/50">Email Us</p>
-                <p className="font-semibold text-xs sm:text-sm text-[#1D3D9E]">hello@naviroute.studio</p>
-                <p className="text-[11px] text-[#0F2C59]/60">Typical response time: &lt; 24h</p>
-              </div>
-            </a>
-
-            {/* Phone Card */}
-            <a 
-              href="tel:+919986389444" 
-              className="flex items-center gap-4 p-5 rounded-2xl border border-[#1D3D9E]/10 bg-[#1D3D9E]/5 hover:bg-[#1D3D9E]/10 hover:border-[#FF6B00]/30 transition-all duration-300 group text-left w-full"
-            >
-              <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#1D3D9E] group-hover:bg-[#FF6B00] group-hover:text-white transition-all duration-300 shadow-sm flex-shrink-0">
-                <Phone className="w-5 h-5 stroke-[1.5]" />
-              </div>
-              <div className="space-y-1">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-[#0F2C59]/50">Call Us</p>
-                <p className="font-semibold text-xs sm:text-sm text-[#1D3D9E]">+91 99863 89444</p>
-                <p className="text-[11px] text-[#0F2C59]/60">Mon - Sat, 9:30am - 6:30pm IST</p>
-              </div>
-            </a>
-
-            {/* Branch Locations Selector Widget */}
-            <div className="p-6 rounded-2xl border border-[#1D3D9E]/10 bg-[#1D3D9E]/5 space-y-6 w-full text-left">
-              <div className="flex items-center justify-between border-b border-[#1D3D9E]/10 pb-3">
-                <span className="text-[10px] font-black uppercase tracking-wider text-[#0F2C59]/50">Our Offices</span>
-                <span className="bg-[#1D3D9E]/10 text-[#1D3D9E] text-[9px] font-bold px-2.5 py-0.5 rounded-full">Global Presence</span>
-              </div>
-
-              {/* Branch Selector Tabs */}
-              <div className="flex gap-1.5 p-1 bg-[#1D3D9E]/5 rounded-xl">
-                {branches.map((b) => (
-                  <button
-                    key={b.id}
-                    type="button"
-                    onClick={() => setActiveBranch(b.id)}
-                    className={`flex-1 text-center py-2 px-1 rounded-lg text-xs font-bold transition-all duration-200 ${
-                      activeBranch === b.id
-                        ? "bg-white text-[#1D3D9E] shadow-sm"
-                        : "text-[#0F2C59]/60 hover:text-[#0F2C59]"
+              <div className="w-full space-y-4">
+                <div className="flex items-center justify-between border-b border-[#1D3D9E]/10 pb-3">
+                  <h3 className="font-serif text-lg font-bold text-[#1D3D9E]">{b.name}</h3>
+                  <span
+                    className={`text-[9px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider ${
+                      b.comingSoon
+                        ? "bg-[#FF6B00]/10 text-[#FF6B00]"
+                        : "bg-[#1D3D9E]/10 text-[#1D3D9E]"
                     }`}
                   >
-                    {b.name}
-                    {b.comingSoon && <span className="ml-1 text-[8px] text-[#FF6B00] font-black uppercase tracking-wider block sm:inline">Soon</span>}
-                  </button>
-                ))}
-              </div>
+                    {b.comingSoon ? "Coming Soon" : b.label}
+                  </span>
+                </div>
 
-              {/* Branch Details Display */}
-              <div className="space-y-4 pt-1 min-h-[140px] flex flex-col justify-center">
-                {(() => {
-                  const b = branches.find((branch) => branch.id === activeBranch)!;
-                  if (b.comingSoon) {
-                    return (
-                      <div className="flex flex-col items-center justify-center py-4 text-center space-y-2 bg-white/40 border border-[#1D3D9E]/5 rounded-xl">
-                        <div className="w-10 h-10 rounded-full bg-[#FF6B00]/10 flex items-center justify-center text-[#FF6B00]">
-                          <MapPin className="w-5 h-5 animate-bounce" />
-                        </div>
-                        <div className="space-y-1">
-                          <h4 className="font-bold text-sm text-[#1D3D9E]">Goa Office</h4>
-                          <p className="text-[11px] text-[#0F2C59]/60 px-4">Address and contact details coming soon. Stay tuned!</p>
-                        </div>
+                {b.comingSoon ? (
+                  <div className="flex flex-col items-center justify-center py-4 text-center space-y-2">
+                    <div className="w-9 h-9 rounded-full bg-[#FF6B00]/10 flex items-center justify-center text-[#FF6B00]">
+                      <MapPin className="w-4 h-4" />
+                    </div>
+                    <p className="text-[11px] text-[#0F2C59]/60 px-4">
+                      Address and contact details coming soon. Stay tuned!
+                    </p>
+                  </div>
+                ) : (
+                  <div className="space-y-3.5">
+                    {/* Office Location */}
+                    <div className="flex gap-3 items-start">
+                      <div className="w-7 h-7 rounded-lg bg-white flex items-center justify-center text-[#1D3D9E] shadow-sm shrink-0 mt-0.5">
+                        <MapPin className="w-3.5 h-3.5 stroke-[2]" />
                       </div>
-                    );
-                  }
-                  return (
-                    <div className="space-y-4">
-                      {/* Office Location */}
+                      <div className="space-y-0.5">
+                        <p className="text-[8px] font-bold uppercase tracking-wider text-[#0F2C59]/50 leading-none">
+                          Office Location
+                        </p>
+                        <p className="font-semibold text-xs text-[#1D3D9E] leading-relaxed">
+                          {b.address}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Direct Line */}
+                    {b.phone && (
                       <div className="flex gap-3 items-start">
-                        <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-[#1D3D9E] shadow-sm shrink-0">
-                          <MapPin className="w-4 h-4 stroke-[2]" />
+                        <div className="w-7 h-7 rounded-lg bg-white flex items-center justify-center text-[#1D3D9E] shadow-sm shrink-0 mt-0.5">
+                          <Phone className="w-3.5 h-3.5 stroke-[2]" />
                         </div>
                         <div className="space-y-0.5">
-                          <p className="text-[9px] font-bold uppercase tracking-wider text-[#0F2C59]/50 leading-none">Office Location</p>
-                          <p className="font-semibold text-xs sm:text-sm text-[#1D3D9E] leading-relaxed">{b.address}</p>
-                        </div>
-                      </div>
-
-                      {/* Direct Line */}
-                      <div className="flex gap-3 items-start">
-                        <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-[#1D3D9E] shadow-sm shrink-0">
-                          <Phone className="w-4 h-4 stroke-[2]" />
-                        </div>
-                        <div className="space-y-0.5">
-                          <p className="text-[9px] font-bold uppercase tracking-wider text-[#0F2C59]/50 leading-none">Direct Line</p>
-                          <a 
-                            href={`tel:${b.phone.replace(/[^+\d]/g, "")}`} 
-                            className="font-semibold text-xs sm:text-sm text-[#1D3D9E] hover:text-[#FF6B00] transition-colors leading-relaxed block"
+                          <p className="text-[8px] font-bold uppercase tracking-wider text-[#0F2C59]/50 leading-none">
+                            Direct Line
+                          </p>
+                          <a
+                            href={`tel:${b.phone.replace(/[^+\d]/g, "")}`}
+                            onClick={(e) => e.stopPropagation()}
+                            className="font-semibold text-xs text-[#1D3D9E] hover:text-[#FF6B00] transition-colors leading-relaxed block"
                           >
                             {b.phone}
                           </a>
                         </div>
                       </div>
+                    )}
 
-                      {/* Working Hours */}
+                    {/* Working Hours */}
+                    {b.hours && (
                       <div className="flex gap-3 items-start">
-                        <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-[#1D3D9E] shadow-sm shrink-0">
-                          <Clock className="w-4 h-4 stroke-[2]" />
+                        <div className="w-7 h-7 rounded-lg bg-white flex items-center justify-center text-[#1D3D9E] shadow-sm shrink-0 mt-0.5">
+                          <Clock className="w-3.5 h-3.5 stroke-[2]" />
                         </div>
                         <div className="space-y-0.5">
-                          <p className="text-[9px] font-bold uppercase tracking-wider text-[#0F2C59]/50 leading-none">Working Hours</p>
-                          <p className="font-semibold text-xs sm:text-sm text-[#1D3D9E] leading-relaxed">{b.hours}</p>
+                          <p className="text-[8px] font-bold uppercase tracking-wider text-[#0F2C59]/50 leading-none">
+                            Working Hours
+                          </p>
+                          <p className="font-semibold text-xs text-[#1D3D9E] leading-relaxed">
+                            {b.hours}
+                          </p>
                         </div>
                       </div>
-                    </div>
-                  );
-                })()}
+                    )}
+                  </div>
+                )}
               </div>
+
+              {!b.comingSoon && (
+                <div className="w-full mt-4 pt-3 border-t border-[#1D3D9E]/5 flex justify-end items-center gap-1.5">
+                  <span
+                    className={`w-1.5 h-1.5 rounded-full ${
+                      isActive ? "bg-[#FF6B00] animate-pulse" : "bg-[#1D3D9E]/30"
+                    }`}
+                  />
+                  <span
+                    className={`text-[9px] font-bold uppercase tracking-wider ${
+                      isActive ? "text-[#FF6B00]" : "text-[#1D3D9E]/50"
+                    }`}
+                  >
+                    {isActive ? "Active on Map" : "Show on Map"}
+                  </span>
+                </div>
+              )}
             </div>
+          );
+        })}
+      </div>
 
-          </div>
-        </div>
-
-        {/* Right Side: Interactive Card Form */}
-        <div className="lg:col-span-7 w-full">
+      {/* 3. Main Form & Secondary Contact Info Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch relative z-10 w-full">
+        {/* Left Side: Interactive Card Form */}
+        <div className="lg:col-span-7 w-full order-1 lg:order-1">
           <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#1D3D9E]/10 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden w-full flex flex-col">
             
             {isSubmitted ? (
@@ -327,6 +319,38 @@ export default function Contact() {
           </div>
         </div>
 
+        {/* Right Side: General Email & Phone Contact Details */}
+        <div className="lg:col-span-5 flex flex-col justify-start space-y-4 order-2 lg:order-2">
+          {/* Email Card */}
+          <a 
+            href="mailto:hello@naviroute.studio" 
+            className="flex items-center gap-4 p-5 rounded-2xl border border-[#1D3D9E]/10 bg-[#1D3D9E]/5 hover:bg-[#1D3D9E]/10 hover:border-[#FF6B00]/30 transition-all duration-300 group text-left w-full"
+          >
+            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#1D3D9E] group-hover:bg-[#FF6B00] group-hover:text-white transition-all duration-300 shadow-sm flex-shrink-0">
+              <Mail className="w-5 h-5 stroke-[1.5]" />
+            </div>
+            <div className="space-y-1">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-[#0F2C59]/50">Email Us</p>
+              <p className="font-semibold text-xs sm:text-sm text-[#1D3D9E]">hello@naviroute.studio</p>
+              <p className="text-[11px] text-[#0F2C59]/60">Typical response time: &lt; 24h</p>
+            </div>
+          </a>
+
+          {/* Phone Card */}
+          <a 
+            href="tel:+919986389444" 
+            className="flex items-center gap-4 p-5 rounded-2xl border border-[#1D3D9E]/10 bg-[#1D3D9E]/5 hover:bg-[#1D3D9E]/10 hover:border-[#FF6B00]/30 transition-all duration-300 group text-left w-full"
+          >
+            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#1D3D9E] group-hover:bg-[#FF6B00] group-hover:text-white transition-all duration-300 shadow-sm flex-shrink-0">
+              <Phone className="w-5 h-5 stroke-[1.5]" />
+            </div>
+            <div className="space-y-1">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-[#0F2C59]/50">Call Us</p>
+              <p className="font-semibold text-xs sm:text-sm text-[#1D3D9E]">+91 99863 89444</p>
+              <p className="text-[11px] text-[#0F2C59]/60">Mon - Sat, 9:30am - 6:30pm IST</p>
+            </div>
+          </a>
+        </div>
       </div>
 
       {/* Dynamic Google Map & Illustration Section */}

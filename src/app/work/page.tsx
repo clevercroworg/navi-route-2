@@ -43,618 +43,3099 @@ interface PortOfCall {
   chartLabel: string;
   url: string;
   instagram?: string;
+  summary: string;
 }
 
 const portsOfCall: PortOfCall[] = [
   {
-    name: "Beco",
-    image: "/images/portfolio/Beco.jpg",
-    sector: "D2C & FMCG",
-    category: "Eco-Friendly Home Care",
-    highlight: "+145% Direct Revenue",
-    deliveredServices: ["Performance Marketing", "WhatsApp Automation", "Meta Ads Management", "Creative Strategy"],
-    metrics: [
-      { label: "Revenue Growth", value: "2.4x", trend: "+145% increase" },
-      { label: "Weekly Conversions", value: "3,800+", trend: "+82% YoY" },
-      { label: "Ad ROAS", value: "5.8x", trend: "High conversion efficiency" }
+    "name": "The Northern Group",
+    "image": "/images/thenortherngroup.webp",
+    "sector": "Real Estate",
+    "category": "Real Estate \u2022 Real Estate, Search",
+    "highlight": "+400% Leads",
+    "deliveredServices": [
+      "Real Estate",
+      "Search",
+      "Web Development"
     ],
-    chartLabel: "Direct Revenue Monthly (Lakhs)",
-    chartData: [
-      { label: "Nov", value: 12.0 },
-      { label: "Dec", value: 18.5 },
-      { label: "Jan", value: 24.8 },
-      { label: "Feb", value: 22.0 },
-      { label: "Mar", value: 29.5 },
-      { label: "Apr", value: 34.0 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+400% Leads",
+        "trend": "ROI 12x"
+      },
+      {
+        "label": "Duration",
+        "value": "Full Project",
+        "trend": "Location: NZ"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://thebeco.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://thenortherngroup.co.nz",
+    "summary": "High-converting digital storefront for a top NZ portal."
   },
   {
-    name: "Zluri",
-    image: "/images/portfolio/Zluri.jpg",
-    sector: "SaaS & B2B Tech",
-    category: "SaaS Operations Management",
-    highlight: "18.5k Demo Signups",
-    deliveredServices: ["Google PPC Search", "B2B LinkedIn Campaigns", "Custom Landing Pages", "Analytics Setup"],
-    metrics: [
-      { label: "Demo Bookings", value: "18,500+", trend: "+112% volume growth" },
-      { label: "Cost Per Acquisition", value: "$32", trend: "-38% reduction" },
-      { label: "Search Visibility", value: "+140%", trend: "Top B2B rankings" }
+    "name": "Acquire Buyers Agency",
+    "image": "/images/acquirebuyersagency.webp",
+    "sector": "Real Estate",
+    "category": "Real Estate \u2022 Real Estate, Bidding",
+    "highlight": "82% Conversions",
+    "deliveredServices": [
+      "Real Estate",
+      "Bidding",
+      "Web Development"
     ],
-    chartLabel: "Demo Requests Monthly Log",
-    chartData: [
-      { label: "Nov", value: 1200 },
-      { label: "Dec", value: 1650 },
-      { label: "Jan", value: 2100 },
-      { label: "Feb", value: 1950 },
-      { label: "Mar", value: 2500 },
-      { label: "Apr", value: 2850 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "82% Conversions",
+        "trend": "CPL -30%"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale-up",
+        "trend": "Location: AU"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://www.zluri.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://acquirebuyersagency.com.au/",
+    "summary": "Strategic web presence for an Australian buyers agency."
   },
   {
-    name: "Gunsberg",
-    image: "/images/portfolio/Gunsberg.jpg",
-    sector: "D2C & FMCG",
-    category: "Premium Craft Beverages",
-    highlight: "5.4x Retargeting ROI",
-    deliveredServices: ["Meta Ad Management", "Dynamic Product Retargeting", "E-commerce UX Updates"],
-    metrics: [
-      { label: "Retargeting ROAS", value: "5.4x", trend: "High intent flows" },
-      { label: "Abandoned Carts Saved", value: "32%", trend: "+12% recovery" },
-      { label: "AOV Growth", value: "+28%", trend: "Via automated bundle upsells" }
+    "name": "Green City",
+    "image": "/images/greencity.webp",
+    "sector": "Real Estate",
+    "category": "Real Estate \u2022 Real Estate, Sales",
+    "highlight": "\u20b92.4 Cr Rev",
+    "deliveredServices": [
+      "Real Estate",
+      "Sales",
+      "Web Development"
     ],
-    chartLabel: "Monthly Conversions Track",
-    chartData: [
-      { label: "Nov", value: 850 },
-      { label: "Dec", value: 1100 },
-      { label: "Jan", value: 1600 },
-      { label: "Feb", value: 1450 },
-      { label: "Mar", value: 1850 },
-      { label: "Apr", value: 2200 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "\u20b92.4 Cr Rev",
+        "trend": "Leads +210%"
+      },
+      {
+        "label": "Duration",
+        "value": "Phase 1",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://gunsberg.in/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.futurearthgroup.com/green-city",
+    "summary": "Digital launch for a premium residential layout project."
   },
   {
-    name: "Topmate",
-    image: "/images/portfolio/Topmate.jpg",
-    sector: "SaaS & B2B Tech",
-    category: "Creator Monetization SaaS",
-    highlight: "+190% Creator Signups",
-    deliveredServices: ["Growth Hacking Ads", "Influencer Ad Placements", "Conversion Optimization"],
-    metrics: [
-      { label: "New Creators", value: "+190%", trend: "Rapid onboarding" },
-      { label: "User Acquisition Cost", value: "₹45", trend: "-28% reduction" },
-      { label: "Conversion Rate", value: "6.2%", trend: "Next.js landing focus" }
+    "name": "Nivriti Farms",
+    "image": "/images/nivritifarms.webp",
+    "sector": "Real Estate",
+    "category": "Real Estate \u2022 Real Estate, Luxury",
+    "highlight": "+150% Enquiries",
+    "deliveredServices": [
+      "Real Estate",
+      "Luxury",
+      "Web Development"
     ],
-    chartLabel: "Weekly Signups Average",
-    chartData: [
-      { label: "Nov", value: 340 },
-      { label: "Dec", value: 480 },
-      { label: "Jan", value: 650 },
-      { label: "Feb", value: 580 },
-      { label: "Mar", value: 720 },
-      { label: "Apr", value: 986 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+150% Enquiries",
+        "trend": "Conversion 18%"
+      },
+      {
+        "label": "Duration",
+        "value": "3 Months",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://topmate.io/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.nivritifarms.com",
+    "summary": "Luxury farm project landing experience and lead capture."
   },
   {
-    name: "Amaha",
-    image: "/images/portfolio/Amaha.jpg",
-    sector: "Health & Wellness",
-    category: "Mental Health Platform",
-    highlight: "6.2x Campaign ROAS",
-    deliveredServices: ["Social Media Ads", "Interactive Booking Funnels", "Local Clinic Ads"],
-    metrics: [
-      { label: "Campaign ROAS", value: "6.2x", trend: "Therapy bookings boost" },
-      { label: "Lead Response Time", value: "<1 min", trend: "Automatic CRM Triggered" },
-      { label: "Appointment Rate", value: "4.8%", trend: "Highly targeted reach" }
+    "name": "SHB Developers",
+    "image": "/images/shbdeveloperss.webp",
+    "sector": "Real Estate",
+    "category": "Real Estate \u2022 Real Estate, Build",
+    "highlight": "\u20b91.2 Cr Revenue",
+    "deliveredServices": [
+      "Real Estate",
+      "Build",
+      "Web Development"
     ],
-    chartLabel: "Monthly Confirmed Bookings",
-    chartData: [
-      { label: "Nov", value: 150 },
-      { label: "Dec", value: 210 },
-      { label: "Jan", value: 290 },
-      { label: "Feb", value: 270 },
-      { label: "Mar", value: 340 },
-      { label: "Apr", value: 420 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "\u20b91.2 Cr Revenue",
+        "trend": "ROI 8.5x"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://www.amahamindcare.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://shbdeveloperss.com",
+    "summary": "Full-scale corporate identity and lead generation site."
   },
   {
-    name: "Nirvasa",
-    image: "/images/portfolio/Nirvasa.jpg",
-    sector: "Health & Wellness",
-    category: "Digital Healthcare Provider",
-    highlight: "+160% Patient Registrations",
-    deliveredServices: ["Google Search PPC", "Interactive Patient Qualification", "Meta Ads"],
-    metrics: [
-      { label: "Patient Growth", value: "+160%", trend: "Telehealth focus" },
-      { label: "Prescription Leads", value: "2,200+", trend: "+145% volume growth" },
-      { label: "Cost Per Registrations", value: "₹135", trend: "-22% reduction" }
+    "name": "Iqon West",
+    "image": "/images/iqonwest.webp",
+    "sector": "Real Estate",
+    "category": "Real Estate \u2022 Real Estate, Launch",
+    "highlight": "+310% Enquiries",
+    "deliveredServices": [
+      "Real Estate",
+      "Launch",
+      "Web Development"
     ],
-    chartLabel: "Daily Consultations Month Avg",
-    chartData: [
-      { label: "Nov", value: 45 },
-      { label: "Dec", value: 68 },
-      { label: "Jan", value: 92 },
-      { label: "Feb", value: 85 },
-      { label: "Mar", value: 110 },
-      { label: "Apr", value: 135 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+310% Enquiries",
+        "trend": "CPL Drop 40%"
+      },
+      {
+        "label": "Duration",
+        "value": "Sprint",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://www.nirvasa.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://ankurahomes.in/iqonwest/index.html",
+    "summary": "Focused project landing page for high-intent investors."
   },
   {
-    name: "Housr",
-    image: "/images/portfolio/Housr.jpg",
-    sector: "Real Estate & Co-living",
-    category: "Premium Co-living Spaces",
-    highlight: "98% Occupancy Rate",
-    deliveredServices: ["Local Lead Generation", "Instagram Video Ads", "WhatsApp Booking Integration"],
-    metrics: [
-      { label: "Leads Qualified", value: "1,850+", trend: "Direct site visits" },
-      { label: "Total Bookings", value: "+130%", trend: "Reduced vacancy times" },
-      { label: "Weekly Clicks", value: "12,000+", trend: "Highly targeted reach" }
+    "name": "Ad Critter",
+    "image": "/images/adcritter.webp",
+    "sector": "Education",
+    "category": "Education \u2022 MarTech, UX",
+    "highlight": "82% Conversion",
+    "deliveredServices": [
+      "MarTech",
+      "UX",
+      "Web Development"
     ],
-    chartLabel: "Direct Bookings Monthly average",
-    chartData: [
-      { label: "Nov", value: 90 },
-      { label: "Dec", value: 140 },
-      { label: "Jan", value: 195 },
-      { label: "Feb", value: 180 },
-      { label: "Mar", value: 230 },
-      { label: "Apr", value: 280 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "82% Conversion",
+        "trend": "Growth +150%"
+      },
+      {
+        "label": "Duration",
+        "value": "MVP",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://housr.in/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://adcritter.ai/",
+    "summary": "Education-tech platform interface for US advertisers."
   },
   {
-    name: "Settl.",
-    image: "/images/portfolio/Settl.jpg",
-    sector: "Real Estate & Co-living",
-    category: "Modern Smart Co-living",
-    highlight: "+120% Web Bookings",
-    deliveredServices: ["Meta Lead Generation", "Speed Optimized React Webpages", "WhatsApp Auto Qualify"],
-    metrics: [
-      { label: "Web Bookings", value: "+120%", trend: "Via tailored landing forms" },
-      { label: "Qualified leads", value: "980+", trend: "95% accuracy rate" },
-      { label: "OTA share reduction", value: "28%", trend: "Direct channel boost" }
+    "name": "Carver Aviation",
+    "image": "/images/carveraviation.webp",
+    "sector": "Education",
+    "category": "Education \u2022 Aviation, Leads",
+    "highlight": "+320 Leads",
+    "deliveredServices": [
+      "Aviation",
+      "Leads",
+      "Web Development"
     ],
-    chartLabel: "Web Direct Booking Count",
-    chartData: [
-      { label: "Nov", value: 30 },
-      { label: "Dec", value: 55 },
-      { label: "Jan", value: 85 },
-      { label: "Feb", value: 78 },
-      { label: "Mar", value: 98 },
-      { label: "Apr", value: 120 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+320 Leads",
+        "trend": "CPL -45%"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://thesettl.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://carveraviation.com/",
+    "summary": "Digital presence for India's premier flight training academy."
   },
   {
-    name: "Bitespeed",
-    image: "/images/portfolio/Bitespeed.jpg",
-    sector: "SaaS & B2B Tech",
-    category: "Conversational Marketing SaaS",
-    highlight: "5.8x Campaign ROAS",
-    deliveredServices: ["B2B Search Ads", "SaaS Retargeting Flow", "Landing Page Audit & Speedup"],
-    metrics: [
-      { label: "Growth Campaign ROAS", value: "5.8x", trend: "High conversion intent target" },
-      { label: "Lead Response Rate", value: "98%", trend: "Automated triggers" },
-      { label: "Mobile Bounce Rate", value: "-22%", trend: "Page speed optimized" }
+    "name": "Intryc",
+    "image": "/images/intryc.webp",
+    "sector": "Education",
+    "category": "Education \u2022 FinTech, Trust",
+    "highlight": "ROI 4.2x",
+    "deliveredServices": [
+      "FinTech",
+      "Trust",
+      "Web Development"
     ],
-    chartLabel: "Revenue Track (Lakhs)",
-    chartData: [
-      { label: "Nov", value: 4.5 },
-      { label: "Dec", value: 7.2 },
-      { label: "Jan", value: 10.8 },
-      { label: "Feb", value: 9.5 },
-      { label: "Mar", value: 13.2 },
-      { label: "Apr", value: 16.8 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 4.2x",
+        "trend": "CTR +65%"
+      },
+      {
+        "label": "Duration",
+        "value": "Full Life",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://www.bitespeed.co/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.intryc.com",
+    "summary": "Global education and finance trust management interface."
   },
   {
-    name: "Dovetail",
-    image: "/images/portfolio/Dovetail.jpg",
-    sector: "SaaS & B2B Tech",
-    category: "Product Research Platform",
-    highlight: "+112% Organic Traffic",
-    deliveredServices: ["B2B Content Strategy", "Google Search Optimization", "Lead Scoring Engine"],
-    metrics: [
-      { label: "Organic Search", value: "+112%", trend: "High intent research terms" },
-      { label: "User Acquisition Cost", value: "₹72", trend: "-40% reduction" },
-      { label: "Click-through Rate", value: "3.5%", trend: "Above industry standard" }
+    "name": "People Manager",
+    "image": "/images/peoplemanager.webp",
+    "sector": "Education",
+    "category": "Education \u2022 HR, Platform",
+    "highlight": "ROI 3.4x",
+    "deliveredServices": [
+      "HR",
+      "Platform",
+      "Web Development"
     ],
-    chartLabel: "Organic Monthly Visitors (k)",
-    chartData: [
-      { label: "Nov", value: 8.5 },
-      { label: "Dec", value: 10.2 },
-      { label: "Jan", value: 12.8 },
-      { label: "Feb", value: 14.5 },
-      { label: "Mar", value: 17.2 },
-      { label: "Apr", value: 19.8 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 3.4x",
+        "trend": "Growth +245%"
+      },
+      {
+        "label": "Duration",
+        "value": "3 Months",
+        "trend": "Location: AU"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://dovetailapp.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://peoplemanager.co/",
+    "summary": "Australian education and hiring platform interface."
   },
   {
-    name: "Crio.Do",
-    image: "/images/portfolio/Crio_Do.jpg",
-    sector: "EdTech & Education",
-    category: "Developer Education Platform",
-    highlight: "+200% Booking Enquiries",
-    deliveredServices: ["EdTech Lead Generation", "Instagram Brand Campaigns", "Email Funnel Flows"],
-    metrics: [
-      { label: "Student Enquiries", value: "2,400+", trend: "+200% YoY increase" },
-      { label: "Ad Click-through Rate", value: "3.4%", trend: "High interest creatives" },
-      { label: "Cost Per Qualified lead", value: "₹92", trend: "-28% reduction" }
+    "name": "Rollins",
+    "image": "/images/rollins.webp",
+    "sector": "Education",
+    "category": "Education \u2022 University, Global",
+    "highlight": "+245% Traffic",
+    "deliveredServices": [
+      "University",
+      "Global",
+      "Web Development"
     ],
-    chartLabel: "Weekly Enquiries Monthly Average",
-    chartData: [
-      { label: "Nov", value: 120 },
-      { label: "Dec", value: 180 },
-      { label: "Jan", value: 260 },
-      { label: "Feb", value: 240 },
-      { label: "Mar", value: 310 },
-      { label: "Apr", value: 386 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+245% Traffic",
+        "trend": "Conversions +80%"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://crio.do/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.rollins.edu",
+    "summary": "US-based college portal extension and optimization."
   },
   {
-    name: "Blox",
-    image: "/images/portfolio/Blox.jpg",
-    sector: "Real Estate & Co-living",
-    category: "Home Buying Platform",
-    highlight: "+150% Leads Growth",
-    deliveredServices: ["Lead Gen Campaigns", "Google PPC Ads", "Landing Page Audit"],
-    metrics: [
-      { label: "Qualified leads", value: "1,200+", trend: "+150% volume growth" },
-      { label: "Conversion rate", value: "4.2%", trend: "Optimized user paths" },
-      { label: "Cost Per Acquisition", value: "₹180", trend: "-22% reduction" }
+    "name": "WGU",
+    "image": "/images/wgu.webp",
+    "sector": "Education",
+    "category": "Education \u2022 EdTech, LMS",
+    "highlight": "1M+ Visitors",
+    "deliveredServices": [
+      "EdTech",
+      "LMS",
+      "Web Development"
     ],
-    chartLabel: "Monthly Home Buying Enquiries",
-    chartData: [
-      { label: "Nov", value: 450 },
-      { label: "Dec", value: 680 },
-      { label: "Jan", value: 920 },
-      { label: "Feb", value: 850 },
-      { label: "Mar", value: 1100 },
-      { label: "Apr", value: 1350 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "1M+ Visitors",
+        "trend": "CPL -50%"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://blox.xyz/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.wgu.edu",
+    "summary": "Conversion-optimized pages for global online university."
   },
   {
-    name: "Fernish",
-    image: "/images/portfolio/Fernish.jpg",
-    sector: "Consumer Tech & E-commerce",
-    category: "Furniture Rental Subscription",
-    highlight: "5.2x Subscription ROI",
-    deliveredServices: ["Meta Acquisition Ads", "Dynamic Product Catalog Ads", "User Retention Campaigns"],
-    metrics: [
-      { label: "Subscription ROAS", value: "5.2x", trend: "High LTV segments" },
-      { label: "Active Subscribers", value: "4,500+", trend: "+45% YoY increase" },
-      { label: "Churn Rate", value: "-12%", trend: "Via automated follow-ups" }
+    "name": "Alchemist Pharmarx",
+    "image": "/images/alchemistpharmarx.webp",
+    "sector": "Healthcare",
+    "category": "Healthcare \u2022 Pharma, Ecom",
+    "highlight": "82% Conv Lift",
+    "deliveredServices": [
+      "Pharma",
+      "Ecom",
+      "Web Development"
     ],
-    chartLabel: "Monthly Active Subscribers",
-    chartData: [
-      { label: "Nov", value: 2200 },
-      { label: "Dec", value: 2800 },
-      { label: "Jan", value: 3400 },
-      { label: "Feb", value: 3200 },
-      { label: "Mar", value: 3900 },
-      { label: "Apr", value: 4500 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "82% Conv Lift",
+        "trend": "Orders +150%"
+      },
+      {
+        "label": "Duration",
+        "value": "Sprint",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://fernish.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://alchemistpharmarx.com/",
+    "summary": "US-based prescription and pharmacy portal revamp."
   },
   {
-    name: "Malaki",
-    image: "/images/portfolio/Malaki.jpg",
-    sector: "D2C & FMCG",
-    category: "Luxury Craft Soda",
-    highlight: "6.8x Total Campaign ROAS",
-    deliveredServices: ["Luxury Branding Ads", "Influencer Media Placements", "Shopify Funnel Tuning"],
-    metrics: [
-      { label: "Campaign ROAS", value: "6.8x", trend: "Premium lifestyle focus" },
-      { label: "Direct Shopify Sales", value: "₹24L", trend: "+130% increase" },
-      { label: "Email signups", value: "+300%", trend: "Loyal buyer list" }
+    "name": "Better Tomorrow",
+    "image": "/images/bettertomorrowtc.webp",
+    "sector": "Healthcare",
+    "category": "Healthcare \u2022 Selfcare, Care",
+    "highlight": "ROI 5.2x",
+    "deliveredServices": [
+      "Selfcare",
+      "Care",
+      "Web Development"
     ],
-    chartLabel: "Shopify Sales Track (Lakhs)",
-    chartData: [
-      { label: "Nov", value: 8.2 },
-      { label: "Dec", value: 12.5 },
-      { label: "Jan", value: 18.8 },
-      { label: "Feb", value: 16.0 },
-      { label: "Mar", value: 21.5 },
-      { label: "Apr", value: 24.0 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 5.2x",
+        "trend": "Leads +310%"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://malakispice.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://bettertomorrowtc.com/",
+    "summary": "Patient-centered digital strategy and lead flow."
   },
   {
-    name: "Oorjaa",
-    image: "/images/portfolio/Oorjaa.jpg",
-    sector: "D2C & FMCG",
-    category: "Artisanal Organic Teas",
-    highlight: "+210% Search Clicks",
-    deliveredServices: ["Organic SEO", "Product Description Copywriting", "Social Meta Campaigns"],
-    metrics: [
-      { label: "Organic Search", value: "+210%", trend: "High conversion terms" },
-      { label: "Direct Inquiries", value: "980+", trend: "+145% YoY increase" },
-      { label: "OTA share reduction", value: "35%", trend: "Increased Direct" }
+    "name": "DDC Smiles",
+    "image": "/images/ddcsmiles.webp",
+    "sector": "Healthcare",
+    "category": "Healthcare \u2022 Healthcare, Dental",
+    "highlight": "\u20b931L Revenue",
+    "deliveredServices": [
+      "Healthcare",
+      "Dental",
+      "Web Development"
     ],
-    chartLabel: "Organic Monthly Clicks (k)",
-    chartData: [
-      { label: "Nov", value: 3.5 },
-      { label: "Dec", value: 5.2 },
-      { label: "Jan", value: 7.8 },
-      { label: "Feb", value: 7.0 },
-      { label: "Mar", value: 9.5 },
-      { label: "Apr", value: 12.0 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "\u20b931L Revenue",
+        "trend": "ROI 5x"
+      },
+      {
+        "label": "Duration",
+        "value": "30 Days",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://oorjaa.org/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://ddcsmiles.in/",
+    "summary": "Strategic patient acquisition for a dental chain."
   },
   {
-    name: "Pilot",
-    image: "/images/portfolio/Pilot.jpg",
-    sector: "SaaS & B2B Tech",
-    category: "B2B Payroll & Compliance",
-    highlight: "+122% Lead Generation",
-    deliveredServices: ["B2B Search Funnels", "Meta Lead Gen Forms", "CRM Auto-Sync"],
-    metrics: [
-      { label: "Qualified leads", value: "3,400+", trend: "+122% volume growth" },
-      { label: "Cost Per Qualified lead", value: "$45", trend: "-28% reduction" },
-      { label: "Form completion rate", value: "12.5%", trend: "Optimized UX flow" }
+    "name": "Gateway Foundation",
+    "image": "/images/gatewayfoundation.webp",
+    "sector": "Healthcare",
+    "category": "Healthcare \u2022 Wellness, Charity",
+    "highlight": "ROI 3.4x",
+    "deliveredServices": [
+      "Wellness",
+      "Charity",
+      "Web Development"
     ],
-    chartLabel: "Monthly Qualified Leads",
-    chartData: [
-      { label: "Nov", value: 1800 },
-      { label: "Dec", value: 2400 },
-      { label: "Jan", value: 3100 },
-      { label: "Feb", value: 2900 },
-      { label: "Mar", value: 3800 },
-      { label: "Apr", value: 4500 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 3.4x",
+        "trend": "Growth +210%"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://pilot.co/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.gatewayfoundation.org",
+    "summary": "Impact-driven web presence for healthcare foundation."
   },
   {
-    name: "Sanzo",
-    image: "/images/portfolio/Sanzo.jpg",
-    sector: "D2C & FMCG",
-    category: "Sparkling Water Craft",
-    highlight: "+160% Online Orders",
-    deliveredServices: ["Meta Dynamic Ads", "Direct Subscription Retargeting", "A/B Creatives Tuning"],
-    metrics: [
-      { label: "Direct Orders", value: "+160%", trend: "D2C subscriber focus" },
-      { label: "Cost Per Booking", value: "$8.5", trend: "-45% drop" },
-      { label: "Ad Click-through Rate", value: "3.2%", trend: "Above industry avg" }
+    "name": "Lakeview Health",
+    "image": "/images/lakeviewhealth.webp",
+    "sector": "Healthcare",
+    "category": "Healthcare \u2022 Medical, US",
+    "highlight": "+310% Enquiries",
+    "deliveredServices": [
+      "Medical",
+      "US",
+      "Web Development"
     ],
-    chartLabel: "Monthly Confirmed Subscriptions",
-    chartData: [
-      { label: "Nov", value: 450 },
-      { label: "Dec", value: 680 },
-      { label: "Jan", value: 920 },
-      { label: "Feb", value: 850 },
-      { label: "Mar", value: 1100 },
-      { label: "Apr", value: 1350 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+310% Enquiries",
+        "trend": "CPL -40%"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://drinksanzo.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.lakeviewhealth.com",
+    "summary": "Primary capture portal for luxury US medical facility."
   },
   {
-    name: "Synthesis",
-    image: "/images/portfolio/Synthesis.jpg",
-    sector: "SaaS & B2B Tech",
-    category: "SaaS Business Planning",
-    highlight: "+140% Weekly Installs",
-    deliveredServices: ["Google PPC", "B2B LinkedIn Campaigns", "Landing Page Audit"],
-    metrics: [
-      { label: "Weekly Installs", value: "850+", trend: "+140% volume growth" },
-      { label: "Direct Traffic", value: "+85%", trend: "Increase in organic search" },
-      { label: "Page load speed", value: "0.6s", trend: "React speed optimized" }
+    "name": "SL Compounding",
+    "image": "/images/slcompounding.webp",
+    "sector": "Healthcare",
+    "category": "Healthcare \u2022 Pharma, Custom",
+    "highlight": "\u20b950 L Sales",
+    "deliveredServices": [
+      "Pharma",
+      "Custom",
+      "Web Development"
     ],
-    chartLabel: "Weekly Installs Average",
-    chartData: [
-      { label: "Nov", value: 300 },
-      { label: "Dec", value: 450 },
-      { label: "Jan", value: 620 },
-      { label: "Feb", value: 550 },
-      { label: "Mar", value: 700 },
-      { label: "Apr", value: 850 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "\u20b950 L Sales",
+        "trend": "ROI 6x"
+      },
+      {
+        "label": "Duration",
+        "value": "MVP",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://www.synthesis.is/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://slcompounding.com",
+    "summary": "Pharmacy compounding order system and interface."
   },
   {
-    name: "Tend",
-    image: "/images/portfolio/Tend.jpg",
-    sector: "Health & Wellness",
-    category: "Modern Dental Care",
-    highlight: "₹45L Ad Spend Revenue",
-    deliveredServices: ["Local Lead Generation", "High-End Video Ads", "WhatsApp Booking Automation"],
-    metrics: [
-      { label: "Ad Revenue", value: "₹45L", trend: "Generated in 90 days" },
-      { label: "Direct Bookings", value: "+150%", trend: "Chikmagalur region focus" },
-      { label: "OTA share reduction", value: "28%", trend: "Increased Direct" }
+    "name": "B2Bind",
+    "image": "/images/b2bind.webp",
+    "sector": "Industrial",
+    "category": "Industrial \u2022 B2B, International",
+    "highlight": "\u20b985L Orders",
+    "deliveredServices": [
+      "B2B",
+      "International",
+      "Web Development"
     ],
-    chartLabel: "Tracked Revenue (Lakhs)",
-    chartData: [
-      { label: "Nov", value: 15.0 },
-      { label: "Dec", value: 24.5 },
-      { label: "Jan", value: 35.8 },
-      { label: "Feb", value: 30.0 },
-      { label: "Mar", value: 38.5 },
-      { label: "Apr", value: 45.0 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "\u20b985L Orders",
+        "trend": "+210% Deals"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://www.hellotend.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.b2bind.com/",
+    "summary": "Robust B2B industrial portal for global supply."
   },
   {
-    name: "Wisp",
-    image: "/images/portfolio/Wisp.jpg",
-    sector: "Health & Wellness",
-    category: "D2C Telehealth Platform",
-    highlight: "+190% Patients Growth",
-    deliveredServices: ["Meta Patient Acquisition", "Interactive Forms", "Direct Email Marketing"],
-    metrics: [
-      { label: "Patients Reached", value: "4,500+", trend: "+190% volume growth" },
-      { label: "Cost Per Registrations", value: "$18.5", trend: "-35% decrease" },
-      { label: "Form completion rate", value: "14.5%", trend: "Fully optimized UX" }
+    "name": "Interior Buildouts",
+    "image": "/images/interiorbuildouts.webp",
+    "sector": "Industrial",
+    "category": "Industrial \u2022 Construction, Fitout",
+    "highlight": "+300% Leads",
+    "deliveredServices": [
+      "Construction",
+      "Fitout",
+      "Web Development"
     ],
-    chartLabel: "Daily Consultations Average",
-    chartData: [
-      { label: "Nov", value: 110 },
-      { label: "Dec", value: 145 },
-      { label: "Jan", value: 195 },
-      { label: "Feb", value: 180 },
-      { label: "Mar", value: 240 },
-      { label: "Apr", value: 272 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+300% Leads",
+        "trend": "CPL -42%"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://hellowisp.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://interiorbuildouts.com/",
+    "summary": "Construction fit-out demand capture in the US."
   },
   {
-    name: "AI Studio",
-    image: "/images/portfolio/AI.jpg",
-    sector: "Consumer Tech & E-commerce",
-    category: "AI Design & Creator Hub",
-    highlight: "6.2x Campaign ROAS",
-    deliveredServices: ["Creative Dynamic Campaigns", "Google PPC Ads", "Analytics Setup"],
-    metrics: [
-      { label: "Campaign ROAS", value: "6.2x", trend: "High conversion efficiency" },
-      { label: "Direct Orders", value: "2,200+", trend: "+145% volume growth" },
-      { label: "Organic Search", value: "+112%", trend: "Top rankings search pack" }
+    "name": "PCL",
+    "image": "/images/pcl.webp",
+    "sector": "Industrial",
+    "category": "Industrial \u2022 Construction, Global",
+    "highlight": "ROI 4.2x",
+    "deliveredServices": [
+      "Construction",
+      "Global",
+      "Web Development"
     ],
-    chartLabel: "Monthly Confirmed Subscriptions",
-    chartData: [
-      { label: "Nov", value: 350 },
-      { label: "Dec", value: 520 },
-      { label: "Jan", value: 780 },
-      { label: "Feb", value: 700 },
-      { label: "Mar", value: 950 },
-      { label: "Apr", value: 1180 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 4.2x",
+        "trend": "CTR +90%"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://www.aistudio.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.pcl.com/",
+    "summary": "High-performance construction group digital assets."
   },
   {
-    name: "Design Living",
-    image: "/images/portfolio/Design.jpg",
-    sector: "Consumer Tech & E-commerce",
-    category: "Luxury Furniture E-commerce",
-    highlight: "+160% Direct Bookings",
-    deliveredServices: ["E-commerce Catalog Ads", "Meta Acquisition Retargeting", "UX Audit"],
-    metrics: [
-      { label: "Direct Bookings", value: "+160%", trend: "Reduced vacancy times" },
-      { label: "Weekly Clicks", value: "8,500+", trend: "+122% click growth" },
-      { label: "Ad Click-through Rate", value: "3.2%", trend: "Above industry avg" }
+    "name": "RUD",
+    "image": "/images/rud.webp",
+    "sector": "Industrial",
+    "category": "Industrial \u2022 Mining, Heavy",
+    "highlight": "+175% Quotes",
+    "deliveredServices": [
+      "Mining",
+      "Heavy",
+      "Web Development"
     ],
-    chartLabel: "Monthly Booking Count",
-    chartData: [
-      { label: "Nov", value: 40 },
-      { label: "Dec", value: 65 },
-      { label: "Jan", value: 85 },
-      { label: "Feb", value: 78 },
-      { label: "Mar", value: 98 },
-      { label: "Apr", value: 120 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+175% Quotes",
+        "trend": "Rev +50%"
+      },
+      {
+        "label": "Duration",
+        "value": "3 Months",
+        "trend": "Location: AU"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://www.designliving.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.rud.com.au/",
+    "summary": "Lifting and mining equipment industrial solution."
   },
   {
-    name: "Forest Life",
-    image: "/images/portfolio/Forest.jpg",
-    sector: "Consumer Tech & E-commerce",
-    category: "Sustainable Lifestyle Products",
-    highlight: "+200% Booking Enquiries",
-    deliveredServices: ["Lifestyle Ecotourism Themes", "Meta Lead Forms", "WhatsApp Auto Replies"],
-    metrics: [
-      { label: "Weekly Enquiries", value: "450+", trend: "+200% YoY increase" },
-      { label: "Form completion rate", value: "12.5%", trend: "High conversion UX" },
-      { label: "Cost Per Qualified lead", value: "₹72", trend: "-40% reduction" }
+    "name": "Sten House Lifting",
+    "image": "/images/stenhouselifting.webp",
+    "sector": "Industrial",
+    "category": "Industrial \u2022 Maintenance, Safety",
+    "highlight": "ROI 6.5x",
+    "deliveredServices": [
+      "Maintenance",
+      "Safety",
+      "Web Development"
     ],
-    chartLabel: "Weekly Enquiries Average",
-    chartData: [
-      { label: "Nov", value: 120 },
-      { label: "Dec", value: 180 },
-      { label: "Jan", value: 260 },
-      { label: "Feb", value: 240 },
-      { label: "Mar", value: 310 },
-      { label: "Apr", value: 386 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 6.5x",
+        "trend": "Orders +210%"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale",
+        "trend": "Location: AU"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://www.forestlife.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.stenhouselifting.com.au/",
+    "summary": "Safety-first industrial equipment service portal."
   },
   {
-    name: "Living Space",
-    image: "/images/portfolio/Living.jpg",
-    sector: "Consumer Tech & E-commerce",
-    category: "Premium Interior Decor",
-    highlight: "₹38L Monthly Revenue",
-    deliveredServices: ["Heritage Destination Ads", "Google Ads Search", "Booking Engine Sync"],
-    metrics: [
-      { label: "Direct Revenue", value: "₹38L", trend: "Generated in 90 days" },
-      { label: "OTA share reduction", value: "28%", trend: "Direct channel boost" },
-      { label: "Keyword Rankings", value: "Top 3", trend: "Jaipur old city search terms" }
+    "name": "Triveni Group",
+    "image": "/images/trivenigroup.webp",
+    "sector": "Industrial",
+    "category": "Industrial \u2022 Energy, Mfg",
+    "highlight": "+320 Leads",
+    "deliveredServices": [
+      "Energy",
+      "Mfg",
+      "Web Development"
     ],
-    chartLabel: "Direct Revenue Monthly (Lakhs)",
-    chartData: [
-      { label: "Nov", value: 14.5 },
-      { label: "Dec", value: 22.0 },
-      { label: "Jan", value: 30.5 },
-      { label: "Feb", value: 28.0 },
-      { label: "Mar", value: 33.5 },
-      { label: "Apr", value: 38.0 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+320 Leads",
+        "trend": "Spend 25K"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://www.livingspace.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.trivenigroup.com/",
+    "summary": "Global energy solutions manufacturing presence."
   },
   {
-    name: "Pop Shop",
-    image: "/images/portfolio/Pop.jpg",
-    sector: "Consumer Tech & E-commerce",
-    category: "Smart Accessories E-store",
-    highlight: "+140% Direct Bookings",
-    deliveredServices: ["Social Ads Acquisition", "Meta Product Retargeting", "Conversion Optimization"],
-    metrics: [
-      { label: "Direct Bookings", value: "+140%", trend: "Via tailored landing forms" },
-      { label: "Qualified leads", value: "980+", trend: "95% accuracy rate" },
-      { label: "Mobile Bounce Rate", value: "-22%", trend: "Page speed optimized" }
+    "name": "Anatomy Fitness",
+    "image": "/images/anatomyfitness.webp",
+    "sector": "E-commerce",
+    "category": "E-commerce \u2022 Fitness, App",
+    "highlight": "\u20b935 L Rev",
+    "deliveredServices": [
+      "Fitness",
+      "App",
+      "Web Development"
     ],
-    chartLabel: "Web Direct Booking Count",
-    chartData: [
-      { label: "Nov", value: 30 },
-      { label: "Dec", value: 45 },
-      { label: "Jan", value: 62 },
-      { label: "Feb", value: 55 },
-      { label: "Mar", value: 70 },
-      { label: "Apr", value: 85 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "\u20b935 L Rev",
+        "trend": "+175% Sales"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://www.popshop.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://anatomyfitness.co/",
+    "summary": "Direct-to-consumer fitness apparel and app site."
   },
   {
-    name: "Wellness Zone",
-    image: "/images/portfolio/Wellness.jpg",
-    sector: "Health & Wellness",
-    category: "Corporate Wellness Platform",
-    highlight: "+180% Leads Growth",
-    deliveredServices: ["B2B Wellness Campaigns", "Interactive Patient Qualification", "Google Ads Search"],
-    metrics: [
-      { label: "Weekly Enquiries", value: "2,400+", trend: "+180% volume increase" },
-      { label: "Lead Response Rate", value: "98%", trend: "Automatic CRM Triggers" },
-      { label: "Appointment Rate", value: "5.1%", trend: "Industry High" }
+    "name": "Artebella",
+    "image": "/images/artebella.webp",
+    "sector": "E-commerce",
+    "category": "E-commerce \u2022 Art, Decor",
+    "highlight": "\u20b918 L Orders",
+    "deliveredServices": [
+      "Art",
+      "Decor",
+      "Web Development"
     ],
-    chartLabel: "Daily Consultations Month Avg",
-    chartData: [
-      { label: "Nov", value: 180 },
-      { label: "Dec", value: 280 },
-      { label: "Jan", value: 390 },
-      { label: "Feb", value: 350 },
-      { label: "Mar", value: 480 },
-      { label: "Apr", value: 590 }
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "\u20b918 L Orders",
+        "trend": "ROI 15x"
+      },
+      {
+        "label": "Duration",
+        "value": "Full Cycle",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
     ],
-    url: "https://www.wellnesszone.com/"
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://artebella.in/",
+    "summary": "Premium art and home decor boutique storefront."
+  },
+  {
+    "name": "Baatu",
+    "image": "/images/baatu.webp",
+    "sector": "E-commerce",
+    "category": "E-commerce \u2022 Tech, Lifestyle",
+    "highlight": "100K Downloads",
+    "deliveredServices": [
+      "Tech",
+      "Lifestyle",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "100K Downloads",
+        "trend": "ROI 5x"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.baatu.in/",
+    "summary": "Tech-lifestyle brand e-commerce and app hub."
+  },
+  {
+    "name": "Bella Lash",
+    "image": "/images/bellalash.webp",
+    "sector": "E-commerce",
+    "category": "E-commerce \u2022 Beauty, Global",
+    "highlight": "2.5M Views",
+    "deliveredServices": [
+      "Beauty",
+      "Global",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "2.5M Views",
+        "trend": "+300% Rev"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://bellalash.com/",
+    "summary": "Lash artist supply and global training platform."
+  },
+  {
+    "name": "British Darts",
+    "image": "/images/britishdarts.webp",
+    "sector": "E-commerce",
+    "category": "E-commerce \u2022 Sports, Equip",
+    "highlight": "ROI 8.5x",
+    "deliveredServices": [
+      "Sports",
+      "Equip",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 8.5x",
+        "trend": "Orders +210%"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://britishdarts.com/",
+    "summary": "Heritage sports equipment e-commerce storefront."
+  },
+  {
+    "name": "Gatodates",
+    "image": "/images/gatodates.webp",
+    "sector": "E-commerce",
+    "category": "E-commerce \u2022 Food, Healthy",
+    "highlight": "+150% Orders",
+    "deliveredServices": [
+      "Food",
+      "Healthy",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+150% Orders",
+        "trend": "CTR +95%"
+      },
+      {
+        "label": "Duration",
+        "value": "Full Launch",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://gatodates.com/",
+    "summary": "Direct sales platform for premium healthy dates."
+  },
+  {
+    "name": "Betterworld Technology",
+    "image": "/images/betterworldtechnology.webp",
+    "sector": "IT",
+    "category": "IT \u2022 SaaS, Network",
+    "highlight": "+245% Traffic",
+    "deliveredServices": [
+      "SaaS",
+      "Network",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+245% Traffic",
+        "trend": "ROI 3.4x"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.betterworldtechnology.com/",
+    "summary": "Sustainable IT and network solution management."
+  },
+  {
+    "name": "Exotel",
+    "image": "/images/exotel.webp",
+    "sector": "IT",
+    "category": "IT \u2022 Cloud, Telecom",
+    "highlight": "ROI 12x",
+    "deliveredServices": [
+      "Cloud",
+      "Telecom",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 12x",
+        "trend": "Conv 25%"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://exotel.com/",
+    "summary": "Conversion flow optimization for telecom leader."
+  },
+  {
+    "name": "Intergy",
+    "image": "/images/intergy.webp",
+    "sector": "IT",
+    "category": "IT \u2022 Software, B2B",
+    "highlight": "ROI 5.2x",
+    "deliveredServices": [
+      "Software",
+      "B2B",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 5.2x",
+        "trend": "Leads +210%"
+      },
+      {
+        "label": "Duration",
+        "value": "Full Project",
+        "trend": "Location: AU"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.intergy.com.au/",
+    "summary": "Custom software solutions and B2B digital hub."
+  },
+  {
+    "name": "Uinno",
+    "image": "/images/lionwood.webp",
+    "sector": "IT",
+    "category": "IT \u2022 UI/UX, Product",
+    "highlight": "ROI 6.5x",
+    "deliveredServices": [
+      "UI/UX",
+      "Product",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 6.5x",
+        "trend": "Growth 245%"
+      },
+      {
+        "label": "Duration",
+        "value": "Sprint",
+        "trend": "Location: Global"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://uinno.io/",
+    "summary": "Digital transformation and product engineering."
+  },
+  {
+    "name": "Pubmatic",
+    "image": "/images/pubmatic.webp",
+    "sector": "IT",
+    "category": "IT \u2022 AdTech, Platform",
+    "highlight": "3M+ Views",
+    "deliveredServices": [
+      "AdTech",
+      "Platform",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "3M+ Views",
+        "trend": "+350% Reach"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: Global"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://pubmatic.com/",
+    "summary": "Global ad infrastructure and publisher network."
+  },
+  {
+    "name": "Xenai Digital",
+    "image": "/images/xenaidigital.webp",
+    "sector": "IT",
+    "category": "IT \u2022 Digital, Search",
+    "highlight": "ROI 4.2x",
+    "deliveredServices": [
+      "Digital",
+      "Search",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 4.2x",
+        "trend": "Growth +175%"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: AU"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://xenaidigital.com.au/",
+    "summary": "Australian strategic digital and search agency."
+  },
+  {
+    "name": "Ahilya By The Sea",
+    "image": "/images/ahilyabythesea.webp",
+    "sector": "Hospitality",
+    "category": "Hospitality \u2022 Luxury, Goa",
+    "highlight": "+310% Bookings",
+    "deliveredServices": [
+      "Luxury",
+      "Goa",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+310% Bookings",
+        "trend": "CPL -40%"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: Goa"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://ahilyabythesea.com/",
+    "summary": "Luxury boutique hotel experience and booking flow."
+  },
+  {
+    "name": "Ananta Hotels",
+    "image": "/images/anantahotels.webp",
+    "sector": "Hospitality",
+    "category": "Hospitality \u2022 Resort, Nation",
+    "highlight": "\u20b935 L Rev",
+    "deliveredServices": [
+      "Resort",
+      "Nation",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "\u20b935 L Rev",
+        "trend": "ROI 12x"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.anantahotels.com/",
+    "summary": "Digital revamp of luxury hotel chain web assets."
+  },
+  {
+    "name": "Stay Boutique",
+    "image": "/images/boutique.webp",
+    "sector": "Hospitality",
+    "category": "Hospitality \u2022 Curated, Hub",
+    "highlight": "ROI 5.2x",
+    "deliveredServices": [
+      "Curated",
+      "Hub",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 5.2x",
+        "trend": "Conv +210%"
+      },
+      {
+        "label": "Duration",
+        "value": "Sprint",
+        "trend": "Location: Global"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://stay-boutique.com/",
+    "summary": "Strategic boutique hotel curator and booking site."
+  },
+  {
+    "name": "Jumeirah",
+    "image": "/images/jumeirah.webp",
+    "sector": "Hospitality",
+    "category": "Hospitality \u2022 Luxury, Global",
+    "highlight": "10M+ Revenue",
+    "deliveredServices": [
+      "Luxury",
+      "Global",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "10M+ Revenue",
+        "trend": "ROI 15x"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: Global"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.jumeirah.com/en",
+    "summary": "Premier luxury group direct booking optimization."
+  },
+  {
+    "name": "Postcard Resorts",
+    "image": "/images/postcardresorts.webp",
+    "sector": "Hospitality",
+    "category": "Hospitality \u2022 Experience, India",
+    "highlight": "+250% Direct",
+    "deliveredServices": [
+      "Experience",
+      "India",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+250% Direct",
+        "trend": "ROI 8x"
+      },
+      {
+        "label": "Duration",
+        "value": "Full Revamp",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.postcardresorts.com/",
+    "summary": "Boutique experience portal for niche resorts."
+  },
+  {
+    "name": "Raas Hotels",
+    "image": "/images/raashotels.webp",
+    "sector": "Hospitality",
+    "category": "Hospitality \u2022 Heritage, Luxury",
+    "highlight": "+310% Leads",
+    "deliveredServices": [
+      "Heritage",
+      "Luxury",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+310% Leads",
+        "trend": "CPL -30%"
+      },
+      {
+        "label": "Duration",
+        "value": "Sprint",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.raashotels.com/",
+    "summary": "Heritage luxury property booking and leads hub."
+  },
+  {
+    "name": "Asset Class",
+    "image": "/images/assetclass.webp",
+    "sector": "Corporate",
+    "category": "Corporate \u2022 Finance, Scale",
+    "highlight": "ROI 12x",
+    "deliveredServices": [
+      "Finance",
+      "Scale",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 12x",
+        "trend": "Traffic +245%"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: Global"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.assetclass.com/",
+    "summary": "Multi-national asset management digital platform."
+  },
+  {
+    "name": "Corporate Professionals",
+    "image": "/images/corporateprofessionals.webp",
+    "sector": "Corporate",
+    "category": "Corporate \u2022 Legal, Advisory",
+    "highlight": "+310 Leads",
+    "deliveredServices": [
+      "Legal",
+      "Advisory",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+310 Leads",
+        "trend": "Conv +40%"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale",
+        "trend": "Location: AU"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.corporatewebsite.com.au/",
+    "summary": "Strategic advisory and legal corporate presence."
+  },
+  {
+    "name": "Graham Partners",
+    "image": "/images/grahampartners.webp",
+    "sector": "Corporate",
+    "category": "Corporate \u2022 Equity, US",
+    "highlight": "\u20b950 L Sales",
+    "deliveredServices": [
+      "Equity",
+      "US",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "\u20b950 L Sales",
+        "trend": "ROI 6x"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.grahampartners.net/",
+    "summary": "Investment equity and firm management portal."
+  },
+  {
+    "name": "Jabil",
+    "image": "/images/jabil.webp",
+    "sector": "Corporate",
+    "category": "Corporate \u2022 Manufacturing, IT",
+    "highlight": "ROI 5.2x",
+    "deliveredServices": [
+      "Manufacturing",
+      "IT",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 5.2x",
+        "trend": "Growth +175%"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: Global"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.jabil.com/",
+    "summary": "Global manufacturing services corporate asset."
+  },
+  {
+    "name": "Kochhar",
+    "image": "/images/kochhar.webp",
+    "sector": "Corporate",
+    "category": "Corporate \u2022 Legal, India",
+    "highlight": "+320 Leads",
+    "deliveredServices": [
+      "Legal",
+      "India",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+320 Leads",
+        "trend": "CPL -35%"
+      },
+      {
+        "label": "Duration",
+        "value": "Sprint",
+        "trend": "Location: India"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://kochhar.com/",
+    "summary": "Leading law firm digital service and lead hub."
+  },
+  {
+    "name": "LPL",
+    "image": "/images/lpl.webp",
+    "sector": "Corporate",
+    "category": "Corporate \u2022 Insurance, Global",
+    "highlight": "3M+ Views",
+    "deliveredServices": [
+      "Insurance",
+      "Global",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "3M+ Views",
+        "trend": "ROI 4.2x"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.lpl.com/",
+    "summary": "Financial services and insurance group presence."
+  },
+  {
+    "name": "Little Palm Island",
+    "image": "/images/littlepalmisland.webp",
+    "sector": "Wellness",
+    "category": "Wellness \u2022 Spa, Private",
+    "highlight": "+310% Bookings",
+    "deliveredServices": [
+      "Spa",
+      "Private",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+310% Bookings",
+        "trend": "ROI 12x"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.littlepalmisland.com/",
+    "summary": "Exclusive private island wellness resort portal."
+  },
+  {
+    "name": "Lon Retreat",
+    "image": "/images/lonretreat.webp",
+    "sector": "Wellness",
+    "category": "Wellness \u2022 Organic, Retreat",
+    "highlight": "ROI 5.2x",
+    "deliveredServices": [
+      "Organic",
+      "Retreat",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 5.2x",
+        "trend": "Leads +210%"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: AU"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://lonretreat.com.au/",
+    "summary": "Sustainable retreat and wellness experience site."
+  },
+  {
+    "name": "Niramaya",
+    "image": "/images/niramaya.webp",
+    "sector": "Wellness",
+    "category": "Wellness \u2022 Holistic, Villas",
+    "highlight": "100K Views",
+    "deliveredServices": [
+      "Holistic",
+      "Villas",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "100K Views",
+        "trend": "ROI 8x"
+      },
+      {
+        "label": "Duration",
+        "value": "Scale",
+        "trend": "Location: AU"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.niramaya.com.au/",
+    "summary": "Tropical wellness villas and spa booking hub."
+  },
+  {
+    "name": "Terranea",
+    "image": "/images/terranea-2.webp",
+    "sector": "Wellness",
+    "category": "Wellness \u2022 Oceanfront, Lux",
+    "highlight": "+320% Leads",
+    "deliveredServices": [
+      "Oceanfront",
+      "Lux",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "+320% Leads",
+        "trend": "ROI 15x"
+      },
+      {
+        "label": "Duration",
+        "value": "Ongoing",
+        "trend": "Location: USA"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.terranea.com/",
+    "summary": "Oceanfront luxury wellness resort digital assets."
+  },
+  {
+    "name": "The Dolphin Bay",
+    "image": "/images/thedolphinbay.webp",
+    "sector": "Wellness",
+    "category": "Wellness \u2022 Beach, Yoga",
+    "highlight": "ROI 4.2x",
+    "deliveredServices": [
+      "Beach",
+      "Yoga",
+      "Web Development"
+    ],
+    "metrics": [
+      {
+        "label": "Primary Outcome",
+        "value": "ROI 4.2x",
+        "trend": "Conv +175%"
+      },
+      {
+        "label": "Duration",
+        "value": "Sprint",
+        "trend": "Location: Thailand"
+      },
+      {
+        "label": "Platform Focus",
+        "value": "WEB",
+        "trend": "Conversion Optimized"
+      }
+    ],
+    "chartLabel": "Performance Lift Growth Log",
+    "chartData": [
+      {
+        "label": "Phase 1",
+        "value": 12
+      },
+      {
+        "label": "Phase 2",
+        "value": 24
+      },
+      {
+        "label": "Phase 3",
+        "value": 38
+      },
+      {
+        "label": "Phase 4",
+        "value": 32
+      },
+      {
+        "label": "Phase 5",
+        "value": 48
+      },
+      {
+        "label": "Launch",
+        "value": 65
+      }
+    ],
+    "url": "https://www.thedolphinbay.com",
+    "summary": "Beachfront yoga and wellness retreat experience."
   }
 ];
+
 
 // Grouping by Sector as requested by the user
 const sectorFilters = [
   { label: "All Sectors", value: "all" },
-  { label: "SaaS & B2B Tech", value: "SaaS & B2B Tech" },
-  { label: "D2C & FMCG", value: "D2C & FMCG" },
-  { label: "Real Estate & Co-living", value: "Real Estate & Co-living" },
-  { label: "Health & Wellness", value: "Health & Wellness" },
-  { label: "EdTech & Education", value: "EdTech & Education" },
-  { label: "Consumer Tech & E-commerce", value: "Consumer Tech & E-commerce" }
+  { label: "Real Estate", value: "Real Estate" },
+  { label: "Education", value: "Education" },
+  { label: "Healthcare", value: "Healthcare" },
+  { label: "Industrial", value: "Industrial" },
+  { label: "E-commerce", value: "E-commerce" },
+  { label: "IT", value: "IT" },
+  { label: "Hospitality", value: "Hospitality" },
+  { label: "Corporate", value: "Corporate" },
+  { label: "Wellness", value: "Wellness" }
 ];
 
 export default function WorkPage() {
@@ -826,16 +3307,18 @@ export default function WorkPage() {
                         <ExternalLink className="w-3.5 h-3.5" />
                       </a>
                       
-                      <a
-                        href={port.instagram || `https://www.instagram.com/${port.name.toLowerCase().replace(/[^a-z0-9]/g, "")}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="h-7 w-7 rounded-full bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white flex items-center justify-center shadow-md hover:scale-110 transition-transform cursor-pointer"
-                        title="Instagram Feed"
-                      >
-                        <InstagramIcon className="w-3.5 h-3.5 stroke-white" />
-                      </a>
+                      {port.instagram && (
+                        <a
+                          href={port.instagram}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="h-7 w-7 rounded-full bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white flex items-center justify-center shadow-md hover:scale-110 transition-transform cursor-pointer"
+                          title="Instagram Feed"
+                        >
+                          <InstagramIcon className="w-3.5 h-3.5 stroke-white" />
+                        </a>
+                      )}
                     </div>
                   </div>
 
@@ -864,7 +3347,7 @@ export default function WorkPage() {
 
                       {/* Result Description */}
                       <p className="text-xs sm:text-sm text-[#0F2C59]/75 leading-relaxed pt-2 border-t border-[#1D3D9E]/5">
-                        Delivered custom conversion funnels, tailored ad designs, and high-performance acquisition campaigns.
+                        {port.summary}
                       </p>
                     </div>
 
