@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, CheckCircle, Clock } from "lucide-react";
 
@@ -44,6 +45,7 @@ const branches = [
 ];
 
 export default function Contact() {
+  const router = useRouter();
   const [selectedType, setSelectedType] = useState<string>("Website Development");
   const [activeBranch, setActiveBranch] = useState("udupi");
   const [name, setName] = useState("");
@@ -77,11 +79,11 @@ export default function Contact() {
         throw new Error("Failed to send message");
       }
 
-      setIsSubmitted(true);
       setName("");
       setEmail("");
       setPhone("");
       setMessage("");
+      router.push("/thank-you");
     } catch (err) {
       console.error(err);
       alert("Something went wrong. Please try again or contact us via phone/WhatsApp.");
