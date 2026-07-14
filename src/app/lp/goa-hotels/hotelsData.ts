@@ -129,8 +129,8 @@ export const hotelsData: Hotel[] = [
       "Chic Lounge Bar & Bistro"
     ],
     images: [
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/cmiiaent-resort-goa.jpg",
+      "/images/hotels/cmiiaent-resort-goa-2.jpg"
     ],
     region: "North Goa",
     type: "Modern Premium",
@@ -153,8 +153,8 @@ export const hotelsData: Hotel[] = [
       "Luxury Spa & Wellness Massages"
     ],
     images: [
-      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/amaya-at-anamiva.jpg",
+      "/images/hotels/amaya-at-anamiva-2.jpg"
     ],
     region: "North Goa",
     type: "Heritage & Boutique",
@@ -177,8 +177,8 @@ export const hotelsData: Hotel[] = [
       "Spacious Family-friendly Suites"
     ],
     images: [
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/the-golden-crown-hotel-spa.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa-2.jpg"
     ],
     region: "South Goa",
     type: "Modern Premium",
@@ -201,8 +201,8 @@ export const hotelsData: Hotel[] = [
       "Minutes to Candolim Nightlife"
     ],
     images: [
-      "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/hibiscus-oasis-da-alohas.jpg",
+      "/images/hotels/hibiscus-oasis-da-alohas-2.jpg"
     ],
     region: "North Goa",
     type: "Modern Premium",
@@ -225,8 +225,8 @@ export const hotelsData: Hotel[] = [
       "Short Walk to Sunset Point"
     ],
     images: [
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/3102bce-a-vedic-resort-2.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2-2.jpg"
     ],
     region: "North Goa",
     type: "Heritage & Boutique",
@@ -249,8 +249,8 @@ export const hotelsData: Hotel[] = [
       "Full Fitness Center & Gym"
     ],
     images: [
-      "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/argo-by-trance.jpg",
+      "/images/hotels/argo-by-trance-2.jpg"
     ],
     region: "Central Goa",
     type: "Modern Premium",
@@ -273,8 +273,8 @@ export const hotelsData: Hotel[] = [
       "Authentic Local Dining Cafe"
     ],
     images: [
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1584132907293-641251503031?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/jacks-resort.jpg",
+      "/images/hotels/jacks-resort-2.jpg"
     ],
     region: "North Goa",
     type: "Heritage & Boutique",
@@ -297,8 +297,8 @@ export const hotelsData: Hotel[] = [
       "Quiet Slow-paced Country Living"
     ],
     images: [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/laguna-anjuna.jpg",
+      "/images/hotels/laguna-anjuna-2.jpg"
     ],
     region: "North Goa",
     type: "Heritage & Boutique",
@@ -321,8 +321,8 @@ export const hotelsData: Hotel[] = [
       "Minutes to Mandovi River Cruise"
     ],
     images: [
-      "https://images.unsplash.com/photo-1546412414-8035e1776c9a?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/mateus-boutique-hotel.jpg",
+      "/images/hotels/mateus-boutique-hotel-2.jpg"
     ],
     region: "Central Goa",
     type: "Heritage & Boutique",
@@ -345,8 +345,8 @@ export const hotelsData: Hotel[] = [
       "Contemporary Minimalist Decor"
     ],
     images: [
-      "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/swim-up-by-whiteflower.jpg",
+      "/images/hotels/swim-up-by-whiteflower-2.jpg"
     ],
     region: "North Goa",
     type: "Private Villa",
@@ -369,8 +369,8 @@ export const hotelsData: Hotel[] = [
       "Direct Path Access to Ozran Beach"
     ],
     images: [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/stone-wood-beach-resort.jpg",
+      "/images/hotels/stone-wood-beach-resort-2.jpg"
     ],
     region: "North Goa",
     type: "Luxury Resort",
@@ -393,8 +393,8 @@ export const hotelsData: Hotel[] = [
       "Poolside Sunset Cocktail Bar"
     ],
     images: [
-      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/mia-bella-beach-cottages.jpg",
+      "/images/hotels/mia-bella-beach-cottages-2.jpg"
     ],
     region: "North Goa",
     type: "Modern Premium",
