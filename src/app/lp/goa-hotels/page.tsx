@@ -801,12 +801,6 @@ Please let me know about availability and exclusive partner rates. Thank you!`;
 
 // MAIN PAGE COMPONENT
 export default function GoaHotelsLandingPage() {
-  // Filter and Search States
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedBrand, setSelectedBrand] = useState<string>("All");
-  const [selectedType, setSelectedType] = useState<string>("All");
-  const [selectedBudget, setSelectedBudget] = useState<string>("All");
-
   // Booking Modal States
   const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -817,57 +811,8 @@ export default function GoaHotelsLandingPage() {
   const [visibleCount, setVisibleCount] = useState(10);
   const [isPreloading, setIsPreloading] = useState(false);
 
-  // Available types and brands for filters
-  const hotelTypes = useMemo(() => {
-    const types = new Set(hotelsData.map(h => h.type));
-    return ["All", ...Array.from(types)];
-  }, []);
-
-  const hotelBrands = useMemo(() => {
-    const brands = new Set(hotelsData.map(h => h.brand));
-    return ["All", ...Array.from(brands)];
-  }, []);
-
-  // Filtered Hotels list
-  const filteredHotels = useMemo(() => {
-    let result = [...hotelsData];
-
-    // Search query matching
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase().trim();
-      result = result.filter(h => 
-        h.name.toLowerCase().includes(q) ||
-        h.location.toLowerCase().includes(q) ||
-        h.description.toLowerCase().includes(q) ||
-        h.highlights.some(hl => hl.toLowerCase().includes(q))
-      );
-    }
-
-    // Type filter
-    if (selectedType !== "All") {
-      result = result.filter(h => h.type === selectedType);
-    }
-
-    // Brand filter
-    if (selectedBrand !== "All") {
-      result = result.filter(h => h.brand === selectedBrand);
-    }
-
-    // Budget price range filter (Professional filter!)
-    if (selectedBudget !== "All") {
-      if (selectedBudget === "value") {
-        result = result.filter(h => h.startingRate < 4000);
-      } else if (selectedBudget === "midrange") {
-        result = result.filter(h => h.startingRate >= 4000 && h.startingRate < 8000);
-      } else if (selectedBudget === "premium") {
-        result = result.filter(h => h.startingRate >= 8000 && h.startingRate < 15000);
-      } else if (selectedBudget === "luxury") {
-        result = result.filter(h => h.startingRate >= 15000);
-      }
-    }
-
-    return result;
-  }, [searchQuery, selectedType, selectedBrand, selectedBudget]);
+  // Filtered Hotels list (no filters, display full list)
+  const filteredHotels = hotelsData;
 
   // Displayed hotels sliced based on pagination visibleCount
   const displayedHotels = useMemo(() => {
@@ -1048,133 +993,18 @@ export default function GoaHotelsLandingPage() {
           </div>
         </section>
 
-        {/* 2. MINIMALIST BOTTOM-BORDERED FILTERS */}
+        {/* 2. DIRECTORY TITLE SECTION */}
         <section id="directory-listing" className="max-w-7xl mx-auto px-6 mt-16 scroll-mt-24">
-          <div className="bg-transparent space-y-6">
-            
-            {/* Horizontal Line Selectors */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-end pb-8 border-b border-[#1D3D9E]/10">
-              
-              {/* Hotel Brand Select */}
-              <div className="relative w-full border-b border-[#1D3D9E]/20 pb-1.5 focus-within:border-orange-brand transition-colors">
-                <label htmlFor="brand-filter" className="block text-[10px] font-bold text-navy-800/60 uppercase tracking-widest text-left mb-1">
-                  Hotel Brand
-                </label>
-                <select
-                  id="brand-filter"
-                  value={selectedBrand}
-                  onChange={(e) => {
-                    setSelectedBrand(e.target.value);
-                    setVisibleCount(10);
-                  }}
-                  className="w-full bg-transparent appearance-none py-2 text-navy-800 font-serif text-sm font-bold outline-hidden pr-8 cursor-pointer"
-                >
-                  {hotelBrands.map((brand) => (
-                    <option key={brand} value={brand} className="text-navy-900 bg-[#FDFBF8]">
-                      {brand === "All" ? "All Brands" : brand}
-                    </option>
-                  ))}
-                </select>
-                <span className="absolute right-0 bottom-3.5 pointer-events-none text-slate-400">
-                  <ChevronRight className="w-3.5 h-3.5 rotate-90" />
-                </span>
-              </div>
-
-              {/* Hotel Type Select */}
-              <div className="relative w-full border-b border-[#1D3D9E]/20 pb-1.5 focus-within:border-orange-brand transition-colors">
-                <label htmlFor="type-filter" className="block text-[10px] font-bold text-navy-800/60 uppercase tracking-widest text-left mb-1">
-                  Hotel Type
-                </label>
-                <select
-                  id="type-filter"
-                  value={selectedType}
-                  onChange={(e) => {
-                    setSelectedType(e.target.value);
-                    setVisibleCount(10);
-                  }}
-                  className="w-full bg-transparent appearance-none py-2 text-navy-800 font-serif text-sm font-bold outline-hidden pr-8 cursor-pointer"
-                >
-                  {hotelTypes.map((type) => (
-                    <option key={type} value={type} className="text-navy-900 bg-[#FDFBF8]">
-                      {type === "All" ? "All Types" : type}
-                    </option>
-                  ))}
-                </select>
-                <span className="absolute right-0 bottom-3.5 pointer-events-none text-slate-400">
-                  <ChevronRight className="w-3.5 h-3.5 rotate-90" />
-                </span>
-              </div>
-
-              {/* Price Range Filter */}
-              <div className="relative w-full border-b border-[#1D3D9E]/20 pb-1.5 focus-within:border-orange-brand transition-colors">
-                <label htmlFor="budget-filter" className="block text-[10px] font-bold text-navy-800/60 uppercase tracking-widest text-left mb-1">
-                  Price Range
-                </label>
-                <select
-                  id="budget-filter"
-                  value={selectedBudget}
-                  onChange={(e) => {
-                    setSelectedBudget(e.target.value);
-                    setVisibleCount(10);
-                  }}
-                  className="w-full bg-transparent appearance-none py-2 text-navy-800 font-serif text-sm font-bold outline-hidden pr-8 cursor-pointer"
-                >
-                  <option value="All" className="text-navy-900 bg-[#FDFBF8]">All Price Ranges</option>
-                  <option value="luxury" className="text-navy-900 bg-[#FDFBF8]">Luxury (₹15,000+)</option>
-                  <option value="premium" className="text-navy-900 bg-[#FDFBF8]">Premium (₹8,000 - ₹15,000)</option>
-                  <option value="midrange" className="text-navy-900 bg-[#FDFBF8]">Boutique &amp; Mid-Range (₹4,000 - ₹8,000)</option>
-                  <option value="value" className="text-navy-900 bg-[#FDFBF8]">Value (Under ₹4,000)</option>
-                </select>
-                <span className="absolute right-0 bottom-3.5 pointer-events-none text-slate-400">
-                  <ChevronRight className="w-3.5 h-3.5 rotate-90" />
-                </span>
-              </div>
-
-              {/* Search Box */}
-              <div className="relative w-full border-b border-[#1D3D9E]/20 pb-1.5 focus-within:border-orange-brand transition-colors">
-                <label htmlFor="search" className="block text-[10px] font-bold text-navy-800/60 uppercase tracking-widest text-left mb-1">
-                  Search
-                </label>
-                <div className="flex items-center">
-                  <Search className="w-4 h-4 text-slate-400 shrink-0 mr-2" />
-                  <input
-                    type="text"
-                    id="search"
-                    value={searchQuery}
-                    onChange={(e) => {
-                      setSearchQuery(e.target.value);
-                      setVisibleCount(10);
-                    }}
-                    placeholder="Keyword search..."
-                    className="w-full bg-transparent py-1.5 text-navy-800 font-sans text-sm font-medium outline-hidden"
-                  />
-                </div>
-              </div>
-
-            </div>
-
-            {/* Results Title count below filters */}
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-4 gap-4">
-              <h2 className="text-lg sm:text-xl font-bold text-navy-800 tracking-tight">
-                {filteredHotels.length} {filteredHotels.length === 1 ? "Hotel" : "Hotels"} in Goa
-              </h2>
-              
-              {(searchQuery || selectedBrand !== "All" || selectedType !== "All" || selectedBudget !== "All") && (
-                <button
-                  onClick={() => {
-                    setSearchQuery("");
-                    setSelectedBrand("All");
-                    setSelectedType("All");
-                    setSelectedBudget("All");
-                    setVisibleCount(10);
-                  }}
-                  className="text-xs text-orange-brand hover:text-orange-brand-hover font-bold uppercase tracking-wider transition-colors"
-                >
-                  Clear Filters
-                </button>
-              )}
-            </div>
-
+          <div className="border-b border-[#1D3D9E]/10 pb-6 text-left">
+            <span className="text-[#FF6B00] uppercase tracking-wider text-[10px] font-bold block mb-1">
+              Bespoke Hospitality Catalog
+            </span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-black text-navy-800 tracking-wide uppercase">
+              Our Goa Hotel Directory ({hotelsData.length} Selected Stays)
+            </h2>
+            <p className="text-xs sm:text-sm text-navy-800/60 mt-1 max-w-2xl leading-relaxed">
+              Browse through our handpicked collection of luxury resorts, heritage boutique manors, and private beach villas in North, South, and Central Goa.
+            </p>
           </div>
         </section>
 
@@ -1201,23 +1031,11 @@ export default function GoaHotelsLandingPage() {
                       <Star className="w-6 h-6" />
                     </div>
                     <h3 className="font-serif text-lg font-bold text-navy-800 uppercase">
-                      No Hotels Found
+                      No Hotels Available
                     </h3>
                     <p className="text-xs text-slate-500 leading-relaxed">
-                      We couldn&apos;t find any partners matching your filters. Try clearing your filters or resetting search keywords.
+                      Our hotel collection is currently offline. Please check back later.
                     </p>
-                    <button
-                      onClick={() => {
-                        setSearchQuery("");
-                        setSelectedBrand("All");
-                        setSelectedType("All");
-                        setSelectedBudget("All");
-                        setVisibleCount(10);
-                      }}
-                      className="bg-navy-800 hover:bg-navy-950 text-white font-bold text-xs uppercase tracking-widest px-6 py-2.5 rounded-xl"
-                    >
-                      Clear Filters
-                    </button>
                   </div>
                 </motion.div>
               )}
