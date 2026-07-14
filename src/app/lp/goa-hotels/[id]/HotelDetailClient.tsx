@@ -16,7 +16,7 @@ import {
   Loader2
 } from "lucide-react";
 import confetti from "canvas-confetti";
-import { Hotel } from "../hotelsData";
+import { Hotel } from "../hotelsData"; // Force Next.js HMR reload
 
 // Gold/Orange diamond icon matching the website theme
 function BrandDiamond() {

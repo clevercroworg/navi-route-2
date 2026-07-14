@@ -21,7 +21,7 @@ import {
   PhoneCall,
   Loader2
 } from "lucide-react";
-import { hotelsData, Hotel } from "./hotelsData";
+import { hotelsData, Hotel } from "./hotelsData"; // Force Next.js HMR reload
 
 // Gold/Orange diamond icon matching the website theme
 function BrandDiamond() {
