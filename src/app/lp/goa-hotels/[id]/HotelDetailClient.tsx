@@ -409,6 +409,44 @@ function BookingModal({
 export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [failedImages, setFailedImages] = useState<Record<number, boolean>>({});
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
+
+  const nextLightboxImage = () => {
+    if (hotel.gallery && hotel.gallery.length > 0) {
+      const len = hotel.gallery.length;
+      setLightboxIndex((prev) => (prev + 1) % len);
+    }
+  };
+
+  const prevLightboxImage = () => {
+    if (hotel.gallery && hotel.gallery.length > 0) {
+      const len = hotel.gallery.length;
+      setLightboxIndex((prev) => (prev - 1 + len) % len);
+    }
+  };
+
+  // Keyboard listener for Lightbox navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isLightboxOpen) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") nextLightboxImage();
+      if (e.key === "ArrowLeft") prevLightboxImage();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isLightboxOpen, lightboxIndex]);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % hotel.images.length);
@@ -625,6 +663,49 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
             </div>
           </div>
         </div>
+
+        {/* Gallery & Exterior Views Section */}
+        {hotel.gallery && hotel.gallery.length > 0 && hotel.gallery.filter((_, idx) => !failedImages[idx]).length > 0 && (
+          <div className="mt-16 border-t border-[#1D3D9E]/10 pt-12">
+            <div className="mb-8">
+              <span className="text-[#FF6B00] uppercase tracking-wider text-[10px] font-bold block mb-1">
+                Visual Sanctuary Showcase
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl font-black text-navy-800 tracking-wide uppercase">
+                Gallery &amp; Exterior Views
+              </h2>
+              <p className="text-xs sm:text-sm text-navy-800/60 mt-1 max-w-2xl leading-relaxed">
+                Take a virtual tour through the breathtaking architectural details, poolside escapes, and lush garden walkways of this curated Goan property.
+              </p>
+            </div>
+            
+            {/* Gallery Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              {hotel.gallery.map((imgSrc, idx) => {
+                if (failedImages[idx]) return null;
+                return (
+                  <div 
+                    key={idx}
+                    onClick={() => openLightbox(idx)}
+                    className="relative h-32 sm:h-40 md:h-48 rounded-xl overflow-hidden shadow-xs border border-[#1D3D9E]/5 cursor-pointer hover:border-orange-brand/30 hover:shadow-md transition-all duration-300 group bg-slate-100"
+                  >
+                    <Image
+                      src={imgSrc}
+                      alt={`${hotel.name} Gallery Image ${idx + 1}`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                      onError={() => {
+                        setFailedImages(prev => ({ ...prev, [idx]: true }));
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-colors" />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </main>
 
       {/* MINIMALIST LANDING PAGE FOOTER */}
@@ -655,6 +736,53 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
       />
+
+      {/* Lightbox Modal */}
+      {isLightboxOpen && hotel.gallery && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/95 backdrop-blur-xs p-4 select-none">
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-20 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/10 hover:bg-white/20"
+            aria-label="Close gallery viewer"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
+          {/* Navigation Controls */}
+          <button 
+            onClick={prevLightboxImage}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-orange-brand hover:text-white text-white/80 flex items-center justify-center transition-all z-10 cursor-pointer border border-white/10"
+            aria-label="Previous gallery image"
+          >
+            <ChevronLeft className="w-8 h-8" />
+          </button>
+          <button 
+            onClick={nextLightboxImage}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-orange-brand hover:text-white text-white/80 flex items-center justify-center transition-all z-10 cursor-pointer border border-white/10"
+            aria-label="Next gallery image"
+          >
+            <ChevronRight className="w-8 h-8" />
+          </button>
+
+          {/* Lightbox Main Image Container */}
+          <div className="relative w-full max-w-5xl h-[70vh] sm:h-[80vh] flex flex-col items-center justify-center">
+            <div className="relative w-full h-full">
+              <Image
+                src={hotel.gallery[lightboxIndex]}
+                alt={`${hotel.name} Full View ${lightboxIndex + 1}`}
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            
+            {/* Image Indicator / Caption */}
+            <div className="text-white/60 text-xs mt-4 tracking-wider uppercase font-bold">
+              Image {lightboxIndex + 1} of {hotel.gallery.length}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

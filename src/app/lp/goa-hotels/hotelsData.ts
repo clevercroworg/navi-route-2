@@ -14,6 +14,7 @@ export interface Hotel {
   brand: "Taj (IHCL)" | "Brij Hotels" | "SeleQtions" | "amã Stays & Trails" | "Ginger" | "Others";
   tag: string;
   visitUrl?: string;
+  gallery?: string[];
 }
 
 export const hotelsData: Hotel[] = [
@@ -402,3 +403,9 @@ export const hotelsData: Hotel[] = [
     tag: "Beachside Cottage Escape"
   }
 ];
+
+// Dynamically generate the 15 gallery image paths for each hotel
+hotelsData.forEach((hotel) => {
+  hotel.gallery = Array.from({ length: 15 }, (_, i) => `/images/hotels/${hotel.id}/${i + 1}.jpg`);
+});
+
