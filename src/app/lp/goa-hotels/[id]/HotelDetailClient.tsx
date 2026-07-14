@@ -427,7 +427,7 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
 
   return (
     <div 
-      className="flex flex-col min-h-screen bg-sand-100 select-none relative text-left"
+      className="flex flex-col min-h-screen bg-sand-100 select-none relative text-left overflow-x-hidden"
       style={{
         userSelect: "none",
         WebkitUserSelect: "none",
@@ -437,7 +437,7 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
     >
       
       {/* BRAND THEMED LANDING PAGE HEADER */}
-      <header className="sticky top-0 z-40 bg-navy-800 border-b border-navy-950/20 shadow-xs">
+      <header className="relative z-40 bg-navy-800 border-b border-navy-950/20 shadow-xs">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center select-none">
             <div className="relative w-[140px] h-[45px]">
@@ -460,8 +460,8 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
       <main className="flex-grow pb-24 max-w-7xl mx-auto px-6 mt-8 w-full z-10">
         
         {/* Navigation Breadcrumbs & Back button */}
-        <div className="flex justify-between items-center mb-6 flex-wrap gap-4 border-b border-[#1D3D9E]/10 pb-4">
-          <div className="text-[10px] text-navy-800/40 tracking-wider uppercase font-bold">
+        <div className="flex justify-between items-center mb-6 flex-wrap gap-4 border-b border-[#1D3D9E]/10 pb-4 w-full">
+          <div className="text-[10px] text-navy-800/40 tracking-wider uppercase font-bold break-words max-w-full">
             Home / Hotels / {hotel.name.replace(", Goa", "")}
           </div>
           <Link
@@ -603,7 +603,7 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
             </div>
             
             {/* Trusted partner card */}
-            <div className="watercolor-card bg-navy-900 text-white p-6 sm:p-8 rounded-2xl border border-navy-950 relative overflow-hidden shadow-md text-left">
+            <div className="bg-navy-900 text-white p-6 sm:p-8 rounded-2xl border border-navy-950 relative overflow-hidden shadow-md text-left">
               <div className="absolute top-0 right-0 w-36 h-36 opacity-[0.02] select-none pointer-events-none translate-x-12 -translate-y-12">
                 <Compass className="w-full h-full text-white" />
               </div>

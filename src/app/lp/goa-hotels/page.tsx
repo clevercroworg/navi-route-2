@@ -197,11 +197,6 @@ function HotelCard({
                 </span>
               </div>
             </div>
-
-            {/* Description Box */}
-            <div className="text-sm text-navy-800/80 leading-relaxed mt-4 mb-6 bg-sand-100/55 p-4 rounded-xl border border-[#1D3D9E]/5">
-              {hotel.description}
-            </div>
           </div>
 
           {/* Footer Actions */}
@@ -692,7 +687,7 @@ export default function GoaHotelsLandingPage() {
 
   return (
     <div 
-      className="flex flex-col min-h-screen bg-sand-100 select-none relative"
+      className="flex flex-col min-h-screen bg-sand-100 select-none relative overflow-x-hidden"
       style={{
         userSelect: "none",
         WebkitUserSelect: "none",
@@ -702,7 +697,7 @@ export default function GoaHotelsLandingPage() {
     >
       
       {/* BRAND THEMED LANDING PAGE HEADER */}
-      <header className="sticky top-0 z-40 bg-navy-800 border-b border-navy-950/20 shadow-xs">
+      <header className="relative z-40 bg-navy-800 border-b border-navy-950/20 shadow-xs">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center select-none">
             <div className="relative w-[140px] h-[45px]">
@@ -730,14 +725,14 @@ export default function GoaHotelsLandingPage() {
           {/* Background Image of the entire Hero section */}
           <div className="absolute inset-0 z-0 select-none pointer-events-none">
             <Image
-              src="/images/goa_beach_hero.png"
+              src="/images/goa_beach_hero_v3.png"
               alt="Nautical Goa Beach Cover"
               fill
-              className="object-cover opacity-25"
+              className="object-cover opacity-85"
               priority
             />
             {/* Soft wash overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#FAF5EE]/90 via-[#FAF5EE]/80 to-[#FAF5EE]/95" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5EE]/50 via-[#FAF5EE]/75 to-[#FAF5EE]/90" />
           </div>
 
           {/* Sailboat waves sketch watermark absolute on left */}
@@ -788,7 +783,7 @@ export default function GoaHotelsLandingPage() {
               Bespoke Hospitality Catalog
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-black text-navy-800 tracking-wide uppercase">
-              Our Goa Hotel Directory ({hotelsData.length} Selected Stays)
+              Our Goa Hotel Directory
             </h2>
             <p className="text-xs sm:text-sm text-navy-800/60 mt-1 max-w-2xl leading-relaxed">
               Browse through our handpicked collection of luxury resorts, heritage boutique manors, and private beach villas in North, South, and Central Goa.
