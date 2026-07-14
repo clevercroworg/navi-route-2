@@ -56,7 +56,15 @@ const getHotelRating = (hotel: Hotel) => {
 };
 
 // Redesigned Hotel Card Component (Fully themed, with compass watermark and hand-drawn styling)
-function HotelCard({ hotel, onBook }: { hotel: Hotel; onBook: (hotel: Hotel) => void }) {
+function HotelCard({ 
+  hotel, 
+  onBook,
+  onViewGallery
+}: { 
+  hotel: Hotel; 
+  onBook: (hotel: Hotel) => void;
+  onViewGallery: (hotel: Hotel) => void;
+}) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = (e: React.MouseEvent) => {
@@ -223,19 +231,16 @@ function HotelCard({ hotel, onBook }: { hotel: Hotel; onBook: (hotel: Hotel) => 
 
         {/* Footer Actions */}
         <div className="flex items-center justify-between pt-4 border-t border-[#1D3D9E]/10 mt-auto">
-          {hotel.visitUrl ? (
-            <a 
-              href={hotel.visitUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-brand hover:text-orange-brand-hover tracking-wider uppercase group/link"
-            >
-              <span>{hotel.type === "Private Villa" ? "Visit Villa" : "Visit Hotel"}</span>
-              <ArrowRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" />
-            </a>
-          ) : (
-            <span className="text-xs text-navy-800/40 italic">Official website unavailable</span>
-          )}
+          <button 
+            onClick={(e) => {
+              e.preventDefault();
+              onViewGallery(hotel);
+            }}
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B00] hover:text-[#E05E00] tracking-wider uppercase group/link cursor-pointer"
+          >
+            <span>{hotel.type === "Private Villa" ? "View Villa Photos" : "View Hotel Photos"}</span>
+            <ArrowRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" />
+          </button>
 
           <button
             onClick={() => onBook(hotel)}
@@ -580,18 +585,15 @@ Please let me know about availability and exclusive partner rates. Thank you!`;
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#25D366] hover:bg-[#1ebd59] text-white font-bold text-xs uppercase tracking-widest py-4 transition-colors disabled:bg-slate-400 flex items-center justify-center gap-2 mt-6 rounded-xl shadow-md"
+                  className="w-full bg-[#0F2C59] hover:bg-[#1D3D9E] text-white font-bold text-xs uppercase tracking-widest py-4 transition-colors disabled:bg-slate-400 flex items-center justify-center gap-2 mt-6 rounded-xl shadow-md cursor-pointer"
                 >
                   {isSubmitting ? (
                     <>
                       <Loader2 className="animate-spin h-5 w-5 text-white" />
-                      <span>Opening WhatsApp...</span>
+                      <span>Confirming...</span>
                     </>
                   ) : (
-                    <>
-                      <WhatsAppIcon className="w-5 h-5 fill-white" />
-                      <span>Confirm &amp; Book via WhatsApp</span>
-                    </>
+                    <span>Confirm</span>
                   )}
                 </button>
               </form>
@@ -681,6 +683,139 @@ Please let me know about availability and exclusive partner rates. Thank you!`;
   );
 }
 
+// Gallery Lightbox Modal Component
+function GalleryModal({
+  hotel,
+  isOpen,
+  onClose
+}: {
+  hotel: Hotel | null;
+  isOpen: boolean;
+  onClose: () => void;
+}) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setIndex(0);
+    }
+  }, [isOpen]);
+
+  if (!isOpen || !hotel || !hotel.images || hotel.images.length === 0) return null;
+
+  const nextImg = () => {
+    setIndex((prev) => (prev + 1) % hotel.images.length);
+  };
+
+  const prevImg = () => {
+    setIndex((prev) => (prev - 1 + hotel.images.length) % hotel.images.length);
+  };
+
+  return (
+    <AnimatePresence>
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="absolute inset-0 bg-[#0A1E3B]/90 backdrop-blur-md"
+        />
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          className="relative bg-white w-full max-w-5xl rounded-2xl shadow-2xl overflow-hidden z-10 border border-[#1D3D9E]/10 p-6 flex flex-col items-center max-h-[90vh]"
+        >
+          {/* Close Button */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-slate-400 hover:text-navy-800 transition-colors z-20 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer"
+            aria-label="Close gallery"
+          >
+            <X className="w-4 h-4" />
+          </button>
+
+          {/* Header */}
+          <div className="w-full text-left mb-4 pr-10">
+            <span className="text-orange-brand uppercase text-[10px] font-bold tracking-widest block">
+              Hotel Gallery
+            </span>
+            <h4 className="font-serif text-xl sm:text-2xl font-bold text-navy-800">
+              {hotel.name}
+            </h4>
+            <p className="text-xs text-slate-500 mt-1 flex items-center gap-1">
+              <MapPin className="w-3.5 h-3.5 text-orange-brand shrink-0" />
+              <span>{hotel.location}</span>
+            </p>
+          </div>
+
+          {/* Main Image Slider */}
+          <div className="relative w-full flex-grow bg-slate-50 rounded-xl overflow-hidden min-h-[300px] flex items-center justify-center">
+            <Image
+              src={hotel.images[index]}
+              alt={`${hotel.name} view ${index + 1}`}
+              fill
+              className="object-contain"
+              sizes="(max-width: 1200px) 100vw, 80vw"
+              priority
+            />
+
+            {/* Navigation Arrows */}
+            {hotel.images.length > 1 && (
+              <>
+                <button
+                  onClick={prevImg}
+                  className="absolute left-4 w-10 h-10 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 shadow-md cursor-pointer"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={nextImg}
+                  className="absolute right-4 w-10 h-10 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 shadow-md cursor-pointer"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              </>
+            )}
+
+            {/* Image counter */}
+            <div className="absolute bottom-4 right-4 bg-navy-900/70 text-white text-xs px-3 py-1 rounded-full font-medium">
+              {index + 1} / {hotel.images.length}
+            </div>
+          </div>
+
+          {/* Thumbnails indicator */}
+          {hotel.images.length > 1 && (
+            <div className="flex gap-2 mt-4 overflow-x-auto w-full max-w-md py-1 justify-center">
+              {hotel.images.map((img, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setIndex(idx)}
+                  className={`relative w-14 h-10 rounded-md overflow-hidden border-2 transition-all shrink-0 cursor-pointer ${
+                    idx === index ? "border-orange-brand scale-105" : "border-transparent opacity-60 hover:opacity-100"
+                  }`}
+                >
+                  <Image
+                    src={img}
+                    alt="thumbnail"
+                    fill
+                    className="object-cover"
+                    sizes="60px"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
+        </motion.div>
+      </div>
+    </AnimatePresence>
+  );
+}
+
 // MAIN PAGE COMPONENT
 export default function GoaHotelsLandingPage() {
   // Filter and Search States
@@ -692,6 +827,10 @@ export default function GoaHotelsLandingPage() {
   // Booking Modal States
   const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Gallery Modal States
+  const [selectedGalleryHotel, setSelectedGalleryHotel] = useState<Hotel | null>(null);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
   // Pagination count state
   const [visibleCount, setVisibleCount] = useState(10);
@@ -815,13 +954,7 @@ export default function GoaHotelsLandingPage() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center select-none">
             <div className="relative w-[140px] h-[45px]">
-              <Image
-                src="/images/logo-1.png"
-                alt="Navi Route Logo"
-                fill
-                className="object-contain object-left"
-                priority
-              />
+              {/* Logo temporarily removed - waiting for client new logo */}
             </div>
           </Link>
 
@@ -1074,6 +1207,10 @@ export default function GoaHotelsLandingPage() {
                     key={hotel.id} 
                     hotel={hotel} 
                     onBook={handleOpenBooking} 
+                    onViewGallery={(h) => {
+                      setSelectedGalleryHotel(h);
+                      setIsGalleryOpen(true);
+                    }}
                   />
                 ))
               ) : (
@@ -1181,12 +1318,7 @@ export default function GoaHotelsLandingPage() {
         <div className="max-w-7xl mx-auto px-6 text-center space-y-6">
           <Link href="/" className="inline-block select-none mx-auto">
             <div className="relative w-[140px] h-[45px] mx-auto">
-              <Image
-                src="/images/logo-1.png"
-                alt="Navi Route Logo"
-                fill
-                className="object-contain brightness-0 invert"
-              />
+              {/* Logo temporarily removed */}
             </div>
           </Link>
           <div className="max-w-md mx-auto text-slate-400/80 leading-relaxed">
@@ -1208,6 +1340,13 @@ export default function GoaHotelsLandingPage() {
         hotel={selectedHotel} 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
+      />
+
+      {/* Gallery Lightbox Modal Dialog */}
+      <GalleryModal 
+        hotel={selectedGalleryHotel} 
+        isOpen={isGalleryOpen} 
+        onClose={() => setIsGalleryOpen(false)} 
       />
     </div>
   );
