@@ -208,21 +208,9 @@ function HotelCard({
                   </div>
                 </div>
 
-                {/* Description */}
-                <p className="text-sm text-navy-800/70 leading-relaxed mt-4 mb-4">
+                {/* Description Box */}
+                <div className="text-sm text-navy-800/80 leading-relaxed mt-4 mb-6 bg-sand-100/55 p-4 rounded-xl border border-[#1D3D9E]/5">
                   {hotel.description}
-                </p>
-
-                {/* Contact Details */}
-                <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-navy-800/80 mb-6 bg-sand-100/55 p-3.5 rounded-xl border border-[#1D3D9E]/5">
-                  <a href={`tel:${hotel.phone}`} className="flex items-center gap-2 hover:text-orange-brand transition-colors">
-                    <Phone className="w-3.5 h-3.5 text-orange-brand" />
-                    <span>{hotel.phone}</span>
-                  </a>
-                  <a href={`mailto:${hotel.email}`} className="flex items-center gap-2 hover:text-orange-brand transition-colors">
-                    <Mail className="w-3.5 h-3.5 text-orange-brand" />
-                    <span>{hotel.email}</span>
-                  </a>
                 </div>
 
                 {/* Highlights grid */}
