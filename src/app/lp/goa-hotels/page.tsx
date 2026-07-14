@@ -699,7 +699,7 @@ export default function GoaHotelsLandingPage() {
       {/* BRAND THEMED LANDING PAGE HEADER */}
       <header className="relative z-40 bg-navy-800 border-b border-navy-950/20 shadow-xs">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center select-none">
+          <div className="flex items-center select-none">
             <div className="relative w-[140px] h-[45px]">
               <Image
                 src="/images/elite stays/logo_light.svg"
@@ -709,7 +709,7 @@ export default function GoaHotelsLandingPage() {
                 priority
               />
             </div>
-          </Link>
+          </div>
 
           <div className="flex items-center gap-4">
             <a
@@ -888,7 +888,7 @@ export default function GoaHotelsLandingPage() {
       {/* MINIMALIST LANDING PAGE FOOTER */}
       <footer className="bg-navy-950 text-slate-400 py-12 border-t border-navy-900 text-xs">
         <div className="max-w-7xl mx-auto px-6 text-center space-y-6">
-          <Link href="/" className="inline-block select-none mx-auto">
+          <div className="inline-block select-none mx-auto">
             <div className="relative w-[140px] h-[45px] mx-auto">
               <Image
                 src="/images/elite stays/logo_light.svg"
@@ -897,7 +897,7 @@ export default function GoaHotelsLandingPage() {
                 className="object-contain"
               />
             </div>
-          </Link>
+          </div>
           <div className="max-w-md mx-auto text-slate-400/80 leading-relaxed">
             Navigating ideas. Delivering impact. Curated hospitality listings are promoted by Navi Route Digital Growth Partners.
           </div>
