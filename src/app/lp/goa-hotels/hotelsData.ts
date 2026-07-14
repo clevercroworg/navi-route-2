@@ -33,8 +33,8 @@ export const hotelsData: Hotel[] = [
       "Poolside Blue Bistro Restaurant"
     ],
     images: [
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1582719478250-c89cae4db85b?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/Resort Terra Paraiso goa.webp",
+      "/images/hotels/Resort Terra Paraiso goa-2.webp"
     ],
     region: "North Goa",
     type: "Luxury Resort",
@@ -57,8 +57,8 @@ export const hotelsData: Hotel[] = [
       "Close to Morjim Turtle Beach"
     ],
     images: [
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/Goa Crescent Resort.webp",
+      "/images/hotels/Goa Crescent Resort-2.webp"
     ],
     region: "North Goa",
     type: "Modern Premium",
@@ -81,8 +81,8 @@ export const hotelsData: Hotel[] = [
       "In-house Gourmet Patisserie"
     ],
     images: [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1517840901100-8179e982acb7?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/The Tamarind Hotel.webp",
+      "/images/hotels/The Tamarind Hotel-2.webp"
     ],
     region: "North Goa",
     type: "Heritage & Boutique",
@@ -105,8 +105,8 @@ export const hotelsData: Hotel[] = [
       "Daily Wellness & Yoga Classes"
     ],
     images: [
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80"
+      "/images/hotels/3102bce AVedicResort.webp",
+      "/images/hotels/3102bce AVedicResort-2.webp"
     ],
     region: "North Goa",
     type: "Heritage & Boutique",
