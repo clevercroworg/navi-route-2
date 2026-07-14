@@ -153,8 +153,8 @@ export const hotelsData: Hotel[] = [
       "Luxury Spa & Wellness Massages"
     ],
     images: [
-      "/images/hotels/amaya-at-anamiva.jpg",
-      "/images/hotels/amaya-at-anamiva-2.jpg"
+      "/images/hotels/AMiiaYA AT ANAMIVA.jpg",
+      "/images/hotels/AMiiaYA AT ANAMIVA-2.jpg"
     ],
     region: "North Goa",
     type: "Heritage & Boutique",
@@ -177,8 +177,8 @@ export const hotelsData: Hotel[] = [
       "Spacious Family-friendly Suites"
     ],
     images: [
-      "/images/hotels/the-golden-crown-hotel-spa.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa-2.jpg"
+      "/images/hotels/The Golden Crown Hotel & Spa.webp",
+      "/images/hotels/The Golden Crown Hotel & Spa-2.webp"
     ],
     region: "South Goa",
     type: "Modern Premium",
@@ -201,8 +201,8 @@ export const hotelsData: Hotel[] = [
       "Minutes to Candolim Nightlife"
     ],
     images: [
-      "/images/hotels/hibiscus-oasis-da-alohas.jpg",
-      "/images/hotels/hibiscus-oasis-da-alohas-2.jpg"
+      "/images/hotels/Hibiscus Oasis by Da Alohas.avif",
+      "/images/hotels/Hibiscus Oasis by Da Alohas-2.avif"
     ],
     region: "North Goa",
     type: "Modern Premium",
@@ -225,8 +225,8 @@ export const hotelsData: Hotel[] = [
       "Short Walk to Sunset Point"
     ],
     images: [
-      "/images/hotels/3102bce-a-vedic-resort-2.jpg",
-      "/images/hotels/3102bce-a-vedic-resort-2-2.jpg"
+      "/images/hotels/3102bce AVedicResort.webp",
+      "/images/hotels/3102bce AVedicResort-2.webp"
     ],
     region: "North Goa",
     type: "Heritage & Boutique",
@@ -249,8 +249,8 @@ export const hotelsData: Hotel[] = [
       "Full Fitness Center & Gym"
     ],
     images: [
-      "/images/hotels/argo-by-trance.jpg",
-      "/images/hotels/argo-by-trance-2.jpg"
+      "/images/hotels/Argo By Trance.webp",
+      "/images/hotels/Argo By Trance-2.webp"
     ],
     region: "Central Goa",
     type: "Modern Premium",
@@ -273,8 +273,8 @@ export const hotelsData: Hotel[] = [
       "Authentic Local Dining Cafe"
     ],
     images: [
-      "/images/hotels/jacks-resort.jpg",
-      "/images/hotels/jacks-resort-2.jpg"
+      "/images/hotels/Jacks Resort.jpg",
+      "/images/hotels/Jacks Resort-2.jpg"
     ],
     region: "North Goa",
     type: "Heritage & Boutique",
@@ -297,8 +297,8 @@ export const hotelsData: Hotel[] = [
       "Quiet Slow-paced Country Living"
     ],
     images: [
-      "/images/hotels/laguna-anjuna.jpg",
-      "/images/hotels/laguna-anjuna-2.jpg"
+      "/images/hotels/Laguna Anjuna-Vintage Goan country house style.jpg",
+      "/images/hotels/Laguna Anjuna-Vintage Goan country house style-2.jpg"
     ],
     region: "North Goa",
     type: "Heritage & Boutique",
@@ -321,8 +321,8 @@ export const hotelsData: Hotel[] = [
       "Minutes to Mandovi River Cruise"
     ],
     images: [
-      "/images/hotels/mateus-boutique-hotel.jpg",
-      "/images/hotels/mateus-boutique-hotel-2.jpg"
+      "/images/hotels/Mateus Boutique Hotel.webp",
+      "/images/hotels/Mateus Boutique Hotel-2.webp"
     ],
     region: "Central Goa",
     type: "Heritage & Boutique",
@@ -345,8 +345,8 @@ export const hotelsData: Hotel[] = [
       "Contemporary Minimalist Decor"
     ],
     images: [
-      "/images/hotels/swim-up-by-whiteflower.jpg",
-      "/images/hotels/swim-up-by-whiteflower-2.jpg"
+      "/images/hotels/Swim Up By Whiteflower.webp",
+      "/images/hotels/Swim Up By Whiteflower-2.webp"
     ],
     region: "North Goa",
     type: "Private Villa",
@@ -369,8 +369,8 @@ export const hotelsData: Hotel[] = [
       "Direct Path Access to Ozran Beach"
     ],
     images: [
-      "/images/hotels/stone-wood-beach-resort.jpg",
-      "/images/hotels/stone-wood-beach-resort-2.jpg"
+      "/images/hotels/Stone Wood Beach Resort and Club, Vagator Beach.webp",
+      "/images/hotels/Stone Wood Beach Resort and Club, Vagator Beach-2.webp"
     ],
     region: "North Goa",
     type: "Luxury Resort",
@@ -393,8 +393,8 @@ export const hotelsData: Hotel[] = [
       "Poolside Sunset Cocktail Bar"
     ],
     images: [
-      "/images/hotels/mia-bella-beach-cottages.jpg",
-      "/images/hotels/mia-bella-beach-cottages-2.jpg"
+      "/images/hotels/Miia Bella Beach Cottage Resort Baga.webp",
+      "/images/hotels/Miia Bella Beach Cottage Resort Baga-2.webp"
     ],
     region: "North Goa",
     type: "Modern Premium",
