@@ -479,7 +479,13 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center select-none">
             <div className="relative w-[140px] h-[45px]">
-              {/* Logo temporarily removed - waiting for client new logo */}
+              <Image
+                src="/images/elite stays/logo_light.svg"
+                alt="Elite Stays Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
           </Link>
 
@@ -713,7 +719,12 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
         <div className="max-w-7xl mx-auto px-6 text-center space-y-6">
           <Link href="/" className="inline-block select-none mx-auto">
             <div className="relative w-[140px] h-[45px] mx-auto">
-              {/* Logo temporarily removed */}
+              <Image
+                src="/images/elite stays/logo_light.svg"
+                alt="Elite Stays Logo"
+                fill
+                className="object-contain"
+              />
             </div>
           </Link>
           <div className="max-w-md mx-auto text-slate-400/80 leading-relaxed">
