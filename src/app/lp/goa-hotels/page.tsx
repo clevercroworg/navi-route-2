@@ -58,14 +58,13 @@ const getHotelRating = (hotel: Hotel) => {
 // Redesigned Hotel Card Component (Fully themed, with compass watermark and hand-drawn styling)
 function HotelCard({ 
   hotel, 
-  onBook,
-  onViewGallery
+  onBook 
 }: { 
   hotel: Hotel; 
   onBook: (hotel: Hotel) => void;
-  onViewGallery: (hotel: Hotel) => void;
 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showSummary, setShowSummary] = useState(false);
 
   const nextImage = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -94,7 +93,7 @@ function HotelCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5 }}
-      className="watercolor-card rounded-2xl overflow-hidden border border-[#1D3D9E]/10 hover:border-orange-brand/30 hover:shadow-[0_16px_40px_rgba(15,44,89,0.08)] hover:-translate-y-0.5 transition-all duration-500 grid grid-cols-1 lg:grid-cols-12 group relative"
+      className="watercolor-card rounded-2xl overflow-hidden border border-[#1D3D9E]/10 hover:border-orange-brand/30 hover:shadow-[0_16px_40px_rgba(15,44,89,0.08)] hover:-translate-y-0.5 transition-all duration-500 relative min-h-[360px]"
     >
       
       {/* Subtle Compass Rose watermark inside card background */}
@@ -107,149 +106,278 @@ function HotelCard({
         />
       </div>
 
-      {/* Left Gallery / Image Slider */}
-      <div className="col-span-12 lg:col-span-5 relative h-64 lg:h-auto min-h-[300px] bg-slate-100 overflow-hidden">
-        <Image
-          src={hotel.images[currentImageIndex]}
-          alt={hotel.name}
-          fill
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-          sizes="(max-width: 1024px) 100vw, 40vw"
-          priority
-        />
-        
-        {/* Brand Theme Styled Badge */}
-        <div className="absolute top-4 left-4 z-10 bg-navy-900/90 text-white text-[9px] uppercase font-bold tracking-widest px-3.5 py-1.5 rounded-full shadow-xs border border-white/10">
-          {hotel.type}
-        </div>
+      <AnimatePresence mode="wait">
+        {!showSummary ? (
+          <motion.div
+            key="overview"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="grid grid-cols-1 lg:grid-cols-12 w-full h-full"
+          >
+            {/* Left Gallery / Image Slider */}
+            <div className="col-span-12 lg:col-span-5 relative h-64 lg:h-auto min-h-[300px] bg-slate-100 overflow-hidden">
+              <Image
+                src={hotel.images[currentImageIndex]}
+                alt={hotel.name}
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                priority
+              />
+              
+              {/* Brand Theme Styled Badge */}
+              <div className="absolute top-4 left-4 z-10 bg-navy-900/90 text-white text-[9px] uppercase font-bold tracking-widest px-3.5 py-1.5 rounded-full shadow-xs border border-white/10">
+                {hotel.type}
+              </div>
 
-        {/* Gallery Controls (Always visible, styled in brand style) */}
-        {hotel.images.length > 1 && (
-          <>
-            <button 
-              onClick={prevImage}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10"
-              aria-label="Previous image"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button 
-              onClick={nextImage}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10"
-              aria-label="Next image"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
+              {/* Gallery Controls (Always visible, styled in brand style) */}
+              {hotel.images.length > 1 && (
+                <>
+                  <button 
+                    onClick={prevImage}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 cursor-pointer"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                  <button 
+                    onClick={nextImage}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 cursor-pointer"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
 
-            {/* Dots Indicator */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-navy-900/40 px-2.5 py-1 rounded-full backdrop-blur-xs">
-              {hotel.images.map((_, idx) => (
-                <button
-                  key={idx}
+                  {/* Dots Indicator */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-navy-900/40 px-2.5 py-1 rounded-full backdrop-blur-xs">
+                    {hotel.images.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setCurrentImageIndex(idx);
+                        }}
+                        className={`w-1.5 h-1.5 rounded-full transition-all cursor-pointer ${
+                          idx === currentImageIndex ? "bg-orange-brand scale-125" : "bg-white/60"
+                        }`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+
+            {/* Right Content Details */}
+            <div className="col-span-12 lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between z-10">
+              <div>
+                {/* Header row: Tag and Rating Badge */}
+                <div className="flex items-center gap-3 mb-2 flex-wrap">
+                  <span className="font-script text-2xl text-orange-brand">
+                    {hotel.tag}
+                  </span>
+                  <div className="flex items-center gap-1 bg-orange-brand/10 text-orange-brand text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-orange-brand/20">
+                    <Star className="w-2.5 h-2.5 fill-orange-brand shrink-0" />
+                    <span>{rating.score} • {rating.text}</span>
+                  </div>
+                </div>
+
+                {/* Title and Pricing */}
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                  <div className="space-y-1">
+                    <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-navy-800 tracking-wide uppercase leading-tight group-hover:text-[#FF6B00] transition-colors duration-300">
+                      {hotel.name}
+                    </h3>
+                    <div className="flex items-start gap-1.5 text-xs text-navy-800/60 mt-1.5">
+                      <MapPin className="w-3.5 h-3.5 text-orange-brand shrink-0 mt-0.5" />
+                      <span>{hotel.location}</span>
+                    </div>
+                  </div>
+                  
+                  {/* Price section */}
+                  <div className="shrink-0 text-left sm:text-right">
+                    <span className="text-[9px] text-navy-800/45 font-bold uppercase tracking-wider block">
+                      Starting Rate/Night
+                    </span>
+                    <span className="text-xl sm:text-2xl lg:text-3xl font-serif font-black text-navy-800 block mt-0.5">
+                      ₹ {formatPrice(hotel.startingRate)}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-sm text-navy-800/70 leading-relaxed mt-4 mb-4">
+                  {hotel.description}
+                </p>
+
+                {/* Contact Details */}
+                <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-navy-800/80 mb-6 bg-sand-100/55 p-3.5 rounded-xl border border-[#1D3D9E]/5">
+                  <a href={`tel:${hotel.phone}`} className="flex items-center gap-2 hover:text-orange-brand transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-orange-brand" />
+                    <span>{hotel.phone}</span>
+                  </a>
+                  <a href={`mailto:${hotel.email}`} className="flex items-center gap-2 hover:text-orange-brand transition-colors">
+                    <Mail className="w-3.5 h-3.5 text-orange-brand" />
+                    <span>{hotel.email}</span>
+                  </a>
+                </div>
+
+                {/* Highlights grid */}
+                <div className="border-t border-[#1D3D9E]/10 pt-4 mb-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+                    {hotel.highlights.map((highlight, idx) => (
+                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-navy-800/85">
+                        <BrandDiamond />
+                        <span>{highlight}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Footer Actions */}
+              <div className="flex items-center justify-between pt-4 border-t border-[#1D3D9E]/10 mt-auto">
+                <button 
                   onClick={(e) => {
                     e.preventDefault();
-                    e.stopPropagation();
-                    setCurrentImageIndex(idx);
+                    setShowSummary(true);
                   }}
-                  className={`w-1.5 h-1.5 rounded-full transition-all ${
-                    idx === currentImageIndex ? "bg-orange-brand scale-125" : "bg-white/60"
-                  }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div>
-          </>
-        )}
-      </div>
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B00] hover:text-[#E05E00] tracking-wider uppercase group/link cursor-pointer"
+                >
+                  <span>{hotel.type === "Private Villa" ? "View Villa Details" : "View Hotel Details"}</span>
+                  <ArrowRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" />
+                </button>
 
-      {/* Right Content Details */}
-      <div className="col-span-12 lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between z-10">
-        <div>
-          {/* Header row: Tag and Rating Badge */}
-          <div className="flex items-center gap-3 mb-2 flex-wrap">
-            <span className="font-script text-2xl text-orange-brand">
-              {hotel.tag}
-            </span>
-            <div className="flex items-center gap-1 bg-orange-brand/10 text-orange-brand text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-orange-brand/20">
-              <Star className="w-2.5 h-2.5 fill-orange-brand shrink-0" />
-              <span>{rating.score} • {rating.text}</span>
-            </div>
-          </div>
-
-          {/* Title and Pricing */}
-          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-            <div className="space-y-1">
-              <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-navy-800 tracking-wide uppercase leading-tight group-hover:text-[#FF6B00] transition-colors duration-300">
-                {hotel.name}
-              </h3>
-              <div className="flex items-start gap-1.5 text-xs text-navy-800/60 mt-1.5">
-                <MapPin className="w-3.5 h-3.5 text-orange-brand shrink-0 mt-0.5" />
-                <span>{hotel.location}</span>
+                <button
+                  onClick={() => onBook(hotel)}
+                  className="bg-orange-brand hover:bg-[#E05E00] text-white text-xs lg:text-sm font-bold uppercase tracking-widest px-8 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer"
+                >
+                  Book Now
+                </button>
               </div>
             </div>
-            
-            {/* Price section */}
-            <div className="shrink-0 text-left sm:text-right">
-              <span className="text-[9px] text-navy-800/45 font-bold uppercase tracking-wider block">
-                Starting Rate/Night
-              </span>
-              <span className="text-xl sm:text-2xl lg:text-3xl font-serif font-black text-navy-800 block mt-0.5">
-                ₹ {formatPrice(hotel.startingRate)}
-              </span>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="summary"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="grid grid-cols-1 lg:grid-cols-12 w-full h-full animate-fade-in"
+          >
+            {/* Left Side: split images of the hotel (Image 1 and Image 2) */}
+            <div className="col-span-12 lg:col-span-5 relative bg-sand-50/50 p-4 flex flex-col sm:flex-row lg:flex-col gap-4 min-h-[300px]">
+              <div className="relative w-full h-[140px] sm:h-auto sm:flex-1 lg:flex-none lg:h-[150px] rounded-xl overflow-hidden shadow-sm border border-[#1D3D9E]/5">
+                <Image
+                  src={hotel.images[0]}
+                  alt={`${hotel.name} exterior`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 50vw, 20vw"
+                  priority
+                />
+              </div>
+              <div className="relative w-full h-[140px] sm:h-auto sm:flex-1 lg:flex-none lg:h-[150px] rounded-xl overflow-hidden shadow-sm border border-[#1D3D9E]/5">
+                <Image
+                  src={hotel.images[1] || hotel.images[0]}
+                  alt={`${hotel.name} interior`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 50vw, 20vw"
+                  priority
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Description */}
-          <p className="text-sm text-navy-800/70 leading-relaxed mt-4 mb-4">
-            {hotel.description}
-          </p>
+            {/* Right Side: Stay Summary details */}
+            <div className="col-span-12 lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between z-10 w-full text-left">
+              <div>
+                {/* Back Button */}
+                <button 
+                  onClick={() => setShowSummary(false)}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-navy-800/60 hover:text-orange-brand transition-colors uppercase tracking-wider mb-4 cursor-pointer"
+                >
+                  <ChevronLeft className="w-4 h-4 text-orange-brand" />
+                  <span>Back to Overview</span>
+                </button>
 
-          {/* Contact Details */}
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-navy-800/80 mb-6 bg-sand-100/55 p-3.5 rounded-xl border border-[#1D3D9E]/5">
-            <a href={`tel:${hotel.phone}`} className="flex items-center gap-2 hover:text-orange-brand transition-colors">
-              <Phone className="w-3.5 h-3.5 text-orange-brand" />
-              <span>{hotel.phone}</span>
-            </a>
-            <a href={`mailto:${hotel.email}`} className="flex items-center gap-2 hover:text-orange-brand transition-colors">
-              <Mail className="w-3.5 h-3.5 text-orange-brand" />
-              <span>{hotel.email}</span>
-            </a>
-          </div>
-
-          {/* Highlights grid */}
-          <div className="border-t border-[#1D3D9E]/10 pt-4 mb-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
-              {hotel.highlights.map((highlight, idx) => (
-                <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-navy-800/85">
-                  <BrandDiamond />
-                  <span>{highlight}</span>
+                {/* Header row: Tag and Rating */}
+                <div className="flex items-center gap-3 mb-2 flex-wrap">
+                  <span className="font-script text-2xl text-orange-brand">
+                    {hotel.tag}
+                  </span>
+                  <div className="flex items-center gap-1 bg-orange-brand/10 text-orange-brand text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-orange-brand/20">
+                    <Star className="w-2.5 h-2.5 fill-orange-brand shrink-0" />
+                    <span>{rating.score} • {rating.text}</span>
+                  </div>
                 </div>
-              ))}
+
+                {/* Title */}
+                <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-navy-800 tracking-wide uppercase leading-tight">
+                  {hotel.name}
+                </h3>
+                
+                {/* Detailed Summary Box */}
+                <div className="mt-4 space-y-4">
+                  <div>
+                    <h4 className="text-[10px] font-bold text-navy-800/60 uppercase tracking-widest">
+                      Property Overview &amp; Location
+                    </h4>
+                    <p className="text-xs text-navy-800/80 leading-relaxed mt-1">
+                      {hotel.description} Located at the prime beachfront of <strong className="text-navy-900">{hotel.subRegion}</strong> in {hotel.region}, Goa.
+                    </p>
+                  </div>
+
+                  <div className="border-t border-[#1D3D9E]/10 pt-3">
+                    <h4 className="text-[10px] font-bold text-navy-800/60 uppercase tracking-widest mb-2">
+                      Key Highlights &amp; Inclusions
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {hotel.highlights.map((hl, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-xs text-navy-800/80">
+                          <span className="text-orange-brand text-xs">♦</span>
+                          <span>{hl}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Actions footer */}
+              <div className="flex items-center justify-between pt-4 border-t border-[#1D3D9E]/10 mt-6 sm:mt-8">
+                <div>
+                  <span className="text-[9px] text-navy-800/45 font-bold uppercase tracking-wider block">
+                    Starting Rate/Night
+                  </span>
+                  <span className="text-xl sm:text-2xl font-serif font-black text-navy-800 block mt-0.5">
+                    ₹ {formatPrice(hotel.startingRate)}
+                  </span>
+                </div>
+
+                <div className="flex gap-3">
+                  <button 
+                    onClick={() => setShowSummary(false)}
+                    className="border border-[#1D3D9E]/25 hover:border-[#1D3D9E]/50 text-navy-800 font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl transition-all cursor-pointer bg-white"
+                  >
+                    Back
+                  </button>
+                  <button
+                    onClick={() => onBook(hotel)}
+                    className="bg-orange-brand hover:bg-[#E05E00] text-white text-xs lg:text-sm font-bold uppercase tracking-widest px-8 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer"
+                  >
+                    Book Now
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        {/* Footer Actions */}
-        <div className="flex items-center justify-between pt-4 border-t border-[#1D3D9E]/10 mt-auto">
-          <button 
-            onClick={(e) => {
-              e.preventDefault();
-              onViewGallery(hotel);
-            }}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B00] hover:text-[#E05E00] tracking-wider uppercase group/link cursor-pointer"
-          >
-            <span>{hotel.type === "Private Villa" ? "View Villa Photos" : "View Hotel Photos"}</span>
-            <ArrowRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" />
-          </button>
-
-          <button
-            onClick={() => onBook(hotel)}
-            className="bg-orange-brand hover:bg-[#E05E00] text-white text-xs lg:text-sm font-bold uppercase tracking-widest px-8 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg"
-          >
-            Book Now
-          </button>
-        </div>
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
@@ -683,138 +811,7 @@ Please let me know about availability and exclusive partner rates. Thank you!`;
   );
 }
 
-// Gallery Lightbox Modal Component
-function GalleryModal({
-  hotel,
-  isOpen,
-  onClose
-}: {
-  hotel: Hotel | null;
-  isOpen: boolean;
-  onClose: () => void;
-}) {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    if (!isOpen) {
-      setIndex(0);
-    }
-  }, [isOpen]);
-
-  if (!isOpen || !hotel || !hotel.images || hotel.images.length === 0) return null;
-
-  const nextImg = () => {
-    setIndex((prev) => (prev + 1) % hotel.images.length);
-  };
-
-  const prevImg = () => {
-    setIndex((prev) => (prev - 1 + hotel.images.length) % hotel.images.length);
-  };
-
-  return (
-    <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={onClose}
-          className="absolute inset-0 bg-[#0A1E3B]/90 backdrop-blur-md"
-        />
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          className="relative bg-white w-full max-w-5xl rounded-2xl shadow-2xl overflow-hidden z-10 border border-[#1D3D9E]/10 p-6 flex flex-col items-center max-h-[90vh]"
-        >
-          {/* Close Button */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 text-slate-400 hover:text-navy-800 transition-colors z-20 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer"
-            aria-label="Close gallery"
-          >
-            <X className="w-4 h-4" />
-          </button>
-
-          {/* Header */}
-          <div className="w-full text-left mb-4 pr-10">
-            <span className="text-orange-brand uppercase text-[10px] font-bold tracking-widest block">
-              Hotel Gallery
-            </span>
-            <h4 className="font-serif text-xl sm:text-2xl font-bold text-navy-800">
-              {hotel.name}
-            </h4>
-            <p className="text-xs text-slate-500 mt-1 flex items-center gap-1">
-              <MapPin className="w-3.5 h-3.5 text-orange-brand shrink-0" />
-              <span>{hotel.location}</span>
-            </p>
-          </div>
-
-          {/* Main Image Slider */}
-          <div className="relative w-full flex-grow bg-slate-50 rounded-xl overflow-hidden min-h-[300px] flex items-center justify-center">
-            <Image
-              src={hotel.images[index]}
-              alt={`${hotel.name} view ${index + 1}`}
-              fill
-              className="object-contain"
-              sizes="(max-width: 1200px) 100vw, 80vw"
-              priority
-            />
-
-            {/* Navigation Arrows */}
-            {hotel.images.length > 1 && (
-              <>
-                <button
-                  onClick={prevImg}
-                  className="absolute left-4 w-10 h-10 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 shadow-md cursor-pointer"
-                  aria-label="Previous image"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button
-                  onClick={nextImg}
-                  className="absolute right-4 w-10 h-10 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 shadow-md cursor-pointer"
-                  aria-label="Next image"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              </>
-            )}
-
-            {/* Image counter */}
-            <div className="absolute bottom-4 right-4 bg-navy-900/70 text-white text-xs px-3 py-1 rounded-full font-medium">
-              {index + 1} / {hotel.images.length}
-            </div>
-          </div>
-
-          {/* Thumbnails indicator */}
-          {hotel.images.length > 1 && (
-            <div className="flex gap-2 mt-4 overflow-x-auto w-full max-w-md py-1 justify-center">
-              {hotel.images.map((img, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setIndex(idx)}
-                  className={`relative w-14 h-10 rounded-md overflow-hidden border-2 transition-all shrink-0 cursor-pointer ${
-                    idx === index ? "border-orange-brand scale-105" : "border-transparent opacity-60 hover:opacity-100"
-                  }`}
-                >
-                  <Image
-                    src={img}
-                    alt="thumbnail"
-                    fill
-                    className="object-cover"
-                    sizes="60px"
-                  />
-                </button>
-              ))}
-            </div>
-          )}
-        </motion.div>
-      </div>
-    </AnimatePresence>
-  );
-}
+// Gallery modal removed - replaced with inline card transitions
 
 // MAIN PAGE COMPONENT
 export default function GoaHotelsLandingPage() {
@@ -828,9 +825,7 @@ export default function GoaHotelsLandingPage() {
   const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Gallery Modal States
-  const [selectedGalleryHotel, setSelectedGalleryHotel] = useState<Hotel | null>(null);
-  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+
 
   // Pagination count state
   const [visibleCount, setVisibleCount] = useState(10);
@@ -1207,10 +1202,6 @@ export default function GoaHotelsLandingPage() {
                     key={hotel.id} 
                     hotel={hotel} 
                     onBook={handleOpenBooking} 
-                    onViewGallery={(h) => {
-                      setSelectedGalleryHotel(h);
-                      setIsGalleryOpen(true);
-                    }}
                   />
                 ))
               ) : (
@@ -1342,12 +1333,7 @@ export default function GoaHotelsLandingPage() {
         onClose={() => setIsModalOpen(false)} 
       />
 
-      {/* Gallery Lightbox Modal Dialog */}
-      <GalleryModal 
-        hotel={selectedGalleryHotel} 
-        isOpen={isGalleryOpen} 
-        onClose={() => setIsGalleryOpen(false)} 
-      />
+
     </div>
   );
 }
