@@ -267,83 +267,57 @@ function HotelCard({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            className="grid grid-cols-1 lg:grid-cols-12 w-full h-full animate-fade-in"
+            className="grid grid-cols-1 lg:grid-cols-12 w-full h-full"
           >
-            {/* Left Side: split images of the hotel (Image 1 and Image 2) */}
-            <div className="col-span-12 lg:col-span-5 relative bg-sand-50/50 p-4 flex flex-col sm:flex-row lg:flex-col gap-4 min-h-[300px]">
-              <div className="relative w-full h-[140px] sm:h-auto sm:flex-1 lg:flex-none lg:h-[150px] rounded-xl overflow-hidden shadow-sm border border-[#1D3D9E]/5">
-                <Image
-                  src={hotel.images[0]}
-                  alt={`${hotel.name} exterior`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 50vw, 20vw"
-                  priority
-                />
-              </div>
-              <div className="relative w-full h-[140px] sm:h-auto sm:flex-1 lg:flex-none lg:h-[150px] rounded-xl overflow-hidden shadow-sm border border-[#1D3D9E]/5">
-                <Image
-                  src={hotel.images[1] || hotel.images[0]}
-                  alt={`${hotel.name} interior`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 50vw, 20vw"
-                  priority
-                />
-              </div>
-            </div>
-
-            {/* Right Side: Stay Summary details */}
-            <div className="col-span-12 lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between z-10 w-full text-left">
+            {/* Left Side: Stay Summary details (text details) */}
+            <div className="col-span-12 lg:col-span-6 p-6 sm:p-8 flex flex-col justify-between z-10 w-full text-left order-2 lg:order-1">
               <div>
-                {/* Back Button */}
-                <button 
-                  onClick={() => setShowSummary(false)}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-navy-800/60 hover:text-orange-brand transition-colors uppercase tracking-wider mb-4 cursor-pointer"
-                >
-                  <ChevronLeft className="w-4 h-4 text-orange-brand" />
-                  <span>Back to Overview</span>
-                </button>
-
-                {/* Header row: Tag and Rating */}
-                <div className="flex items-center gap-3 mb-2 flex-wrap">
-                  <span className="font-script text-2xl text-orange-brand">
-                    {hotel.tag}
+                {/* Top bar with Breadcrumbs & Share */}
+                <div className="flex justify-between items-center w-full mb-4 gap-4 flex-wrap">
+                  <span className="text-[9px] text-navy-800/40 tracking-wider uppercase font-bold">
+                    Home / Hotels / {hotel.name.replace(", Goa", "")}
                   </span>
-                  <div className="flex items-center gap-1 bg-orange-brand/10 text-orange-brand text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-orange-brand/20">
-                    <Star className="w-2.5 h-2.5 fill-orange-brand shrink-0" />
-                    <span>{rating.score} • {rating.text}</span>
-                  </div>
+                  <span 
+                    onClick={() => {
+                      if (navigator.share) {
+                        navigator.share({
+                          title: hotel.name,
+                          text: hotel.description,
+                          url: window.location.href
+                        }).catch(err => console.log(err));
+                      } else {
+                        navigator.clipboard.writeText(window.location.href);
+                        alert("Link copied to clipboard!");
+                      }
+                    }}
+                    className="text-[9px] text-navy-800/50 hover:text-[#FF6B00] tracking-wider uppercase font-bold cursor-pointer flex items-center gap-1 transition-colors"
+                  >
+                    SHARE
+                  </span>
                 </div>
 
-                {/* Title */}
-                <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-navy-800 tracking-wide uppercase leading-tight">
-                  {hotel.name}
-                </h3>
-                
-                {/* Detailed Summary Box */}
-                <div className="mt-4 space-y-4">
-                  <div>
-                    <h4 className="text-[10px] font-bold text-navy-800/60 uppercase tracking-widest">
-                      Property Overview &amp; Location
-                    </h4>
-                    <p className="text-xs text-navy-800/80 leading-relaxed mt-1">
-                      {hotel.description} Located at the prime beachfront of <strong className="text-navy-900">{hotel.subRegion}</strong> in {hotel.region}, Goa.
-                    </p>
-                  </div>
+                {/* Tagline / Type prefixed with dash */}
+                <span className="font-serif text-lg sm:text-xl lg:text-2xl font-medium text-navy-800 tracking-wide uppercase block mb-4 leading-tight">
+                  &mdash; {hotel.tag.toUpperCase()}
+                </span>
 
-                  <div className="border-t border-[#1D3D9E]/10 pt-3">
-                    <h4 className="text-[10px] font-bold text-navy-800/60 uppercase tracking-widest mb-2">
-                      Key Highlights &amp; Inclusions
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {hotel.highlights.map((hl, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-xs text-navy-800/80">
-                          <span className="text-orange-brand text-xs">♦</span>
-                          <span>{hl}</span>
-                        </div>
-                      ))}
-                    </div>
+                {/* Description */}
+                <p className="text-sm text-navy-800/75 leading-relaxed font-sans">
+                  {hotel.description}
+                </p>
+                
+                {/* Detailed Metadata Box */}
+                <div className="mt-4 border-t border-[#1D3D9E]/10 pt-4 space-y-3">
+                  <p className="text-xs text-navy-800/70 leading-relaxed">
+                    Overlooking the prime beachfront stretch of <strong className="text-navy-900">{hotel.subRegion}</strong> in {hotel.region}, Goa.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
+                    {hotel.highlights.map((hl, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-xs text-navy-800/80">
+                        <span className="text-orange-brand">♦</span>
+                        <span>{hl}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -374,6 +348,18 @@ function HotelCard({
                   </button>
                 </div>
               </div>
+            </div>
+
+            {/* Right Side: Large landscape image of the hotel (order-1 on mobile, order-2 on desktop) */}
+            <div className="col-span-12 lg:col-span-6 relative h-64 lg:h-auto min-h-[350px] bg-slate-50 overflow-hidden order-1 lg:order-2">
+              <Image
+                src={hotel.images[1] || hotel.images[0]}
+                alt={`${hotel.name} view`}
+                fill
+                className="object-cover transition-transform duration-500 hover:scale-102"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                priority
+              />
             </div>
           </motion.div>
         )}
