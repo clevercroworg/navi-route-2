@@ -746,9 +746,6 @@ export default function GoaHotelsLandingPage() {
           </div>
 
           <div className="max-w-4xl mx-auto px-6 relative z-10 w-full text-center space-y-6">
-            <span className="text-[#FF6B00] uppercase tracking-wider text-xs font-bold block">
-              Direct Booking Promotion — Exclusive Partner Rates
-            </span>
             
             <span className="font-script text-3xl text-orange-brand block mb-[-12px]">
               Curated Luxury Stays
@@ -759,7 +756,7 @@ export default function GoaHotelsLandingPage() {
             </h1>
             
             <p className="text-navy-800/80 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto">
-              Explore 16 handpicked beachfront retreats, colonial estates, and modern villas. Place an enquiry to secure direct agency pricing, complimentary breakfasts, and premium airport shuttles.
+              Explore handpicked beachfront retreats, colonial estates, and modern villas. Place an enquiry to secure direct agency pricing, complimentary breakfasts, and premium airport shuttles.
             </p>
 
             <div className="flex justify-center gap-4 pt-2">
