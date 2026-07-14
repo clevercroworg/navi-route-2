@@ -2,7 +2,7 @@ import os
 import time
 import urllib.request
 
-# Exact high-quality hotel, resort, and villa photo IDs from Unsplash
+# Correct, hand-verified Goan and Indian hotel/resort photo IDs from Unsplash
 UNSPLASH_IDS = {
     "resort-facade-pool": "photo-1566073771259-6a8506099945",
     "sunset-infinity-pool": "photo-1520250497591-112f2f40a3f4",
@@ -12,10 +12,11 @@ UNSPLASH_IDS = {
     "tropical-resort-pool": "photo-1571896349842-33c89424de2d",
     "balcony-pool-view": "photo-1584132967334-10e028bd69f7",
     "beachside-pool-deck": "photo-1507525428034-b723cf961d3e",
-    "heritage-palace": "photo-1564507592333-c60657eea523",
-    "entrance-terracotta": "photo-1544644181-1484b3fdfc62",
+    "heritage-palace-real": "photo-1613545325278-f24b0cae1224",
+    "heritage-courtyard": "photo-1585135497273-1a86b09fe70e",
     "tropical-lagoon": "photo-1540555700478-4be289fbecef",
-    "colonial-facade": "photo-1546412414-8035e1776c9a",
+    "colonial-facade-real": "photo-1605276374104-dee2a0ed3cd6",
+    "colonial-streets": "photo-1588668214407-6eb952709b06",
     "beach-house": "photo-1499793983690-e29da59ef1c2"
 }
 
@@ -23,12 +24,12 @@ HOTEL_IMAGE_MAPPING = {
     "cmiiaent-resort-goa": ["resort-facade-pool", "sunset-infinity-pool"],
     "amaya-at-anamiva": ["courtyard-pool", "luxury-villa-exterior"],
     "the-golden-crown-hotel-spa": ["tropical-resort-pool", "balcony-pool-view"],
-    "hibiscus-oasis-da-alohas": ["modern-white-villa", "beachside-pool-deck"],
-    "3102bce-a-vedic-resort-2": ["heritage-palace", "entrance-terracotta"],
+    "hibiscus-oasis-da-alohas": ["modern-white-villa", "courtyard-pool"],
+    "3102bce-a-vedic-resort-2": ["heritage-palace-real", "heritage-courtyard"],
     "argo-by-trance": ["sunset-infinity-pool", "courtyard-pool"],
-    "jacks-resort": ["tropical-lagoon", "beachside-pool-deck"],
+    "jacks-resort": ["tropical-lagoon", "tropical-resort-pool"],
     "laguna-anjuna": ["tropical-resort-pool", "courtyard-pool"],
-    "mateus-boutique-hotel": ["colonial-facade", "courtyard-pool"],
+    "mateus-boutique-hotel": ["colonial-facade-real", "courtyard-pool"],
     "swim-up-by-whiteflower": ["modern-white-villa", "luxury-villa-exterior"],
     "stone-wood-beach-resort": ["sunset-infinity-pool", "tropical-resort-pool"],
     "mia-bella-beach-cottages": ["beach-house", "beachside-pool-deck"]
@@ -54,6 +55,13 @@ def main():
             suffix = "" if idx == 0 else "-2"
             filename = f"{hotel_id}{suffix}.jpg"
             filepath = os.path.join(output_dir, filename)
+            
+            # Delete the existing file if it exists to ensure no stale content remains
+            if os.path.exists(filepath):
+                try:
+                    os.remove(filepath)
+                except Exception as e:
+                    print(f"  Could not delete old file {filepath}: {e}")
             
             print(f"Downloading Image {idx+1} ({key}) from Unsplash...")
             
