@@ -64,7 +64,6 @@ function HotelCard({
   onBook: (hotel: Hotel) => void;
 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [showSummary, setShowSummary] = useState(false);
 
   const nextImage = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -106,252 +105,124 @@ function HotelCard({
         />
       </div>
 
-      <AnimatePresence mode="wait">
-        {!showSummary ? (
-          <motion.div
-            key="overview"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.25 }}
-            className="grid grid-cols-1 lg:grid-cols-12 w-full h-full"
-          >
-            {/* Left Gallery / Image Slider */}
-            <div className="col-span-12 lg:col-span-5 relative h-64 lg:h-auto min-h-[300px] bg-slate-100 overflow-hidden">
-              <Image
-                src={hotel.images[currentImageIndex]}
-                alt={hotel.name}
-                fill
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                priority
-              />
-              
-              {/* Brand Theme Styled Badge */}
-              <div className="absolute top-4 left-4 z-10 bg-navy-900/90 text-white text-[9px] uppercase font-bold tracking-widest px-3.5 py-1.5 rounded-full shadow-xs border border-white/10">
-                {hotel.type}
-              </div>
+      <div className="grid grid-cols-1 lg:grid-cols-12 w-full h-full">
+        {/* Left Gallery / Image Slider */}
+        <div className="col-span-12 lg:col-span-5 relative h-64 lg:h-auto min-h-[300px] bg-slate-100 overflow-hidden">
+          <Image
+            src={hotel.images[currentImageIndex]}
+            alt={hotel.name}
+            fill
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            sizes="(max-width: 1024px) 100vw, 40vw"
+            priority
+          />
+          
+          {/* Brand Theme Styled Badge */}
+          <div className="absolute top-4 left-4 z-10 bg-navy-900/90 text-white text-[9px] uppercase font-bold tracking-widest px-3.5 py-1.5 rounded-full shadow-xs border border-white/10">
+            {hotel.type}
+          </div>
 
-              {/* Gallery Controls (Always visible, styled in brand style) */}
-              {hotel.images.length > 1 && (
-                <>
-                  <button 
-                    onClick={prevImage}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 cursor-pointer"
-                    aria-label="Previous image"
-                  >
-                    <ChevronLeft className="w-5 h-5" />
-                  </button>
-                  <button 
-                    onClick={nextImage}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 cursor-pointer"
-                    aria-label="Next image"
-                  >
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
+          {/* Gallery Controls (Always visible, styled in brand style) */}
+          {hotel.images.length > 1 && (
+            <>
+              <button 
+                onClick={prevImage}
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 cursor-pointer"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button 
+                onClick={nextImage}
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 cursor-pointer"
+                aria-label="Next image"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
 
-                  {/* Dots Indicator */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-navy-900/40 px-2.5 py-1 rounded-full backdrop-blur-xs">
-                    {hotel.images.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          setCurrentImageIndex(idx);
-                        }}
-                        className={`w-1.5 h-1.5 rounded-full transition-all cursor-pointer ${
-                          idx === currentImageIndex ? "bg-orange-brand scale-125" : "bg-white/60"
-                        }`}
-                        aria-label={`Go to slide ${idx + 1}`}
-                      />
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-
-            {/* Right Content Details */}
-            <div className="col-span-12 lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between z-10">
-              <div>
-                {/* Header row: Tag and Rating Badge */}
-                <div className="flex items-center gap-3 mb-2 flex-wrap">
-                  <span className="font-script text-2xl text-orange-brand">
-                    {hotel.tag}
-                  </span>
-                  <div className="flex items-center gap-1 bg-orange-brand/10 text-orange-brand text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-orange-brand/20">
-                    <Star className="w-2.5 h-2.5 fill-orange-brand shrink-0" />
-                    <span>{rating.score} • {rating.text}</span>
-                  </div>
-                </div>
-
-                {/* Title and Pricing */}
-                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-                  <div className="space-y-1">
-                    <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-navy-800 tracking-wide uppercase leading-tight group-hover:text-[#FF6B00] transition-colors duration-300">
-                      {hotel.name}
-                    </h3>
-                    <div className="flex items-start gap-1.5 text-xs text-navy-800/60 mt-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-orange-brand shrink-0 mt-0.5" />
-                      <span>{hotel.location}</span>
-                    </div>
-                  </div>
-                  
-                  {/* Price section */}
-                  <div className="shrink-0 text-left sm:text-right">
-                    <span className="text-[9px] text-navy-800/45 font-bold uppercase tracking-wider block">
-                      Starting Rate/Night
-                    </span>
-                    <span className="text-xl sm:text-2xl lg:text-3xl font-serif font-black text-navy-800 block mt-0.5">
-                      ₹ {formatPrice(hotel.startingRate)}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Description Box */}
-                <div className="text-sm text-navy-800/80 leading-relaxed mt-4 mb-6 bg-sand-100/55 p-4 rounded-xl border border-[#1D3D9E]/5">
-                  {hotel.description}
-                </div>
-
-                {/* Highlights grid */}
-                <div className="border-t border-[#1D3D9E]/10 pt-4 mb-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
-                    {hotel.highlights.map((highlight, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-navy-800/85">
-                        <BrandDiamond />
-                        <span>{highlight}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Footer Actions */}
-              <div className="flex items-center justify-between pt-4 border-t border-[#1D3D9E]/10 mt-auto">
-                <button 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setShowSummary(true);
-                  }}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B00] hover:text-[#E05E00] tracking-wider uppercase group/link cursor-pointer"
-                >
-                  <span>{hotel.type === "Private Villa" ? "View Villa Details" : "View Hotel Details"}</span>
-                  <ArrowRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" />
-                </button>
-
-                <button
-                  onClick={() => onBook(hotel)}
-                  className="bg-orange-brand hover:bg-[#E05E00] text-white text-xs lg:text-sm font-bold uppercase tracking-widest px-8 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer"
-                >
-                  Book Now
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        ) : (
-          <motion.div
-            key="summary"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.25 }}
-            className="grid grid-cols-1 lg:grid-cols-12 w-full h-full"
-          >
-            {/* Left Side: Stay Summary details (text details) */}
-            <div className="col-span-12 lg:col-span-6 p-6 sm:p-8 flex flex-col justify-between z-10 w-full text-left order-2 lg:order-1">
-              <div>
-                {/* Top bar with Breadcrumbs & Share */}
-                <div className="flex justify-between items-center w-full mb-4 gap-4 flex-wrap">
-                  <span className="text-[9px] text-navy-800/40 tracking-wider uppercase font-bold">
-                    Home / Hotels / {hotel.name.replace(", Goa", "")}
-                  </span>
-                  <span 
-                    onClick={() => {
-                      if (navigator.share) {
-                        navigator.share({
-                          title: hotel.name,
-                          text: hotel.description,
-                          url: window.location.href
-                        }).catch(err => console.log(err));
-                      } else {
-                        navigator.clipboard.writeText(window.location.href);
-                        alert("Link copied to clipboard!");
-                      }
-                    }}
-                    className="text-[9px] text-navy-800/50 hover:text-[#FF6B00] tracking-wider uppercase font-bold cursor-pointer flex items-center gap-1 transition-colors"
-                  >
-                    SHARE
-                  </span>
-                </div>
-
-                {/* Tagline / Type prefixed with dash */}
-                <span className="font-serif text-lg sm:text-xl lg:text-2xl font-medium text-navy-800 tracking-wide uppercase block mb-4 leading-tight">
-                  &mdash; {hotel.tag.toUpperCase()}
-                </span>
-
-                {/* Description */}
-                <p className="text-sm text-navy-800/75 leading-relaxed font-sans">
-                  {hotel.description}
-                </p>
-                
-                {/* Detailed Metadata Box */}
-                <div className="mt-4 border-t border-[#1D3D9E]/10 pt-4 space-y-3">
-                  <p className="text-xs text-navy-800/70 leading-relaxed">
-                    Overlooking the prime beachfront stretch of <strong className="text-navy-900">{hotel.subRegion}</strong> in {hotel.region}, Goa.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
-                    {hotel.highlights.map((hl, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs text-navy-800/80">
-                        <span className="text-orange-brand">♦</span>
-                        <span>{hl}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Actions footer */}
-              <div className="flex items-center justify-between pt-4 border-t border-[#1D3D9E]/10 mt-6 sm:mt-8">
-                <div>
-                  <span className="text-[9px] text-navy-800/45 font-bold uppercase tracking-wider block">
-                    Starting Rate/Night
-                  </span>
-                  <span className="text-xl sm:text-2xl font-serif font-black text-navy-800 block mt-0.5">
-                    ₹ {formatPrice(hotel.startingRate)}
-                  </span>
-                </div>
-
-                <div className="flex gap-3">
-                  <button 
-                    onClick={() => setShowSummary(false)}
-                    className="border border-[#1D3D9E]/25 hover:border-[#1D3D9E]/50 text-navy-800 font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl transition-all cursor-pointer bg-white"
-                  >
-                    Back
-                  </button>
+              {/* Dots Indicator */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-navy-900/40 px-2.5 py-1 rounded-full backdrop-blur-xs">
+                {hotel.images.map((_, idx) => (
                   <button
-                    onClick={() => onBook(hotel)}
-                    className="bg-orange-brand hover:bg-[#E05E00] text-white text-xs lg:text-sm font-bold uppercase tracking-widest px-8 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer"
-                  >
-                    Book Now
-                  </button>
-                </div>
+                    key={idx}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setCurrentImageIndex(idx);
+                    }}
+                    className={`w-1.5 h-1.5 rounded-full transition-all cursor-pointer ${
+                      idx === currentImageIndex ? "bg-orange-brand scale-125" : "bg-white/60"
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* Right Content Details */}
+        <div className="col-span-12 lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between z-10">
+          <div>
+            {/* Header row: Tag and Rating Badge */}
+            <div className="flex items-center gap-3 mb-2 flex-wrap">
+              <span className="font-script text-2xl text-orange-brand">
+                {hotel.tag}
+              </span>
+              <div className="flex items-center gap-1 bg-orange-brand/10 text-orange-brand text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-orange-brand/20">
+                <Star className="w-2.5 h-2.5 fill-orange-brand shrink-0" />
+                <span>{rating.score} • {rating.text}</span>
               </div>
             </div>
 
-            {/* Right Side: Large landscape image of the hotel (order-1 on mobile, order-2 on desktop) */}
-            <div className="col-span-12 lg:col-span-6 relative h-64 lg:h-auto min-h-[350px] bg-slate-50 overflow-hidden order-1 lg:order-2">
-              <Image
-                src={hotel.images[1] || hotel.images[0]}
-                alt={`${hotel.name} view`}
-                fill
-                className="object-cover transition-transform duration-500 hover:scale-102"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                priority
-              />
+            {/* Title and Pricing */}
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+              <div className="space-y-1">
+                <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-navy-800 tracking-wide uppercase leading-tight group-hover:text-[#FF6B00] transition-colors duration-300">
+                  {hotel.name}
+                </h3>
+                <div className="flex items-start gap-1.5 text-xs text-navy-800/60 mt-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-orange-brand shrink-0 mt-0.5" />
+                  <span>{hotel.location}</span>
+                </div>
+              </div>
+              
+              {/* Price section */}
+              <div className="shrink-0 text-left sm:text-right">
+                <span className="text-[9px] text-navy-800/45 font-bold uppercase tracking-wider block">
+                  Starting Rate/Night
+                </span>
+                <span className="text-xl sm:text-2xl lg:text-3xl font-serif font-black text-navy-800 block mt-0.5">
+                  ₹ {formatPrice(hotel.startingRate)}
+                </span>
+              </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+            {/* Description Box */}
+            <div className="text-sm text-navy-800/80 leading-relaxed mt-4 mb-6 bg-sand-100/55 p-4 rounded-xl border border-[#1D3D9E]/5">
+              {hotel.description}
+            </div>
+          </div>
+
+          {/* Footer Actions */}
+          <div className="flex items-center justify-between pt-4 border-t border-[#1D3D9E]/10 mt-auto">
+            <Link 
+              href={`/lp/goa-hotels/${hotel.id}`}
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B00] hover:text-[#E05E00] tracking-wider uppercase group/link"
+            >
+              <span>{hotel.type === "Private Villa" ? "View Villa Details" : "View Hotel Details"}</span>
+              <ArrowRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" />
+            </Link>
+
+            <button
+              onClick={() => onBook(hotel)}
+              className="bg-orange-brand hover:bg-[#E05E00] text-white text-xs lg:text-sm font-bold uppercase tracking-widest px-8 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 }
@@ -442,9 +313,6 @@ Please let me know about availability and exclusive partner rates. Thank you!`;
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
-      
-      // Open WhatsApp in new tab
-      window.open(whatsappUrl, "_blank");
 
       try {
         confetti({
@@ -706,7 +574,7 @@ Please let me know about availability and exclusive partner rates. Thank you!`;
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center space-y-6 py-6"
               >
-                <div className="w-16 h-16 bg-[#25D366]/10 text-[#25D366] rounded-full flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 bg-orange-brand/10 text-orange-brand rounded-full flex items-center justify-center mx-auto">
                   <Check className="w-8 h-8 stroke-[3]" />
                 </div>
                 
@@ -715,7 +583,7 @@ Please let me know about availability and exclusive partner rates. Thank you!`;
                     Enquiry Registered
                   </h3>
                   <p className="text-sm text-slate-600 max-w-md mx-auto">
-                    Thank you, <strong className="text-navy-800">{name}</strong>. Your enquiry details for <strong>{hotel.name}</strong> have been opened in WhatsApp.
+                    Thank you, <strong className="text-navy-800">{name}</strong>. Your enquiry details for <strong>{hotel.name}</strong> have been registered. Our partner travel desk will contact you shortly.
                   </p>
                 </div>
 
@@ -738,40 +606,10 @@ Please let me know about availability and exclusive partner rates. Thank you!`;
                   </div>
                 </div>
 
-                <div className="text-xs text-orange-brand bg-orange-brand/5 border border-orange-brand/10 rounded-xl p-4 max-w-md mx-auto flex items-start gap-3">
-                  <Info className="w-5 h-5 shrink-0 mt-0.5 text-orange-brand" />
-                  <p className="text-left leading-relaxed">
-                    <strong>Exclusive Partner Benefit</strong>: If the WhatsApp tab did not open automatically, please click the button below to retry sending your travel details.
-                  </p>
-                </div>
-
-                <div className="flex gap-4 justify-center">
-                  <button
-                    onClick={() => {
-                      const message = `Hi! I would like to book a stay at ${hotel.name}.
-
-Here are my travel details:
-- Check-in (Start Date): ${checkIn}
-- Check-out (End Date): ${checkOut}
-- Rooms: ${rooms}
-- Guests: ${guests}
-
-My Contact Details:
-- Name: ${name}
-- Phone: ${phone}
-- Email: ${email}
-
-Please let me know about availability and exclusive partner rates. Thank you!`;
-                      window.open(`https://wa.me/919986389444?text=${encodeURIComponent(message)}`, "_blank");
-                    }}
-                    className="bg-[#25D366] hover:bg-[#1ebd59] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 transition-colors rounded-xl shadow-sm flex items-center gap-1.5"
-                  >
-                    <WhatsAppIcon className="w-4 h-4 fill-white" />
-                    <span>Retry WhatsApp</span>
-                  </button>
+                <div className="flex justify-center pt-2">
                   <button
                     onClick={onClose}
-                    className="bg-navy-800 hover:bg-navy-900 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 transition-colors rounded-xl shadow-sm"
+                    className="bg-navy-800 hover:bg-navy-900 text-white font-bold text-xs uppercase tracking-widest px-10 py-4.5 transition-colors rounded-xl shadow-md cursor-pointer"
                   >
                     Close Window
                   </button>
@@ -864,7 +702,7 @@ export default function GoaHotelsLandingPage() {
     >
       
       {/* BRAND THEMED LANDING PAGE HEADER */}
-      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-[#1D3D9E]/8 shadow-xs">
+      <header className="sticky top-0 z-40 bg-navy-800 border-b border-navy-950/20 shadow-xs">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center select-none">
             <div className="relative w-[140px] h-[45px]">
@@ -875,19 +713,10 @@ export default function GoaHotelsLandingPage() {
           <div className="flex items-center gap-4">
             <a
               href="tel:+919986389444"
-              className="hidden sm:inline-flex items-center gap-2 text-xs font-bold text-navy-800 hover:text-orange-brand transition-colors border-r border-[#1D3D9E]/10 pr-4"
+              className="hidden sm:inline-flex items-center gap-2 text-xs font-bold text-white hover:text-orange-brand transition-colors"
             >
               <PhoneCall className="w-4 h-4 text-orange-brand" />
               <span>Call Desk: +91 99863 89444</span>
-            </a>
-            <a
-              href="https://wa.me/919986389444?text=Hi%2C%20I'm%20interested%20in%20exclusive%20Goa%20hotel%20rates."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#25D366] hover:bg-[#1ebd59] text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-5 py-3 rounded-xl flex items-center gap-1.5 transition-colors shadow-xs"
-            >
-              <WhatsAppIcon className="w-4 h-4 fill-white" />
-              <span>WhatsApp</span>
             </a>
           </div>
         </div>
@@ -895,11 +724,24 @@ export default function GoaHotelsLandingPage() {
 
       <main className="flex-grow pb-24">
         
-        {/* 1. HERO SECTION - Coastal Themed with Custom Watercolor Illustration */}
-        <section className="relative py-16 sm:py-24 overflow-hidden bg-[#FAF5EE] border-b border-[#1D3D9E]/5">
+        {/* 1. HERO SECTION - Coastal Themed with Custom Watercolor Illustration Background */}
+        <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#1D3D9E]/5 flex items-center justify-center min-h-[300px]">
           
+          {/* Background Image of the entire Hero section */}
+          <div className="absolute inset-0 z-0 select-none pointer-events-none">
+            <Image
+              src="/images/goa_beach_hero.png"
+              alt="Nautical Goa Beach Cover"
+              fill
+              className="object-cover opacity-25"
+              priority
+            />
+            {/* Soft wash overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#FAF5EE]/90 via-[#FAF5EE]/80 to-[#FAF5EE]/95" />
+          </div>
+
           {/* Sailboat waves sketch watermark absolute on left */}
-          <div className="absolute left-[-40px] bottom-[-20px] w-96 h-96 opacity-20 select-none pointer-events-none z-0 rotate-12">
+          <div className="absolute left-[-40px] bottom-[-20px] w-96 h-96 opacity-15 select-none pointer-events-none z-0 rotate-12">
             <Image
               src="/images/sailboat_waves_sketch.png"
               alt="Nautical Sailboat Wave Sketch"
@@ -908,76 +750,34 @@ export default function GoaHotelsLandingPage() {
             />
           </div>
 
-          {/* Ship wheel sketch watermark absolute on right */}
-          <div className="absolute right-[5%] top-[10%] w-72 h-72 opacity-[0.04] select-none pointer-events-none z-0 -rotate-12">
-            <Image
-              src="/images/ship_wheel_sketch.png"
-              alt="Nautical Ship Wheel Sketch"
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="max-w-4xl mx-auto px-6 relative z-10 w-full text-center space-y-6">
+            <span className="text-[#FF6B00] uppercase tracking-wider text-xs font-bold block">
+              Direct Booking Promotion — Exclusive Partner Rates
+            </span>
             
-            {/* Left Column: Typography Content */}
-            <div className="lg:col-span-7 space-y-6 text-left">
-              <span className="text-[#FF6B00] uppercase tracking-wider text-xs font-bold block">
-                Direct Booking Promotion — Exclusive Partner Rates
-              </span>
-              
-              <span className="font-script text-3xl text-orange-brand block mb-[-12px]">
-                Curated Luxury Stays
-              </span>
-              
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-800 leading-tight">
-                GOA HOTELS <br />
-                &amp; RESORTS
-              </h1>
-              
-              <p className="text-navy-800/80 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl">
-                Explore 38 handpicked beachfront retreats, colonial estates, and modern villas. Place an enquiry to secure direct agency pricing, complimentary breakfasts, and premium airport shuttles.
-              </p>
+            <span className="font-script text-3xl text-orange-brand block mb-[-12px]">
+              Curated Luxury Stays
+            </span>
+            
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-800 leading-tight">
+              GOA HOTELS &amp; RESORTS
+            </h1>
+            
+            <p className="text-navy-800/80 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto">
+              Explore 16 handpicked beachfront retreats, colonial estates, and modern villas. Place an enquiry to secure direct agency pricing, complimentary breakfasts, and premium airport shuttles.
+            </p>
 
-              <div className="flex flex-wrap gap-4 pt-2">
-                <a
-                  href="https://wa.me/919986389444?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20exclusive%20Goa%20hotel%20villas."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex justify-center items-center gap-2 bg-[#25D366] hover:bg-[#1ebd59] text-white text-xs sm:text-sm font-bold px-8 py-4 rounded-xl shadow-md transition-all duration-200"
-                >
-                  <WhatsAppIcon className="w-5 h-5 fill-white" />
-                  <span>Enquire via WhatsApp</span>
-                </a>
-                <button
-                  onClick={() => {
-                    const element = document.getElementById("directory-listing");
-                    element?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="inline-flex justify-center items-center bg-navy-800 hover:bg-navy-950 text-white text-xs sm:text-sm font-bold px-8 py-4 rounded-xl shadow-sm transition-all duration-200"
-                >
-                  Browse Stays ({hotelsData.length})
-                </button>
-              </div>
+            <div className="flex justify-center gap-4 pt-2">
+              <button
+                onClick={() => {
+                  const element = document.getElementById("directory-listing");
+                  element?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex justify-center items-center bg-navy-800 hover:bg-navy-950 text-white text-xs sm:text-sm font-bold px-10 py-4 rounded-xl shadow-sm transition-all duration-200 cursor-pointer"
+              >
+                Browse Stays ({hotelsData.length})
+              </button>
             </div>
-
-            {/* Right Column: Friendly-sized Custom Nautical Illustration */}
-            <div className="lg:col-span-5 flex flex-col items-center lg:items-end justify-center w-full">
-              <div className="relative w-full max-w-md h-[260px] sm:h-[300px] rounded-2xl overflow-hidden shadow-md border border-[#1D3D9E]/10 bg-white group hover:scale-[1.01] transition-transform duration-300">
-                <Image
-                  src="/images/goa_beach_hero.png"
-                  alt="Nautical Goa Beach Cover"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  priority
-                />
-              </div>
-              <span className="text-[9px] text-navy-800/40 uppercase tracking-widest mt-2.5 block font-bold">
-                *Featured Illustration: Sailing off the Goan Coastline
-              </span>
-            </div>
-
           </div>
         </section>
 
@@ -1074,21 +874,12 @@ export default function GoaHotelsLandingPage() {
                 Need multiple rooms, event setups, destination weddings or corporate retreat deals at these hotels? Our marketing and events desks negotiate volume discounts directly with IHCL Taj and Brij Hotels.
               </p>
               
-              <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="pt-4 flex justify-center">
                 <a
                   href="tel:+919986389444"
-                  className="bg-orange-brand hover:bg-orange-brand-hover text-white font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-xl transition-colors w-full sm:w-auto shadow-sm"
+                  className="bg-orange-brand hover:bg-orange-brand-hover text-white font-bold text-xs uppercase tracking-widest px-10 py-4.5 rounded-xl transition-colors shadow-sm cursor-pointer"
                 >
                   Call +91 99863 89444
-                </a>
-                <a
-                  href="https://wa.me/919986389444?text=Hi%2C%20we're%20planning%20a%20group%20booking%20in%20Goa."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-transparent hover:bg-white/10 text-white border border-white/20 font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-xl transition-colors flex items-center justify-center gap-2 w-full sm:w-auto"
-                >
-                  <WhatsAppIcon className="w-5 h-5 fill-white" />
-                  <span>WhatsApp Group Desk</span>
                 </a>
               </div>
             </div>

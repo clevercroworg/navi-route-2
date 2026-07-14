@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Anchor, X, Compass, HelpCircle } from "lucide-react";
 
@@ -107,6 +108,10 @@ const optionResponses: Record<string, { text: string; options: ChatOption[] }> =
 };
 
 export default function Chatbot() {
+  const pathname = usePathname();
+  if (pathname && pathname.startsWith("/lp/goa-hotels")) {
+    return null;
+  }
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
