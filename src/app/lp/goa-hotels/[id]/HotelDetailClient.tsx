@@ -457,7 +457,7 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
         </div>
       </header>
 
-      <main className="flex-grow pb-24 max-w-7xl mx-auto px-6 mt-8 w-full z-10">
+      <main className="flex-grow pb-24 max-w-7xl mx-auto px-4 sm:px-6 mt-8 w-full max-w-full overflow-x-hidden z-10">
         
         {/* Navigation Breadcrumbs & Back button */}
         <div className="flex justify-between items-center mb-6 flex-wrap gap-4 border-b border-[#1D3D9E]/10 pb-4 w-full">
@@ -474,7 +474,7 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
         </div>
 
         {/* Content Layout Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start w-full max-w-full overflow-x-hidden">
           
           {/* Left Side: Images and highlights (7 columns) */}
           <div className="col-span-12 lg:col-span-7 space-y-8">
@@ -567,17 +567,17 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
               </div>
 
               {/* Description */}
-              <div className="text-sm text-navy-800/80 leading-relaxed font-sans border-t border-[#1D3D9E]/10 pt-6">
+              <div className="text-sm leading-relaxed font-sans border-t border-[#1D3D9E]/10 pt-6">
                 <span className="font-serif font-medium text-navy-800 uppercase tracking-wider block mb-3">
                   &mdash; Stay Overview
                 </span>
-                <p className="leading-relaxed">
+                <div className="bg-sand-100/55 p-4 rounded-xl border border-[#1D3D9E]/5 text-navy-800/90 font-sans leading-relaxed">
                   {hotel.description} Overlooking the prime beachfront stretch of <strong className="text-navy-900">{hotel.subRegion}</strong> in {hotel.region}, Goa.
-                </p>
+                </div>
               </div>
 
               {/* Price Details */}
-              <div className="border-t border-[#1D3D9E]/10 pt-6 flex justify-between items-end">
+              <div className="border-t border-[#1D3D9E]/10 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 w-full">
                 <div>
                   <span className="text-[10px] text-navy-800/45 font-bold uppercase tracking-wider block">
                     Starting Rate / Night
@@ -586,7 +586,7 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
                     ₹ {formatPrice(hotel.startingRate)}
                   </span>
                 </div>
-                <div className="text-[10px] text-navy-800/40 italic text-right">
+                <div className="text-[10px] text-navy-800/40 italic text-left sm:text-right mt-1 sm:mt-0">
                   *Complimentary transfers included
                 </div>
               </div>
