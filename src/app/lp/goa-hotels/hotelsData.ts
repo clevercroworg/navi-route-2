@@ -19,7 +19,7 @@ export interface Hotel {
 export const hotelsData: Hotel[] = [
   {
     id: "resort-terra-paraiso",
-    name: "Resort Terra Paraiso",
+    name: "Resort Terra Paraiso goa",
     location: "Gauravaddo, Calangute, North Goa, 403516, India",
     subRegion: "Calangute",
     startingRate: 5600,
@@ -114,12 +114,12 @@ export const hotelsData: Hotel[] = [
     tag: "Vedic Architecture & Wellness"
   },
   {
-    id: "clement-resort-goa",
-    name: "Clement Resort Goa",
+    id: "cmiiaent-resort-goa",
+    name: "CMiiaent Resort Goa",
     location: "Coutinho Vaddo, Vagator, North Goa, 403509, India",
     subRegion: "Vagator",
     startingRate: 4700,
-    description: "Located near Vagator's prime sunset points, Clement Resort Goa is a stylish boutique escape providing contemporary rooms, private pool decks, a tropical bar, and easy access to coastal party hubs.",
+    description: "Located near Vagator's prime sunset points, CMiiaent Resort Goa is a stylish boutique escape providing contemporary rooms, private pool decks, a tropical bar, and easy access to coastal party hubs.",
     phone: "+91 83222 55943",
     email: "hello.clement@nautiroute.com",
     highlights: [
