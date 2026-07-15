@@ -1,5 +1,47 @@
 [
   {
+    "id": "prainha-resort-by-the-sea",
+    "name": "Prainha Resort By The Sea",
+    "location": "Jetty Rd, near State Bank of India, Dona Paula, Panaji, Goa, 403004, India",
+    "subRegion": "Dona Paula",
+    "startingRate": 7500,
+    "description": "Nestled in the quiet cove of Dona Paula in Panaji, Prainha Resort By The Sea is a tranquil luxury beachfront sanctuary in Central Goa. The resort offers private cottage-style accommodations, oceanfront infinity swimming pools, lush gardens, scenic bay views, and delightful beachside dining.",
+    "phone": "+91 77740 10131",
+    "email": "stay.prainha@nautiroute.com",
+    "highlights": [
+      "Private Beachside Seclusion",
+      "Stunning Dona Paula Bay Views",
+      "Outdoor Oceanfront Infinity Pool",
+      "Waterfront Dining & Sunset Cocktails"
+    ],
+    "images": [
+      "/images/hotels/prainha-resort-by-the-sea/1.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/2.jpg"
+    ],
+    "region": "Central Goa",
+    "type": "Luxury Resort",
+    "brand": "Others",
+    "tag": "Beachside Seclusion Luxury",
+    "googleRating": "4.2",
+    "gallery": [
+      "/images/hotels/prainha-resort-by-the-sea/1.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/2.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/3.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/4.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/5.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/6.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/7.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/8.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/9.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/10.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/11.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/12.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/13.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/14.jpg",
+      "/images/hotels/prainha-resort-by-the-sea/15.jpg"
+    ]
+  },
+  {
     "id": "goa-marriott-resort",
     "name": "Goa Marriott Resort & Spa",
     "location": "Miramar Beach, Miramar, Panaji, Goa, 403001, India",
