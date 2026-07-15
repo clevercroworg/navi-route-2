@@ -780,7 +780,7 @@ export default function GoaHotelsLandingPage() {
                 }}
                 className="inline-flex justify-center items-center bg-navy-800 hover:bg-navy-950 text-white text-xs sm:text-sm font-bold px-10 py-4 rounded-xl shadow-sm transition-all duration-200 cursor-pointer"
               >
-                Browse Stays ({hotelsData.length})
+                Browse Stays
               </button>
             </div>
           </div>
