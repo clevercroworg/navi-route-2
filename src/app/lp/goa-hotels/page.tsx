@@ -90,7 +90,7 @@ function HotelCard({
       } else {
         prevImage(e as any);
       }
-    } else if (Math.abs(diff) < 5) {
+    } else if (Math.abs(diff) < 15) {
       onImageClick(hotel, currentImageIndex);
     }
     setDragStartX(null);
@@ -109,7 +109,7 @@ function HotelCard({
       } else {
         prevImage(e);
       }
-    } else if (Math.abs(diff) < 5) {
+    } else if (Math.abs(diff) < 15) {
       onImageClick(hotel, currentImageIndex);
     }
     setDragStartX(null);
@@ -730,6 +730,15 @@ export default function GoaHotelsLandingPage() {
   const [lightboxImages, setLightboxImages] = useState<string[]>([]);
   const [lightboxHotelName, setLightboxHotelName] = useState("");
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [activeLoadedIndex, setActiveLoadedIndex] = useState(0);
+  const [isImageLoading, setIsImageLoading] = useState(false);
+
+  // When lightbox opens or index changes, mark as loading
+  useEffect(() => {
+    if (isLightboxOpen) {
+      setIsImageLoading(true);
+    }
+  }, [lightboxIndex, isLightboxOpen]);
 
   // Pagination count state — restore from sessionStorage if available
   const [visibleCount, setVisibleCount] = useState(() => {
@@ -820,6 +829,7 @@ export default function GoaHotelsLandingPage() {
     setLightboxImages(imagesToUse);
     setLightboxHotelName(hotel.name);
     setLightboxIndex(initialIndex);
+    setActiveLoadedIndex(initialIndex);
     setIsLightboxOpen(true);
   };
 
@@ -1244,19 +1254,29 @@ export default function GoaHotelsLandingPage() {
               exit={{ opacity: 0, scale: 0.95 }}
               className="relative w-full max-w-5xl h-[70vh] sm:h-[80vh] flex flex-col items-center justify-center z-10 pointer-events-none"
             >
-              <div className="relative w-full h-full">
+              <div className="relative w-full h-full pointer-events-auto">
                 <Image
                   src={lightboxImages[lightboxIndex]}
                   alt={`${lightboxHotelName} Full View ${lightboxIndex + 1}`}
                   fill
                   className="object-contain"
                   priority
+                  onLoad={() => {
+                    setActiveLoadedIndex(lightboxIndex);
+                    setIsImageLoading(false);
+                  }}
                 />
+                {isImageLoading && (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-navy-950/40 backdrop-blur-xs z-20">
+                    <Loader2 className="animate-spin w-8 h-8 text-orange-brand mb-2" />
+                    <span className="text-white/80 text-[10px] uppercase font-bold tracking-wider">Loading...</span>
+                  </div>
+                )}
               </div>
               
               {/* Image Indicator / Caption */}
               <div className="text-white/60 text-xs mt-4 tracking-wider uppercase font-bold pointer-events-auto">
-                {lightboxHotelName} &mdash; Image {lightboxIndex + 1} of {lightboxImages.length}
+                {lightboxHotelName} &mdash; Image {activeLoadedIndex + 1} of {lightboxImages.length}
               </div>
             </motion.div>
           </div>

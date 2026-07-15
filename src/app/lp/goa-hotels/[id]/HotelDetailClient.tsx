@@ -417,13 +417,23 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [activeLoadedIndex, setActiveLoadedIndex] = useState(0);
+  const [isImageLoading, setIsImageLoading] = useState(false);
   const [failedImages, setFailedImages] = useState<Record<number, boolean>>({});
+
+  // When lightbox opens or index changes, mark as loading
+  useEffect(() => {
+    if (isLightboxOpen) {
+      setIsImageLoading(true);
+    }
+  }, [lightboxIndex, isLightboxOpen]);
 
   // Fallback to images if gallery is empty/undefined
   const galleryImages = hotel.gallery && hotel.gallery.length > 0 ? hotel.gallery : hotel.images;
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
+    setActiveLoadedIndex(index);
     setIsLightboxOpen(true);
   };
 
@@ -916,19 +926,29 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
 
           {/* Lightbox Main Image Container */}
           <div className="relative w-full max-w-5xl h-[70vh] sm:h-[80vh] flex flex-col items-center justify-center">
-            <div className="relative w-full h-full">
+            <div className="relative w-full h-full pointer-events-auto">
               <Image
                 src={galleryImages[lightboxIndex]}
                 alt={`${hotel.name} Full View ${lightboxIndex + 1}`}
                 fill
                 className="object-contain"
                 priority
+                onLoad={() => {
+                  setActiveLoadedIndex(lightboxIndex);
+                  setIsImageLoading(false);
+                }}
               />
+              {isImageLoading && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-navy-950/40 backdrop-blur-xs z-20">
+                  <Loader2 className="animate-spin w-8 h-8 text-orange-brand mb-2" />
+                  <span className="text-white/80 text-[10px] uppercase font-bold tracking-wider">Loading...</span>
+                </div>
+              )}
             </div>
             
             {/* Image Indicator / Caption */}
             <div className="text-white/60 text-xs mt-4 tracking-wider uppercase font-bold">
-              Image {lightboxIndex + 1} of {galleryImages.length}
+              Image {activeLoadedIndex + 1} of {galleryImages.length}
             </div>
           </div>
         </div>
