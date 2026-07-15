@@ -496,11 +496,8 @@ Please let me know about availability and exclusive partner rates. Thank you!`;
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-1">
                   <h3 className="font-serif text-xl font-bold text-navy-800">
-                    Request Booking Enquiry
+                    Booking
                   </h3>
-                  <p className="text-xs text-slate-500">
-                    Fill out the form below. Confirming will redirect you to WhatsApp to complete your stay enquiry.
-                  </p>
                 </div>
 
                 {/* Name */}
@@ -756,21 +753,63 @@ export default function GoaHotelsLandingPage() {
     setIsLightboxOpen(true);
   };
 
+  const nextLightboxImage = () => {
+    setLightboxIndex((prev) => (prev + 1) % lightboxImages.length);
+  };
+
+  const prevLightboxImage = () => {
+    setLightboxIndex((prev) => (prev - 1 + lightboxImages.length) % lightboxImages.length);
+  };
+
+  const [lightboxDragStartX, setLightboxDragStartX] = useState<number | null>(null);
+
+  const handleLightboxTouchStart = (e: React.TouchEvent) => {
+    setLightboxDragStartX(e.targetTouches[0].clientX);
+  };
+
+  const handleLightboxTouchEnd = (e: React.TouchEvent) => {
+    if (lightboxDragStartX === null) return;
+    const dragEndX = e.changedTouches[0].clientX;
+    const diff = lightboxDragStartX - dragEndX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        nextLightboxImage();
+      } else {
+        prevLightboxImage();
+      }
+    }
+    setLightboxDragStartX(null);
+  };
+
+  const handleLightboxMouseDown = (e: React.MouseEvent) => {
+    setLightboxDragStartX(e.clientX);
+  };
+
+  const handleLightboxMouseUp = (e: React.MouseEvent) => {
+    if (lightboxDragStartX === null) return;
+    const diff = lightboxDragStartX - e.clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        nextLightboxImage();
+      } else {
+        prevLightboxImage();
+      }
+    }
+    setLightboxDragStartX(null);
+  };
+
   // Keyboard navigation for Lightbox
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isLightboxOpen) return;
       if (e.key === "Escape") setIsLightboxOpen(false);
-      if (e.key === "ArrowRight") {
-        setLightboxIndex((prev) => (prev + 1) % lightboxImages.length);
-      }
-      if (e.key === "ArrowLeft") {
-        setLightboxIndex((prev) => (prev - 1 + lightboxImages.length) % lightboxImages.length);
-      }
+      if (e.key === "ArrowRight") nextLightboxImage();
+      if (e.key === "ArrowLeft") prevLightboxImage();
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isLightboxOpen, lightboxImages]);
+
 
   // Displayed hotels sliced based on pagination visibleCount
   const displayedHotels = useMemo(() => {
@@ -1083,7 +1122,13 @@ export default function GoaHotelsLandingPage() {
       {/* Lightbox Modal for Main Catalog */}
       <AnimatePresence>
         {isLightboxOpen && lightboxImages.length > 0 && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/95 backdrop-blur-xs p-4 select-none">
+          <div 
+            onTouchStart={handleLightboxTouchStart}
+            onTouchEnd={handleLightboxTouchEnd}
+            onMouseDown={handleLightboxMouseDown}
+            onMouseUp={handleLightboxMouseUp}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/95 backdrop-blur-xs p-4 select-none cursor-grab active:cursor-grabbing"
+          >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

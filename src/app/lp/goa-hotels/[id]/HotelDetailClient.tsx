@@ -200,11 +200,8 @@ function BookingModal({
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-1 text-left">
                 <h3 className="font-serif text-xl font-bold text-navy-800">
-                  Request Booking Enquiry
+                  Booking
                 </h3>
-                <p className="text-xs text-slate-500 font-sans">
-                  Fill out the form below. Confirming will register your details directly with our travel desk.
-                </p>
               </div>
 
               {/* Name */}
@@ -438,6 +435,43 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
 
   const prevLightboxImage = () => {
     setLightboxIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
+
+  const [lightboxDragStartX, setLightboxDragStartX] = useState<number | null>(null);
+
+  const handleLightboxTouchStart = (e: React.TouchEvent) => {
+    setLightboxDragStartX(e.targetTouches[0].clientX);
+  };
+
+  const handleLightboxTouchEnd = (e: React.TouchEvent) => {
+    if (lightboxDragStartX === null) return;
+    const dragEndX = e.changedTouches[0].clientX;
+    const diff = lightboxDragStartX - dragEndX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        nextLightboxImage();
+      } else {
+        prevLightboxImage();
+      }
+    }
+    setLightboxDragStartX(null);
+  };
+
+  const handleLightboxMouseDown = (e: React.MouseEvent) => {
+    setLightboxDragStartX(e.clientX);
+  };
+
+  const handleLightboxMouseUp = (e: React.MouseEvent) => {
+    if (lightboxDragStartX === null) return;
+    const diff = lightboxDragStartX - e.clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        nextLightboxImage();
+      } else {
+        prevLightboxImage();
+      }
+    }
+    setLightboxDragStartX(null);
   };
 
   // Keyboard listener for Lightbox navigation
@@ -847,7 +881,13 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
 
       {/* Lightbox Modal */}
       {isLightboxOpen && galleryImages.length > 0 && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/95 backdrop-blur-xs p-4 select-none">
+        <div 
+          onTouchStart={handleLightboxTouchStart}
+          onTouchEnd={handleLightboxTouchEnd}
+          onMouseDown={handleLightboxMouseDown}
+          onMouseUp={handleLightboxMouseUp}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/95 backdrop-blur-xs p-4 select-none cursor-grab active:cursor-grabbing"
+        >
           <button
             onClick={closeLightbox}
             className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-20 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/10 hover:bg-white/20 cursor-pointer"
