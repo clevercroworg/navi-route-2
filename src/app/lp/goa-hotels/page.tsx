@@ -484,7 +484,7 @@ Please let me know about availability and exclusive partner rates. Thank you!`;
               <div className="flex items-start gap-2">
                 <Info className="w-4 h-4 text-orange-brand shrink-0 mt-0.5" />
                 <p>
-                  Promoted by <strong className="text-orange-brand">Navi Route</strong>. Bookings processed directly secure exclusive complimentary upgrades and airport transfers.
+                  Bookings processed directly secure exclusive complimentary upgrades and airport transfers.
                 </p>
               </div>
             </div>
@@ -1060,7 +1060,7 @@ export default function GoaHotelsLandingPage() {
             </div>
           </div>
           <div className="max-w-md mx-auto text-slate-400/80 leading-relaxed">
-            Navigating ideas. Delivering impact. Curated hospitality listings are promoted by Navi Route Digital Growth Partners.
+            Curated luxury hospitality listings and hotel packages.
           </div>
           <div className="flex justify-center gap-6 pt-2">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
@@ -1068,7 +1068,7 @@ export default function GoaHotelsLandingPage() {
             <Link href="/contact" className="hover:text-white transition-colors">Contact Support</Link>
           </div>
           <div className="text-[10px] text-slate-500 pt-4">
-            &copy; {new Date().getFullYear()} Navi Route. Developed for hospitality campaigns. All hotel rates subject to season availability.
+            &copy; {new Date().getFullYear()} Elite Stays. All hotel rates subject to season availability.
           </div>
         </div>
       </footer>
