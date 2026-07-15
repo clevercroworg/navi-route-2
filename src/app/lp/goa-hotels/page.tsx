@@ -716,7 +716,7 @@ export default function GoaHotelsLandingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Filter States
-  const [selectedType, setSelectedType] = useState<"all" | "Premium" | "Luxury" | "Standard">("all");
+  const [selectedType, setSelectedType] = useState<"Premium" | "Luxury" | "Standard">("Premium");
 
   // Lightbox States
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -730,7 +730,6 @@ export default function GoaHotelsLandingPage() {
 
   // Filtered Hotels list based on selected stay type
   const filteredHotels = useMemo(() => {
-    if (selectedType === "all") return hotelsData;
     if (selectedType === "Luxury") {
       return hotelsData.filter(h => ["Luxury Resort", "Heritage & Boutique", "Private Villa"].includes(h.type));
     }
@@ -929,7 +928,6 @@ export default function GoaHotelsLandingPage() {
             {/* Stay Type Filters */}
             <div className="flex flex-wrap gap-2 shrink-0">
               {[
-                { id: "all", label: "All Stays" },
                 { id: "Premium", label: "Premium" },
                 { id: "Luxury", label: "Luxury" },
                 { id: "Standard", label: "Standard" }
