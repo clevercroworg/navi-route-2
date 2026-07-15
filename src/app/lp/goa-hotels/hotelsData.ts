@@ -478,6 +478,47 @@ export const hotelsData: Hotel[] = [
       "/images/hotels/BensInn/Bensinn_imag_148.avif",
       "/images/hotels/BensInn/Bensinn_imag_15.avif"
     ]
+  },
+  {
+    id: "riva-boutique-apartments",
+    name: "Riva Boutique Apartments",
+    location: "Mandrem Beach, Mandrem, North Goa, 403527, India",
+    subRegion: "Mandrem",
+    startingRate: 3800,
+    description: "Set on Mandrem Beach, Riva Boutique Apartments offers North Goa’s most breathtaking waterfront escape, blending upscale boutique service with custom self-catering kitchenette conveniences.",
+    phone: "+91 83222 77309",
+    email: "reservations.riva@nautiroute.com",
+    highlights: [
+      "Deluxe Rooms with Kitchenette",
+      "Stunning Dual-Waterfront Views",
+      "Located Directly on Mandrem Beach",
+      "Access to Riva Resort Amenities"
+    ],
+    images: [
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image1.webp",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image2.webp"
+    ],
+    region: "North Goa",
+    type: "Standard",
+    brand: "Others",
+    tag: "Waterfront Boutique Stays",
+    gallery: [
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image1.webp",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image2.webp",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image3.jpg",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image4.webp",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image6.webp",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image7.jpg",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image8.jpg",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image9.jpg",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image10.jpg",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image11.jpg",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image12.webp",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image13.jpg",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image14.webp",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image15.jpg",
+      "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image16.webp"
+    ]
   }
 ];
 
