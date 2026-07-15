@@ -712,22 +712,38 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
               </div>
 
               {/* Rating block */}
-              <div className="flex items-center gap-1.5 bg-white text-navy-800 text-[11px] font-bold px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs w-fit">
-                <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex items-center gap-2 bg-white text-navy-800 text-sm font-bold px-4 py-2 rounded-full border border-slate-200 shadow-sm w-fit">
+                <svg className="w-4.5 h-4.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                   <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
                   <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
                   <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 6.16l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
                 </svg>
                 <span>{rating.score}</span>
-                <div className="flex items-center gap-0.5 ml-1.5 border-l border-slate-200 pl-2">
+                <div className="flex items-center gap-0.5 ml-2 border-l border-slate-200 pl-2">
                   {Array.from({ length: 5 }, (_, i) => {
-                    const isFilled = i < Math.floor(parseFloat(rating.score));
+                    const starValue = i + 1;
+                    const scoreVal = parseFloat(rating.score);
+                    let fillPercent = 0;
+                    if (scoreVal >= starValue) {
+                      fillPercent = 100;
+                    } else if (scoreVal > starValue - 1) {
+                      fillPercent = Math.round((scoreVal - (starValue - 1)) * 100);
+                    }
+                    const gradientId = `star-grad-detail-${hotel.id}-${starValue}`;
                     return (
-                      <Star 
-                        key={i} 
-                        className={`w-3 h-3 shrink-0 ${isFilled ? "fill-[#FF6B00] text-[#FF6B00]" : "text-slate-200"}`} 
-                      />
+                      <svg key={i} className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                          <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset={`${fillPercent}%`} stopColor="#FF6B00" />
+                            <stop offset={`${fillPercent}%`} stopColor="#E2E8F0" />
+                          </linearGradient>
+                        </defs>
+                        <path 
+                          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" 
+                          fill={`url(#${gradientId})`}
+                        />
+                      </svg>
                     );
                   })}
                 </div>
