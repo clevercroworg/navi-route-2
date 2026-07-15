@@ -630,8 +630,116 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
         {/* Content Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start w-full max-w-full overflow-x-hidden">
           
-          {/* Left Column: Stay Summary details (5 columns) */}
-          <div className="col-span-12 lg:col-span-5 space-y-6 order-2 lg:order-1">
+          {/* Left Side: Images and highlights (7 columns) */}
+          <div className="col-span-12 lg:col-span-7 space-y-8">
+            
+            {/* Gallery Image slider */}
+            <div 
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              onMouseDown={handleMouseDown}
+              onMouseUp={handleMouseUp}
+              className="relative w-full h-[300px] sm:h-[450px] rounded-2xl overflow-hidden shadow-md border border-[#1D3D9E]/10 bg-slate-100 cursor-pointer select-none"
+            >
+              <Image
+                src={hotel.images[currentImageIndex]}
+                alt={hotel.name}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                priority
+                draggable={false}
+              />
+
+              {/* Gallery Controls */}
+              {hotel.images.length > 1 && (
+                <>
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      prevImage();
+                    }}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 cursor-pointer"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      nextImage();
+                    }}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 cursor-pointer"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+
+                  {/* Dots Indicator */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-navy-900/40 px-3 py-1.5 rounded-full backdrop-blur-xs">
+                    {hotel.images.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setCurrentImageIndex(idx);
+                        }}
+                        className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
+                          idx === currentImageIndex ? "bg-orange-brand scale-125" : "bg-white/60"
+                        }`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+
+            {/* Gallery & Room Views Section (Moved to replace highlights) */}
+            {hotel.gallery && hotel.gallery.length > 0 && (
+              <div className="watercolor-card bg-white p-6 sm:p-8 rounded-2xl border border-[#1D3D9E]/10 space-y-6">
+                <div>
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-navy-800 tracking-wide uppercase">
+                    Gallery &amp; Room Views
+                  </h3>
+                  <p className="text-xs text-navy-800/60 mt-1 max-w-2xl leading-relaxed">
+                    Take a virtual tour through the room interiors and beautiful layouts of this curated Goan property.
+                  </p>
+                </div>
+                
+                {/* Gallery Grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                  {hotel.gallery
+                    .filter((_, idx) => !failedImages[idx])
+                    .map((imgSrc, idx) => {
+                      const originalIdx = hotel.gallery!.indexOf(imgSrc);
+                      return (
+                        <div 
+                          key={idx}
+                          onClick={() => openLightbox(originalIdx)}
+                          className="relative h-32 sm:h-40 rounded-xl overflow-hidden shadow-xs border border-[#1D3D9E]/5 cursor-pointer hover:border-orange-brand/30 hover:shadow-md transition-all duration-300 group bg-slate-100"
+                        >
+                          <Image
+                            src={imgSrc}
+                            alt={`${hotel.name} Gallery Image ${idx + 1}`}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            sizes="(max-width: 640px) 50vw, 30vw"
+                            onError={() => {
+                              setFailedImages(prev => ({ ...prev, [originalIdx]: true }));
+                            }}
+                          />
+                          <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-colors" />
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Right Side: Stay Summary details (5 columns) */}
+          <div className="col-span-12 lg:col-span-5 space-y-6">
             <div className="watercolor-card bg-white p-6 sm:p-8 rounded-2xl border border-[#1D3D9E]/10 space-y-6">
 
               {/* Rating block */}
@@ -730,116 +838,7 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
               </a>
             </div>
           </div>
-
-          {/* Right Column: Images and highlights (7 columns) */}
-          <div className="col-span-12 lg:col-span-7 space-y-8 order-1 lg:order-2">
-            
-            {/* Gallery Image slider */}
-            <div 
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
-              onMouseDown={handleMouseDown}
-              onMouseUp={handleMouseUp}
-              className="relative w-full h-[300px] sm:h-[450px] rounded-2xl overflow-hidden shadow-md border border-[#1D3D9E]/10 bg-slate-100 cursor-pointer select-none"
-            >
-              <Image
-                src={hotel.images[currentImageIndex]}
-                alt={hotel.name}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                priority
-                draggable={false}
-              />
-
-              {/* Gallery Controls */}
-              {hotel.images.length > 1 && (
-                <>
-                  <button 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      prevImage();
-                    }}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 cursor-pointer"
-                    aria-label="Previous image"
-                  >
-                    <ChevronLeft className="w-6 h-6" />
-                  </button>
-                  <button 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      nextImage();
-                    }}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 cursor-pointer"
-                    aria-label="Next image"
-                  >
-                    <ChevronRight className="w-6 h-6" />
-                  </button>
-
-                  {/* Dots Indicator */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-navy-900/40 px-3 py-1.5 rounded-full backdrop-blur-xs">
-                    {hotel.images.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setCurrentImageIndex(idx);
-                        }}
-                        className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
-                          idx === currentImageIndex ? "bg-orange-brand scale-125" : "bg-white/60"
-                        }`}
-                        aria-label={`Go to slide ${idx + 1}`}
-                      />
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-          </div>
-
         </div>
-
-        {/* Bottom Section: Full Width Gallery & Room Views */}
-        {hotel.gallery && hotel.gallery.length > 0 && (
-          <div className="watercolor-card bg-white p-6 sm:p-8 rounded-2xl border border-[#1D3D9E]/10 mt-10 w-full">
-            <div>
-              <h3 className="font-serif text-lg sm:text-xl font-bold text-navy-800 tracking-wide uppercase">
-                Gallery &amp; Room Views
-              </h3>
-              <p className="text-xs text-navy-800/60 mt-1 max-w-2xl leading-relaxed">
-                Take a virtual tour through the room interiors and beautiful layouts of this curated Goan property.
-              </p>
-            </div>
-            
-            {/* Gallery Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
-              {hotel.gallery
-                .filter((_, idx) => !failedImages[idx])
-                .map((imgSrc, idx) => {
-                  const originalIdx = hotel.gallery!.indexOf(imgSrc);
-                  return (
-                    <div 
-                      key={idx}
-                      onClick={() => openLightbox(originalIdx)}
-                      className="relative h-32 sm:h-40 lg:h-48 rounded-xl overflow-hidden shadow-xs border border-[#1D3D9E]/5 cursor-pointer hover:border-orange-brand/30 hover:shadow-md transition-all duration-300 group bg-slate-100"
-                    >
-                      <Image
-                        src={imgSrc}
-                        alt={`${hotel.name} Gallery Image ${idx + 1}`}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                        onError={() => {
-                          setFailedImages(prev => ({ ...prev, [originalIdx]: true }));
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-colors" />
-                    </div>
-                  );
-                })}
-            </div>
-          </div>
-        )}
 
 
       </main>
