@@ -1,5 +1,48 @@
 [
   {
+    "id": "goa-marriott-resort",
+    "name": "Goa Marriott Resort & Spa",
+    "location": "Miramar Beach, Miramar, Panaji, Goa, 403001, India",
+    "subRegion": "Panaji",
+    "startingRate": 9000,
+    "description": "Situated on the edge of Miramar Beach in Panaji, Goa Marriott Resort & Spa is a classic luxury waterfront retreat in Central Goa. The property features scenic views of Miramar beach and Nerul river mouth, modern rooms with elegant furnishings, an in-house casino, wellness spa services, and multiple award-winning restaurants.",
+    "phone": "+91 832-665-6000",
+    "email": "stay.marriott@nautiroute.com",
+    "highlights": [
+      "Waterfront Miramar Beach Location",
+      "King Room with Garden View",
+      "On-site Casino & Wellness Spa",
+      "Minutes away from Panaji Town Center"
+    ],
+    "images": [
+      "/images/hotels/goa-marriott-resort/1.jpg",
+      "/images/hotels/goa-marriott-resort/2.jpg"
+    ],
+    "region": "Central Goa",
+    "type": "Luxury Resort",
+    "brand": "Others",
+    "tag": "Miramar Beachfront Luxury",
+    "googleRating": "4.4",
+    "gallery": [
+      "/images/hotels/goa-marriott-resort/1.jpg",
+      "/images/hotels/goa-marriott-resort/2.jpg",
+      "/images/hotels/goa-marriott-resort/3.jpg",
+      "/images/hotels/goa-marriott-resort/4.jpg",
+      "/images/hotels/goa-marriott-resort/5.jpg",
+      "/images/hotels/goa-marriott-resort/6.jpg",
+      "/images/hotels/goa-marriott-resort/7.jpg",
+      "/images/hotels/goa-marriott-resort/8.jpg",
+      "/images/hotels/goa-marriott-resort/9.jpg",
+      "/images/hotels/goa-marriott-resort/10.jpg",
+      "/images/hotels/goa-marriott-resort/11.jpg",
+      "/images/hotels/goa-marriott-resort/12.jpg",
+      "/images/hotels/goa-marriott-resort/13.jpg",
+      "/images/hotels/goa-marriott-resort/14.jpg",
+      "/images/hotels/goa-marriott-resort/15.jpg",
+      "/images/hotels/goa-marriott-resort/16.jpg"
+    ]
+  },
+  {
     "id": "hilton-goa-resort",
     "name": "Hilton Goa Resort",
     "location": "Pilerne - Candolim Road, Saipem Hills, Candolim, North Goa, 403515, India",
