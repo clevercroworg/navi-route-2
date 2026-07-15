@@ -463,6 +463,50 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
     setCurrentImageIndex((prev) => (prev - 1 + hotel.images.length) % hotel.images.length);
   };
 
+  const [showAllGallery, setShowAllGallery] = useState(false);
+  const [dragStartX, setDragStartX] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setDragStartX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (dragStartX === null) return;
+    const dragEndX = e.changedTouches[0].clientX;
+    const diff = dragStartX - dragEndX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        nextImage();
+      } else {
+        prevImage();
+      }
+    } else {
+      const galleryIdx = hotel.gallery ? hotel.gallery.indexOf(hotel.images[currentImageIndex]) : -1;
+      openLightbox(galleryIdx >= 0 ? galleryIdx : 0);
+    }
+    setDragStartX(null);
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setDragStartX(e.clientX);
+  };
+
+  const handleMouseUp = (e: React.MouseEvent) => {
+    if (dragStartX === null) return;
+    const diff = dragStartX - e.clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        nextImage();
+      } else {
+        prevImage();
+      }
+    } else {
+      const galleryIdx = hotel.gallery ? hotel.gallery.indexOf(hotel.images[currentImageIndex]) : -1;
+      openLightbox(galleryIdx >= 0 ? galleryIdx : 0);
+    }
+    setDragStartX(null);
+  };
+
   const rating = getHotelRating(hotel);
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("en-IN", {
@@ -531,7 +575,13 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
           <div className="col-span-12 lg:col-span-7 space-y-8">
             
             {/* Gallery Image slider */}
-            <div className="relative w-full h-[300px] sm:h-[450px] rounded-2xl overflow-hidden shadow-md border border-[#1D3D9E]/10 bg-slate-100">
+            <div 
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              onMouseDown={handleMouseDown}
+              onMouseUp={handleMouseUp}
+              className="relative w-full h-[300px] sm:h-[450px] rounded-2xl overflow-hidden shadow-md border border-[#1D3D9E]/10 bg-slate-100 cursor-pointer select-none"
+            >
               <Image
                 src={hotel.images[currentImageIndex]}
                 alt={hotel.name}
@@ -539,20 +589,27 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 60vw"
                 priority
+                draggable={false}
               />
 
               {/* Gallery Controls */}
               {hotel.images.length > 1 && (
                 <>
                   <button 
-                    onClick={prevImage}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      prevImage();
+                    }}
                     className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 cursor-pointer"
                     aria-label="Previous image"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
                   <button 
-                    onClick={nextImage}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      nextImage();
+                    }}
                     className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-navy-900/60 hover:bg-orange-brand text-white flex items-center justify-center transition-all z-10 cursor-pointer"
                     aria-label="Next image"
                   >
@@ -564,7 +621,10 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
                     {hotel.images.map((_, idx) => (
                       <button
                         key={idx}
-                        onClick={() => setCurrentImageIndex(idx)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setCurrentImageIndex(idx);
+                        }}
                         className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
                           idx === currentImageIndex ? "bg-orange-brand scale-125" : "bg-white/60"
                         }`}
@@ -576,20 +636,60 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
               )}
             </div>
 
-            {/* highlights/bullet points */}
-            <div className="watercolor-card bg-white p-6 sm:p-8 rounded-2xl border border-[#1D3D9E]/10 space-y-6">
-              <h3 className="font-serif text-lg sm:text-xl font-bold text-navy-800 tracking-wide uppercase">
-                Amenities &amp; Stays Highlights
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {hotel.highlights.map((highlight, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 text-sm text-navy-800/85">
-                    <BrandDiamond />
-                    <span>{highlight}</span>
+            {/* Gallery & Room Views Section (Moved to replace highlights) */}
+            {hotel.gallery && hotel.gallery.length > 0 && (
+              <div className="watercolor-card bg-white p-6 sm:p-8 rounded-2xl border border-[#1D3D9E]/10 space-y-6">
+                <div>
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-navy-800 tracking-wide uppercase">
+                    Gallery &amp; Room Views
+                  </h3>
+                  <p className="text-xs text-navy-800/60 mt-1 max-w-2xl leading-relaxed">
+                    Take a virtual tour through the room interiors and beautiful layouts of this curated Goan property.
+                  </p>
+                </div>
+                
+                {/* Gallery Grid */}
+                <div className="grid grid-cols-2 gap-4">
+                  {hotel.gallery
+                    .filter((_, idx) => !failedImages[idx])
+                    .slice(0, showAllGallery ? undefined : 2)
+                    .map((imgSrc, idx) => {
+                      const originalIdx = hotel.gallery!.indexOf(imgSrc);
+                      return (
+                        <div 
+                          key={idx}
+                          onClick={() => openLightbox(originalIdx)}
+                          className="relative h-32 sm:h-40 rounded-xl overflow-hidden shadow-xs border border-[#1D3D9E]/5 cursor-pointer hover:border-orange-brand/30 hover:shadow-md transition-all duration-300 group bg-slate-100"
+                        >
+                          <Image
+                            src={imgSrc}
+                            alt={`${hotel.name} Gallery Image ${idx + 1}`}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            sizes="(max-width: 640px) 50vw, 30vw"
+                            onError={() => {
+                              setFailedImages(prev => ({ ...prev, [originalIdx]: true }));
+                            }}
+                          />
+                          <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-colors" />
+                        </div>
+                      );
+                    })}
+                </div>
+
+                {/* Show More / Show Less Button */}
+                {hotel.gallery.filter((_, idx) => !failedImages[idx]).length > 2 && (
+                  <div className="pt-2 text-center">
+                    <button
+                      onClick={() => setShowAllGallery(!showAllGallery)}
+                      className="inline-flex items-center gap-1.5 bg-[#FF6B00] hover:bg-[#E05E00] text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-xl transition-all cursor-pointer shadow-sm"
+                    >
+                      <span>{showAllGallery ? "Show Less" : "Show More Images"}</span>
+                    </button>
                   </div>
-                ))}
+                )}
               </div>
-            </div>
+            )}
           </div>
 
           {/* Right Side: Stay Summary details (5 columns) */}
@@ -612,9 +712,25 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
               </div>
 
               {/* Rating block */}
-              <div className="flex items-center gap-2.5 bg-orange-brand/5 text-orange-brand text-xs uppercase font-bold tracking-wider px-3.5 py-2.5 rounded-xl border border-orange-brand/10 w-fit">
-                <Star className="w-3.5 h-3.5 fill-orange-brand shrink-0" />
-                <span>{rating.score} • {rating.text}</span>
+              <div className="flex items-center gap-1.5 bg-white text-navy-800 text-[11px] font-bold px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs w-fit">
+                <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 6.16l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                <span>{rating.score}</span>
+                <div className="flex items-center gap-0.5 ml-1.5 border-l border-slate-200 pl-2">
+                  {Array.from({ length: 5 }, (_, i) => {
+                    const isFilled = i < Math.floor(parseFloat(rating.score));
+                    return (
+                      <Star 
+                        key={i} 
+                        className={`w-3 h-3 shrink-0 ${isFilled ? "fill-[#FF6B00] text-[#FF6B00]" : "text-slate-200"}`} 
+                      />
+                    );
+                  })}
+                </div>
               </div>
 
               {/* Description */}
@@ -677,48 +793,7 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
           </div>
         </div>
 
-        {/* Gallery & Exterior Views Section */}
-        {hotel.gallery && hotel.gallery.length > 0 && hotel.gallery.filter((_, idx) => !failedImages[idx]).length > 0 && (
-          <div className="mt-16 border-t border-[#1D3D9E]/10 pt-12">
-            <div className="mb-8">
-              <span className="text-[#FF6B00] uppercase tracking-wider text-[10px] font-bold block mb-1">
-                Visual Sanctuary Showcase
-              </span>
-              <h2 className="font-serif text-2xl sm:text-3xl font-black text-navy-800 tracking-wide uppercase">
-                Gallery &amp; Exterior Views
-              </h2>
-              <p className="text-xs sm:text-sm text-navy-800/60 mt-1 max-w-2xl leading-relaxed">
-                Take a virtual tour through the breathtaking architectural details, poolside escapes, and lush garden walkways of this curated Goan property.
-              </p>
-            </div>
-            
-            {/* Gallery Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {hotel.gallery.map((imgSrc, idx) => {
-                if (failedImages[idx]) return null;
-                return (
-                  <div 
-                    key={idx}
-                    onClick={() => openLightbox(idx)}
-                    className="relative h-32 sm:h-40 md:h-48 rounded-xl overflow-hidden shadow-xs border border-[#1D3D9E]/5 cursor-pointer hover:border-orange-brand/30 hover:shadow-md transition-all duration-300 group bg-slate-100"
-                  >
-                    <Image
-                      src={imgSrc}
-                      alt={`${hotel.name} Gallery Image ${idx + 1}`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                      onError={() => {
-                        setFailedImages(prev => ({ ...prev, [idx]: true }));
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-colors" />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
+
       </main>
 
       {/* MINIMALIST LANDING PAGE FOOTER */}
