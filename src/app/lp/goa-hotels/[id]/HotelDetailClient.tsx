@@ -591,6 +591,7 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
         <div className="flex justify-between items-center mb-6 flex-wrap gap-4 border-b border-[#1D3D9E]/10 pb-4 w-full">
           <Link
             href="/lp/goa-hotels"
+            scroll={false}
             className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B00] hover:text-[#E05E00] tracking-wider uppercase"
           >
             <ChevronLeft className="w-4 h-4" />
