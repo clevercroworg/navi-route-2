@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -716,8 +716,14 @@ export default function GoaHotelsLandingPage() {
   const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Filter States
-  const [selectedType, setSelectedType] = useState<"Premium" | "Luxury" | "Standard">("Standard");
+  // Filter States — restore from sessionStorage if available
+  const [selectedType, setSelectedType] = useState<"Premium" | "Luxury" | "Standard">(() => {
+    if (typeof window !== "undefined") {
+      const saved = sessionStorage.getItem("goa-hotels-filter");
+      if (saved === "Premium" || saved === "Luxury" || saved === "Standard") return saved;
+    }
+    return "Standard";
+  });
 
   // Lightbox States
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -725,8 +731,14 @@ export default function GoaHotelsLandingPage() {
   const [lightboxHotelName, setLightboxHotelName] = useState("");
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  // Pagination count state
-  const [visibleCount, setVisibleCount] = useState(10);
+  // Pagination count state — restore from sessionStorage if available
+  const [visibleCount, setVisibleCount] = useState(() => {
+    if (typeof window !== "undefined") {
+      const saved = sessionStorage.getItem("goa-hotels-visible");
+      if (saved) return Math.max(10, parseInt(saved, 10));
+    }
+    return 10;
+  });
   const [isPreloading, setIsPreloading] = useState(false);
 
   // Filtered Hotels list based on selected stay type
@@ -737,8 +749,53 @@ export default function GoaHotelsLandingPage() {
     return hotelsData.filter(h => h.type === selectedType);
   }, [selectedType]);
 
-  // Reset pagination when type filter changes
+  // Persist filter selection and visible count to sessionStorage
   useEffect(() => {
+    sessionStorage.setItem("goa-hotels-filter", selectedType);
+  }, [selectedType]);
+
+  useEffect(() => {
+    sessionStorage.setItem("goa-hotels-visible", String(visibleCount));
+  }, [visibleCount]);
+
+  // Restore scroll position after page mount (delayed to allow cards to render)
+  useEffect(() => {
+    const savedScroll = sessionStorage.getItem("goa-hotels-scroll");
+    if (savedScroll) {
+      const scrollY = parseInt(savedScroll, 10);
+      // Double rAF to ensure DOM is fully painted with restored cards before scrolling
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          window.scrollTo(0, scrollY);
+        });
+      });
+      sessionStorage.removeItem("goa-hotels-scroll");
+    }
+  }, []);
+
+  // Save scroll position continuously (SPA navigations don't fire beforeunload)
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          sessionStorage.setItem("goa-hotels-scroll", String(window.scrollY));
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Reset pagination when type filter changes (but not on initial mount restore)
+  const isInitialMount = useRef(true);
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
     setVisibleCount(10);
   }, [selectedType]);
 
