@@ -555,9 +555,6 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
         
         {/* Navigation Breadcrumbs & Back button */}
         <div className="flex justify-between items-center mb-6 flex-wrap gap-4 border-b border-[#1D3D9E]/10 pb-4 w-full">
-          <div className="text-[10px] text-navy-800/40 tracking-wider uppercase font-bold break-words max-w-full">
-            Home / Hotels / {hotel.name.replace(", Goa", "")}
-          </div>
           <Link
             href="/lp/goa-hotels"
             className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B00] hover:text-[#E05E00] tracking-wider uppercase"
@@ -565,6 +562,9 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
             <ChevronLeft className="w-4 h-4" />
             <span>Back to Catalog</span>
           </Link>
+          <div className="text-[10px] text-navy-800/40 tracking-wider uppercase font-bold break-words max-w-full">
+            Home / Hotels / {hotel.name.replace(", Goa", "")}
+          </div>
         </div>
 
         {/* Content Layout Grid */}
