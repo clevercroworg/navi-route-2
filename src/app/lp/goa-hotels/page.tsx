@@ -758,25 +758,40 @@ export default function GoaHotelsLandingPage() {
     sessionStorage.setItem("goa-hotels-visible", String(visibleCount));
   }, [visibleCount]);
 
+  // Disable browser's built-in scroll restoration so it doesn't fight us
+  useEffect(() => {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+  }, []);
+
+  // Guard flag: don't save scroll position until we've finished restoring
+  const scrollRestoredRef = useRef(false);
+
   // Restore scroll position after page mount (delayed to allow cards to render)
   useEffect(() => {
     const savedScroll = sessionStorage.getItem("goa-hotels-scroll");
     if (savedScroll) {
       const scrollY = parseInt(savedScroll, 10);
-      // Double rAF to ensure DOM is fully painted with restored cards before scrolling
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          window.scrollTo(0, scrollY);
-        });
-      });
-      sessionStorage.removeItem("goa-hotels-scroll");
+      if (scrollY > 0) {
+        // Use setTimeout to wait for DOM to fully render with restored cards
+        const timer = setTimeout(() => {
+          window.scrollTo({ top: scrollY, behavior: "instant" });
+          // Allow scroll saving after restoration is complete
+          setTimeout(() => { scrollRestoredRef.current = true; }, 100);
+        }, 200);
+        return () => clearTimeout(timer);
+      }
     }
+    // No saved scroll — allow saving immediately
+    scrollRestoredRef.current = true;
   }, []);
 
-  // Save scroll position continuously (SPA navigations don't fire beforeunload)
+  // Save scroll position continuously (only after restoration is complete)
   useEffect(() => {
     let ticking = false;
     const handleScroll = () => {
+      if (!scrollRestoredRef.current) return; // Don't save during restoration
       if (!ticking) {
         requestAnimationFrame(() => {
           sessionStorage.setItem("goa-hotels-scroll", String(window.scrollY));
