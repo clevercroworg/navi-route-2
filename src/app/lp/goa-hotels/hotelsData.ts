@@ -10,7 +10,7 @@ export interface Hotel {
   highlights: string[];
   images: string[];
   region: "North Goa" | "South Goa" | "Central Goa";
-  type: "Luxury Resort" | "Heritage & Boutique" | "Modern Premium" | "Private Villa" | "Basic";
+  type: "Luxury Resort" | "Heritage & Boutique" | "Modern Premium" | "Private Villa" | "Standard";
   brand: "Taj (IHCL)" | "Brij Hotels" | "SeleQtions" | "amã Stays & Trails" | "Ginger" | "Others";
   tag: string;
   visitUrl?: string;
@@ -422,7 +422,7 @@ export const hotelsData: Hotel[] = [
       "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_2.webp"
     ],
     region: "North Goa",
-    type: "Basic",
+    type: "Standard",
     brand: "Others",
     tag: "Palm-lined Mandrem Escape",
     gallery: [
