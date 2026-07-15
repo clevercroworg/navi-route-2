@@ -1,5 +1,45 @@
 [
   {
+    "id": "hilton-goa-resort",
+    "name": "Hilton Goa Resort",
+    "location": "Pilerne - Candolim Road, Saipem Hills, Candolim, North Goa, 403515, India",
+    "subRegion": "Candolim",
+    "startingRate": 8500,
+    "description": "Perched atop the scenic Saipem Hills and overlooking the Nerul River, Hilton Goa Resort is a luxury retreat in Candolim, North Goa. The resort features elegant rooms with private balconies, four outdoor swimming pools, therapeutic spa treatments, and signature Mediterranean dining, all just a short drive from Candolim Beach.",
+    "phone": "+91 832-664-9800",
+    "email": "stay.hilton@nautiroute.com",
+    "highlights": [
+      "Perched atop Scenic Saipem Hills",
+      "Deluxe King Room with Garden Sit-Out",
+      "Overlooking Nerul River & Valley Views",
+      "Four Outdoor Pool Decks & Bar"
+    ],
+    "images": [
+      "/images/hotels/hilton-goa-resort/1.jpg",
+      "/images/hotels/hilton-goa-resort/2.jpg"
+    ],
+    "region": "North Goa",
+    "type": "Luxury Resort",
+    "brand": "Others",
+    "tag": "Hilltop Nerul River Luxury",
+    "googleRating": "4.3",
+    "gallery": [
+      "/images/hotels/hilton-goa-resort/1.jpg",
+      "/images/hotels/hilton-goa-resort/2.jpg",
+      "/images/hotels/hilton-goa-resort/3.jpg",
+      "/images/hotels/hilton-goa-resort/4.jpg",
+      "/images/hotels/hilton-goa-resort/5.jpg",
+      "/images/hotels/hilton-goa-resort/6.jpg",
+      "/images/hotels/hilton-goa-resort/7.jpg",
+      "/images/hotels/hilton-goa-resort/8.jpg",
+      "/images/hotels/hilton-goa-resort/9.jpg",
+      "/images/hotels/hilton-goa-resort/10.jpg",
+      "/images/hotels/hilton-goa-resort/11.jpg",
+      "/images/hotels/hilton-goa-resort/12.jpg",
+      "/images/hotels/hilton-goa-resort/13.jpg"
+    ]
+  },
+  {
     "id": "resort-terra-paraiso",
     "name": "Resort Terra Paraiso goa",
     "location": "Gauravaddo, Calangute, North Goa, 403516, India",
