@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { 
   MapPin, 
   ChevronLeft, 
@@ -412,6 +413,7 @@ function BookingModal({
 // CLIENT COMPONENT MAIN EXPORT
 export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -589,14 +591,13 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
         
         {/* Navigation Breadcrumbs & Back button */}
         <div className="flex justify-between items-center mb-6 flex-wrap gap-4 border-b border-[#1D3D9E]/10 pb-4 w-full">
-          <Link
-            href="/lp/goa-hotels"
-            scroll={false}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B00] hover:text-[#E05E00] tracking-wider uppercase"
+          <button
+            onClick={() => router.push('/lp/goa-hotels', { scroll: false })}
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B00] hover:text-[#E05E00] tracking-wider uppercase cursor-pointer"
           >
             <ChevronLeft className="w-4 h-4" />
             <span>Back to Catalog</span>
-          </Link>
+          </button>
           <div className="text-[10px] text-navy-800/40 tracking-wider uppercase font-bold break-words max-w-full">
             Home / Hotels / {hotel.name.replace(", Goa", "")}
           </div>
