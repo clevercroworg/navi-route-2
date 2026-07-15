@@ -438,6 +438,46 @@ export const hotelsData: Hotel[] = [
       "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_11.webp",
       "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_12.webp"
     ]
+  },
+  {
+    id: "bensinn",
+    name: "BensInn",
+    location: "House # 205 Ashwem, Ashwem Mandrem, Beach Road, Ashwem Beach, near Calisto Super Market, Pernem, Goa 403527",
+    subRegion: "Ashwem",
+    startingRate: 3600,
+    description: "Bens Inn in Mandrem provides premium guest house accommodation with a garden, a bar, a restaurant, and a shared lounge. Enjoy rooms equipped with air conditioning, desks, and private balconies near Ashwem Beach.",
+    phone: "+91 83222 77205",
+    email: "reservations.bensinn@nautiroute.com",
+    highlights: [
+      "Queen Premium Deluxe with Balcony",
+      "Steps away from Ashwem Beach",
+      "Cozy Garden & Shared Lounge Area",
+      "Concierge, Tour Desk & Room Service"
+    ],
+    images: [
+      "/images/hotels/BensInn/Bensinn_imag_8.avif",
+      "/images/hotels/BensInn/Bensinn_imag_5.avif"
+    ],
+    region: "North Goa",
+    type: "Standard",
+    brand: "Others",
+    tag: "Garden & Balcony Retreat",
+    gallery: [
+      "/images/hotels/BensInn/Bensinn_imag_1.avif",
+      "/images/hotels/BensInn/Bensinn_imag_2.avif",
+      "/images/hotels/BensInn/Bensinn_imag_3.avif",
+      "/images/hotels/BensInn/Bensinn_imag_4.avif",
+      "/images/hotels/BensInn/Bensinn_imag_5.avif",
+      "/images/hotels/BensInn/Bensinn_imag_8.avif",
+      "/images/hotels/BensInn/Bensinn_imag_9.avif",
+      "/images/hotels/BensInn/Bensinn_imag_10.avif",
+      "/images/hotels/BensInn/Bensinn_imag_11.avif",
+      "/images/hotels/BensInn/Bensinn_imag_12.avif",
+      "/images/hotels/BensInn/Bensinn_imag_13.avif",
+      "/images/hotels/BensInn/Bensinn_imag_14.avif",
+      "/images/hotels/BensInn/Bensinn_imag_148.avif",
+      "/images/hotels/BensInn/Bensinn_imag_15.avif"
+    ]
   }
 ];
 
