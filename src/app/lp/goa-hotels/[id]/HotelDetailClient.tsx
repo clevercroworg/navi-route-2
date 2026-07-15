@@ -420,6 +420,9 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [failedImages, setFailedImages] = useState<Record<number, boolean>>({});
 
+  // Fallback to images if gallery is empty/undefined
+  const galleryImages = hotel.gallery && hotel.gallery.length > 0 ? hotel.gallery : hotel.images;
+
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
     setIsLightboxOpen(true);
@@ -430,17 +433,11 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
   };
 
   const nextLightboxImage = () => {
-    if (hotel.gallery && hotel.gallery.length > 0) {
-      const len = hotel.gallery.length;
-      setLightboxIndex((prev) => (prev + 1) % len);
-    }
+    setLightboxIndex((prev) => (prev + 1) % galleryImages.length);
   };
 
   const prevLightboxImage = () => {
-    if (hotel.gallery && hotel.gallery.length > 0) {
-      const len = hotel.gallery.length;
-      setLightboxIndex((prev) => (prev - 1 + len) % len);
-    }
+    setLightboxIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
   // Keyboard listener for Lightbox navigation
@@ -453,7 +450,7 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isLightboxOpen, lightboxIndex]);
+  }, [isLightboxOpen, lightboxIndex, galleryImages]);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % hotel.images.length);
@@ -480,9 +477,10 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
       } else {
         prevImage();
       }
-    } else {
-      const galleryIdx = hotel.gallery ? hotel.gallery.indexOf(hotel.images[currentImageIndex]) : -1;
-      openLightbox(galleryIdx >= 0 ? galleryIdx : 0);
+    } else if (Math.abs(diff) < 5) {
+      const currentSrc = hotel.images[currentImageIndex];
+      const idx = galleryImages.indexOf(currentSrc);
+      openLightbox(idx >= 0 ? idx : 0);
     }
     setDragStartX(null);
   };
@@ -500,9 +498,10 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
       } else {
         prevImage();
       }
-    } else {
-      const galleryIdx = hotel.gallery ? hotel.gallery.indexOf(hotel.images[currentImageIndex]) : -1;
-      openLightbox(galleryIdx >= 0 ? galleryIdx : 0);
+    } else if (Math.abs(diff) < 5) {
+      const currentSrc = hotel.images[currentImageIndex];
+      const idx = galleryImages.indexOf(currentSrc);
+      openLightbox(idx >= 0 ? idx : 0);
     }
     setDragStartX(null);
   };
@@ -847,11 +846,11 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
       />
 
       {/* Lightbox Modal */}
-      {isLightboxOpen && hotel.gallery && (
+      {isLightboxOpen && galleryImages.length > 0 && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/95 backdrop-blur-xs p-4 select-none">
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-20 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/10 hover:bg-white/20"
+            className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-20 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/10 hover:bg-white/20 cursor-pointer"
             aria-label="Close gallery viewer"
           >
             <X className="w-5 h-5" />
@@ -877,7 +876,7 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
           <div className="relative w-full max-w-5xl h-[70vh] sm:h-[80vh] flex flex-col items-center justify-center">
             <div className="relative w-full h-full">
               <Image
-                src={hotel.gallery[lightboxIndex]}
+                src={galleryImages[lightboxIndex]}
                 alt={`${hotel.name} Full View ${lightboxIndex + 1}`}
                 fill
                 className="object-contain"
@@ -887,7 +886,7 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
             
             {/* Image Indicator / Caption */}
             <div className="text-white/60 text-xs mt-4 tracking-wider uppercase font-bold">
-              Image {lightboxIndex + 1} of {hotel.gallery.length}
+              Image {lightboxIndex + 1} of {galleryImages.length}
             </div>
           </div>
         </div>

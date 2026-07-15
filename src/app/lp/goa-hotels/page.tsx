@@ -65,10 +65,12 @@ const getHotelRating = (hotel: Hotel) => {
 // Redesigned Hotel Card Component (Fully themed, with compass watermark and hand-drawn styling)
 function HotelCard({ 
   hotel, 
-  onBook 
+  onBook,
+  onImageClick
 }: { 
   hotel: Hotel; 
   onBook: (hotel: Hotel) => void;
+  onImageClick: (hotel: Hotel, index: number) => void;
 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -88,6 +90,8 @@ function HotelCard({
       } else {
         prevImage(e as any);
       }
+    } else if (Math.abs(diff) < 5) {
+      onImageClick(hotel, currentImageIndex);
     }
     setDragStartX(null);
   };
@@ -105,6 +109,8 @@ function HotelCard({
       } else {
         prevImage(e);
       }
+    } else if (Math.abs(diff) < 5) {
+      onImageClick(hotel, currentImageIndex);
     }
     setDragStartX(null);
   };
@@ -709,14 +715,57 @@ export default function GoaHotelsLandingPage() {
   const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Filter States
+  const [selectedType, setSelectedType] = useState<"all" | "Premium" | "Luxury" | "Standard">("all");
 
+  // Lightbox States
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [lightboxImages, setLightboxImages] = useState<string[]>([]);
+  const [lightboxHotelName, setLightboxHotelName] = useState("");
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   // Pagination count state
   const [visibleCount, setVisibleCount] = useState(10);
   const [isPreloading, setIsPreloading] = useState(false);
 
-  // Filtered Hotels list (no filters, display full list)
-  const filteredHotels = hotelsData;
+  // Filtered Hotels list based on selected stay type
+  const filteredHotels = useMemo(() => {
+    if (selectedType === "all") return hotelsData;
+    if (selectedType === "Luxury") {
+      return hotelsData.filter(h => ["Luxury Resort", "Heritage & Boutique", "Private Villa"].includes(h.type));
+    }
+    return hotelsData.filter(h => h.type === selectedType);
+  }, [selectedType]);
+
+  // Reset pagination when type filter changes
+  useEffect(() => {
+    setVisibleCount(10);
+  }, [selectedType]);
+
+  // Handle open lightbox
+  const handleOpenLightbox = (hotel: Hotel, initialIndex: number) => {
+    const imagesToUse = hotel.gallery && hotel.gallery.length > 0 ? hotel.gallery : hotel.images;
+    setLightboxImages(imagesToUse);
+    setLightboxHotelName(hotel.name);
+    setLightboxIndex(initialIndex);
+    setIsLightboxOpen(true);
+  };
+
+  // Keyboard navigation for Lightbox
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isLightboxOpen) return;
+      if (e.key === "Escape") setIsLightboxOpen(false);
+      if (e.key === "ArrowRight") {
+        setLightboxIndex((prev) => (prev + 1) % lightboxImages.length);
+      }
+      if (e.key === "ArrowLeft") {
+        setLightboxIndex((prev) => (prev - 1 + lightboxImages.length) % lightboxImages.length);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isLightboxOpen, lightboxImages]);
 
   // Displayed hotels sliced based on pagination visibleCount
   const displayedHotels = useMemo(() => {
@@ -862,18 +911,42 @@ export default function GoaHotelsLandingPage() {
           </div>
         </section>
 
-        {/* 2. DIRECTORY TITLE SECTION */}
+        {/* 2. DIRECTORY TITLE SECTION & FILTER BAR */}
         <section id="directory-listing" className="max-w-7xl mx-auto px-6 mt-16 scroll-mt-24">
-          <div className="border-b border-[#1D3D9E]/10 pb-6 text-left">
-            <span className="text-[#FF6B00] uppercase tracking-wider text-[10px] font-bold block mb-1">
-              Bespoke Hospitality Catalog
-            </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-black text-navy-800 tracking-wide uppercase">
-              Our Goa Hotel Directory
-            </h2>
-            <p className="text-xs sm:text-sm text-navy-800/60 mt-1 max-w-2xl leading-relaxed">
-              Browse through our handpicked collection of luxury resorts, heritage boutique manors, and private beach villas in North, South, and Central Goa.
-            </p>
+          <div className="border-b border-[#1D3D9E]/10 pb-6 text-left flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+            <div>
+              <span className="text-[#FF6B00] uppercase tracking-wider text-[10px] font-bold block mb-1">
+                Bespoke Hospitality Catalog
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl font-black text-navy-800 tracking-wide uppercase">
+                Our Goa Hotel Directory
+              </h2>
+              <p className="text-xs sm:text-sm text-navy-800/60 mt-1 max-w-2xl leading-relaxed">
+                Browse through our handpicked collection of luxury resorts, heritage boutique manors, and private beach villas in North, South, and Central Goa.
+              </p>
+            </div>
+
+            {/* Stay Type Filters */}
+            <div className="flex flex-wrap gap-2 shrink-0">
+              {[
+                { id: "all", label: "All Stays" },
+                { id: "Premium", label: "Premium" },
+                { id: "Luxury", label: "Luxury" },
+                { id: "Standard", label: "Standard" }
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setSelectedType(tab.id as any)}
+                  className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 cursor-pointer ${
+                    selectedType === tab.id
+                      ? "bg-[#FF6B00] text-white shadow-md shadow-orange-brand/20 scale-105"
+                      : "bg-white hover:bg-sand-50 text-navy-800 border border-slate-200 hover:border-slate-300"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -887,6 +960,7 @@ export default function GoaHotelsLandingPage() {
                     key={hotel.id} 
                     hotel={hotel} 
                     onBook={handleOpenBooking} 
+                    onImageClick={handleOpenLightbox}
                   />
                 ))
               ) : (
@@ -1002,6 +1076,73 @@ export default function GoaHotelsLandingPage() {
         onClose={() => setIsModalOpen(false)} 
       />
 
+      {/* Lightbox Modal for Main Catalog */}
+      <AnimatePresence>
+        {isLightboxOpen && lightboxImages.length > 0 && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/95 backdrop-blur-xs p-4 select-none">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsLightboxOpen(false)}
+              className="absolute inset-0 cursor-zoom-out"
+            />
+            
+            <button
+              onClick={() => setIsLightboxOpen(false)}
+              className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-20 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/10 hover:bg-white/20 cursor-pointer"
+              aria-label="Close gallery viewer"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Navigation Controls */}
+            <button 
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxIndex((prev) => (prev - 1 + lightboxImages.length) % lightboxImages.length);
+              }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-orange-brand hover:text-white text-white/80 flex items-center justify-center transition-all z-10 cursor-pointer border border-white/10"
+              aria-label="Previous gallery image"
+            >
+              <ChevronLeft className="w-8 h-8" />
+            </button>
+            <button 
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxIndex((prev) => (prev + 1) % lightboxImages.length);
+              }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-orange-brand hover:text-white text-white/80 flex items-center justify-center transition-all z-10 cursor-pointer border border-white/10"
+              aria-label="Next gallery image"
+            >
+              <ChevronRight className="w-8 h-8" />
+            </button>
+
+            {/* Lightbox Main Image Container */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="relative w-full max-w-5xl h-[70vh] sm:h-[80vh] flex flex-col items-center justify-center z-10 pointer-events-none"
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src={lightboxImages[lightboxIndex]}
+                  alt={`${lightboxHotelName} Full View ${lightboxIndex + 1}`}
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              
+              {/* Image Indicator / Caption */}
+              <div className="text-white/60 text-xs mt-4 tracking-wider uppercase font-bold pointer-events-auto">
+                {lightboxHotelName} &mdash; Image {lightboxIndex + 1} of {lightboxImages.length}
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
     </div>
   );
