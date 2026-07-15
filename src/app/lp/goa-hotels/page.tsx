@@ -43,6 +43,13 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 // Helper to determine score and text
 const getHotelRating = (hotel: Hotel) => {
+  if (hotel.googleRating) {
+    const scoreNum = parseFloat(hotel.googleRating);
+    let text = "Highly Rated";
+    if (scoreNum >= 4.8) text = "Premier Boutique";
+    else if (scoreNum <= 4.2) text = "Value Choice";
+    return { score: hotel.googleRating, text };
+  }
   if (hotel.brand === "Taj (IHCL)" || hotel.brand === "Brij Hotels" || hotel.type === "Private Villa") {
     return { score: "4.9", text: "VVIP Choice" };
   }

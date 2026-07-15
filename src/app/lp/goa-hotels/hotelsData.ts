@@ -15,6 +15,7 @@ export interface Hotel {
   tag: string;
   visitUrl?: string;
   gallery?: string[];
+  googleRating?: string;
 }
 
 export const hotelsData: Hotel[] = [
@@ -462,6 +463,7 @@ export const hotelsData: Hotel[] = [
     type: "Standard",
     brand: "Others",
     tag: "Garden & Balcony Retreat",
+    googleRating: "4.6",
     gallery: [
       "/images/hotels/BensInn/Bensinn_imag_1.avif",
       "/images/hotels/BensInn/Bensinn_imag_2.avif",
@@ -502,6 +504,7 @@ export const hotelsData: Hotel[] = [
     type: "Standard",
     brand: "Others",
     tag: "Waterfront Boutique Stays",
+    googleRating: "4.1",
     gallery: [
       "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image1.webp",
       "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image2.webp",
@@ -518,6 +521,43 @@ export const hotelsData: Hotel[] = [
       "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image14.webp",
       "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image15.jpg",
       "/images/hotels/Riva_Boutique_Apartments/Riva_Boutique_Apartments_image16.webp"
+    ]
+  },
+  {
+    id: "fabhotel-palm-inn-resort",
+    name: "FabHotel Palm Inn Resort",
+    location: "Survey No: 120/2-X, Village Morjim, Tembwada, Pernem, Morjim, Goa 403512, India",
+    subRegion: "Morjim",
+    startingRate: 3400,
+    description: "Located a short walk from Morjim Beach, FabHotel Palm Inn Resort offers comfortable 3-star accommodations featuring an indoor swimming pool, private balconies, and a peaceful garden area.",
+    phone: "+91 83222 77401",
+    email: "reservations.palminn@nautiroute.com",
+    highlights: [
+      "Deluxe Rooms with Balcony",
+      "Indoor Swimming Pool",
+      "6-Min Walk to Morjim Beach",
+      "Free On-site Private Parking"
+    ],
+    images: [
+      "/images/hotels/FabHotel_Palm Inn_Resort/FabHotel_Palm_Inn_Resort_image1.jpg",
+      "/images/hotels/FabHotel_Palm Inn_Resort/FabHotel_Palm_Inn_Resort_image2.jpg"
+    ],
+    region: "North Goa",
+    type: "Standard",
+    brand: "Others",
+    tag: "Morjim Poolside Comfort",
+    googleRating: "4.2",
+    gallery: [
+      "/images/hotels/FabHotel_Palm Inn_Resort/FabHotel_Palm_Inn_Resort_image1.jpg",
+      "/images/hotels/FabHotel_Palm Inn_Resort/FabHotel_Palm_Inn_Resort_image2.jpg",
+      "/images/hotels/FabHotel_Palm Inn_Resort/FabHotel_Palm_Inn_Resort_image3.jpg",
+      "/images/hotels/FabHotel_Palm Inn_Resort/FabHotel_Palm_Inn_Resort_image4.jpg",
+      "/images/hotels/FabHotel_Palm Inn_Resort/FabHotel_Palm_Inn_Resort_image5.jpg",
+      "/images/hotels/FabHotel_Palm Inn_Resort/FabHotel_Palm_Inn_Resort_image6.jpg",
+      "/images/hotels/FabHotel_Palm Inn_Resort/FabHotel_Palm_Inn_Resort_image7.jpg",
+      "/images/hotels/FabHotel_Palm Inn_Resort/FabHotel_Palm_Inn_Resort_image8.jpg",
+      "/images/hotels/FabHotel_Palm Inn_Resort/FabHotel_Palm_Inn_Resort_image9.jpg",
+      "/images/hotels/FabHotel_Palm Inn_Resort/FabHotel_Palm_Inn_Resort_image10.jpg"
     ]
   }
 ];
