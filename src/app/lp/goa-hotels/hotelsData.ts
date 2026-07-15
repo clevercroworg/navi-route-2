@@ -20,6 +20,660 @@ export interface Hotel {
 
 export const hotelsData: Hotel[] = [
   {
+    id: "resort-terra-paraiso",
+    name: "Resort Terra Paraiso goa",
+    location: "Gauravaddo, Calangute, North Goa, 403516, India",
+    subRegion: "Calangute",
+    startingRate: 5600,
+    description: "Nestled steps away from the famous Calangute Beach, Resort Terra Paraiso is a boutique oasis featuring Portuguese villa-style architecture, red-earthen roofs, lush courtyard pools, and warm Goan hospitality.",
+    phone: "+91 83222 76321",
+    email: "reservations.terraparaiso@nautiroute.com",
+    highlights: [
+      "2-Min Walk to Calangute Beach",
+      "Traditional Portuguese Villa Style",
+      "Two Outdoor Courtyard Pools",
+      "Poolside Blue Bistro Restaurant"
+    ],
+    images: [
+      "/images/hotels/resort-terra-paraiso/1.jpg",
+      "/images/hotels/resort-terra-paraiso/2.jpg"
+    ],
+    region: "North Goa",
+    type: "Luxury Resort",
+    brand: "Others",
+    tag: "Earthen Portuguese Villas",
+    googleRating: "4.3",
+    gallery: [
+      "/images/hotels/resort-terra-paraiso/1.jpg",
+      "/images/hotels/resort-terra-paraiso/2.jpg",
+      "/images/hotels/resort-terra-paraiso/3.jpg",
+      "/images/hotels/resort-terra-paraiso/4.jpg",
+      "/images/hotels/resort-terra-paraiso/5.jpg",
+      "/images/hotels/resort-terra-paraiso/6.jpg",
+      "/images/hotels/resort-terra-paraiso/7.jpg",
+      "/images/hotels/resort-terra-paraiso/8.jpg",
+      "/images/hotels/resort-terra-paraiso/9.jpg",
+      "/images/hotels/resort-terra-paraiso/10.jpg",
+      "/images/hotels/resort-terra-paraiso/11.jpg",
+      "/images/hotels/resort-terra-paraiso/12.jpg",
+      "/images/hotels/resort-terra-paraiso/13.jpg",
+      "/images/hotels/resort-terra-paraiso/14.jpg"
+    ]
+  },
+  {
+    id: "goa-crescent-resort",
+    name: "Goa Crescent Resort",
+    location: "Morjim Beach Road, Morjim, North Goa, 403512, India",
+    subRegion: "Morjim",
+    startingRate: 3900,
+    description: "Perched gracefully on a hilltop, Goa Crescent Resort is a coastal haven that offers sweeping panoramic views of the Arabian Sea, modern poolside lounges, and easy access to Morjim's tranquil sands.",
+    phone: "+91 83222 98451",
+    email: "booking.crescent@nautiroute.com",
+    highlights: [
+      "Panoramic Hilltop Ocean Views",
+      "Modern Sea-facing Suites",
+      "Infinity-edge Swimming Pool",
+      "Close to Morjim Turtle Beach"
+    ],
+    images: [
+      "/images/hotels/goa-crescent-resort/1.jpg",
+      "/images/hotels/goa-crescent-resort/2.jpg"
+    ],
+    region: "North Goa",
+    type: "Modern Premium",
+    brand: "Others",
+    tag: "Hilltop Ocean Escape",
+    googleRating: "4.5",
+    gallery: [
+      "/images/hotels/goa-crescent-resort/1.jpg",
+      "/images/hotels/goa-crescent-resort/2.jpg",
+      "/images/hotels/goa-crescent-resort/3.jpg",
+      "/images/hotels/goa-crescent-resort/4.jpg",
+      "/images/hotels/goa-crescent-resort/5.jpg",
+      "/images/hotels/goa-crescent-resort/6.jpg",
+      "/images/hotels/goa-crescent-resort/7.jpg",
+      "/images/hotels/goa-crescent-resort/8.jpg",
+      "/images/hotels/goa-crescent-resort/9.jpg",
+      "/images/hotels/goa-crescent-resort/10.jpg",
+      "/images/hotels/goa-crescent-resort/11.jpg",
+      "/images/hotels/goa-crescent-resort/12.jpg",
+      "/images/hotels/goa-crescent-resort/13.jpg",
+      "/images/hotels/goa-crescent-resort/14.jpg",
+      "/images/hotels/goa-crescent-resort/15.jpg"
+    ]
+  },
+  {
+    id: "the-tamarind-hotel",
+    name: "The Tamarind Hotel",
+    location: "Anjuna-Mapusa Road, Anjuna, North Goa, 403509, India",
+    subRegion: "Anjuna",
+    startingRate: 4200,
+    description: "Tucked away in the leafy lanes of Anjuna, The Tamarind Hotel is a classic stone-built heritage property with vintage Goan charm, private balconies, a chic courtyard pool, and a renowned bakery cafe.",
+    phone: "+91 83266 73849",
+    email: "stay.tamarind@nautiroute.com",
+    highlights: [
+      "Elegant Hand-cut Stone Facade",
+      "Peaceful Courtyard Sanctuary",
+      "Walk to Famous Anjuna Cafes",
+      "In-house Gourmet Patisserie"
+    ],
+    images: [
+      "/images/hotels/the-tamarind-hotel/1.jpg",
+      "/images/hotels/the-tamarind-hotel/2.jpg"
+    ],
+    region: "North Goa",
+    type: "Heritage & Boutique",
+    brand: "Others",
+    tag: "Stone-built Heritage Stay",
+    googleRating: "4.2",
+    gallery: [
+      "/images/hotels/the-tamarind-hotel/1.jpg",
+      "/images/hotels/the-tamarind-hotel/2.jpg",
+      "/images/hotels/the-tamarind-hotel/3.jpg",
+      "/images/hotels/the-tamarind-hotel/4.jpg",
+      "/images/hotels/the-tamarind-hotel/5.jpg",
+      "/images/hotels/the-tamarind-hotel/6.jpg",
+      "/images/hotels/the-tamarind-hotel/7.jpg",
+      "/images/hotels/the-tamarind-hotel/8.jpg",
+      "/images/hotels/the-tamarind-hotel/9.jpg",
+      "/images/hotels/the-tamarind-hotel/10.jpg",
+      "/images/hotels/the-tamarind-hotel/11.jpg",
+      "/images/hotels/the-tamarind-hotel/12.jpg",
+      "/images/hotels/the-tamarind-hotel/13.jpg",
+      "/images/hotels/the-tamarind-hotel/14.jpg",
+      "/images/hotels/the-tamarind-hotel/15.jpg",
+      "/images/hotels/the-tamarind-hotel/16.jpg"
+    ]
+  },
+  {
+    id: "3102bce-a-vedic-resort-1",
+    name: "3102bce AVedicResort",
+    location: "Deul Wada, Vagator, North Goa, 403509, India",
+    subRegion: "Vagator",
+    startingRate: 4000,
+    description: "Inspired by the prehistoric Vedic era, 3102bce AVedicResort is a unique designer retreat featuring archaeological style elements, open-air jacuzzis, yoga shalas, and a pristine rooftop pool overlooking Chapora.",
+    phone: "+91 83266 91102",
+    email: "vedic.experience@nautiroute.com",
+    highlights: [
+      "Vedic Era Theme & Design",
+      "Open-air Balcony Jacuzzis",
+      "Rooftop Infinity Bath Pool",
+      "Daily Wellness & Yoga Classes"
+    ],
+    images: [
+      "/images/hotels/3102bce-a-vedic-resort-1/1.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/2.jpg"
+    ],
+    region: "North Goa",
+    type: "Heritage & Boutique",
+    brand: "Others",
+    tag: "Vedic Architecture & Wellness",
+    googleRating: "4.5",
+    gallery: [
+      "/images/hotels/3102bce-a-vedic-resort-1/1.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/2.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/3.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/4.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/5.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/6.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/7.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/8.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/9.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/10.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/11.jpg"
+    ]
+  },
+  {
+    id: "cmiiaent-resort-goa",
+    name: "CMiiaent Resort Goa",
+    location: "Coutinho Vaddo, Vagator, North Goa, 403509, India",
+    subRegion: "Vagator",
+    startingRate: 4700,
+    description: "Located near Vagator's prime sunset points, CMiiaent Resort Goa is a stylish boutique escape providing contemporary rooms, private pool decks, a tropical bar, and easy access to coastal party hubs.",
+    phone: "+91 83222 55943",
+    email: "hello.clement@nautiroute.com",
+    highlights: [
+      "Prime Vagator Sunset Location",
+      "Contemporary Tropical Vibe",
+      "Private Balcony Deck Access",
+      "Chic Lounge Bar & Bistro"
+    ],
+    images: [
+      "/images/hotels/cmiiaent-resort-goa/1.jpg",
+      "/images/hotels/cmiiaent-resort-goa/2.jpg"
+    ],
+    region: "North Goa",
+    type: "Modern Premium",
+    brand: "Others",
+    tag: "Boutique Vagator Escape",
+    googleRating: "4.2",
+    gallery: [
+      "/images/hotels/cmiiaent-resort-goa/1.jpg",
+      "/images/hotels/cmiiaent-resort-goa/2.jpg",
+      "/images/hotels/cmiiaent-resort-goa/3.jpg",
+      "/images/hotels/cmiiaent-resort-goa/4.jpg",
+      "/images/hotels/cmiiaent-resort-goa/5.jpg",
+      "/images/hotels/cmiiaent-resort-goa/6.jpg",
+      "/images/hotels/cmiiaent-resort-goa/7.jpg",
+      "/images/hotels/cmiiaent-resort-goa/8.jpg",
+      "/images/hotels/cmiiaent-resort-goa/9.jpg",
+      "/images/hotels/cmiiaent-resort-goa/10.jpg",
+      "/images/hotels/cmiiaent-resort-goa/11.jpg",
+      "/images/hotels/cmiiaent-resort-goa/12.jpg",
+      "/images/hotels/cmiiaent-resort-goa/13.jpg",
+      "/images/hotels/cmiiaent-resort-goa/14.jpg",
+      "/images/hotels/cmiiaent-resort-goa/15.jpg"
+    ]
+  },
+  {
+    id: "amaya-at-anamiva",
+    name: "AMiiaYA AT ANAMIVA",
+    location: "Gaonwadi, Anjuna, North Goa, 403509, India",
+    subRegion: "Anjuna",
+    startingRate: 6500,
+    description: "Experience designer elegance at Amaya at Anamiva, an art-focused luxury boutique hotel in Anjuna. Enjoy custom-crafted rooms, premium art installations, a wellness spa, and an upscale pool cocktail lounge.",
+    phone: "+91 83266 44589",
+    email: "reservations.anamiva@nautiroute.com",
+    highlights: [
+      "Art-themed Curator Suites",
+      "Upscale Swimming Pool Lounge",
+      "Designer Mediterranean Decor",
+      "Luxury Spa & Wellness Massages"
+    ],
+    images: [
+      "/images/hotels/amaya-at-anamiva/1.jpg",
+      "/images/hotels/amaya-at-anamiva/2.jpg"
+    ],
+    region: "North Goa",
+    type: "Heritage & Boutique",
+    brand: "Others",
+    tag: "Designer Boutique Art Suites",
+    googleRating: "4.5",
+    gallery: [
+      "/images/hotels/amaya-at-anamiva/1.jpg",
+      "/images/hotels/amaya-at-anamiva/2.jpg",
+      "/images/hotels/amaya-at-anamiva/3.jpg",
+      "/images/hotels/amaya-at-anamiva/4.jpg",
+      "/images/hotels/amaya-at-anamiva/5.jpg",
+      "/images/hotels/amaya-at-anamiva/6.jpg",
+      "/images/hotels/amaya-at-anamiva/7.jpg",
+      "/images/hotels/amaya-at-anamiva/8.jpg",
+      "/images/hotels/amaya-at-anamiva/9.jpg",
+      "/images/hotels/amaya-at-anamiva/10.jpg",
+      "/images/hotels/amaya-at-anamiva/11.jpg"
+    ]
+  },
+  {
+    id: "the-golden-crown-hotel-spa",
+    name: "The Golden Crown Hotel & Spa",
+    location: "Beach Road, Colva, South Goa, 403708, India",
+    subRegion: "Colva",
+    startingRate: 4500,
+    description: "Surrounded by South Goa's tranquil paddy fields, The Golden Crown Hotel & Spa offers a peaceful 4-star experience with large rooms, a luxury ayurvedic spa, and a short walk to Colva Beach.",
+    phone: "+91 83266 11223",
+    email: "booking.goldencrown@nautiroute.com",
+    highlights: [
+      "Scenic Paddy Field Backdrops",
+      "500 Meters from Colva Beach",
+      "Ayurvedic Wellness Spa Center",
+      "Spacious Family-friendly Suites"
+    ],
+    images: [
+      "/images/hotels/the-golden-crown-hotel-spa/1.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/2.jpg"
+    ],
+    region: "South Goa",
+    type: "Modern Premium",
+    brand: "Others",
+    tag: "South Goan Oasis",
+    googleRating: "4.1",
+    gallery: [
+      "/images/hotels/the-golden-crown-hotel-spa/1.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/2.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/3.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/4.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/5.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/6.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/7.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/8.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/9.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/10.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/11.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/12.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/13.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/14.jpg",
+      "/images/hotels/the-golden-crown-hotel-spa/15.jpg"
+    ]
+  },
+  {
+    id: "hibiscus-oasis-da-alohas",
+    name: "Hibiscus Oasis by Da Alohas",
+    location: "Candolim Beach Road, Candolim, North Goa, 403515, India",
+    subRegion: "Candolim",
+    startingRate: 4800,
+    description: "Hibiscus Oasis by Da Alohas is a premium serviced retreat in Candolim, featuring luxury pool-facing suites, landscaped gardens, and modern amenities designed for long, relaxing stays near the beach.",
+    phone: "+91 83222 77501",
+    email: "hibiscus.alohas@nautiroute.com",
+    highlights: [
+      "Pool-facing Luxury Apartments",
+      "Lush Landscaped Grounds",
+      "Self-catering Kitchen Options",
+      "Minutes to Candolim Nightlife"
+    ],
+    images: [
+      "/images/hotels/hibiscus-oasis-da-alohas/1.jpg",
+      "/images/hotels/hibiscus-oasis-da-alohas/2.jpg"
+    ],
+    region: "North Goa",
+    type: "Modern Premium",
+    brand: "Others",
+    tag: "Poolside Serviced Retreat",
+    googleRating: "4.8",
+    gallery: [
+      "/images/hotels/hibiscus-oasis-da-alohas/1.jpg",
+      "/images/hotels/hibiscus-oasis-da-alohas/2.jpg",
+      "/images/hotels/hibiscus-oasis-da-alohas/3.jpg",
+      "/images/hotels/hibiscus-oasis-da-alohas/4.jpg",
+      "/images/hotels/hibiscus-oasis-da-alohas/5.jpg",
+      "/images/hotels/hibiscus-oasis-da-alohas/6.jpg",
+      "/images/hotels/hibiscus-oasis-da-alohas/7.jpg",
+      "/images/hotels/hibiscus-oasis-da-alohas/8.jpg",
+      "/images/hotels/hibiscus-oasis-da-alohas/9.jpg",
+      "/images/hotels/hibiscus-oasis-da-alohas/10.jpg",
+      "/images/hotels/hibiscus-oasis-da-alohas/11.jpg"
+    ]
+  },
+  {
+    id: "3102bce-a-vedic-resort-2",
+    name: "3102bce - A Vedic Resort",
+    location: "187/14, Deul Wada, Vagator, North Goa, 403509, India",
+    subRegion: "Vagator",
+    startingRate: 4000,
+    description: "Unwind at 3102bce - A Vedic Resort in Vagator, North Goa. Explore a heritage property designed around the ancient Indus Valley civilization, featuring rustic wood detailing and therapeutic spa baths.",
+    phone: "+91 83266 91103",
+    email: "experience.vedic@nautiroute.com",
+    highlights: [
+      "Indus Valley Themed Rooms",
+      "Terracotta & Wood Architecture",
+      "Istaka Poolside Dining Bar",
+      "Short Walk to Sunset Point"
+    ],
+    images: [
+      "/images/hotels/3102bce-a-vedic-resort-2/1.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/2.jpg"
+    ],
+    region: "North Goa",
+    type: "Heritage & Boutique",
+    brand: "Others",
+    tag: "India's First Vedic Resort",
+    googleRating: "4.5",
+    gallery: [
+      "/images/hotels/3102bce-a-vedic-resort-2/1.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/2.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/3.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/4.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/5.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/6.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/7.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/8.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/9.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/10.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/11.jpg"
+    ]
+  },
+  {
+    id: "argo-by-trance",
+    name: "Argo By Trance",
+    location: "Airport Road, Dabolim, Central Goa, 403801, India",
+    subRegion: "Dabolim",
+    startingRate: 4600,
+    description: "Conveniently located near Dabolim Airport, Argo By Trance is an adult-focused boutique hotel offering contemporary comfort, a year-round outdoor pool, a fitness center, and a chic cocktail bar.",
+    phone: "+91 83266 12345",
+    email: "reservations.argo@nautiroute.com",
+    highlights: [
+      "5-Min Drive to Dabolim Airport",
+      "Adults-only Premium Rooms",
+      "Chic Poolside Cocktail Lounge",
+      "Full Fitness Center & Gym"
+    ],
+    images: [
+      "/images/hotels/argo-by-trance/1.jpg",
+      "/images/hotels/argo-by-trance/2.jpg"
+    ],
+    region: "Central Goa",
+    type: "Modern Premium",
+    brand: "Others",
+    tag: "Contemporary Airport Luxury",
+    googleRating: "4.1",
+    gallery: [
+      "/images/hotels/argo-by-trance/1.jpg",
+      "/images/hotels/argo-by-trance/2.jpg",
+      "/images/hotels/argo-by-trance/3.jpg",
+      "/images/hotels/argo-by-trance/4.jpg",
+      "/images/hotels/argo-by-trance/5.jpg",
+      "/images/hotels/argo-by-trance/6.jpg",
+      "/images/hotels/argo-by-trance/7.jpg",
+      "/images/hotels/argo-by-trance/8.jpg",
+      "/images/hotels/argo-by-trance/9.jpg",
+      "/images/hotels/argo-by-trance/10.jpg",
+      "/images/hotels/argo-by-trance/11.jpg",
+      "/images/hotels/argo-by-trance/12.jpg",
+      "/images/hotels/argo-by-trance/13.jpg"
+    ]
+  },
+  {
+    id: "jacks-resort",
+    name: "Jacks Resort",
+    location: "Chapora Road, Vagator, North Goa, 403509, India",
+    subRegion: "Vagator",
+    startingRate: 3600,
+    description: "Jacks Resort offers a quiet, budget-friendly tropical retreat in Vagator. Enjoy simple, clean rooms, a lush garden perimeter, a family pool, and walking proximity to Chapora Fort.",
+    phone: "+91 83222 34950",
+    email: "bookings.jacks@nautiroute.com",
+    highlights: [
+      "Quiet Tropical Garden Setting",
+      "Walk to Historic Chapora Fort",
+      "Clean Pool & Deck Area",
+      "Authentic Local Dining Cafe"
+    ],
+    images: [
+      "/images/hotels/jacks-resort/1.jpg",
+      "/images/hotels/jacks-resort/2.jpg"
+    ],
+    region: "North Goa",
+    type: "Heritage & Boutique",
+    brand: "Others",
+    tag: "Tropical Garden Sanctuary",
+    googleRating: "4.3",
+    gallery: [
+      "/images/hotels/jacks-resort/1.jpg",
+      "/images/hotels/jacks-resort/2.jpg",
+      "/images/hotels/jacks-resort/3.jpg",
+      "/images/hotels/jacks-resort/4.jpg",
+      "/images/hotels/jacks-resort/5.jpg",
+      "/images/hotels/jacks-resort/6.jpg",
+      "/images/hotels/jacks-resort/7.jpg",
+      "/images/hotels/jacks-resort/8.jpg",
+      "/images/hotels/jacks-resort/9.jpg",
+      "/images/hotels/jacks-resort/10.jpg",
+      "/images/hotels/jacks-resort/11.jpg",
+      "/images/hotels/jacks-resort/12.jpg",
+      "/images/hotels/jacks-resort/13.jpg",
+      "/images/hotels/jacks-resort/14.jpg",
+      "/images/hotels/jacks-resort/15.jpg"
+    ]
+  },
+  {
+    id: "laguna-anjuna",
+    name: "Laguna Anjuna-Vintage Goan country house style",
+    location: "Soranto Vaddo, Anjuna, North Goa, 403509, India",
+    subRegion: "Anjuna",
+    startingRate: 4100,
+    description: "Immerse yourself in vintage country house style at Laguna Anjuna. Featuring stone cottages, organic terracotta tiling, and a massive natural lagoon-style pool nestled under leafy palm canopies.",
+    phone: "+91 83222 74321",
+    email: "info.laguna@nautiroute.com",
+    highlights: [
+      "Vintage Stone Country Cottages",
+      "Massive Lagoon-style Pool",
+      "Pet-friendly Vacation Grounds",
+      "Quiet Slow-paced Country Living"
+    ],
+    images: [
+      "/images/hotels/laguna-anjuna/1.jpg",
+      "/images/hotels/laguna-anjuna/2.jpg"
+    ],
+    region: "North Goa",
+    type: "Heritage & Boutique",
+    brand: "Others",
+    tag: "Vintage Goan Country House",
+    googleRating: "4.1",
+    gallery: [
+      "/images/hotels/laguna-anjuna/1.jpg",
+      "/images/hotels/laguna-anjuna/2.jpg",
+      "/images/hotels/laguna-anjuna/3.jpg",
+      "/images/hotels/laguna-anjuna/4.jpg",
+      "/images/hotels/laguna-anjuna/5.jpg",
+      "/images/hotels/laguna-anjuna/6.jpg",
+      "/images/hotels/laguna-anjuna/7.jpg",
+      "/images/hotels/laguna-anjuna/8.jpg",
+      "/images/hotels/laguna-anjuna/9.jpg",
+      "/images/hotels/laguna-anjuna/10.jpg",
+      "/images/hotels/laguna-anjuna/11.jpg",
+      "/images/hotels/laguna-anjuna/12.jpg",
+      "/images/hotels/laguna-anjuna/13.jpg",
+      "/images/hotels/laguna-anjuna/14.jpg",
+      "/images/hotels/laguna-anjuna/15.jpg"
+    ]
+  },
+  {
+    id: "mateus-boutique-hotel",
+    name: "Mateus Boutique Hotel",
+    location: "31 January Road, Fontainhas, Panaji, Goa, 403001, India",
+    subRegion: "Panaji",
+    startingRate: 5000,
+    description: "Located in Panaji's vibrant Latin Quarter (Fontainhas), Mateus Boutique Hotel is a restored 19th-century colonial mansion blending Portuguese heritage decor with modern air-conditioned luxury.",
+    phone: "+91 83266 54321",
+    email: "reservations.mateus@nautiroute.com",
+    highlights: [
+      "Restored 19th-Century Mansion",
+      "Fontainhas Heritage Quarter",
+      "Original Colonial Furniture",
+      "Minutes to Mandovi River Cruise"
+    ],
+    images: [
+      "/images/hotels/mateus-boutique-hotel/1.jpg",
+      "/images/hotels/mateus-boutique-hotel/2.jpg"
+    ],
+    region: "Central Goa",
+    type: "Heritage & Boutique",
+    brand: "Others",
+    tag: "Colonial Mansion Stay",
+    googleRating: "4.0",
+    gallery: [
+      "/images/hotels/mateus-boutique-hotel/1.jpg",
+      "/images/hotels/mateus-boutique-hotel/2.jpg",
+      "/images/hotels/mateus-boutique-hotel/3.jpg",
+      "/images/hotels/mateus-boutique-hotel/4.jpg",
+      "/images/hotels/mateus-boutique-hotel/5.jpg",
+      "/images/hotels/mateus-boutique-hotel/6.jpg",
+      "/images/hotels/mateus-boutique-hotel/7.jpg",
+      "/images/hotels/mateus-boutique-hotel/8.jpg",
+      "/images/hotels/mateus-boutique-hotel/9.jpg",
+      "/images/hotels/mateus-boutique-hotel/10.jpg",
+      "/images/hotels/mateus-boutique-hotel/11.jpg",
+      "/images/hotels/mateus-boutique-hotel/12.jpg",
+      "/images/hotels/mateus-boutique-hotel/13.jpg",
+      "/images/hotels/mateus-boutique-hotel/14.jpg",
+      "/images/hotels/mateus-boutique-hotel/15.jpg"
+    ]
+  },
+  {
+    id: "swim-up-by-whiteflower",
+    name: "Swim Up By Whiteflower",
+    location: "Coutinho Vaddo, Vagator, North Goa, 403509, India",
+    subRegion: "Vagator",
+    startingRate: 6000,
+    description: "Designed for premium privacy, Swim Up By Whiteflower features signature rooms with direct swim-up balcony pools, custom interiors, and an on-site artisan bakery for a truly exclusive getaway.",
+    phone: "+91 83266 89901",
+    email: "swimup.whiteflower@nautiroute.com",
+    highlights: [
+      "Direct Swim-up Pool Rooms",
+      "Exclusive High-privacy Villa Feel",
+      "In-house Artisan Tea Bakery",
+      "Contemporary Minimalist Decor"
+    ],
+    images: [
+      "/images/hotels/swim-up-by-whiteflower/1.jpg",
+      "/images/hotels/swim-up-by-whiteflower/2.jpg"
+    ],
+    region: "North Goa",
+    type: "Private Villa",
+    brand: "Others",
+    tag: "Exclusive Swim-up Balconies",
+    googleRating: "4.1",
+    gallery: [
+      "/images/hotels/swim-up-by-whiteflower/1.jpg",
+      "/images/hotels/swim-up-by-whiteflower/2.jpg",
+      "/images/hotels/swim-up-by-whiteflower/3.jpg",
+      "/images/hotels/swim-up-by-whiteflower/4.jpg",
+      "/images/hotels/swim-up-by-whiteflower/5.jpg",
+      "/images/hotels/swim-up-by-whiteflower/6.jpg",
+      "/images/hotels/swim-up-by-whiteflower/7.jpg",
+      "/images/hotels/swim-up-by-whiteflower/8.jpg",
+      "/images/hotels/swim-up-by-whiteflower/9.jpg",
+      "/images/hotels/swim-up-by-whiteflower/10.jpg",
+      "/images/hotels/swim-up-by-whiteflower/11.jpg",
+      "/images/hotels/swim-up-by-whiteflower/12.jpg",
+      "/images/hotels/swim-up-by-whiteflower/13.jpg",
+      "/images/hotels/swim-up-by-whiteflower/14.jpg",
+      "/images/hotels/swim-up-by-whiteflower/15.jpg"
+    ]
+  },
+  {
+    id: "stone-wood-beach-resort",
+    name: "Stone Wood Beach Resort and Club, Vagator Beach",
+    location: "Ozran Beach Road, Vagator, North Goa, 403509, India",
+    subRegion: "Vagator",
+    startingRate: 5200,
+    description: "Overlooking the vibrant shores of Small Vagator, Stone Wood Beach Resort is a premium party hotel featuring direct beach access, poolside DJ decks, and contemporary wooden cottages.",
+    phone: "+91 91120 01711",
+    email: "reservations.stonewood@nautiroute.com",
+    highlights: [
+      "Overlooking Small Vagator Beach",
+      "Lively Poolside Music & Dj Decks",
+      "Rustic Luxury Wooden Cottages",
+      "Direct Path Access to Ozran Beach"
+    ],
+    images: [
+      "/images/hotels/stone-wood-beach-resort/1.jpg",
+      "/images/hotels/stone-wood-beach-resort/2.jpg"
+    ],
+    region: "North Goa",
+    type: "Luxury Resort",
+    brand: "Others",
+    tag: "Beachfront Party Resort",
+    googleRating: "4.2",
+    gallery: [
+      "/images/hotels/stone-wood-beach-resort/1.jpg",
+      "/images/hotels/stone-wood-beach-resort/2.jpg",
+      "/images/hotels/stone-wood-beach-resort/3.jpg",
+      "/images/hotels/stone-wood-beach-resort/4.jpg",
+      "/images/hotels/stone-wood-beach-resort/5.jpg",
+      "/images/hotels/stone-wood-beach-resort/6.jpg",
+      "/images/hotels/stone-wood-beach-resort/7.jpg",
+      "/images/hotels/stone-wood-beach-resort/8.jpg",
+      "/images/hotels/stone-wood-beach-resort/9.jpg",
+      "/images/hotels/stone-wood-beach-resort/10.jpg",
+      "/images/hotels/stone-wood-beach-resort/11.jpg",
+      "/images/hotels/stone-wood-beach-resort/12.jpg",
+      "/images/hotels/stone-wood-beach-resort/13.jpg",
+      "/images/hotels/stone-wood-beach-resort/14.jpg",
+      "/images/hotels/stone-wood-beach-resort/15.jpg"
+    ]
+  },
+  {
+    id: "mia-bella-beach-cottages",
+    name: "Miia Bella Beach Cottage Resort Baga",
+    location: "Baga Beach Road, Baga, North Goa, 403516, India",
+    subRegion: "Baga",
+    startingRate: 4300,
+    description: "Steps from Baga Beach, Mia Bella Beach Cottage Resort features beachfront cottages, private garden patios, and instant access to Baga's famous water sports and dining nightlife.",
+    phone: "+91 83222 66701",
+    email: "bookings.miabella@nautiroute.com",
+    highlights: [
+      "Right Beside Baga Sandy Shore",
+      "Private Cottage Garden Patios",
+      "Walk to Famous Tito's Lane",
+      "Poolside Sunset Cocktail Bar"
+    ],
+    images: [
+      "/images/hotels/mia-bella-beach-cottages/1.jpg",
+      "/images/hotels/mia-bella-beach-cottages/2.jpg"
+    ],
+    region: "North Goa",
+    type: "Modern Premium",
+    brand: "Others",
+    tag: "Beachside Cottage Escape",
+    googleRating: "4.3",
+    gallery: [
+      "/images/hotels/mia-bella-beach-cottages/1.jpg",
+      "/images/hotels/mia-bella-beach-cottages/2.jpg",
+      "/images/hotels/mia-bella-beach-cottages/3.jpg",
+      "/images/hotels/mia-bella-beach-cottages/4.jpg",
+      "/images/hotels/mia-bella-beach-cottages/5.jpg",
+      "/images/hotels/mia-bella-beach-cottages/6.jpg",
+      "/images/hotels/mia-bella-beach-cottages/7.jpg",
+      "/images/hotels/mia-bella-beach-cottages/8.jpg",
+      "/images/hotels/mia-bella-beach-cottages/9.jpg",
+      "/images/hotels/mia-bella-beach-cottages/10.jpg",
+      "/images/hotels/mia-bella-beach-cottages/11.jpg",
+      "/images/hotels/mia-bella-beach-cottages/12.jpg",
+      "/images/hotels/mia-bella-beach-cottages/13.jpg",
+      "/images/hotels/mia-bella-beach-cottages/14.jpg",
+      "/images/hotels/mia-bella-beach-cottages/15.jpg"
+    ]
+  },
+  {
     id: "hotel-the-north39-1",
     name: "Hotel The North39 1",
     location: "NORTH39 186, B JUNESWADA, Mandrem, GOA, Goa 403527",
@@ -70,11 +724,12 @@ export const hotelsData: Hotel[] = [
       "Queen Premium Deluxe with Balcony",
       "Steps away from Ashwem Beach",
       "Cozy Garden & Shared Lounge Area",
-      "Concierge, Tour Desk & Room Service"
+      "Concierge",
+      "Tour Desk & Room Service"
     ],
     images: [
-      "/images/hotels/BensInn/Bensinn_imag_8.avif",
-      "/images/hotels/BensInn/Bensinn_imag_5.avif"
+      "/images/hotels/BensInn/Bensinn_imag_1.avif",
+      "/images/hotels/BensInn/Bensinn_imag_2.avif"
     ],
     region: "North Goa",
     type: "Standard",
@@ -220,10 +875,3 @@ export const hotelsData: Hotel[] = [
     ]
   }
 ];
-
-// Dynamically generate the 15 gallery image paths for each hotel (if not already explicitly defined)
-hotelsData.forEach((hotel) => {
-  if (!hotel.gallery) {
-    hotel.gallery = Array.from({ length: 15 }, (_, i) => `/images/hotels/${hotel.id}/${i + 1}.jpg`);
-  }
-});
