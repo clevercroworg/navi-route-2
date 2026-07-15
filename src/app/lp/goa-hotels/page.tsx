@@ -137,11 +137,9 @@ function HotelCard({
 
   return (
     <motion.div 
-      layout
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.5 }}
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
       className="watercolor-card rounded-2xl overflow-hidden border border-[#1D3D9E]/10 hover:border-orange-brand/30 hover:shadow-[0_16px_40px_rgba(15,44,89,0.08)] hover:-translate-y-0.5 transition-all duration-500 relative min-h-[360px]"
     >
       
