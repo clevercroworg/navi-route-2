@@ -10,7 +10,7 @@ export interface Hotel {
   highlights: string[];
   images: string[];
   region: "North Goa" | "South Goa" | "Central Goa";
-  type: "Luxury Resort" | "Heritage & Boutique" | "Modern Premium" | "Private Villa";
+  type: "Luxury Resort" | "Heritage & Boutique" | "Modern Premium" | "Private Villa" | "Basic";
   brand: "Taj (IHCL)" | "Brij Hotels" | "SeleQtions" | "amã Stays & Trails" | "Ginger" | "Others";
   tag: string;
   visitUrl?: string;
@@ -401,11 +401,50 @@ export const hotelsData: Hotel[] = [
     type: "Modern Premium",
     brand: "Others",
     tag: "Beachside Cottage Escape"
+  },
+  {
+    id: "hotel-the-north39-1",
+    name: "Hotel The North39 1",
+    location: "NORTH39 186, B JUNESWADA, Mandrem, GOA, Goa 403527",
+    subRegion: "Mandrem",
+    startingRate: 3500,
+    description: "At the North 39 Hotel, experience the best of North Goa in a beautiful palm tree-lined sanctuary near serene beaches, offering packages perfect for families or couples seeking a romantic getaway.",
+    phone: "+91 83222 99939",
+    email: "reservations.thenorth39@nautiroute.com",
+    highlights: [
+      "Deluxe Rooms with Private Kitchenette",
+      "Set in a Lush Palm-lined Sanctuary",
+      "Short Walk to Serene Mandrem Beach",
+      "Perfect for Families & Couples"
+    ],
+    images: [
+      "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_1.webp",
+      "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_2.webp"
+    ],
+    region: "North Goa",
+    type: "Basic",
+    brand: "Others",
+    tag: "Palm-lined Mandrem Escape",
+    gallery: [
+      "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_1.webp",
+      "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_2.webp",
+      "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_4.webp",
+      "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_5.webp",
+      "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_6.webp",
+      "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_7.webp",
+      "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_8.webp",
+      "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_9.jpg",
+      "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_10.webp",
+      "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_11.webp",
+      "/images/hotels/Hotel_The_North39_8/Hotel_The_North39_12.webp"
+    ]
   }
 ];
 
-// Dynamically generate the 15 gallery image paths for each hotel
+// Dynamically generate the 15 gallery image paths for each hotel (if not already explicitly defined)
 hotelsData.forEach((hotel) => {
-  hotel.gallery = Array.from({ length: 15 }, (_, i) => `/images/hotels/${hotel.id}/${i + 1}.jpg`);
+  if (!hotel.gallery) {
+    hotel.gallery = Array.from({ length: 15 }, (_, i) => `/images/hotels/${hotel.id}/${i + 1}.jpg`);
+  }
 });
 
