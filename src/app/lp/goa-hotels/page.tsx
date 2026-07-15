@@ -3,6 +3,7 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
 import { 
@@ -712,6 +713,7 @@ Please let me know about availability and exclusive partner rates. Thank you!`;
 
 // MAIN PAGE COMPONENT
 export default function GoaHotelsLandingPage() {
+  const router = useRouter();
   // Booking Modal States
   const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -1083,7 +1085,9 @@ export default function GoaHotelsLandingPage() {
                     key={hotel.id} 
                     hotel={hotel} 
                     onBook={handleOpenBooking} 
-                    onImageClick={handleOpenLightbox}
+                    onImageClick={(h) => {
+                      router.push(`/lp/goa-hotels/${h.id}`);
+                    }}
                   />
                 ))
               ) : (

@@ -292,35 +292,6 @@
     ]
   },
   {
-    "id": "cmiiaent-resort-goa",
-    "name": "CMiiaent Resort Goa",
-    "location": "Coutinho Vaddo, Vagator, North Goa, 403509, India",
-    "subRegion": "Vagator",
-    "startingRate": 6700,
-    "description": "Located near Vagator's prime sunset points, CMiiaent Resort Goa is a stylish boutique escape providing contemporary rooms, private pool decks, a tropical bar, and easy access to coastal party hubs.",
-    "phone": "+91 83222 55943",
-    "email": "hello.clement@nautiroute.com",
-    "highlights": [
-      "Prime Vagator Sunset Location",
-      "Contemporary Tropical Vibe",
-      "Private Balcony Deck Access",
-      "Chic Lounge Bar & Bistro"
-    ],
-    "images": [
-      "/images/hotels/cmiiaent-resort-goa/1.jpg",
-      "/images/hotels/cmiiaent-resort-goa/2.jpg"
-    ],
-    "region": "North Goa",
-    "type": "Premium",
-    "brand": "Others",
-    "tag": "Boutique Vagator Escape",
-    "googleRating": "4.2",
-    "gallery": [
-      "/images/hotels/cmiiaent-resort-goa/1.jpg",
-      "/images/hotels/cmiiaent-resort-goa/2.jpg"
-    ]
-  },
-  {
     "id": "amaya-at-anamiva",
     "name": "AMiiaYA AT ANAMIVA",
     "location": "Gaonwadi, Anjuna, North Goa, 403509, India",
@@ -813,8 +784,8 @@
     ]
   },
   {
-    "id": "bensinn",
-    "name": "BensInn",
+    "id": "bennis-inn",
+    "name": "Bennis-inn",
     "location": "House # 205 Ashwem, Ashwem Mandrem, Beach Road, Ashwem Beach, near Calisto Super Market, Pernem, Goa 403527",
     "subRegion": "Ashwem",
     "startingRate": 3600,
@@ -829,8 +800,8 @@
       "Tour Desk & Room Service"
     ],
     "images": [
-      "/images/hotels/BensInn/Bensinn_imag_15.jpg",
-      "/images/hotels/BensInn/Bensinn_imag_8.jpg"
+      "/images/hotels/bennis-inn/1.jpg",
+      "/images/hotels/bennis-inn/2.jpg"
     ],
     "region": "North Goa",
     "type": "Standard",
@@ -838,20 +809,18 @@
     "tag": "Garden & Balcony Retreat",
     "googleRating": "4.6",
     "gallery": [
-      "/images/hotels/BensInn/Bensinn_imag_1.jpg",
-      "/images/hotels/BensInn/Bensinn_imag_2.jpg",
-      "/images/hotels/BensInn/Bensinn_imag_3.jpg",
-      "/images/hotels/BensInn/Bensinn_imag_4.jpg",
-      "/images/hotels/BensInn/Bensinn_imag_5.jpg",
-      "/images/hotels/BensInn/Bensinn_imag_8.jpg",
-      "/images/hotels/BensInn/Bensinn_imag_9.jpg",
-      "/images/hotels/BensInn/Bensinn_imag_10.jpg",
-      "/images/hotels/BensInn/Bensinn_imag_11.jpg",
-      "/images/hotels/BensInn/Bensinn_imag_12.jpg",
-      "/images/hotels/BensInn/Bensinn_imag_13.jpg",
-      "/images/hotels/BensInn/Bensinn_imag_14.jpg",
-      "/images/hotels/BensInn/Bensinn_imag_148.jpg",
-      "/images/hotels/BensInn/Bensinn_imag_15.jpg"
+      "/images/hotels/bennis-inn/1.jpg",
+      "/images/hotels/bennis-inn/2.jpg",
+      "/images/hotels/bennis-inn/3.jpg",
+      "/images/hotels/bennis-inn/4.jpg",
+      "/images/hotels/bennis-inn/5.jpg",
+      "/images/hotels/bennis-inn/6.jpg",
+      "/images/hotels/bennis-inn/7.jpg",
+      "/images/hotels/bennis-inn/8.jpg",
+      "/images/hotels/bennis-inn/9.jpg",
+      "/images/hotels/bennis-inn/10.jpg",
+      "/images/hotels/bennis-inn/11.jpg",
+      "/images/hotels/bennis-inn/12.jpg"
     ]
   },
   {

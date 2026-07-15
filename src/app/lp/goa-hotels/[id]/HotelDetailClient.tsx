@@ -613,6 +613,20 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
           </div>
         </div>
 
+        {/* Hotel Main Title Section */}
+        <div className="mb-8">
+          <span className="font-script text-2xl text-orange-brand block mb-1">
+            {hotel.tag}
+          </span>
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-navy-800 uppercase tracking-wide leading-tight">
+            {hotel.name}
+          </h1>
+          <div className="flex items-start gap-2 text-xs text-navy-800/60 mt-3">
+            <MapPin className="w-4 h-4 text-orange-brand shrink-0 mt-0.5" />
+            <span>{hotel.location}</span>
+          </div>
+        </div>
+
         {/* Content Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start w-full max-w-full overflow-x-hidden">
           
@@ -694,10 +708,9 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
                 </div>
                 
                 {/* Gallery Grid */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {hotel.gallery
                     .filter((_, idx) => !failedImages[idx])
-                    .slice(0, showAllGallery ? undefined : 2)
                     .map((imgSrc, idx) => {
                       const originalIdx = hotel.gallery!.indexOf(imgSrc);
                       return (
@@ -721,18 +734,6 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
                       );
                     })}
                 </div>
-
-                {/* Show More / Show Less Button */}
-                {hotel.gallery.filter((_, idx) => !failedImages[idx]).length > 2 && (
-                  <div className="pt-2 text-center">
-                    <button
-                      onClick={() => setShowAllGallery(!showAllGallery)}
-                      className="inline-flex items-center gap-1.5 bg-[#FF6B00] hover:bg-[#E05E00] text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-xl transition-all cursor-pointer shadow-sm"
-                    >
-                      <span>{showAllGallery ? "Show Less" : "Show More Images"}</span>
-                    </button>
-                  </div>
-                )}
               </div>
             )}
           </div>
@@ -740,21 +741,6 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
           {/* Right Side: Stay Summary details (5 columns) */}
           <div className="col-span-12 lg:col-span-5 space-y-6">
             <div className="watercolor-card bg-white p-6 sm:p-8 rounded-2xl border border-[#1D3D9E]/10 space-y-6">
-              
-              <div>
-                <span className="font-script text-2xl text-orange-brand block mb-1">
-                  {hotel.tag}
-                </span>
-                
-                <h1 className="font-serif text-2xl sm:text-3xl font-black text-navy-800 uppercase tracking-wide leading-tight">
-                  {hotel.name}
-                </h1>
-                
-                <div className="flex items-start gap-2 text-xs text-navy-800/60 mt-3">
-                  <MapPin className="w-4 h-4 text-orange-brand shrink-0 mt-0.5" />
-                  <span>{hotel.location}</span>
-                </div>
-              </div>
 
               {/* Rating block */}
               <div className="flex items-center gap-2 bg-white text-navy-800 text-sm font-bold px-4 py-2 rounded-full border border-slate-200 shadow-sm w-fit">
