@@ -36,8 +36,7 @@
       "/images/hotels/resort-terra-paraiso/10.jpg",
       "/images/hotels/resort-terra-paraiso/11.jpg",
       "/images/hotels/resort-terra-paraiso/12.jpg",
-      "/images/hotels/resort-terra-paraiso/13.jpg",
-      "/images/hotels/resort-terra-paraiso/14.jpg"
+      "/images/hotels/resort-terra-paraiso/13.jpg"
     ]
   },
   {
@@ -79,7 +78,8 @@
       "/images/hotels/goa-crescent-resort/12.jpg",
       "/images/hotels/goa-crescent-resort/13.jpg",
       "/images/hotels/goa-crescent-resort/14.jpg",
-      "/images/hotels/goa-crescent-resort/15.jpg"
+      "/images/hotels/goa-crescent-resort/15.jpg",
+      "/images/hotels/goa-crescent-resort/16.jpg"
     ]
   },
   {
@@ -121,8 +121,7 @@
       "/images/hotels/the-tamarind-hotel/12.jpg",
       "/images/hotels/the-tamarind-hotel/13.jpg",
       "/images/hotels/the-tamarind-hotel/14.jpg",
-      "/images/hotels/the-tamarind-hotel/15.jpg",
-      "/images/hotels/the-tamarind-hotel/16.jpg"
+      "/images/hotels/the-tamarind-hotel/15.jpg"
     ]
   },
   {
@@ -160,7 +159,11 @@
       "/images/hotels/3102bce-a-vedic-resort-1/8.jpg",
       "/images/hotels/3102bce-a-vedic-resort-1/9.jpg",
       "/images/hotels/3102bce-a-vedic-resort-1/10.jpg",
-      "/images/hotels/3102bce-a-vedic-resort-1/11.jpg"
+      "/images/hotels/3102bce-a-vedic-resort-1/11.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/12.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/13.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/14.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-1/15.jpg"
     ]
   },
   {
@@ -231,45 +234,47 @@
     ]
   },
   {
-    "id": "the-golden-crown-hotel-spa",
-    "name": "The Golden Crown Hotel & Spa",
-    "location": "Beach Road, Colva, South Goa, 403708, India",
+    "id": "soul-vacation-resort",
+    "name": "Soul Vacation Resort & Spa",
+    "location": "4th Ward, Colva Beach Road, Colva, Salcete, South Goa, 403708, India",
     "subRegion": "Colva",
     "startingRate": 4500,
-    "description": "The Golden Hotels provide luxury hotel accommodation, hospitality and events services for the most discerning guest.",
-    "phone": "+91 83266 11223",
-    "email": "booking.goldencrown@nautiroute.com",
+    "description": "Boasting Mediterranean-style architecture and lush gardens, Soul Vacation Resort & Spa is a tranquil wellness-oriented sanctuary in Colva, South Goa. Guests can indulge in therapeutic Ayurvedic spa treatments, participate in yoga retreats, relax beside the central pool, and enjoy being just a short walk from Colva Beach.",
+    "phone": "+91 83227 88088",
+    "email": "stay.soulvacation@nautiroute.com",
     "highlights": [
-      "Scenic Paddy Field Backdrops",
-      "500 Meters from Colva Beach",
-      "Ayurvedic Wellness Spa Center",
-      "Spacious Family-friendly Suites"
+      "Ayurvedic Spa & Wellness Center",
+      "Sleek Mediterranean-style Architecture",
+      "Central Swimming Pool & Kids' Pool",
+      "Short Walk to Colva Beach Shore"
     ],
     "images": [
-      "/images/hotels/the-golden-crown-hotel-spa/1.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/2.jpg"
+      "/images/hotels/soul-vacation-resort/1.jpg",
+      "/images/hotels/soul-vacation-resort/2.jpg"
     ],
     "region": "South Goa",
     "type": "Premium",
     "brand": "Others",
-    "tag": "South Goan Oasis",
-    "googleRating": "4.1",
+    "tag": "Wellness & Spa Sanctuary",
+    "googleRating": "4.2",
     "gallery": [
-      "/images/hotels/the-golden-crown-hotel-spa/1.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/2.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/3.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/4.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/5.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/6.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/7.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/8.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/9.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/10.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/11.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/12.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/13.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/14.jpg",
-      "/images/hotels/the-golden-crown-hotel-spa/15.jpg"
+      "/images/hotels/soul-vacation-resort/1.jpg",
+      "/images/hotels/soul-vacation-resort/2.jpg",
+      "/images/hotels/soul-vacation-resort/3.jpg",
+      "/images/hotels/soul-vacation-resort/4.jpg",
+      "/images/hotels/soul-vacation-resort/5.jpg",
+      "/images/hotels/soul-vacation-resort/6.jpg",
+      "/images/hotels/soul-vacation-resort/7.jpg",
+      "/images/hotels/soul-vacation-resort/8.jpg",
+      "/images/hotels/soul-vacation-resort/9.jpg",
+      "/images/hotels/soul-vacation-resort/10.jpg",
+      "/images/hotels/soul-vacation-resort/11.jpg",
+      "/images/hotels/soul-vacation-resort/12.jpg",
+      "/images/hotels/soul-vacation-resort/13.jpg",
+      "/images/hotels/soul-vacation-resort/14.jpg",
+      "/images/hotels/soul-vacation-resort/15.jpg",
+      "/images/hotels/soul-vacation-resort/16.jpg",
+      "/images/hotels/soul-vacation-resort/17.jpg"
     ]
   },
   {
@@ -345,7 +350,11 @@
       "/images/hotels/3102bce-a-vedic-resort-2/8.jpg",
       "/images/hotels/3102bce-a-vedic-resort-2/9.jpg",
       "/images/hotels/3102bce-a-vedic-resort-2/10.jpg",
-      "/images/hotels/3102bce-a-vedic-resort-2/11.jpg"
+      "/images/hotels/3102bce-a-vedic-resort-2/11.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/12.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/13.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/14.jpg",
+      "/images/hotels/3102bce-a-vedic-resort-2/15.jpg"
     ]
   },
   {
