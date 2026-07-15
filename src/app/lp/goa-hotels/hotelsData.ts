@@ -559,6 +559,48 @@ export const hotelsData: Hotel[] = [
       "/images/hotels/FabHotel_Palm Inn_Resort/FabHotel_Palm_Inn_Resort_image9.jpg",
       "/images/hotels/FabHotel_Palm Inn_Resort/FabHotel_Palm_Inn_Resort_image10.jpg"
     ]
+  },
+  {
+    id: "palolem-guest-house",
+    name: "Palolem Guest House",
+    location: "Ourem, Palolem, Canacona, South Goa, 403702, India",
+    subRegion: "Palolem",
+    startingRate: 3200,
+    description: "Just a short walk from the scenic shores of Palolem Beach, Palolem Guest House offers a tranquil, home-away-from-home stay in South Goa. Relax in its well-maintained tropical gardens and enjoy dining at the popular Avocado Garden restaurant.",
+    phone: "+91 83226 43021",
+    email: "reservations.palolemgh@nautiroute.com",
+    highlights: [
+      "Standard Double Room with Fan",
+      "3-Min Walk to Palolem Beach",
+      "Renowned Avocado Garden Restaurant",
+      "Bike/Car Rental & Travel Assistance"
+    ],
+    images: [
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image1.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image2.jpg"
+    ],
+    region: "South Goa",
+    type: "Standard",
+    brand: "Others",
+    tag: "Palolem Garden Retreat",
+    googleRating: "4.2",
+    gallery: [
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image1.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image2.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image3.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image4.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image5.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image6.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image7.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image8.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image9.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image10.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image11.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image12.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image13.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image14.jpg",
+      "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image15.jpg"
+    ]
   }
 ];
 
