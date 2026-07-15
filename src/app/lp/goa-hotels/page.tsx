@@ -179,6 +179,12 @@ function HotelCard({
             {hotel.type}
           </div>
 
+          {/* Google Rating Badge on Image Bottom-Left */}
+          <div className="absolute bottom-4 left-4 z-10 bg-navy-900/90 backdrop-blur-xs text-white text-[9px] font-bold px-2 py-1 rounded-md shadow-xs border border-white/10 flex items-center gap-1">
+            <Star className="w-2.5 h-2.5 text-orange-brand fill-orange-brand stroke-none" />
+            <span>{rating.score}</span>
+          </div>
+
           {/* Gallery Controls (Always visible, styled in brand style) */}
           {hotel.images.length > 1 && (
             <>
@@ -716,7 +722,7 @@ export default function GoaHotelsLandingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Filter States
-  const [selectedType, setSelectedType] = useState<"Premium" | "Luxury" | "Standard">("Premium");
+  const [selectedType, setSelectedType] = useState<"Premium" | "Luxury" | "Standard">("Standard");
 
   // Lightbox States
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -928,9 +934,9 @@ export default function GoaHotelsLandingPage() {
             {/* Stay Type Filters */}
             <div className="flex flex-wrap gap-2 shrink-0">
               {[
+                { id: "Standard", label: "Standard" },
                 { id: "Premium", label: "Premium" },
-                { id: "Luxury", label: "Luxury" },
-                { id: "Standard", label: "Standard" }
+                { id: "Luxury", label: "Luxury" }
               ].map((tab) => (
                 <button
                   key={tab.id}
