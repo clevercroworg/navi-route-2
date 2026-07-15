@@ -608,13 +608,13 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
             <ChevronLeft className="w-4 h-4" />
             <span>Back to Catalog</span>
           </button>
-          <div className="text-[10px] text-navy-800/40 tracking-wider uppercase font-bold break-words max-w-full">
-            Home / Hotels / {hotel.name.replace(", Goa", "")}
-          </div>
         </div>
 
         {/* Hotel Main Title Section */}
         <div className="mb-8">
+          <div className="text-[10px] text-navy-800/40 tracking-wider uppercase font-bold break-words max-w-full mb-3">
+            Home / Hotels / {hotel.name.replace(", Goa", "")}
+          </div>
           <span className="font-script text-2xl text-orange-brand block mb-1">
             {hotel.tag}
           </span>
