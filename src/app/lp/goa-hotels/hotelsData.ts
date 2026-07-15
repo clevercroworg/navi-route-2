@@ -25,7 +25,7 @@ export const hotelsData: Hotel[] = [
     location: "Gauravaddo, Calangute, North Goa, 403516, India",
     subRegion: "Calangute",
     startingRate: 5600,
-    description: "Nestled steps away from the famous Calangute Beach, Resort Terra Paraiso is a boutique oasis featuring Portuguese villa-style architecture, red-earthen roofs, lush courtyard pools, and warm Goan hospitality.",
+    description: "Our boutique resort reflects the ambience of charming Goan & Portuguese villas. Tropical greenery surrounds the earthen roof villas and spacious Rooms look out over the azure swimming pool. Antique furniture and local handicrafts lend traditional style, just a step or two from Calangute Beach.",
     phone: "+91 83222 76321",
     email: "reservations.terraparaiso@nautiroute.com",
     highlights: [
@@ -66,7 +66,7 @@ export const hotelsData: Hotel[] = [
     location: "Morjim Beach Road, Morjim, North Goa, 403512, India",
     subRegion: "Morjim",
     startingRate: 3900,
-    description: "Perched gracefully on a hilltop, Goa Crescent Resort is a coastal haven that offers sweeping panoramic views of the Arabian Sea, modern poolside lounges, and easy access to Morjim's tranquil sands.",
+    description: "What began as a single resort 30 years ago has flourished into a thriving chain of premier destinations. Today, we continue to grow and evolve, maintaining our commitment to providing unparalleled comfort, unforgettable experiences, excellence, and innovation.",
     phone: "+91 83222 98451",
     email: "booking.crescent@nautiroute.com",
     highlights: [
@@ -108,7 +108,7 @@ export const hotelsData: Hotel[] = [
     location: "Anjuna-Mapusa Road, Anjuna, North Goa, 403509, India",
     subRegion: "Anjuna",
     startingRate: 4200,
-    description: "Tucked away in the leafy lanes of Anjuna, The Tamarind Hotel is a classic stone-built heritage property with vintage Goan charm, private balconies, a chic courtyard pool, and a renowned bakery cafe.",
+    description: "Whether you wish to peruse an inspiring book at the quaint library, take a peaceful amble through winding pathways, relax in azure reflections of the pool or indulge in diverse culinary delights, The Tamarind Hotel is the perfect choice for that special holiday you deserve.",
     phone: "+91 83266 73849",
     email: "stay.tamarind@nautiroute.com",
     highlights: [
@@ -151,7 +151,7 @@ export const hotelsData: Hotel[] = [
     location: "Deul Wada, Vagator, North Goa, 403509, India",
     subRegion: "Vagator",
     startingRate: 4000,
-    description: "Inspired by the prehistoric Vedic era, 3102bce AVedicResort is a unique designer retreat featuring archaeological style elements, open-air jacuzzis, yoga shalas, and a pristine rooftop pool overlooking Chapora.",
+    description: "3102bce - A Vedic Resort is a unique designer retreat inspired by the prehistoric Vedic era. Our goal is simple: To ensure that every guest leaves not just rested, but enriched and inspired by archaeological design elements and personalized wellness experiences.",
     phone: "+91 83266 91102",
     email: "vedic.experience@nautiroute.com",
     highlights: [
@@ -231,7 +231,7 @@ export const hotelsData: Hotel[] = [
     location: "Gaonwadi, Anjuna, North Goa, 403509, India",
     subRegion: "Anjuna",
     startingRate: 6500,
-    description: "Experience designer elegance at Amaya at Anamiva, an art-focused luxury boutique hotel in Anjuna. Enjoy custom-crafted rooms, premium art installations, a wellness spa, and an upscale pool cocktail lounge.",
+    description: "AMiiaYA AT ANAMIVA (Anantya At Anamiva) is a boutique retreat shaped by design, landscape, and a quiet sense of ease, set gently within the hills of Anjuna.",
     phone: "+91 83266 44589",
     email: "reservations.anamiva@nautiroute.com",
     highlights: [
@@ -269,7 +269,7 @@ export const hotelsData: Hotel[] = [
     location: "Beach Road, Colva, South Goa, 403708, India",
     subRegion: "Colva",
     startingRate: 4500,
-    description: "Surrounded by South Goa's tranquil paddy fields, The Golden Crown Hotel & Spa offers a peaceful 4-star experience with large rooms, a luxury ayurvedic spa, and a short walk to Colva Beach.",
+    description: "The Golden Hotels provide luxury hotel accommodation, hospitality and events services for the most discerning guest.",
     phone: "+91 83266 11223",
     email: "booking.goldencrown@nautiroute.com",
     highlights: [
@@ -311,7 +311,7 @@ export const hotelsData: Hotel[] = [
     location: "Candolim Beach Road, Candolim, North Goa, 403515, India",
     subRegion: "Candolim",
     startingRate: 4800,
-    description: "Hibiscus Oasis by Da Alohas is a premium serviced retreat in Candolim, featuring luxury pool-facing suites, landscaped gardens, and modern amenities designed for long, relaxing stays near the beach.",
+    description: "At Da Alohas, we are revolutionizing the vacation experience. Our selection of pool-facing serviced suites and villas combines the luxury of an upscale retreat with the comfort, privacy, and services of a personal residence.",
     phone: "+91 83222 77501",
     email: "hibiscus.alohas@nautiroute.com",
     highlights: [
@@ -349,7 +349,7 @@ export const hotelsData: Hotel[] = [
     location: "187/14, Deul Wada, Vagator, North Goa, 403509, India",
     subRegion: "Vagator",
     startingRate: 4000,
-    description: "Unwind at 3102bce - A Vedic Resort in Vagator, North Goa. Explore a heritage property designed around the ancient Indus Valley civilization, featuring rustic wood detailing and therapeutic spa baths.",
+    description: "Unwind at 3102bce - A Vedic Resort in Vagator, North Goa. Explore a heritage property designed around the ancient Indus Valley civilization. Our goal is simple: To ensure that every guest leaves not just rested, but enriched and inspired.",
     phone: "+91 83266 91103",
     email: "experience.vedic@nautiroute.com",
     highlights: [
@@ -387,7 +387,7 @@ export const hotelsData: Hotel[] = [
     location: "Airport Road, Dabolim, Central Goa, 403801, India",
     subRegion: "Dabolim",
     startingRate: 4600,
-    description: "Conveniently located near Dabolim Airport, Argo By Trance is an adult-focused boutique hotel offering contemporary comfort, a year-round outdoor pool, a fitness center, and a chic cocktail bar.",
+    description: "At Trance Hotels, our philosophy, 'Blissfully Yours', reflects a commitment to offering exceptional experiences that go beyond ordinary expectations. We have meticulously crafted a hospitality brand that resonates with the needs of today's savvy modern travellers seeking convenience, quality, value, and style.",
     phone: "+91 83266 12345",
     email: "reservations.argo@nautiroute.com",
     highlights: [
@@ -469,7 +469,7 @@ export const hotelsData: Hotel[] = [
     location: "Soranto Vaddo, Anjuna, North Goa, 403509, India",
     subRegion: "Anjuna",
     startingRate: 4100,
-    description: "Immerse yourself in vintage country house style at Laguna Anjuna. Featuring stone cottages, organic terracotta tiling, and a massive natural lagoon-style pool nestled under leafy palm canopies.",
+    description: "Laguna Anjuna is a vintage country house resort in Anjuna, Goa, blending charm and style for hip young families. Enjoy stone cottages, terracotta tile design, and a massive natural lagoon-style pool nestled under leafy palm canopies.",
     phone: "+91 83222 74321",
     email: "info.laguna@nautiroute.com",
     highlights: [
@@ -511,7 +511,7 @@ export const hotelsData: Hotel[] = [
     location: "31 January Road, Fontainhas, Panaji, Goa, 403001, India",
     subRegion: "Panaji",
     startingRate: 5000,
-    description: "Located in Panaji's vibrant Latin Quarter (Fontainhas), Mateus Boutique Hotel is a restored 19th-century colonial mansion blending Portuguese heritage decor with modern air-conditioned luxury.",
+    description: "Mateus is a heritage boutique hotel in Fontainhas, Panjim Goa, set inside a lovingly restored 19th-century Indo-Portuguese home. Located in the Latin Quarter, the hotel blends preserved architectural character with modern comfort to create a quiet, intimate stay.",
     phone: "+91 83266 54321",
     email: "reservations.mateus@nautiroute.com",
     highlights: [
@@ -553,7 +553,7 @@ export const hotelsData: Hotel[] = [
     location: "Coutinho Vaddo, Vagator, North Goa, 403509, India",
     subRegion: "Vagator",
     startingRate: 6000,
-    description: "Designed for premium privacy, Swim Up By Whiteflower features signature rooms with direct swim-up balcony pools, custom interiors, and an on-site artisan bakery for a truly exclusive getaway.",
+    description: "Swim Up by White Flower is the best hotel in Vagator, North Goa, that offers its guests stylish rooms with direct access to a private pool, which ensures a luxurious stay. The on-site tea shop adds to the overall stay experience to relax and socialize.",
     phone: "+91 83266 89901",
     email: "swimup.whiteflower@nautiroute.com",
     highlights: [
@@ -595,7 +595,7 @@ export const hotelsData: Hotel[] = [
     location: "Ozran Beach Road, Vagator, North Goa, 403509, India",
     subRegion: "Vagator",
     startingRate: 5200,
-    description: "Overlooking the vibrant shores of Small Vagator, Stone Wood Beach Resort is a premium party hotel featuring direct beach access, poolside DJ decks, and contemporary wooden cottages.",
+    description: "Stone Wood Beach Resort and Club is a Party Hotel and your ultimate party paradise in Vagator, North Goa! Perfectly situated in the heart of the vibrant nightlife scene, enjoy the breathtaking ocean and sunset views from our in-house restaurant and modern stylish rooms.",
     phone: "+91 91120 01711",
     email: "reservations.stonewood@nautiroute.com",
     highlights: [
@@ -637,7 +637,7 @@ export const hotelsData: Hotel[] = [
     location: "Baga Beach Road, Baga, North Goa, 403516, India",
     subRegion: "Baga",
     startingRate: 4300,
-    description: "Steps from Baga Beach, Mia Bella Beach Cottage Resort features beachfront cottages, private garden patios, and instant access to Baga's famous water sports and dining nightlife.",
+    description: "Miia Bella is a warm, hospitable family-run beach cottage resort by Baga beach, sharing private joy with the travel community. Find personal touches everywhere – from the paintings by the family across the hotel to custom colors in the rooms.",
     phone: "+91 83222 66701",
     email: "bookings.miabella@nautiroute.com",
     highlights: [
