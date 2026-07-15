@@ -694,48 +694,6 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
                 </>
               )}
             </div>
-
-            {/* Gallery & Room Views Section (Moved to replace highlights) */}
-            {hotel.gallery && hotel.gallery.length > 0 && (
-              <div className="watercolor-card bg-white p-6 sm:p-8 rounded-2xl border border-[#1D3D9E]/10 space-y-6">
-                <div>
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-navy-800 tracking-wide uppercase">
-                    Gallery &amp; Room Views
-                  </h3>
-                  <p className="text-xs text-navy-800/60 mt-1 max-w-2xl leading-relaxed">
-                    Take a virtual tour through the room interiors and beautiful layouts of this curated Goan property.
-                  </p>
-                </div>
-                
-                {/* Gallery Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  {hotel.gallery
-                    .filter((_, idx) => !failedImages[idx])
-                    .map((imgSrc, idx) => {
-                      const originalIdx = hotel.gallery!.indexOf(imgSrc);
-                      return (
-                        <div 
-                          key={idx}
-                          onClick={() => openLightbox(originalIdx)}
-                          className="relative h-32 sm:h-40 rounded-xl overflow-hidden shadow-xs border border-[#1D3D9E]/5 cursor-pointer hover:border-orange-brand/30 hover:shadow-md transition-all duration-300 group bg-slate-100"
-                        >
-                          <Image
-                            src={imgSrc}
-                            alt={`${hotel.name} Gallery Image ${idx + 1}`}
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-500"
-                            sizes="(max-width: 640px) 50vw, 30vw"
-                            onError={() => {
-                              setFailedImages(prev => ({ ...prev, [originalIdx]: true }));
-                            }}
-                          />
-                          <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-colors" />
-                        </div>
-                      );
-                    })}
-                </div>
-              </div>
-            )}
           </div>
 
           {/* Right Side: Stay Summary details (5 columns) */}
@@ -815,29 +773,71 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
                 </button>
               </div>
             </div>
-            
-            {/* Trusted partner card */}
-            <div className="bg-navy-900 text-white p-6 sm:p-8 rounded-2xl border border-navy-950 relative overflow-hidden shadow-md text-left">
-              <div className="absolute top-0 right-0 w-36 h-36 opacity-[0.02] select-none pointer-events-none translate-x-12 -translate-y-12">
-                <Compass className="w-full h-full text-white" />
-              </div>
-              <span className="text-orange-brand uppercase text-[9px] font-bold tracking-widest block mb-2">
-                Exclusive Travel Desk Partner
-              </span>
-              <h4 className="font-serif text-lg font-bold uppercase tracking-wide leading-tight mb-2">
-                Volume Discounts Available
-              </h4>
-              <p className="text-slate-300 text-xs leading-relaxed mb-4">
-                Planning a group event, wedding, or corporate retreat? Get custom quotes directly from IHCL Taj and Brij Hotels.
+          </div>
+        </div>
+
+        {/* Bottom Section: Full Width Gallery & Room Views */}
+        {hotel.gallery && hotel.gallery.length > 0 && (
+          <div className="watercolor-card bg-white p-6 sm:p-8 rounded-2xl border border-[#1D3D9E]/10 mt-10 w-full">
+            <div>
+              <h3 className="font-serif text-lg sm:text-xl font-bold text-navy-800 tracking-wide uppercase">
+                Gallery &amp; Room Views
+              </h3>
+              <p className="text-xs text-navy-800/60 mt-1 max-w-2xl leading-relaxed">
+                Take a virtual tour through the room interiors and beautiful layouts of this curated Goan property.
               </p>
-              <a
-                href="tel:+919986389444"
-                className="inline-flex justify-center items-center bg-orange-brand hover:bg-[#E05E00] text-white text-[10px] uppercase font-bold tracking-widest px-6 py-3 rounded-lg transition-colors shadow-sm"
-              >
-                Call desk: +91 99863 89444
-              </a>
+            </div>
+            
+            {/* Gallery Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
+              {hotel.gallery
+                .filter((_, idx) => !failedImages[idx])
+                .map((imgSrc, idx) => {
+                  const originalIdx = hotel.gallery!.indexOf(imgSrc);
+                  return (
+                    <div 
+                      key={idx}
+                      onClick={() => openLightbox(originalIdx)}
+                      className="relative h-32 sm:h-40 lg:h-48 rounded-xl overflow-hidden shadow-xs border border-[#1D3D9E]/5 cursor-pointer hover:border-orange-brand/30 hover:shadow-md transition-all duration-300 group bg-slate-100"
+                    >
+                      <Image
+                        src={imgSrc}
+                        alt={`${hotel.name} Gallery Image ${idx + 1}`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        onError={() => {
+                          setFailedImages(prev => ({ ...prev, [originalIdx]: true }));
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-colors" />
+                    </div>
+                  );
+                })}
             </div>
           </div>
+        )}
+
+        {/* Bottom Section: Volume Discounts Banner */}
+        <div className="bg-navy-900 text-white p-6 sm:p-8 rounded-2xl border border-navy-950 relative overflow-hidden shadow-md text-left mt-8 w-full">
+          <div className="absolute top-0 right-0 w-36 h-36 opacity-[0.02] select-none pointer-events-none translate-x-12 -translate-y-12">
+            <Compass className="w-full h-full text-white" />
+          </div>
+          <span className="text-orange-brand uppercase text-[9px] font-bold tracking-widest block mb-2">
+            Exclusive Travel Desk Partner
+          </span>
+          <h4 className="font-serif text-lg sm:text-xl font-bold uppercase tracking-wide leading-tight mb-2">
+            Volume Discounts Available
+          </h4>
+          <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4 max-w-2xl">
+            Planning a group event, wedding, or corporate retreat? Get custom quotes directly from IHCL Taj and Brij Hotels.
+          </p>
+          <a
+            href="tel:+919986389444"
+            className="inline-flex justify-center items-center bg-orange-brand hover:bg-[#E05E00] text-white text-[10px] sm:text-xs uppercase font-bold tracking-widest px-6 py-3.5 rounded-xl transition-colors shadow-sm"
+          >
+            Call desk: +91 99863 89444
+          </a>
         </div>
 
 
