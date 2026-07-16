@@ -977,5 +977,37 @@
       "/images/hotels/hotel-baga-bay/6.jpg",
       "/images/hotels/hotel-baga-bay/7.jpg"
     ]
+  },
+  {
+    "id": "hotel-pasquina-baga",
+    "name": "Hotel Pasquina Baga",
+    "location": "2, Tito's Ln, beside Snow Park, Saunta Vaddo, Baga, Calangute, Goa 403516, India",
+    "subRegion": "Baga",
+    "startingRate": 2850,
+    "description": "Hotel Pasquina Baga is a 3-star property located in Baga, facing the beach. The property is around a 1-minute walk from Baga Beach, 0.9 miles from Calangute Beach and 4.8 miles from Chapora Fort. The property has a 24-hour front desk, airport transportation, room service and free WiFi throughout the property. All rooms come with air conditioning, a flat-screen TV with satellite channels, a fridge, a electric tea pot, a shower, free toiletries and a closet. All rooms at the hotel are equipped with a private bathroom and bed linen.",
+    "phone": "+91 98800 074741",
+    "email": "stay.pasquina@nautiroute.com",
+    "highlights": [
+      "Beach-Facing 3-Star Property",
+      "1-Minute Walk to Baga Beach",
+      "24-Hour Front Desk & Room Service",
+      "Free WiFi & Airport Transportation"
+    ],
+    "images": [
+      "/images/hotels/hotel-pasquina-baga/1.jpg",
+      "/images/hotels/hotel-pasquina-baga/2.jpg"
+    ],
+    "region": "North Goa",
+    "type": "Basic",
+    "brand": "Others",
+    "tag": "Beachfront Cozy 3-Star Stay",
+    "googleRating": "4.3",
+    "gallery": [
+      "/images/hotels/hotel-pasquina-baga/1.jpg",
+      "/images/hotels/hotel-pasquina-baga/2.jpg",
+      "/images/hotels/hotel-pasquina-baga/3.jpg",
+      "/images/hotels/hotel-pasquina-baga/4.jpg",
+      "/images/hotels/hotel-pasquina-baga/5.jpg"
+    ]
   }
 ]
