@@ -719,10 +719,10 @@ export default function GoaHotelsLandingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Filter States — restore from sessionStorage if available
-  const [selectedType, setSelectedType] = useState<"Premium" | "Luxury" | "Standard">(() => {
+  const [selectedType, setSelectedType] = useState<"Premium" | "Luxury" | "Standard" | "Basic">(() => {
     if (typeof window !== "undefined") {
       const saved = sessionStorage.getItem("goa-hotels-filter");
-      if (saved === "Premium" || saved === "Luxury" || saved === "Standard") return saved;
+      if (saved === "Premium" || saved === "Luxury" || saved === "Standard" || saved === "Basic") return saved;
     }
     return "Standard";
   });
@@ -1055,6 +1055,7 @@ export default function GoaHotelsLandingPage() {
             {/* Stay Type Filters */}
             <div className="flex flex-wrap gap-2 shrink-0">
               {[
+                { id: "Basic", label: "Basic" },
                 { id: "Standard", label: "Standard" },
                 { id: "Premium", label: "Premium" },
                 { id: "Luxury", label: "Luxury" }

@@ -943,5 +943,37 @@
       "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image14.jpg",
       "/images/hotels/Palolem_Guest_House/Palolem_Guest_House_image15.jpg"
     ]
+  },
+  {
+    "id": "hotel-baga-bay",
+    "name": "Hotel Baga Bay",
+    "location": "Baga Beach Road, Near Baga Beach, Baga, Calangute, North Goa, 403516, India",
+    "subRegion": "Baga",
+    "startingRate": 2450,
+    "description": "Set in a colourful building on a commercial street, this laid-back hotel is a 5-minute walk from Baga Beach on the Arabian Sea and 5 km from Splashdown Waterpark. It's 8 km from the NH66 national highway. Humble rooms feature flat-screen TVs and en suite wet rooms. Kids (1 per room) age 5 and under stay at no extra charge when using existing bedding. There's a straightforward restaurant. Continental breakfast is available.",
+    "phone": "+91 99863 89444",
+    "email": "stay.bagabay@nautiroute.com",
+    "highlights": [
+      "5-Minute Walk to Baga Beach",
+      "Laid-Back Cozy Rooms with Flat-Screens",
+      "Straightforward Restaurant on Site",
+      "Continental Breakfast Available"
+    ],
+    "images": [
+      "/images/hotels/hotel-baga-bay/1.jpg",
+      "/images/hotels/hotel-baga-bay/2.jpg"
+    ],
+    "region": "North Goa",
+    "type": "Basic",
+    "brand": "Others",
+    "tag": "Casual Beachside Cozy Stay",
+    "googleRating": "4.1",
+    "gallery": [
+      "/images/hotels/hotel-baga-bay/1.jpg",
+      "/images/hotels/hotel-baga-bay/2.jpg",
+      "/images/hotels/hotel-baga-bay/3.jpg",
+      "/images/hotels/hotel-baga-bay/4.jpg",
+      "/images/hotels/hotel-baga-bay/5.jpg"
+    ]
   }
 ]
