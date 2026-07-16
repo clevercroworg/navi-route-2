@@ -288,20 +288,20 @@ function HotelCard({
           </div>
 
           {/* Footer Actions */}
-          <div className="flex items-center justify-between pt-4 border-t border-[#1D3D9E]/10 mt-auto gap-3">
+          <div className="flex items-center justify-between pt-4 border-t border-[#1D3D9E]/10 mt-auto gap-2 sm:gap-3">
             <button
               onClick={() => onBook(hotel)}
-              className="bg-orange-brand hover:bg-[#E05E00] text-white text-xs lg:text-sm font-bold uppercase tracking-widest px-6 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer flex-1 text-center"
+              className="bg-orange-brand hover:bg-[#E05E00] text-white text-[10px] sm:text-xs lg:text-sm font-bold uppercase tracking-wider sm:tracking-widest px-3 sm:px-6 py-3 sm:py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer flex-1 text-center whitespace-nowrap"
             >
               Book Now
             </button>
 
             <Link 
               href={`/lp/goa-hotels/${hotel.id}`}
-              className="border border-navy-800 hover:bg-navy-800 hover:text-white text-navy-800 text-xs lg:text-sm font-bold uppercase tracking-widest px-6 py-3.5 rounded-xl transition-all cursor-pointer text-center inline-flex items-center justify-center gap-1.5 flex-1"
+              className="border border-navy-800 hover:bg-navy-800 hover:text-white text-navy-800 text-[10px] sm:text-xs lg:text-sm font-bold uppercase tracking-wider sm:tracking-widest px-3 sm:px-6 py-3 sm:py-3.5 rounded-xl transition-all cursor-pointer text-center inline-flex items-center justify-center gap-1 sm:gap-1.5 flex-1 whitespace-nowrap"
             >
               <span>View Details</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             </Link>
           </div>
         </div>
