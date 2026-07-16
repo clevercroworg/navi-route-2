@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState, useMemo, useEffect, useRef } from "react";
+import React, { useState, useMemo, useEffect, useRef, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
 import { 
@@ -707,16 +707,30 @@ Please let me know about availability and exclusive partner rates. Thank you!`;
 
 // MAIN PAGE COMPONENT
 export default function GoaHotelsLandingPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#FDFBF8]" />}>
+      <GoaHotelsContent />
+    </Suspense>
+  );
+}
+
+function GoaHotelsContent() {
   const router = useRouter();
   // Booking Modal States
   const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Filter States — restore from sessionStorage if available
-  const [selectedType, setSelectedType] = useState<"Premium" | "Luxury" | "Standard" | "Basic">(() => {
+  const searchParams = useSearchParams();
+
+  // Filter States — restore from URL ?type= param, then sessionStorage fallback
+  const validTypes = ["Premium", "Luxury", "Standard", "Basic"] as const;
+  type StayType = typeof validTypes[number];
+  const [selectedType, setSelectedType] = useState<StayType>(() => {
     if (typeof window !== "undefined") {
+      const urlType = searchParams.get("type");
+      if (urlType && validTypes.includes(urlType as StayType)) return urlType as StayType;
       const saved = sessionStorage.getItem("goa-hotels-filter");
-      if (saved === "Premium" || saved === "Luxury" || saved === "Standard" || saved === "Basic") return saved;
+      if (saved && validTypes.includes(saved as StayType)) return saved as StayType;
     }
     return "Standard";
   });
@@ -754,10 +768,13 @@ export default function GoaHotelsLandingPage() {
     return hotelsData.filter(h => h.type === selectedType);
   }, [selectedType]);
 
-  // Persist filter selection and visible count to sessionStorage
+  // Persist filter selection to sessionStorage AND update URL
   useEffect(() => {
     sessionStorage.setItem("goa-hotels-filter", selectedType);
-  }, [selectedType]);
+    const url = new URL(window.location.href);
+    url.searchParams.set("type", selectedType);
+    router.replace(url.pathname + url.search, { scroll: false });
+  }, [selectedType, router]);
 
   useEffect(() => {
     sessionStorage.setItem("goa-hotels-visible", String(visibleCount));
