@@ -1053,26 +1053,34 @@ export default function GoaHotelsLandingPage() {
             </div>
 
             {/* Stay Type Filters */}
-            <div className="w-full lg:w-auto overflow-x-auto -mx-6 px-6 sm:mx-0 sm:px-0 scrollbar-none">
-              <div className="flex flex-nowrap gap-2 pb-2 pt-1">
-                {[
-                  { id: "Basic", label: "Basic" },
-                  { id: "Standard", label: "Standard" },
-                  { id: "Premium", label: "Premium" },
-                  { id: "Luxury", label: "Luxury" }
-                ].map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setSelectedType(tab.id as any)}
-                    className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 cursor-pointer shrink-0 ${
-                      selectedType === tab.id
-                        ? "bg-[#FF6B00] text-white shadow-md shadow-orange-brand/20 scale-105"
-                        : "bg-white hover:bg-sand-50 text-navy-800 border border-slate-200 hover:border-slate-300"
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
+            <div className="w-full lg:w-auto">
+              <div className="flex justify-between items-center mb-1.5 lg:hidden px-0.5">
+                <span className="text-[9px] uppercase tracking-wider text-navy-800/40 font-bold">Select Category</span>
+                <span className="text-[9px] uppercase tracking-wider text-[#FF6B00] font-black animate-pulse flex items-center gap-1">
+                  Swipe to view more &rarr;
+                </span>
+              </div>
+              <div className="w-full lg:w-auto overflow-x-auto -mx-6 px-6 sm:mx-0 sm:px-0 scrollbar-none">
+                <div className="flex flex-nowrap gap-2 pb-2 pt-1">
+                  {[
+                    { id: "Basic", label: "Basic" },
+                    { id: "Standard", label: "Standard" },
+                    { id: "Premium", label: "Premium" },
+                    { id: "Luxury", label: "Luxury" }
+                  ].map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => setSelectedType(tab.id as any)}
+                      className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 cursor-pointer shrink-0 ${
+                        selectedType === tab.id
+                          ? "bg-[#FF6B00] text-white shadow-md shadow-orange-brand/20 scale-105"
+                          : "bg-white hover:bg-sand-50 text-navy-800 border border-slate-200 hover:border-slate-300"
+                      }`}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
