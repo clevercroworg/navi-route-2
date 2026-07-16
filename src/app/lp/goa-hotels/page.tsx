@@ -66,12 +66,10 @@ const getHotelRating = (hotel: Hotel) => {
 // Redesigned Hotel Card Component (Fully themed, with compass watermark and hand-drawn styling)
 function HotelCard({ 
   hotel, 
-  onBook,
-  onImageClick
+  onBook
 }: { 
   hotel: Hotel; 
   onBook: (hotel: Hotel) => void;
-  onImageClick: (hotel: Hotel, index: number) => void;
 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -91,8 +89,6 @@ function HotelCard({
       } else {
         prevImage(e as any);
       }
-    } else if (Math.abs(diff) < 15) {
-      onImageClick(hotel, currentImageIndex);
     }
     setDragStartX(null);
   };
@@ -110,8 +106,6 @@ function HotelCard({
       } else {
         prevImage(e);
       }
-    } else if (Math.abs(diff) < 15) {
-      onImageClick(hotel, currentImageIndex);
     }
     setDragStartX(null);
   };
@@ -161,7 +155,7 @@ function HotelCard({
           onTouchEnd={handleTouchEnd}
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
-          className="col-span-12 lg:col-span-5 relative h-64 lg:h-auto min-h-[300px] bg-slate-100 overflow-hidden select-none cursor-pointer"
+          className="col-span-12 lg:col-span-5 relative h-64 lg:h-auto min-h-[300px] bg-slate-100 overflow-hidden select-none cursor-grab active:cursor-grabbing"
         >
           <Image
             src={hotel.images[currentImageIndex]}
@@ -294,21 +288,21 @@ function HotelCard({
           </div>
 
           {/* Footer Actions */}
-          <div className="flex items-center justify-between pt-4 border-t border-[#1D3D9E]/10 mt-auto">
-            <Link 
-              href={`/lp/goa-hotels/${hotel.id}`}
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B00] hover:text-[#E05E00] tracking-wider uppercase group/link"
-            >
-              <span>View Details</span>
-              <ArrowRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" />
-            </Link>
-
+          <div className="flex items-center justify-between pt-4 border-t border-[#1D3D9E]/10 mt-auto gap-3">
             <button
               onClick={() => onBook(hotel)}
-              className="bg-orange-brand hover:bg-[#E05E00] text-white text-xs lg:text-sm font-bold uppercase tracking-widest px-8 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer"
+              className="bg-orange-brand hover:bg-[#E05E00] text-white text-xs lg:text-sm font-bold uppercase tracking-widest px-6 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer flex-1 text-center"
             >
               Book Now
             </button>
+
+            <Link 
+              href={`/lp/goa-hotels/${hotel.id}`}
+              className="border border-navy-800 hover:bg-navy-800 hover:text-white text-navy-800 text-xs lg:text-sm font-bold uppercase tracking-widest px-6 py-3.5 rounded-xl transition-all cursor-pointer text-center inline-flex items-center justify-center gap-1.5 flex-1"
+            >
+              <span>View Details</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </div>
       </div>
@@ -1088,9 +1082,6 @@ export default function GoaHotelsLandingPage() {
                     key={hotel.id} 
                     hotel={hotel} 
                     onBook={handleOpenBooking} 
-                    onImageClick={(h) => {
-                      router.push(`/lp/goa-hotels/${h.id}`);
-                    }}
                   />
                 ))
               ) : (
