@@ -298,19 +298,13 @@ function HotelCard({
 
           {/* Footer Actions */}
           <div className="pt-4 border-t border-[#1D3D9E]/10 mt-auto">
-            {hotel.isUnavailable ? (
-              <div className="w-full bg-slate-200 text-slate-500 text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest py-3 sm:py-3.5 rounded-xl text-center select-none cursor-not-allowed">
-                Fully Booked
-              </div>
-            ) : (
-              <Link 
-                href={`/lp/goa-hotels/${hotel.id}`}
-                className="w-full bg-orange-brand hover:bg-[#E05E00] text-white text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest py-3 sm:py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer text-center inline-flex items-center justify-center gap-1.5 whitespace-nowrap"
-              >
-                <span>View Details</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            )}
+            <Link 
+              href={`/lp/goa-hotels/${hotel.id}`}
+              className="w-full bg-orange-brand hover:bg-[#E05E00] text-white text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest py-3 sm:py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer text-center inline-flex items-center justify-center gap-1.5 whitespace-nowrap"
+            >
+              <span>View Details</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </div>
       </div>
