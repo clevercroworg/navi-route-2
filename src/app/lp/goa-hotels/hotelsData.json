@@ -1055,5 +1055,34 @@
       "/images/hotels/alvorada-resort/12.jpg",
       "/images/hotels/alvorada-resort/13.jpg"
     ]
+  },
+  {
+    "id": "jangala-bagabeach",
+    "name": "Jangala BagaBeach",
+    "location": "Baga Creek Road, Arpora, Calangute, North Goa, 403516, India",
+    "subRegion": "Arpora",
+    "startingRate": 2750,
+    "description": "Tucked away on a quiet lane off Baga Creek Road in Arpora, Jangala Hotel is a French-inspired guest house that offers something rare in North Goa: genuine tranquility. Just 15 minutes from the vibrant shores of Baga Beach, our lush tropical garden creates a natural sanctuary where birdsong replaces the noise of the busy coast.",
+    "phone": "+91 99863 89444",
+    "email": "stay.jangala@nautiroute.com",
+    "highlights": [
+      "French-Inspired Guest House",
+      "Lush Tropical Garden Sanctuary",
+      "Genuine Tranquility in North Goa",
+      "15 Minutes to Baga Beach"
+    ],
+    "images": [
+      "/images/hotels/jangala-bagabeach/1.jpg",
+      "/images/hotels/jangala-bagabeach/2.jpg"
+    ],
+    "region": "North Goa",
+    "type": "Basic",
+    "brand": "Others",
+    "tag": "French Inspired Garden Oasis",
+    "googleRating": "4.6",
+    "gallery": [
+      "/images/hotels/jangala-bagabeach/1.jpg",
+      "/images/hotels/jangala-bagabeach/2.jpg"
+    ]
   }
 ]
