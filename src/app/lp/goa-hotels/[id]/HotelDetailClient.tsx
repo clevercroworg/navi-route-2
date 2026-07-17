@@ -807,12 +807,21 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
 
               {/* Booking Actions */}
               <div className="pt-2">
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="w-full bg-orange-brand hover:bg-[#E05E00] text-white text-xs lg:text-sm font-bold uppercase tracking-widest py-4.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer text-center"
-                >
-                  Book Now
-                </button>
+                {hotel.isUnavailable ? (
+                  <button
+                    disabled
+                    className="w-full bg-slate-200 text-slate-500 text-xs lg:text-sm font-bold uppercase tracking-widest py-4.5 rounded-xl cursor-not-allowed text-center select-none"
+                  >
+                    Fully Booked
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="w-full bg-orange-brand hover:bg-[#E05E00] text-white text-xs lg:text-sm font-bold uppercase tracking-widest py-4.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer text-center"
+                  >
+                    Book Now
+                  </button>
+                )}
               </div>
             </div>
           </div>

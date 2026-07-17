@@ -178,6 +178,15 @@ function HotelCard({
             <span>{rating.score}</span>
           </div>
 
+          {/* Fully Booked Overlay Badge */}
+          {hotel.isUnavailable && (
+            <div className="absolute inset-0 bg-navy-950/40 backdrop-blur-[2px] flex items-center justify-center z-20">
+              <span className="bg-red-600/95 border border-red-500 text-white font-serif text-sm font-bold tracking-widest uppercase px-5 py-2.5 rounded-xl shadow-lg transform -rotate-3">
+                Fully Booked
+              </span>
+            </div>
+          )}
+
           {/* Gallery Controls (Always visible, styled in brand style) */}
           {hotel.images.length > 1 && (
             <>
@@ -289,13 +298,19 @@ function HotelCard({
 
           {/* Footer Actions */}
           <div className="pt-4 border-t border-[#1D3D9E]/10 mt-auto">
-            <Link 
-              href={`/lp/goa-hotels/${hotel.id}`}
-              className="w-full bg-orange-brand hover:bg-[#E05E00] text-white text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest py-3 sm:py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer text-center inline-flex items-center justify-center gap-1.5 whitespace-nowrap"
-            >
-              <span>View Details</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            {hotel.isUnavailable ? (
+              <div className="w-full bg-slate-200 text-slate-500 text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest py-3 sm:py-3.5 rounded-xl text-center select-none cursor-not-allowed">
+                Fully Booked
+              </div>
+            ) : (
+              <Link 
+                href={`/lp/goa-hotels/${hotel.id}`}
+                className="w-full bg-orange-brand hover:bg-[#E05E00] text-white text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest py-3 sm:py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer text-center inline-flex items-center justify-center gap-1.5 whitespace-nowrap"
+              >
+                <span>View Details</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            )}
           </div>
         </div>
       </div>

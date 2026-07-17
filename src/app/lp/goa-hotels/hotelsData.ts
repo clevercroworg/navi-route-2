@@ -18,6 +18,7 @@ export interface Hotel {
   visitUrl?: string;
   gallery?: string[];
   googleRating?: string;
+  isUnavailable?: boolean;
 }
 
 export const hotelsData: Hotel[] = hotelsJson as Hotel[];

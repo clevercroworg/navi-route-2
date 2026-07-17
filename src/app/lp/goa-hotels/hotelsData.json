@@ -1098,5 +1098,37 @@
       "/images/hotels/jangala-bagabeach/15.jpg",
       "/images/hotels/jangala-bagabeach/16.jpg"
     ]
+  },
+  {
+    "id": "baga-beach-front",
+    "name": "Baga Beach Front",
+    "location": "7/2401, near Britto's Bar And Restaurant, Saunta Vaddo, Baga, Calangute, Goa 403516, India",
+    "subRegion": "Baga",
+    "startingRate": 2317,
+    "description": "Located right on the beachfront near Britto's Bar and Restaurant in Baga, Baga Beach Front offers unparalleled access to the shores of North Goa. Enjoy cozy coastal rooms, sea breezes, and proximity to Baga's top shacks and lively beachfront spots.",
+    "phone": "+91 99863 89444",
+    "email": "stay.bagabeachfront@nautiroute.com",
+    "highlights": [
+      "Direct Beachfront Location",
+      "Walking Distance to Britto's",
+      "Highly Rated Hospitality (4.9/5)",
+      "Stunning Sea Views & Coastal Breeze"
+    ],
+    "images": [
+      "/images/hotels/baga-beach-front/1.jpg",
+      "/images/hotels/baga-beach-front/2.jpg"
+    ],
+    "region": "North Goa",
+    "type": "Basic",
+    "brand": "Others",
+    "tag": "Direct Baga Beachfront Stay",
+    "googleRating": "4.9",
+    "isUnavailable": true,
+    "gallery": [
+      "/images/hotels/baga-beach-front/1.jpg",
+      "/images/hotels/baga-beach-front/2.jpg",
+      "/images/hotels/baga-beach-front/3.jpg",
+      "/images/hotels/baga-beach-front/4.jpg"
+    ]
   }
 ]
