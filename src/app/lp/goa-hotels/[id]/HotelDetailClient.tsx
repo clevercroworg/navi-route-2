@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { 
-  MapPin, 
   ChevronLeft, 
   ChevronRight, 
   X, 
@@ -161,11 +160,6 @@ function BookingModal({
             <h4 className="font-serif text-2xl font-black uppercase tracking-wide leading-tight">
               {hotel.name}
             </h4>
-            
-            <div className="flex items-start gap-2 text-xs text-slate-300">
-              <MapPin className="w-4 h-4 text-orange-brand shrink-0 mt-0.5" />
-              <span>{hotel.location}</span>
-            </div>
 
             <div className="border-t border-white/10 pt-4">
               <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Starting rate</span>
@@ -621,10 +615,6 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
           <h1 className="font-serif text-[20px] xs:text-2xl sm:text-4xl lg:text-5xl font-black text-navy-800 uppercase tracking-wide leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
             {hotel.name}
           </h1>
-          <div className="flex items-start gap-2 text-xs text-navy-800/60 mt-3">
-            <MapPin className="w-4 h-4 text-orange-brand shrink-0 mt-0.5" />
-            <span>{hotel.location}</span>
-          </div>
         </div>
 
         {/* Content Layout Grid */}
