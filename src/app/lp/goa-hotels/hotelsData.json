@@ -1015,5 +1015,45 @@
       "/images/hotels/hotel-pasquina-baga/10.jpg",
       "/images/hotels/hotel-pasquina-baga/11.jpg"
     ]
+  },
+  {
+    "id": "alvorada-resort",
+    "name": "Alvorada Resort",
+    "location": "Baga Beach Road, Near Baga Beach, Baga, Calangute, North Goa, 403516, India",
+    "subRegion": "Baga",
+    "startingRate": 2650,
+    "description": "Alvorada Resort in lively Baga puts two travelers within easy reach of Baga and Calangute beaches, seafood shacks and buzzing nightlife. Spacious, air-conditioned rooms include private balconies or terraces, modern showers, complimentary Wi-Fi and select rooms with pool views. Relax by a well-maintained outdoor pool, enjoy crafted cocktails at the stylish bar and dine at the on-site restaurant with a diverse menu. Daily takeaway breakfast and curated local tours make mornings effortless—ideal for two friends seeking sun, sand and easy access to Goa’s attractions.",
+    "phone": "+91 99863 89444",
+    "email": "stay.alvorada@nautiroute.com",
+    "highlights": [
+      "Outdoor Swimming Pool & Bar",
+      "Close to Baga & Calangute Beaches",
+      "Spacious Balcony Rooms",
+      "On-Site Diverse Restaurant"
+    ],
+    "images": [
+      "/images/hotels/alvorada-resort/1.jpg",
+      "/images/hotels/alvorada-resort/2.jpg"
+    ],
+    "region": "North Goa",
+    "type": "Basic",
+    "brand": "Others",
+    "tag": "Beachside Leisure Comfort",
+    "googleRating": "4.1",
+    "gallery": [
+      "/images/hotels/alvorada-resort/1.jpg",
+      "/images/hotels/alvorada-resort/2.jpg",
+      "/images/hotels/alvorada-resort/3.jpg",
+      "/images/hotels/alvorada-resort/4.jpg",
+      "/images/hotels/alvorada-resort/5.jpg",
+      "/images/hotels/alvorada-resort/6.jpg",
+      "/images/hotels/alvorada-resort/7.jpg",
+      "/images/hotels/alvorada-resort/8.jpg",
+      "/images/hotels/alvorada-resort/9.jpg",
+      "/images/hotels/alvorada-resort/10.jpg",
+      "/images/hotels/alvorada-resort/11.jpg",
+      "/images/hotels/alvorada-resort/12.jpg",
+      "/images/hotels/alvorada-resort/13.jpg"
+    ]
   }
 ]
