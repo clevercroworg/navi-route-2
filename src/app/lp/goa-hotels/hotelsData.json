@@ -1206,5 +1206,89 @@
       "/images/hotels/baga-beach-front/11.jpg",
       "/images/hotels/baga-beach-front/12.jpg"
     ]
+  },
+  {
+    "id": "mitra-hostel-vagator",
+    "name": "Mitra Hostel Vagator",
+    "location": "N.No 522(1), Vagator Beach Road, Vagator, Anjuna, Mapusa, Goa – 403509",
+    "subRegion": "Vagator",
+    "startingRate": 850,
+    "description": "Located along the lively Vagator Beach Road, Mitra Hostel Vagator is a highly rated backpacker hostel in North Goa. Offering a vibrant and social atmosphere, the hostel features comfortable dormitory beds, private rooms, lush garden areas, and shared lounge spaces, making it perfect for budget travellers looking to connect and explore.",
+    "phone": "+91 87587 58725",
+    "email": "stay.mitra@nautiroute.com",
+    "highlights": [
+      "Vagator Beach Road Location",
+      "Vibrant Social Backpacker Atmosphere",
+      "Beautiful Garden Chill-out Areas",
+      "Minutes away from Vagator Beach"
+    ],
+    "images": [
+      "/images/hotels/mitra-hostel-vagator/1.jpg",
+      "/images/hotels/mitra-hostel-vagator/2.jpg",
+      "/images/hotels/mitra-hostel-vagator/3.jpg",
+      "/images/hotels/mitra-hostel-vagator/4.jpg",
+      "/images/hotels/mitra-hostel-vagator/5.jpg"
+    ],
+    "region": "North Goa",
+    "type": "Basic",
+    "brand": "Others",
+    "tag": "Backpacker Budget Social",
+    "googleRating": "4.8",
+    "isUnavailable": true,
+    "gallery": [
+      "/images/hotels/mitra-hostel-vagator/1.jpg",
+      "/images/hotels/mitra-hostel-vagator/2.jpg",
+      "/images/hotels/mitra-hostel-vagator/3.jpg",
+      "/images/hotels/mitra-hostel-vagator/4.jpg",
+      "/images/hotels/mitra-hostel-vagator/5.jpg",
+      "/images/hotels/mitra-hostel-vagator/6.jpg",
+      "/images/hotels/mitra-hostel-vagator/7.jpg",
+      "/images/hotels/mitra-hostel-vagator/8.jpg",
+      "/images/hotels/mitra-hostel-vagator/9.jpg",
+      "/images/hotels/mitra-hostel-vagator/10.jpg"
+    ]
+  },
+  {
+    "id": "vibes-inn-singing-tree",
+    "name": "Vibes Inn Singing Tree",
+    "location": "H. No. 1579/2, Zor Vaddo, Near Vagator Petrol Pump, Anjuna, Vagator, Goa 403509",
+    "subRegion": "Vagator",
+    "startingRate": 2200,
+    "description": "Nestled in the Zor Vaddo area of Vagator, Vibes Inn Singing Tree is a charming boutique hotel offering a cozy stay in North Goa. The property features a beautiful courtyard pool, comfortable well-appointed rooms, a signature tree-canopy ambiance, and warm hospitality, ideal for couples and small groups seeking relaxation.",
+    "phone": "+91 88560 72251",
+    "email": "stay.vibesinn@nautiroute.com",
+    "highlights": [
+      "Tranquil Zor Vaddo Location",
+      "Charming Poolside Courtyard",
+      "Cozy 4-Star Rooms & Suites",
+      "Close to Vagator Petrol Pump"
+    ],
+    "images": [
+      "/images/hotels/vibes-inn-singing-tree/1.jpg",
+      "/images/hotels/vibes-inn-singing-tree/2.jpg",
+      "/images/hotels/vibes-inn-singing-tree/3.jpg",
+      "/images/hotels/vibes-inn-singing-tree/4.jpg",
+      "/images/hotels/vibes-inn-singing-tree/5.jpg"
+    ],
+    "region": "North Goa",
+    "type": "Basic",
+    "brand": "Others",
+    "tag": "Boutique Poolside Cozy",
+    "googleRating": "4.3",
+    "isUnavailable": true,
+    "gallery": [
+      "/images/hotels/vibes-inn-singing-tree/1.jpg",
+      "/images/hotels/vibes-inn-singing-tree/2.jpg",
+      "/images/hotels/vibes-inn-singing-tree/3.jpg",
+      "/images/hotels/vibes-inn-singing-tree/4.jpg",
+      "/images/hotels/vibes-inn-singing-tree/5.jpg",
+      "/images/hotels/vibes-inn-singing-tree/6.jpg",
+      "/images/hotels/vibes-inn-singing-tree/7.jpg",
+      "/images/hotels/vibes-inn-singing-tree/8.jpg",
+      "/images/hotels/vibes-inn-singing-tree/9.jpg",
+      "/images/hotels/vibes-inn-singing-tree/10.jpg",
+      "/images/hotels/vibes-inn-singing-tree/11.jpg",
+      "/images/hotels/vibes-inn-singing-tree/12.jpg"
+    ]
   }
 ]
