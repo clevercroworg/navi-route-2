@@ -618,7 +618,7 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
           <span className="font-script text-2xl text-orange-brand block mb-1">
             {hotel.tag}
           </span>
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-navy-800 uppercase tracking-wide leading-tight">
+          <h1 className="font-serif text-[20px] xs:text-2xl sm:text-4xl lg:text-5xl font-black text-navy-800 uppercase tracking-wide leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
             {hotel.name}
           </h1>
           <div className="flex items-start gap-2 text-xs text-navy-800/60 mt-3">
@@ -694,6 +694,48 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
                 </>
               )}
             </div>
+
+            {/* Mobile/Tablet Gallery & Room Views (Shown under slider on mobile viewports) */}
+            {hotel.gallery && hotel.gallery.length > 0 && (
+              <div className="watercolor-card bg-white p-5 rounded-2xl border border-[#1D3D9E]/10 mt-6 w-full block lg:hidden">
+                <div>
+                  <h3 className="font-serif text-base font-bold text-navy-800 tracking-wide uppercase">
+                    Gallery &amp; Room Views
+                  </h3>
+                  <p className="text-[11px] text-navy-800/60 mt-1 leading-relaxed">
+                    Take a virtual tour through the room interiors and beautiful layouts of this curated Goan property.
+                  </p>
+                </div>
+                
+                {/* Gallery Grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
+                  {hotel.gallery
+                    .filter((_, idx) => !failedImages[idx])
+                    .map((imgSrc, idx) => {
+                      const originalIdx = hotel.gallery!.indexOf(imgSrc);
+                      return (
+                        <div 
+                          key={idx}
+                          onClick={() => openLightbox(originalIdx)}
+                          className="relative h-28 sm:h-36 rounded-xl overflow-hidden shadow-xs border border-[#1D3D9E]/5 cursor-pointer hover:border-orange-brand/30 hover:shadow-md transition-all duration-300 group bg-slate-100"
+                        >
+                          <Image
+                            src={imgSrc}
+                            alt={`${hotel.name} Gallery Image ${idx + 1}`}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            sizes="(max-width: 640px) 50vw, 33vw"
+                            onError={() => {
+                              setFailedImages(prev => ({ ...prev, [originalIdx]: true }));
+                            }}
+                          />
+                          <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-colors" />
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Right Side: Stay Summary details (5 columns) */}
@@ -776,9 +818,9 @@ export default function HotelDetailClient({ hotel }: { hotel: Hotel }) {
           </div>
         </div>
 
-        {/* Bottom Section: Full Width Gallery & Room Views */}
+        {/* Bottom Section: Full Width Gallery & Room Views (Desktop only) */}
         {hotel.gallery && hotel.gallery.length > 0 && (
-          <div className="watercolor-card bg-white p-6 sm:p-8 rounded-2xl border border-[#1D3D9E]/10 mt-10 w-full">
+          <div className="watercolor-card bg-white p-6 sm:p-8 rounded-2xl border border-[#1D3D9E]/10 mt-10 w-full hidden lg:block">
             <div>
               <h3 className="font-serif text-lg sm:text-xl font-bold text-navy-800 tracking-wide uppercase">
                 Gallery &amp; Room Views
