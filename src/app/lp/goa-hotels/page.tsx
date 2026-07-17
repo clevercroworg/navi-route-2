@@ -180,7 +180,7 @@ function HotelCard({
 
           {/* Fully Booked Overlay Badge */}
           {hotel.isUnavailable && (
-            <div className="absolute inset-0 bg-navy-950/40 backdrop-blur-[2px] flex items-center justify-center z-20">
+            <div className="absolute inset-0 bg-navy-950/40 flex items-center justify-center z-20">
               <span className="bg-red-600/95 border border-red-500 text-white font-serif text-sm font-bold tracking-widest uppercase px-5 py-2.5 rounded-xl shadow-lg transform -rotate-3">
                 Fully Booked
               </span>
